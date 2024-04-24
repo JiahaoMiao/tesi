@@ -1,0 +1,75 @@
+\makeatletter % Use \makeatletter to make '@' a letter
+\def\input@path{{../}} % Define input path to parent directory
+\makeatother % Restore default category code of '@'
+
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Introduction}
+
+In this thesis we are interested in a specific aspect of theoretical high energy physics. In particular,
+the topic of interest is that of electron-positron ($e^+e^-$) collisions. As is typical in physics, the equations that govern
+the interactions are quite complicated and it is almost impossible to find exact solutions, so all
+functions of interest are perturbatively expanded, meaning they are expanded in a power series
+of a small parameter. 
+
+When the force in question is the electromagnetic interaction, one can
+simply use the fine structure constant ( or electromagnetic coupling constant ) $\alpha_{em} \sim \frac{1}{137} $.
+
+When discussing particles that interact with the strong interaction, it is then natural to use the strong
+coupling constant $ \alpha_S $.
+
+The function we are interested in is an event shape distribution, the Thrust distribution $T$.
+\begin{equation} \label{eq:Thrust}
+    T = \max_{\vec{n}} \frac{\sum_i |\vec{p}_i \cdot \vec{n}|}{\sum_i |\vec{p}_i|}
+\end{equation}
+
+where the sum is over all final state particles and $\vec{n}$ is a unit vector.
+It can be seen from this definition that the thrust is an infrared and collinear safe
+quantity, that is, it is insensitive to the emission of zero momentum particles and to the splitting of 
+one particle into two collinear ones.
+
+It can be seen that a two-particle final state has fixed $T = 1$, consequently the thrust
+distribution receives its first non-trivial contribution from three-particle final states
+
+The lower limit on $T$ depends on the number of final-state particles.
+Neglecting masses, $T_{min} = 2/3$ for three particles, corresponding to a symmetric
+configuration. For four particles the minimum thrust corresponds to final-state
+momenta forming the vertices of a regular tetrahedron, each making an angle
+$\cos^{-1}(1/\sqrt(3))$ with respect to the thrust axis. Thus $T_{min} = 1/\sqrt(3) = 0.577$ in this
+case . For more than four particles, $T_{min}$ approaches $1/2$ from above as the number of particles increases.
+
+
+At large values o f $T$, however, there are terms in higher order that become enhanced by powers o f $\ln(1 - T)$.
+In this kinematical region the real expansion parameter is the
+large effective coupling $\alpha_s \ln^2( 1 - T)$ and therefore
+any finite-order perturbative calculation cannot give an accurate evaluation o f the cross section.
+
+These corrections lead to logarithmically enhanced terms such as $\alpha_S \log(M/qT )$, where M is
+the mass of the final system and qT is the transverse momentum. For small qT , where the
+bulk of events is produced, $\log(M/qT )$ can become quite large, but when $\alpha_S \log(M/qT) \sim 1$ the
+perturbative expansion becomes meaningless because the neglected terms can be of the same
+order of the included terms.
+
+
+In order to obtain realistic cross sections, these logarithmically enhanced terms must then be
+treated differently. A promising solution is the theory of resummation\cite{CATANI19933}: instead of stopping at a
+certain power of $\alpha_S$ as in standard perturbation theory, we calculate an all order resummation
+of the $\alpha_S \log(M/qT )$ terms which lead to a consistent exponential term, the Sudakov form
+factor. It turns out that the Sudakov form factor itself is a power expansion of $\alpha_S$ but now
+with no logarithmic enhancement. The first order calculation is called Leading Logarithmic (LL)
+order, the next order calculation is called Next to Leading Logarithmic (NLL) and so on. In the
+literature, it has been calculated up to N3 LL. We were able to calculate the next order, N4 LL,
+and the main objective of this thesis is to estimate the uncertainty in this function due to the
+missing higher order corrections.
+In the first chapter we introduce the forces and particles of the Standard Model, also describing
+the Quantum Field Theory formalism which is at the base of all the forces described in the
+Standard Model. In the second chapter we then describe the process of interest and illustrate
+the theorems and formulas necessary to calculate the relevant cross sections. In particular we
+introduce the resummation formalism and the Sudakov form factor which is the main object of
+this work. In chapter 3, we describe the calculations that lead us to obtain the Sudakov fom
+factor at different logarithmic orders and finally in chapter 4 we present plots of this function and
+discuss its uncertainty, first using the standard methods and then exploring different methods.
+
+\end{document}
