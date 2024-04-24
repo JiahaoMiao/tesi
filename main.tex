@@ -1,0 +1,55 @@
+\documentclass[12pt,english]{article}
+
+\usepackage{style/relazione}
+\usepackage{style/mystyle}
+
+
+\addbibresource{bibliography/biblio.bib} % The file containing the bibliography
+
+% BACHELOR DEGREE COURSE
+\def\myCDL{Corso di Laurea triennale in Fisica}
+
+% TITLE:
+\def\myTitle{Thrust distribution in \lowercase{$e^+e^-$} annihilation} 
+
+% AUTHOR:
+\def\myName{Miao Jiahao}
+\def\myMat{Matr. Nr. 936136}
+ 
+\def\myRefereeA{Giancarlo Ferrera}
+%\def\myRefereeB{Prof. }
+ 
+% ANNO ACCADEMICO
+\def\myYY{2023-2024}
+
+% This command introduces a list of figures after the table of contents (optional)
+\figurespagetrue
+
+% This command introduces a list of tables after the table of contents (optional)
+\tablespagetrue
+
+
+\begin{document}
+
+% frontispiece with logo, title, author, referee, etc.
+\frontispiece
+
+\beforepreface % romans page numbering
+% \prefacesection{Abstract} %Abstract
+% \subfile{chapters/Abstract} 
+\afterpreface % table of contents, tables and figures
+
+
+\subfile{chapters/Introduzione} 
+
+\subfile{chapters/Strong_Coupling}
+
+
+\appendix
+\subfile{Appendix/Appendix}
+
+\cite{Catani:1992ua}
+% bibliography 
+\printbibliography
+
+\end{document}

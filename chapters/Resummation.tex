@@ -1,0 +1,64 @@
+\makeatletter % Use \makeatletter to make '@' a letter
+\def\input@path{{../}} % Define input path to parent directory
+\makeatother % Restore default category code of '@'
+
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Resummation}
+
+
+\subsection{Soft-gluon effects in QCD cross sections}
+
+These effects and the soft gluon exponentiation are reviewed in \cite{Catani_1997} and \cite{catani1997softgluon}, here i summarize the physical 
+motivation and main idea of the resummation of soft gluon effects in QCD.
+
+The finite energy resolution inherent in any particle detector implies that the physical cross sections, 
+those experimentally measured, inherently incorporate all contributions from arbitrarily soft particles 
+produced in the final state. In other words, because we lack the ability to precisely resolve the energy 
+of soft particles, we are unable to distinguish between their presence or absence in our calculations. 
+Consequently, we must account for the sum over all possible final states.
+
+This inclusiveness is essential in QCD calculations. Higher order perturbative contributions due to \emph{virtual}
+gluons are infrared divergent and the divergences are exactly  cancelled by radiation of undetected \emph{real} gluons.
+speaking the cancellation does not necessarily take place \emph{order by order} in perturbative theory.
+In particular kinematic configurations, \emph{e.g} Thrust in the dijet limit $T->1$ ,   
+real and virtual contributions can be highly unbalanced, because the emission of real radiation is inhibited by kinematic constrainsts,
+spoiling the cancellation mechanism. As a result, soft gluon contribution to QCD cross sections can still be either large or singular.
+
+In these cases, the cancellation of infrared divergences bequeaths higher order contributions of the form:
+
+\begin{equation}\label{eq:log_enhanced_terms}
+    C_{nm} \alpha_s^n \ln^m\qty(\frac{1}{1-T}) , \qq{with $m \le 2n $,}
+\end{equation}
+
+that can become large, $\alpha_s \ln^2\qty(1-x)\lesssim 1$, even if the QCD coupling $\alpha_s$ is in the perturbative regime $\alpha_s \ll 1$.
+The logarithmically enhanced terms in \cref{eq:log_enhanced_terms} are certainly relevant near the dijet limit $T->1$.
+In these cases, see \cite{CATANI19933},\cite{Catani:2003zt}, the theoretical predictions can be improved by evaluating soft gluon 
+contributions to high orders and possibly resumming to all of them in $\alpha_s$.
+
+\subsection{Resummation of soft-gluon effects}
+
+The physical bases for all order summation of soft gluon contributions to QCD cross sections are the following:
+to QCD are dynamics and kinematics factorizations. The first factorization follows from gauge invariance and 
+unitarity: in the soft limit multi-gluon amplitudes fulfil generalized factorization formulae given in terms of a single gluon emission
+probability that is universal \emph{i.e} process independent. The second factorization regards kinematics and is strongly dependent on the observable to because
+computed. 
+
+\emph{If}, in the appropriate soft limit, the phase space for this observable can be written in a factorized way, resummation is feasible in form of 
+generalized exponentiation of the single gluon emission probability. Then exponentiation allows one to dfine and carry out an improved perturbative expansion
+that systematically resums $LL$, terms, $NLL$ terms and so on.
+
+In general the phase space is not factorizable in single particle contributions. If when factorizable, it does not occur in the space where the physical observable 
+x is defined. Usually, it is necessary to introduce a conjugate space where the physical observable x is defined. Usually, it is necessary to 
+introduce a conjugate space to overcome phase-space constraints. 
+
+A typical example is the energy conservation constraints that can be factorized by working in N-moment space, N being the variable conjugate to the energy x 
+via a Mellin (or Laplace) transformation.
+
+Large or Singular soft gluon contributions can have different origins and resummation takes different exponentiation forms depending on kinematics.
+This leads to varieties of Sudakov effects.
+
+One of the effects is Sudakov suppression: Soft gluon resummation produces suppression of cross sections near the exclusive phase space boundary.
+Typical examples are $e^+e^-$ event shapes distributions like Thrust $T$. 

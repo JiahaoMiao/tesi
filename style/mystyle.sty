@@ -1,0 +1,66 @@
+% Preamble
+% Add any additional packages or custom command definitions here
+\ProvidesPackage{style/mystyle}
+% Document formatting packages
+\RequirePackage[a4paper]{geometry}     % Page format
+\RequirePackage[english]{babel}         % Language support
+%\RequirePackage[utf8]{inputenc}         % UTF-8 support (not needed with XeLaTeX or LuaLaTeX)
+\RequirePackage[a-1b]{pdfx}             % PDF-A standard compliant file (required for submission)
+
+% Graphics packages
+\RequirePackage{graphicx}               % Advanced image functions
+\RequirePackage{caption}                % Caption customization
+\RequirePackage{subcaption}             % Subfigures
+\RequirePackage{xcolor}                 % Advanced color management
+\RequirePackage{booktabs}               % For tables
+\RequirePackage{float}                  % For images
+
+% Typography packages
+\RequirePackage{amssymb,amsmath,amsthm} % Mathematical symbols
+\RequirePackage{xparse}                 % For defining new commands
+% \RequirePackage{siunitx}                % SI units
+% \sisetup{
+    % 	retain-unity-mantissa = false
+    % }
+\RequirePackage{physics}                % Simplify writing of physical formulas
+% \AtBeginDocument{\RenewCommandCopy\qty\SI}
+
+% Additional packages for typesetting theses on perturbative QCD
+% Feynman diagrams
+\RequirePackage[compat=1.1.0]{tikz-feynman}   % Drawing Feynman diagrams
+% Math formulas and symbols
+\RequirePackage{mathtools}             % Additional math tools
+\RequirePackage{bm}                     % Bold math symbols
+\RequirePackage{mathrsfs}               % Script math fonts
+% Integrating Mathematica calculations
+\RequirePackage{listings}              % For including Mathematica code
+
+%package for particle physics names
+\RequirePackage{heppennames}
+
+% better array structure
+\RequirePackage{array}
+
+% Hyperlink packages
+
+\RequirePackage{hyperref}               % Enable internal and external hyperlinks
+\hypersetup{
+    unicode=true,                   % Allow non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,                % Show Acrobat’s toolbar
+    pdfmenubar=true,                % Show Acrobat’s menu
+    pdffitwindow=false,             % Window does not fit to page when opened
+    pdfstartview={FitH},            % Fits the width of the page to the window
+    pdfnewwindow=true,              % Links open in new PDF window
+    colorlinks=true,                % Colored links
+    linkcolor=blue,                 % Color of internal links
+    citecolor=green,                % Color of links to bibliography
+    filecolor=cyan,                 % Color of file links
+    urlcolor=magenta                % Color of external links
+}
+\RequirePackage{url}                    % Allow displaying and making URLs interactive
+\RequirePackage{cleveref}                   % Better cross-referencing(after hyperref)
+\RequirePackage{csquotes}               % Quotation management
+\RequirePackage{verbatim}              
+\RequirePackage{biblatex}               % Bibliography management
+% Packages for separate compilation and modular document
+\RequirePackage{subfiles}
