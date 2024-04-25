@@ -6,9 +6,93 @@
 
 \begin{document}
 
-\Chapter{Calculations of the $f_i$-coefficients}\label{ch:f_coeff}
+% \Chapter{Calculations}\label{ch:calculations}
 
-\begin{Calculations}
+\section{Calculation of the $f_i$ functions}\label{sec:f functions}
 
 
-\end{document}
+In the two-jet region the fixed-order thrust distribution is enhanced by large infrared
+logarithms which spoil the convergence of the perturbative series. The convergence can be
+restored by resumming the logarithms to all orders in the coupling constant $\alpha_s$.
+
+According to general theorems \cite{Block:1937},\cite{Kinoshita:1962ur},\cite{Lee:1964is}, 
+the cross section \cref{eq:cross_section} has a power series expansion in $\alpha_s(Q^2)$ of the form:
+
+\begin{equation}
+    \frac{\sigma(\tau,Q^2)}{\sigma_t} =  C\qty(\alpha_s\qty(Q^2))\Sigma\qty(\tau,\alpha_s\qty(Q^2))+F(\tau,\alpha_s\qty(Q^2)
+\end{equation}
+
+where $\sigma_t$ is the total hadronic cross section and    
+
+
+\begin{subequations}
+\begin{align}
+    C\qty(\alpha_s) &= 1 + \sum_{n=1}^{\infty} C_n \alpha_s^n \\
+    \Sigma\qty(\tau,\alpha_s)&= \exp[\sum_{n=1}^\infty \alpha_s^n \sum_{m=1}^{2n}G_{nm}\ln^m\tau] \\
+    F(\tau,\alpha_s) &= \sum_{n=1}^{\infty} \alpha_s^n F_n(\tau)
+\end{align}
+\end{subequations}
+
+Here $C_n$ and $G_{nm}$ are constants, while $F_n(\tau)$ are perturbatively computable functions that vanish at small $\tau$.
+Thus at small $\tau$ (large thrust) it becomes morst important to resum the series of large logarithms in $\Sigma\qty(\tau,\alpha_s)$.
+These are normally classified as \emph{leading} logarithms when $n < m \le 2n$, \emph{next-to-leading} when $m = n$ 
+and \emph{subdominant} logarithms when $m < n$. 
+
+In the article by Catani, Turnock, Webber and Trentadue \cite{CATANI1991491}, it was observed that 
+for a final state configuration corresponding to a large value of thrust , \cref{eq:Thrust} can be approximated by
+
+\begin{equation}
+    \tau = 1-T \approx \frac{k_1^2+k_2^2}{Q^2}
+\end{equation}
+
+where $k_1^2$ and $k_2^2$ are the invariant masses squared of two back-to-back jets and $Q^2$ is the energy of the center of mass.
+Thus the key to the evaluation of the thrust distributions is its relation to the jet mass distribution $J(Q^2,k^2)$ which denotes
+the probability of jet invariant mass-squared $k^2$ at scale $Q^2$, then the thrust fraction 
+
+\begin{equation}
+    R(\tau,\alpha_s(Q^2)) = \frac{\sigma(\tau,Q^2)}{\sigma_t} = \frac{1}{\sigma_t} 
+    \int_0^1 \dv{\sigma(\tau',Q^2)}{\tau'} \Theta (\tau - \tau') \dd \tau'
+\end{equation}
+
+takes the form of a convolution of two jet mass distributions $J(Q^2,k_1^2)$ and $J(Q^2,k_2^2)$
+
+\begin{equation}
+    R(\tau,\alpha_s(Q^2)) \underset{\tau \ll 1}{=} \int_0^\infty J(Q^2,k_1^2) J(Q^2,k_2^2) \Theta\qty(\tau - \frac{k_1^2+k_2^2}{Q^2}) \dd k_1^2 \dd k_2^2
+\end{equation}
+
+Introducing the Laplace transform of the jet mass distribution
+
+\begin{equation}\label{eq:laplace_jet_mass}
+    \tilde{J}_\nu(Q^2) = \int_0^\infty J(Q^2,k^2) e^{-\nu k^2} \dd k^2 
+\end{equation}
+
+and using the integral representation of the Heaviside step function
+
+\begin{equation}
+    \Theta(\tau - \frac{k^2}{Q^2}) = \frac{1}{2\pi i} \int_{\epsilon-i\infty}^{\epsilon+i\infty} \frac{e^{\nu \tau}}{\nu} e^{- \nu \frac{k^2}{Q^2}} \dd \nu
+\end{equation}
+
+we find that 
+
+\begin{equation}
+    \Sigma(\tau,\alpha_s(Q^2)) = \int_{\epsilon - i \infty}^{\epsilon+i\infty} \tilde{J}(Q^2,\nu_1) \tilde{J}(Q^2,\nu_2) e^{\nu_1 \tau} e^{\nu_2 \tau} \dd \nu_1 \dd \nu_2
+\end{equation}
+
+where $\epsilon$ is a real positive constant to the right of all singularities of the integrand $\tilde{J}_\nu(Q^2)$ in the complex $\nu$ plane. 
+
+An integral representation for the Laplace transform $\tilde{J}_\nu(Q^2)$ is given by
+
+\begin{equation}\label{eq:master_formula}
+    \ln \tilde{J}_\nu^q(Q^2) = \int_0^1 \frac{\dd u}{u} \qty(e^{-u \nu Q^2}-1)\qty[ \int_{u^2 Q^2}^{u Q^2} \frac{1}{q^2} A\qty(\alpha_s(q^2)) \dd q^2 + \frac{1}{2} B\qty(\alpha_s(u Q^2))]
+\end{equation}
+
+with 
+
+\begin{align*}
+    A(\alpha_s) &= \sum_{n=1}^\infty \frac{A_n}{\pi^n}\alpha_s^n & B(\alpha_s) &= \sum_{n=1}^\infty \frac{B_n}{\pi^n}\alpha_s^n
+\end{align*}
+
+
+
+
+\end{document} 
