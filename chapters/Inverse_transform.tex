@@ -1,0 +1,24 @@
+\makeatletter % Use \makeatletter to make '@' a letter
+\def\input@path{{../}} % Define input path to parent directory
+\makeatother % Restore default category code of '@'
+
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+In order to find the jet mass distribution $J(Q^2,k^2)$,we have to perform the inverse Laplace transform via 
+the Mellin's inversion formula (or the Bromwich integral) given by the line integral: 
+
+\begin{equation} \label{eq:inverse_laplace}
+    J(Q^2,k^2) = \frac{1}{2\pi i} \lim_{T->\infty}\int_{c-iT}^{c+iT} \dd \nu e^{\nu k^2} \tilde{J}_\nu \qty(Q^2)
+\end{equation}
+
+where C is a real number such that C is at the right of all singularities of the integrand in the complex plane and
+the function $\tilde{J}_\nu(Q^2)$ has to be bounded on the line.  
+
+
+
+
+
+
+\end{document}

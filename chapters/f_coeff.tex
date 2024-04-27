@@ -82,7 +82,7 @@ where $\epsilon$ is a real positive constant to the right of all singularities o
 
 An integral representation for the Laplace transform $\tilde{J}_\nu(Q^2)$ is given by
 
-\begin{equation}\label{eq:master_formula}
+\begin{equation}\label{eq:master formula}
     \ln \tilde{J}_\nu^q(Q^2) = \int_0^1 \frac{\dd u}{u} \qty(e^{-u \nu Q^2}-1)\qty[ \int_{u^2 Q^2}^{u Q^2} \frac{1}{q^2} A\qty(\alpha_s(q^2)) \dd q^2 + \frac{1}{2} B\qty(\alpha_s(u Q^2))]
 \end{equation}
 
@@ -92,7 +92,23 @@ with
     A(\alpha_s) &= \sum_{n=1}^\infty \frac{A_n}{\pi^n}\alpha_s^n & B(\alpha_s) &= \sum_{n=1}^\infty \frac{B_n}{\pi^n}\alpha_s^n
 \end{align*}
 
+The integral as it is cannot be integrated, the $u$ integration may be performed using the prescription in Appendix A of \cite{Catani_2003_appendix} and
+readapting the formula to the case of Laplace transform instead of Mellin transform.
 
+In \cref{Appendix: Laplace and Mellin transform} we show that the prescription, to evaluate the large-N Mellin moments of soft-gluon
+contributins at an arbitrary logarithmic accuracy, can be used for the Laplace transform as well, we can use this result to express \cref{eq:master formula} 
+in an alternative representation:
 
+The method is a generalization of the prescription to NLL accuray in \cite{CATANI19933}
+
+\begin{equation}
+    e^{-u \nu Q^2} - 1 \simeq -\Theta(u-v) \qq{with $v = \frac{N_0}{N}$}
+\end{equation}
+
+where $N_0 = e^{-\gamma_E}$, $\gamma_E = 0.5772 \dots $ being the Euler-Mascheroni constant
+
+\begin{equation}\label{eq:master_formula alt}
+    \ln \tilde{J}_\nu^q(Q^2) = - \int_{N_0/N}^{1} \frac{\dd u}{u} \qty[ \int_{u^2 Q^2}^{u Q^2} \frac{1}{q^2} A\qty(\alpha_s(q^2)) \dd q^2 + \frac{1}{2} \tilde{B}\qty(\alpha_s(u Q^2))] + \ln \tilde{C}(Q^2)
+\end{equation}
 
 \end{document} 
