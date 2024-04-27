@@ -10,7 +10,6 @@
 
 \section{Calculation of the $f_i$ functions}\label{sec:f functions}
 
-
 In the two-jet region the fixed-order thrust distribution is enhanced by large infrared
 logarithms which spoil the convergence of the perturbative series. The convergence can be
 restored by resumming the logarithms to all orders in the coupling constant $\alpha_s$.
@@ -19,11 +18,10 @@ According to general theorems \cite{Block:1937},\cite{Kinoshita:1962ur},\cite{Le
 the cross section \cref{eq:cross_section} has a power series expansion in $\alpha_s(Q^2)$ of the form:
 
 \begin{equation}
-    \frac{\sigma(\tau,Q^2)}{\sigma_t} =  C\qty(\alpha_s\qty(Q^2))\Sigma\qty(\tau,\alpha_s\qty(Q^2))+F(\tau,\alpha_s\qty(Q^2)
+    \frac{\sigma(\tau,Q^2)}{\sigma_t} =  C\qty(\alpha_s\qty(Q^2))\Sigma\qty(\tau,\alpha_s\qty(Q^2))+F\qty(\tau,\alpha_s\qty(Q^2))
 \end{equation}
 
 where $\sigma_t$ is the total hadronic cross section and    
-
 
 \begin{subequations}
 \begin{align}
@@ -46,7 +44,7 @@ for a final state configuration corresponding to a large value of thrust , \cref
 \end{equation}
 
 where $k_1^2$ and $k_2^2$ are the invariant masses squared of two back-to-back jets and $Q^2$ is the energy of the center of mass.
-Thus the key to the evaluation of the thrust distributions is its relation to the jet mass distribution $J(Q^2,k^2)$ which denotes
+Thus the key to the evaluation of the thrust distributions is its relation to the quark jet mass distribution $J^q(Q^2,k^2)$ which denotes
 the probability of jet invariant mass-squared $k^2$ at scale $Q^2$, then the thrust fraction 
 
 \begin{equation}
@@ -63,19 +61,19 @@ takes the form of a convolution of two jet mass distributions $J(Q^2,k_1^2)$ and
 Introducing the Laplace transform of the jet mass distribution
 
 \begin{equation}\label{eq:laplace_jet_mass}
-    \tilde{J}_\nu(Q^2) = \int_0^\infty J(Q^2,k^2) e^{-\nu k^2} \dd k^2 
+    \tilde{J}^q_\nu(Q^2) = \int_0^\infty J^q(Q^2,k^2) e^{-\nu k^2} \dd k^2 
 \end{equation}
 
 and using the integral representation of the Heaviside step function
 
-\begin{equation}
+\begin{equation} \label{eq:heaviside_integral_representation}
     \Theta(\tau - \frac{k^2}{Q^2}) = \frac{1}{2\pi i} \int_{\epsilon-i\infty}^{\epsilon+i\infty} \frac{e^{\nu \tau}}{\nu} e^{- \nu \frac{k^2}{Q^2}} \dd \nu
 \end{equation}
 
 we find that 
 
 \begin{equation}
-    \Sigma(\tau,\alpha_s(Q^2)) = \int_{\epsilon - i \infty}^{\epsilon+i\infty} \tilde{J}(Q^2,\nu_1) \tilde{J}(Q^2,\nu_2) e^{\nu_1 \tau} e^{\nu_2 \tau} \dd \nu_1 \dd \nu_2
+    \Sigma(\tau,\alpha_s(Q^2)) = \int_{\epsilon - i \infty}^{\epsilon+i\infty} \tilde{J}^q(Q^2,\nu_1) \tilde{J}^q(Q^2,\nu_2) e^{\nu_1 \tau} e^{\nu_2 \tau} \dd \nu_1 \dd \nu_2
 \end{equation}
 
 where $\epsilon$ is a real positive constant to the right of all singularities of the integrand $\tilde{J}_\nu(Q^2)$ in the complex $\nu$ plane. 

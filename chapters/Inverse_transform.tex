@@ -6,19 +6,139 @@
 
 \begin{document}
 
-In order to find the jet mass distribution $J(Q^2,k^2)$,we have to perform the inverse Laplace transform via 
+In order to find the quark jet mass distribution $J^q(Q^2,k^2)$,we have to perform the inverse Laplace transform via 
 the Mellin's inversion formula (or the Bromwich integral) given by the line integral: 
 
 \begin{equation} \label{eq:inverse_laplace}
-    J(Q^2,k^2) = \frac{1}{2\pi i} \lim_{T->\infty}\int_{c-iT}^{c+iT} \dd \nu e^{\nu k^2} \tilde{J}_\nu \qty(Q^2)
+    J^q(Q^2,k^2) = \frac{1}{2\pi i} \lim_{T \to \infty}\int_{C-iT}^{C+iT} \dd \nu e^{\nu k^2} \tilde{J}^q_\nu \qty(Q^2)
 \end{equation}
 
 where C is a real number such that C is at the right of all singularities of the integrand in the complex plane and
-the function $\tilde{J}_\nu(Q^2)$ has to be bounded on the line.  
+the function $\tilde{J}^q_\nu(Q^2)$ has to be bounded on the line.
+
+Instead of directly considering the expression in \cref{eq:inverse_laplace}, it was pointed in \cite{CATANI19933} that 
+it is more convenient to work with the mass fraction $R^q(w)$, which gives the fraction of jets with masses less than $wQ^2$:
+
+\begin{equation}\label{eq:jet mass fraction}
+    R^q(w) = \int_0^\infty J^q(Q^2,k^2)\Theta(wQ^2-k^2) \dd k^2
+\end{equation}
+
+and using the integral representation of the Heaviside step function \cref{eq:heaviside_integral_representation}
+
+\begin{equation}
+    \Theta(wQ^2-k^2) = \frac{1}{2\pi i} \lim_{T \to \infty}\int_{C-iT}^{C+iT} \frac{\dd \nu}{\nu} e^{\nu (wQ^2-k^2)} 
+\end{equation}
+
+we recognize the Laplace transform of the quark jet mass distribution \cref{eq:laplace_jet_mass}
+
+\begin{align}
+    \begin{split}
+        R^q(w) &= \frac{1}{2\pi i} \lim_{T \to \infty} \int_{C-iT}^{C+iT} \frac{\dd \nu}{\nu} e^{w \nu Q^2} \int_0^\infty J^q(Q^2,k^2) e^{-\nu k^2} \dd k^2 \\
+        &= \frac{1}{2\pi i} \lim_{T \to \infty} \int_{C-iT}^{C+iT} \frac{\dd \nu}{\nu} e^{w \nu Q^2} \tilde{J}^q_\nu(Q^2) \\
+        &= \frac{1}{2\pi i} \lim_{T \to \infty} \int_{C-iT}^{C+iT} \frac{\dd \nu}{\nu} e^{w \nu Q^2} e^{\mathcal{F}(\alpha_s,\ln(\nu Q^2))}\\
+        &= \frac{1}{2\pi i} \lim_{T \to \infty} \int_{C'-iT}^{C'+iT} \frac{\dd N}{N} e^{w N} e^{\mathcal{F}(\alpha_s,\ln N)}
+    \end{split}
+\end{align}
+
+where $N=\nu Q^2$ and $\mathcal{F}$ has the logarithms expansion
+
+\begin{align}
+    \begin{split}
+    \mathcal{F}(\alpha_s,\ln N) &= f_1(b_0 \alpha_s \ln N) \ln N + f_2(b_0 \alpha_s \ln N) + f_3(b_0 \alpha_s \ln N) \alpha_s \\
+    &+ f_4(b_0 \alpha_s \ln N) \alpha_s^2 + f_5(b_0 \alpha_s \ln N) \alpha_s^3 + \order{\alpha_s^4}
+\end{split}
+\end{align}
+
+Since the function $\mathcal{F}$ in the exponent varies more slowly with N than $wN$, we can introduce the integration variable $u=wN$
+so that $\ln N = \ln u +\ln \frac{1}{w} = \ln u + L$ and Taylor expand with respect to $\ln u$ around $0$, which is equivalent to expanding 
+the original function $\mathcal{F}$ w.r.t $\ln N$ around $\ln N = \ln \frac{1}{w}\equiv L$:
+
+\begin{align}
+    \begin{split}\label{eq:Rw expansion}
+       R^q(w) &= \frac{1}{2\pi i} \int_C \frac{\dd u}{u} e^{u} e^{\mathcal{F}(\alpha_s,\ln u + L)} \\
+       &\stackrel{\text{Taylor}}{=} \int_C \frac{\dd u}{2\pi i} e^{u-\ln u} e^{\mathcal{F}(\alpha_s,L)+\sum_{n=1}^\infty \frac{\mathcal{F}^{(n)}(\alpha_s,L)}{n!}  \ln^n u}\\
+       &= e^{\mathcal{F}(\alpha_s,L)} \int_C \frac{\dd u}{2\pi i} e^{u-\ln u} e^{\sum_{n=1}^\infty \frac{\mathcal{F}^{(n)}(\alpha_s,L)}{n!}  \ln^n u}
+    \end{split}
+\end{align}
+
+where the integral is intended as before, along the line $C$ to the right of all singularities of the integrand, and 
+
+\begin{equation}
+    \mathcal{F}^{(n)}(\alpha_s,L) = \pdv[n]{\mathcal{F}(\alpha_s,\ln u + L )}{\ln u} \eval_{\ln u = 0}
+\end{equation}
+
+The first few derivatives are: 
+
+\begin{align}
+    \begin{split}
+        \mathcal{F}^{(1)}(\alpha_s,L) &= f_1(\lambda )+\lambda  f_1'(\lambda )+\alpha_s b_0 f_2'(\lambda )+\alpha_s^2 b_0 f_3'(\lambda )+\alpha_s^3 b_0 f_4'(\lambda )\\
+        &+\alpha_s^4 b_0 f_5'(\lambda )
+    \end{split}
+\end{align}
+
+\begin{align}
+    \begin{split}
+        \mathcal{F}^{(2)}(\alpha_s,L) &= 2 \alpha_s b_0 f_1'(\lambda ) + \alpha_s b_0 \lambda  f_1''(\lambda )+\alpha_s^2 b_0^2 f_2''(\lambda )+ \alpha_s^3 b_0^2 f_3''(\lambda )\\
+        &+\alpha_s^4 b_0^2 f_4''(\lambda )+ \alpha_s^5 b_0^2 f_5''(\lambda )
+    \end{split}
+\end{align}
+
+\begin{align}
+    \begin{split}
+        \mathcal{F}^{(3)}(\alpha_s,L) &=  3 \alpha_s^2 b_0^2 f_1''(\lambda )+\alpha_s^2 b_0^2 \lambda  f_1^{(3)}(\lambda )+\alpha_s^3 b_0^3 f_2^{(3)}(\lambda )+\alpha_s^4 b_0^3 f_3^{(3)}(\lambda )\\
+        &+\alpha_s^5 b_0^3 f_4^{(3)}(\lambda )+\alpha_s^6 b_0^3 f_5^{(3)}(\lambda )
+    \end{split}
+\end{align}
+
+\begin{align}
+    \begin{split}
+        \mathcal{F}^{(4)}(\alpha_s,L) &= 4 \alpha_s^3 b_0^3 f_1^{(3)}(\lambda ) +\alpha_s^3 b_0^3 \lambda  f_1^{(4)}(\lambda )+\alpha_s^4 b_0^4 f_2^{(4)}(\lambda )+\alpha_s^5 b_0^4 f_3^{(4)}(\lambda )\\
+        &+\alpha_s^6 b_0^4 f_4^{(4)}(\lambda )+\alpha_s^7 b_0^4 f_5^{(4)}(\lambda )
+    \end{split}
+\end{align}
+
+After recasting the expansion presented in \cref{eq:Rw expansion} using the expression \\
+$\gamma(\alpha_s,L) = f_1(\lambda) + \lambda f_1'(\lambda)$ from \cite{CATANI19933}, 
+and defining $\mathcal{F}^{(1)}_{res}(\alpha_s,L) \equiv \mathcal{F}^{(1)}(\alpha_s,L) - \gamma(\alpha_s,L)$, we proceed to expand the second exponential with respect to $\ln u$ around 0, 
+following the approach outlined in \cite{Aglietti:2002ew}. This yields the subsequent expansion:
+
+\begin{align}
+    \begin{split}
+        R^q(w) &= e^{\mathcal{F}(\alpha_s,L)} \int_C \frac{\dd u}{2\pi i} e^{u-(1-\gamma(\alpha_s,L))\ln u} e^{\mathcal{F}^{(1)}_{res}(\alpha_s,L) \ln u +\sum_{n=2}^\infty \frac{\mathcal{F}^{(n)}(\alpha_s,L)}{n!}  \ln^n u}\\
+        &= \int_C \frac{\dd u}{2\pi i} e^{u-(1-\gamma(\alpha_s,L))\ln u} \biggl( 1 + \mathcal{F}^{(1)}_{res}\ln u +\frac{1}{2}\qty( \mathcal{F}^{(2)}+(\mathcal{F}^{(1)}_{res})^2)\ln^2 u \\
+        &+ \frac{1}{6}\qty(\mathcal{F}^{(3)} + 3 \mathcal{F}^{(2)}\mathcal{F}^{(1)}_{res} + (\mathcal{F}^{(1)}_{res})^3 ) \ln^3 u \\
+        &+ \frac{1}{24}\qty(\mathcal{F}^{(4)} + 3(\mathcal{F}^{(2)})^2 + 4 \mathcal{F}^{(3)} \mathcal{F}^{(1)}_{res} + 6 \mathcal{F}^{(2)} (\mathcal{F}^{(1)}_{res})^2 + (\mathcal{F}^{(1)}_{res})^4 )\ln^4 u \\
+        &+ \order{\ln^5 u} \biggr)
+    \end{split}
+\end{align}
+
+Lastly, we utilize the following result to evaluate the integral presented in \cref{eq:jet mass fraction}.
+
+\begin{equation}
+    \int_C \frac{\dd u}{2\pi i} \ln^k u e^{u-(1-\gamma(\alpha_s,L))\ln u} = \dv[k]{\gamma} \frac{1}{\Gamma(1-\gamma(\alpha_s,L))}
+\end{equation}
+
+where $\Gamma$ is the Euler $\Gamma$-function.
+
+\begin{align}
+    \begin{split}
+        R^q(w) &= \frac{e^{\mathcal{F}(\alpha_s,L)}}{\Gamma(1-\gamma)} \biggl[ 1 + \mathcal{F}^{(1)}_{res} \psi_0(1-\gamma) + \frac{1}{2}\qty( \mathcal{F}^{(2)}+(\mathcal{F}^{(1)}_{res})^2) \qty(\psi_0^2-\psi_1)(1-\gamma) \\
+        &+ \frac{1}{6}\qty(\mathcal{F}^{(3)} + 3 \mathcal{F}^{(2)}\mathcal{F}^{(1)}_{res} + (\mathcal{F}^{(1)}_{res})^3 ) \qty(\psi_0^3 -3 \psi_0\psi_1+\psi_2)(1-\gamma) \\
+        &+ \frac{1}{24}\qty(\mathcal{F}^{(4)} + 3(\mathcal{F}^{(2)})^2 + 4 \mathcal{F}^{(3)} \mathcal{F}^{(1)}_{res} + 6 \mathcal{F}^{(2)} (\mathcal{F}^{(1)}_{res})^2 + (\mathcal{F}^{(1)}_{res})^4 ) \\
+        &\qty(\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)(1-\gamma)+ \order{\ln^5 u} \biggr]
+    \end{split}
+\end{align}
+
+where $\psi_n(z)$ are the polygamma functions, defined as:
+
+\begin{equation}
+    \psi_n (z) = \dv[n+1]{z} \ln \Gamma(z) = \dv[n]{z} \frac{\Gamma '(z)}{\Gamma(z)} = \dv[n]{z} \psi_0(z)
+\end{equation}
 
 
 
 
 
+\printbibliography
 
 \end{document}
