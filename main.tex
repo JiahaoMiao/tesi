@@ -34,11 +34,14 @@
 % frontispiece with logo, title, author, referee, etc.
 \frontispiece
 
-\beforepreface % romans page numbering
+\beforepreface % romans page numbering, sets pagestyle to empty
 % \prefacesection{Abstract} %Abstract
 % \subfile{chapters/Abstract} 
-\afterpreface % table of contents, tables and figures
+% \afterpreface % table of contents, tables and figures
 
+\tableofcontents
+\pagenumbering{arabic}
+\setcounter{page}{1}
 
 \subfile{chapters/Introduzione} 
 
@@ -95,11 +98,8 @@
 \beforepreface % romans page numbering, sets pagestyle to empty
 % \prefacesection{Abstract} %Abstract
 % \subfile{chapters/Abstract} 
-% \afterpreface % table of contents, tables and figures, page numbering arabic
-\tableofcontents
-\pagestyle{plain}
-\pagenumbering{arabic}
-\setcounter{page}{1}
+ \afterpreface % table of contents, tables and figures, page numbering arabic
+
 
 \subfile{chapters/Introduzione} 
 

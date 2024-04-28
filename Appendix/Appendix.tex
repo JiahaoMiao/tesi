@@ -59,9 +59,12 @@ Using the known expansion of the Gamma function for small $\epsilon$
 the term in curly brackets in \cref{eq:appendix:gamma expansion} can be expanded in power of $\epsilon$ and then derive. The result for $I_n(N)$ is thus a 
 polynomial of degree $n+1$ in the large logarithm $\ln N$:
 
-\begin{equation}\label{eq:appendix:In expansion}
-    I_n(N) = \frac{(-1)^n+1}{n+1} (\ln N + \gamma_E)^{n+1} + \frac{(-1)^{n-1}}{2} n \zeta(2) (\ln N + \gamma_E)^{n-1} + \sum_{k=0}^{n-2} a_{nk} (\ln N + \gamma_E)^k +\order{\frac{1}{N}}
-\end{equation}
+\begin{align}
+    \begin{split}\label{eq:appendix:In expansion}    
+        I_n(N) &= \frac{(-1)^n+1}{n+1} (\ln N + \gamma_E)^{n+1} + \frac{(-1)^{n-1}}{2} n \zeta(2) (\ln N + \gamma_E)^{n-1} \\
+        &+ \sum_{k=0}^{n-2} a_{nk} (\ln N + \gamma_E)^k +\order{\frac{1}{N}}
+    \end{split}
+\end{align}
 
 This result can be generalized using the following formal identity:
 
