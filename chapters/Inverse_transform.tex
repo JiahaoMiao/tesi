@@ -6,6 +6,8 @@
 
 \begin{document}
 
+\section{Inversion of the Laplace transform}
+
 In order to find the quark jet mass distribution $J^q(Q^2,k^2)$,we have to perform the inverse Laplace transform via 
 the Mellin's inversion formula (or the Bromwich integral) given by the line integral: 
 
@@ -67,35 +69,37 @@ where the integral is intended as before, along the line $C$ to the right of all
     \mathcal{F}^{(n)}(\alpha_s,L) = \pdv[n]{\mathcal{F}(\alpha_s,\ln u + L )}{\ln u} \eval_{\ln u = 0}
 \end{equation}
 
-The first few derivatives are: 
+As noticed in \cite{CATANI19933}, the $n$-th derivative of $\mathcal{F}$ w.r.t $\ln u$ evaluated at $\ln u = 0$ is given by the $n$-th derivative $ \mathcal{F}^{(n)}(\alpha_s,L)$ is 
+at most of logarithmic order $\alpha_s^{n+k-1}L^k$, so in order to achieve $N^4LL$ accuracy we need to compute the first four derivatives of $\mathcal{F}$ w.r.t $\ln u$ and 
+neglect the terms of order $\order{\alpha_s^4}$ that appear in the derivation. We obtain the following expansions: 
 
 \begin{align}
-    \begin{split}
+    \begin{split} \label{eq:derivative F1}
         \mathcal{F}^{(1)}(\alpha_s,L) &= f_1(\lambda )+\lambda  f_1'(\lambda )+\alpha_s b_0 f_2'(\lambda )+\alpha_s^2 b_0 f_3'(\lambda )+\alpha_s^3 b_0 f_4'(\lambda )\\
-        &+\alpha_s^4 b_0 f_5'(\lambda )
+        &+ \order{\alpha_s^n L^{n-3}}
     \end{split}
 \end{align}
 
 \begin{align}
-    \begin{split}
+    \begin{split}\label{eq:derivative F2}
         \mathcal{F}^{(2)}(\alpha_s,L) &= 2 \alpha_s b_0 f_1'(\lambda ) + \alpha_s b_0 \lambda  f_1''(\lambda )+\alpha_s^2 b_0^2 f_2''(\lambda )+ \alpha_s^3 b_0^2 f_3''(\lambda )\\
-        &+\alpha_s^4 b_0^2 f_4''(\lambda )+ \alpha_s^5 b_0^2 f_5''(\lambda )
+        &+ \order{\alpha_s^n L^{n-3}}
     \end{split}
 \end{align}
 
 \begin{align}
-    \begin{split}
-        \mathcal{F}^{(3)}(\alpha_s,L) &=  3 \alpha_s^2 b_0^2 f_1''(\lambda )+\alpha_s^2 b_0^2 \lambda  f_1^{(3)}(\lambda )+\alpha_s^3 b_0^3 f_2^{(3)}(\lambda )+\alpha_s^4 b_0^3 f_3^{(3)}(\lambda )\\
-        &+\alpha_s^5 b_0^3 f_4^{(3)}(\lambda )+\alpha_s^6 b_0^3 f_5^{(3)}(\lambda )
+    \begin{split}\label{eq:derivative F3}
+        \mathcal{F}^{(3)}(\alpha_s,L) &=  3 \alpha_s^2 b_0^2 f_1''(\lambda )+\alpha_s^2 b_0^2 \lambda  f_1^{(3)}(\lambda )+\alpha_s^3 b_0^3 f_2^{(3)}(\lambda )+ \order{\alpha_s^n L^{n-3}}
     \end{split}
 \end{align}
 
 \begin{align}
-    \begin{split}
-        \mathcal{F}^{(4)}(\alpha_s,L) &= 4 \alpha_s^3 b_0^3 f_1^{(3)}(\lambda ) +\alpha_s^3 b_0^3 \lambda  f_1^{(4)}(\lambda )+\alpha_s^4 b_0^4 f_2^{(4)}(\lambda )+\alpha_s^5 b_0^4 f_3^{(4)}(\lambda )\\
-        &+\alpha_s^6 b_0^4 f_4^{(4)}(\lambda )+\alpha_s^7 b_0^4 f_5^{(4)}(\lambda )
+    \begin{split}\label{eq:derivative F4}
+        \mathcal{F}^{(4)}(\alpha_s,L) &= 4 \alpha_s^3 b_0^3 f_1^{(3)}(\lambda ) +\alpha_s^3 b_0^3 \lambda  f_1^{(4)}(\lambda )+ \order{\alpha_s^n L^{n-3}}
     \end{split}
 \end{align}
+
+Here $\lambda = \alpha_s b_0 L$ and derivative w.r.t $\ln u$ and then evaluated at $\ln u = 0$, or equivalently derivative w.r.t $L$ gives the same result.
 
 After recasting the expansion presented in \cref{eq:Rw expansion} using the expression \\
 $\gamma(\alpha_s,L) = f_1(\lambda) + \lambda f_1'(\lambda)$ from \cite{CATANI19933}, 
@@ -121,7 +125,7 @@ Lastly, we utilize the following result to evaluate the integral presented in \c
 where $\Gamma$ is the Euler $\Gamma$-function.
 
 \begin{align}
-    \begin{split}
+    \begin{split}\label{eq:Rw quasi final expansion}
         R^q(w) &= \frac{e^{\mathcal{F}(\alpha_s,L)}}{\Gamma(1-\gamma)} \biggl[ 1 + \mathcal{F}^{(1)}_{res} \psi_0(1-\gamma) + \frac{1}{2}\qty( \mathcal{F}^{(2)}+(\mathcal{F}^{(1)}_{res})^2) \qty(\psi_0^2-\psi_1)(1-\gamma) \\
         &+ \frac{1}{6}\qty(\mathcal{F}^{(3)} + 3 \mathcal{F}^{(2)}\mathcal{F}^{(1)}_{res} + (\mathcal{F}^{(1)}_{res})^3 ) \qty(\psi_0^3 -3 \psi_0\psi_1+\psi_2)(1-\gamma) \\
         &+ \frac{1}{24}\qty(\mathcal{F}^{(4)} + 3(\mathcal{F}^{(2)})^2 + 4 \mathcal{F}^{(3)} \mathcal{F}^{(1)}_{res} + 6 \mathcal{F}^{(2)} (\mathcal{F}^{(1)}_{res})^2 + (\mathcal{F}^{(1)}_{res})^4 ) \\
@@ -135,10 +139,22 @@ where $\psi_n(z)$ are the polygamma functions, defined as:
     \psi_n (z) = \dv[n+1]{z} \ln \Gamma(z) = \dv[n]{z} \frac{\Gamma '(z)}{\Gamma(z)} = \dv[n]{z} \psi_0(z)
 \end{equation}
 
+Substituting the expressions \cref{eq:derivative F1,eq:derivative F2,eq:derivative F3,eq:derivative F4} into \cref{eq:Rw quasi final expansion} we obtain:
 
+\begin{align}
+    \begin{split}
+        R^q(w) &= \frac{e^{\mathcal{F}(\alpha_s,L)}}{\Gamma(1-\gamma)} \biggl[ 1 + \Bigl(\alpha_s^3 b_0 f_4'(\lambda )+\alpha_s^2 b_0 f_3'(\lambda )+\alpha_s b_0 f_2'(\lambda )\Bigr) \psi_0(1-\gamma) \\
+        &+ \frac{1}{2} \Bigl(\alpha_s^3 \bigl(2 b_0^2 f_2'(\lambda ) f_3'(\lambda )+b_0^2 f_3''(\lambda )\bigr)+ \frac{1}{2} \alpha_s^2 \qty(b_0^2 f_2''(\lambda )+b_0^2 f_2'(\lambda )^2 ) \\
+        &+\frac{1}{2} \alpha_s \qty(b_0 \lambda  f_1''(\lambda ) + 2 b_0 f_1'(\lambda ) )\Bigr) \qty(\psi_0^2-\psi_1)(1-\gamma) \\
+        &+ \frac{1}{6}\Bigl( \alpha_s^3 \bigl(b_0^3 f_2^{(3)}(\lambda )+b_0^3 f_2'(\lambda )^3 + 3 b_0^3 f_2'(\lambda ) f_2''(\lambda )+3 b_0^2 \lambda  f_1''(\lambda ) f_3'(\lambda ) \\
+        &+6 b_0^2 f_1'(\lambda ) f_3'(\lambda )\bigr) +\frac{1}{6} \alpha_s^2 \bigl(b_0^2 \lambda  f_1^{(3)}(\lambda )+3 b_0^2 \lambda  f_1''(\lambda ) f_2'(\lambda )+3 b_0^2 f_1''(\lambda )\\
+        &+6 b_0^2 f_1'(\lambda ) f_2'(\lambda )\bigr) \Bigr) \qty(\psi_0^3 -3 \psi_0\psi_1+\psi_2)(1-\gamma) \\
+        &+ \frac{1}{24}\Bigl(\alpha_s^3 \bigl(b_0^3 \lambda  f_1^{(4)}(\lambda )+4 b_0^3 \lambda  f_1^{(3)}(\lambda ) f_2'(\lambda )\\
+        &+4 b_0^3 f_1^{(3)}(\lambda )+6 b_0^3 \lambda  f_1''(\lambda ) f_2''(\lambda )+6 b_0^3 \lambda  f_1''(\lambda ) f_2'(\lambda )^2+12 b_0^3 f_1''(\lambda ) f_2'(\lambda )\\
+        &+12 b_0^3 f_1'(\lambda ) f_2''(\lambda )+12 b_0^3 f_1'(\lambda ) f_2'(\lambda )^2\bigr)+\frac{1}{8} \alpha_s^2 \bigl(b_0^2 \lambda ^2 f_1''(\lambda )^2+4 b_0^2 f_1'(\lambda )^2\\
+        &+4 b_0^2 \lambda  f_1'(\lambda ) f_1''(\lambda )\bigr)\Bigr) \qty(\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)(1-\gamma)+ \order{\ln^5 u} \biggr]
+    \end{split}
+\end{align}
 
-
-
-\printbibliography
 
 \end{document}
