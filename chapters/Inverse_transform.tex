@@ -34,7 +34,7 @@ and using the integral representation of the Heaviside step function \cref{eq:he
 we recognize the Laplace transform of the quark jet mass distribution \cref{eq:laplace_jet_mass}
 
 \begin{align}
-    \begin{split}
+    \begin{split}\label{eq:Rw mass fraction}
         R^q(w) &= \frac{1}{2\pi i} \lim_{T \to \infty} \int_{C-iT}^{C+iT} \frac{\dd \nu}{\nu} e^{w \nu Q^2} \int_0^\infty J^q(Q^2,k^2) e^{-\nu k^2} \dd k^2 \\
         &= \frac{1}{2\pi i} \lim_{T \to \infty} \int_{C-iT}^{C+iT} \frac{\dd \nu}{\nu} e^{w \nu Q^2} \tilde{J}^q_\nu(Q^2) \\
         &= \frac{1}{2\pi i} \lim_{T \to \infty} \int_{C-iT}^{C+iT} \frac{\dd \nu}{\nu} e^{w \nu Q^2} e^{\mathcal{F}(\alpha_s,\ln(\nu Q^2))}\\
@@ -156,5 +156,6 @@ Substituting the expressions \cref{eq:derivative F1,eq:derivative F2,eq:derivati
     \end{split}
 \end{align}
 
+By comparing \cref{eq:Thrust fraction} and \cref{eq:Rw mass fraction} we see that to obtain the Thrust cross section, we simply multiply by 2 the inverse Laplace transform obtained.
 
 \end{document}
