@@ -36,8 +36,8 @@ to replace the logarithm term in the integrand \cref{eq:appendix:laplace test f}
     I_n(N) &= \lim_{\epsilon \to 0} \qty(\pdv{\epsilon})^n \int_0^1 \dd{u} \qty(e^{-u N} - 1) u^{\epsilon-1} \\
     &= \lim_{\epsilon \to 0} \qty(\pdv{\epsilon})^n \qty{-\frac{1}{\epsilon}+N^{-\epsilon} (\Gamma(\epsilon,0) - \Gamma(\epsilon,N))} \\
     &= \lim_{\epsilon \to 0} \lim_{N \to \infty} \qty(\pdv{\epsilon})^n \qty{-\frac{1}{\epsilon}+N^{-\epsilon} \Gamma(\epsilon)}+ e^{-N + \order{\qty(\frac{1}{N})^2}}\order{\frac{1}{N}} \\
-    &= \lim_{\epsilon \to 0} \lim_{N \to \infty} \qty(\pdv{\epsilon})^n \qty{\frac{1}{\epsilon} (N^{-\epsilon} \epsilon \Gamma(\epsilon) -1)} + e^{-N + \order{\qty(\frac{1}{N})^2}}\order{\frac{1}{N}}\\
-    &= \lim_{\epsilon \to 0} \lim_{N \to \infty} \qty(\pdv{\epsilon})^n \qty{\frac{1}{\epsilon} ( e^{-\epsilon \ln N} \Gamma(1+\epsilon) -1)} + e^{-N + \order{\qty(\frac{1}{N})^2}}\order{\frac{1}{N}}
+    &= \lim_{\epsilon \to 0} \lim_{N \to \infty} \qty(\pdv{\epsilon})^n \qty{\frac{1}{\epsilon} (N^{-\epsilon} \epsilon \Gamma(\epsilon) -1)} + \order{\frac{e^{-N}}{N}}\\
+    &= \lim_{\epsilon \to 0} \lim_{N \to \infty} \qty(\pdv{\epsilon})^n \qty{\frac{1}{\epsilon} ( e^{-\epsilon \ln N} \Gamma(1+\epsilon) -1)} + \order{\frac{e^{-N}}{N}}
     \end{split}
 \end{align}
 
@@ -62,7 +62,7 @@ polynomial of degree $n+1$ in the large logarithm $\ln N$:
 \begin{align}
     \begin{split}\label{eq:appendix:In expansion}    
         I_n(N) &= \frac{(-1)^n+1}{n+1} (\ln N + \gamma_E)^{n+1} + \frac{(-1)^{n-1}}{2} n \zeta(2) (\ln N + \gamma_E)^{n-1} \\
-        &+ \sum_{k=0}^{n-2} a_{nk} (\ln N + \gamma_E)^k +\order{\frac{1}{N}}
+        &+ \sum_{k=0}^{n-2} a_{nk} (\ln N + \gamma_E)^k + \order{\frac{e^{-N}}{N}}
     \end{split}
 \end{align}
 
@@ -75,7 +75,7 @@ This result can be generalized using the following formal identity:
 then we can perform the $n$-th derivative with respect to $\epsilon$, and obtain
 
 \begin{equation}
-    I_n(N) = \Gamma\qty(1-\pdv{\ln N}) \frac{ \qty(-\ln N)^n+1}{n+1} + \order{\frac{1}{N}}
+    I_n(N) = \Gamma\qty(1-\pdv{\ln N}) \frac{ \qty(-\ln N)^n+1}{n+1} + \order{\frac{e^{-N}}{N}}
 \end{equation}
 
 This expression can be regarded as a replacement for \cref{eq:appendix:calculation} to compute the polynomial coefficients $a_{nk}$ 
@@ -88,8 +88,8 @@ in \cref{eq:appendix:In expansion}. Moreover, by observing that
 we obtain the all order generalization for of the prescriprion used in \cite{CATANI19933}:
 
 \begin{align}
-    e^{-uN}-1 &= -\Gamma\qty(1-\pdv{\ln_N}) \Theta(u-\frac{1}{N}) + \order{\frac{1}{N}}\\
-              &=  -\tilde{\Gamma}\qty(1-\pdv{\ln_N}) \Theta(u-\frac{N_0}{N}) + \order{\frac{1}{N}} 
+    e^{-uN}-1 &= -\Gamma\qty(1-\pdv{\ln_N}) \Theta(u-\frac{1}{N}) + \order{\frac{e^{-N}}{N}}\\
+              &=  -\tilde{\Gamma}\qty(1-\pdv{\ln_N}) \Theta(u-\frac{N_0}{N}) + \order{\frac{e^{-N}}{N}}
 \end{align}
 
 where 
@@ -101,7 +101,7 @@ where
 It is straightforward to show that the prescription can be applied to as follows:
 
 \begin{equation} \label{eq:appendix:generalized prescription}
-    \int_0^1 \frac{\dd{u}}{u} \qty(e^{-u N} - 1) F\qty(\alpha_s , \ln u) = -\tilde{\Gamma}\qty(1-\pdv{\ln_N}) \int_{\frac{N_0}{N}}^1 \frac{\dd{u}}{u} F\qty(\alpha_s , \ln u) + \order{\frac{1}{N}}
+    \int_0^1 \frac{\dd{u}}{u} \qty(e^{-u N} - 1) F\qty(\alpha_s , \ln u) = -\tilde{\Gamma}\qty(1-\pdv{\ln_N}) \int_{\frac{N_0}{N}}^1 \frac{\dd{u}}{u} F\qty(\alpha_s , \ln u) + \order{\frac{e^{-N}}{N}}
 \end{equation}
     
 and to evaluated the ln $N$-contribution arising from the integration of anu soft-gluon function $F$ that has a generic perturbative expansion of the type
@@ -170,5 +170,7 @@ in \cref{eq:appendix:Btilde} and \cref{eq:appendix:Ctilde}, we can obtain the co
 We note that $\tilde{B}$ corrects the $B$ terms so it has to be expanded up to $\alpha_s^4$ to achieve $N^4LL$ accuracy while
 $\ln \tilde{C}$ corrects the $f_i$ functions so they have to be expanded up to $\alpha_s^3$ to achieve $N^4LL$ accuracy, 
 these corrections are necessary only for NNLL accuracy and beyond, consistent with the results in \cite{CATANI19933}.
+
+\printbibliography
 
 \end{document}
