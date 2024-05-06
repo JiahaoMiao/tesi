@@ -26,7 +26,7 @@ Start by considering
 the above integral can be evaluated as described in \cite{CATANI1989323}. Using the following identity
 
 \begin{equation}
-    \ln^n(u)= \lim_{\epsilon \to 0} \qty(\pdv{\epsilon})^n u^\epsilon
+    \ln^n(u)= \lim_{\epsilon \to 0} \qty(\pdv{\epsilon})^n u^\epsilon = \lim_{\epsilon \to 0} \qty(\pdv{\epsilon})^n e^{\epsilon \ln u}
 \end{equation}
 
 to replace the logarithm term in the integrand \cref{eq:appendix:laplace test f} and straightforwardly integrate the resulting expression. We obtain
@@ -141,11 +141,11 @@ in \cref{eq:appendix:Btilde} and \cref{eq:appendix:Ctilde}, we can obtain the co
 
 \begin{align}
     \begin{split}
-    \tilde{B}(\alpha_s) - B(\alpha_s) &= -\frac{4 A_1 b_0}{\pi} (\zeta(2)) \alpha_s^2 \\
-    &+ \qty(-\frac{8 A_2 b_0}{\pi^2} \zeta(2) + \frac{4 b_0^2 B_1}{\pi} \zeta(2) - \frac{4 A_1}{3\pi}(8 b_0^2 \zeta(3) + 3 b_1 \zeta(2))) \alpha_s^3 \\
-    &+ \biggl(-\frac{12 A_3 b_0}{\pi^3} \zeta(2) + \frac{12 b_0^2 B_2}{\pi^2} \zeta(2) - \frac{8 A_2}{\pi^2} (4 b_0^2 \zeta(3) + b_1 \zeta(2)) \\
-    &+ \frac{B_1}{3 \pi}(48 b_0^3 \zeta(3) +  30 b_0 b_1 \zeta(2)) - \frac{4 A_1}{(3 \pi)} (20 b_0 b_1 \zeta(3) + 3 b_2 \zeta(2) \\
-    &+ 81 b_0^3 \zeta(4)) \biggr) \alpha_s^4 + \order{\alpha_s^5}
+    \tilde{B}\qty(\alpha_s \qty(u Q^2)) - B\qty(\alpha_s \qty(u Q^2)) &= -\frac{4 A_1 b_0}{\pi} (\zeta(2)) \alpha_s^2 + \Bigl(-\frac{8 A_2 b_0}{\pi^2} \zeta(2) + \frac{4 b_0^2 B_1}{\pi} \zeta(2) \\
+    &- \frac{4 A_1}{3\pi}(8 b_0^2 \zeta(3) + 3 b_1 \zeta(2))\Bigr) \alpha_s^3 + \biggl(-\frac{12 A_3 b_0}{\pi^3} \zeta(2) \\
+    &+ \frac{12 b_0^2 B_2}{\pi^2} \zeta(2) - \frac{8 A_2}{\pi^2} (4 b_0^2 \zeta(3) + b_1 \zeta(2)) \\
+    &+ \frac{B_1}{3 \pi}(48 b_0^3 \zeta(3) +  30 b_0 b_1 \zeta(2)) - \frac{4 A_1}{(3 \pi)} (20 b_0 b_1 \zeta(3) \\
+    &+ 3 b_2 \zeta(2) + 81 b_0^3 \zeta(4)) \biggr) \alpha_s^4 + \order{\alpha_s^5}
     \end{split}
 \end{align}
 
@@ -158,19 +158,17 @@ in \cref{eq:appendix:Btilde} and \cref{eq:appendix:Ctilde}, we can obtain the co
 
 \begin{align}
     \begin{split}
-    \ln \tilde{C}(\alpha_s) &= \frac{2 A_1 \zeta(2)}{\pi} \alpha_s \\ 
-    &+ \biggl(\frac{2 A_2}{\pi^2} \zeta(2) - \frac{b_0 B_1}{\pi} \zeta(2) + \frac{A_1}{3\pi}(8 b_0 \zeta(3) - 6 b_0 \ln\qty[\frac{\mu^2}{Q^2}] \zeta(2))\biggr)\alpha_s^2 \\
-    &+ \biggl( \frac{2 A_3}{\pi^3} \zeta(2) - \frac{2 b_0 B2}{\pi^2} \zeta(2) + \frac{A_2}{3 \pi^2} (16 b_0 \zeta(3) - 12 b_0 \ln\qty[\frac{\mu^2}{Q^2}] \zeta(2)) \\
-    &+ \frac{B_1}{3 \pi} \Bigl(-8 b_0^2 \zeta(3) - 3 b_1 \zeta(2) + 6 b_0^2 \ln\qty[\frac{\mu^2}{Q^2}] \zeta(2)\Bigr) + \frac{A_1}{3 \pi} \Bigl(8 b_1 \zeta(3) \\
-    &+  6 b_0^2 \ln^2\qty[\frac{\mu^2}{Q^2}] \zeta(2) - 2 \ln\qty[\frac{\mu^2}{Q^2}] (8 b_0^2 \zeta(3) + 3 b_1 \zeta(2)) + 54 b_0^2 \zeta(4)\Bigr) \biggr)\alpha_s^3 \\
-    &+ \order{\alpha_s^4}
+    \ln \tilde{C}\qty(\alpha_s \qty(Q^2, \frac{\mu^2}{Q^2})) &= \frac{2 A_1 \zeta(2)}{\pi} \alpha_s + \biggl(\frac{2 A_2}{\pi^2} \zeta(2) - \frac{b_0 B_1}{\pi} \zeta(2) + \frac{A_1}{3\pi}(8 b_0 \zeta(3) \\
+    &- 6 b_0 \ln\qty[\frac{\mu^2}{Q^2}] \zeta(2))\biggr)\alpha_s^2 + \biggl( \frac{2 A_3}{\pi^3} \zeta(2) - \frac{2 b_0 B2}{\pi^2} \zeta(2) \\
+    &+ \frac{A_2}{3 \pi^2} (16 b_0 \zeta(3) - 12 b_0 \ln\qty[\frac{\mu^2}{Q^2}] \zeta(2)) + \frac{B_1}{3 \pi} \Bigl(-8 b_0^2 \zeta(3) \\
+    &- 3 b_1 \zeta(2) + 6 b_0^2 \ln\qty[\frac{\mu^2}{Q^2}] \zeta(2)\Bigr) + \frac{A_1}{3 \pi} \Bigl(8 b_1 \zeta(3) \\
+    &+  6 b_0^2 \ln^2\qty[\frac{\mu^2}{Q^2}] \zeta(2) - 2 \ln\qty[\frac{\mu^2}{Q^2}] (8 b_0^2 \zeta(3) + 3 b_1 \zeta(2)) \\
+    &+ 54 b_0^2 \zeta(4)\Bigr) \biggr)\alpha_s^3 + \order{\alpha_s^4}
     \end{split}
 \end{align}
 
 We note that $\tilde{B}$ corrects the $B$ terms so it has to be expanded up to $\alpha_s^4$ to achieve $N^4LL$ accuracy while
 $\ln \tilde{C}$ corrects the $f_i$ functions so they have to be expanded up to $\alpha_s^3$ to achieve $N^4LL$ accuracy, 
 these corrections are necessary only for NNLL accuracy and beyond, consistent with the results in \cite{CATANI19933}.
-
-\printbibliography
 
 \end{document}

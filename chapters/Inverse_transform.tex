@@ -159,31 +159,40 @@ Substituting the expressions \cref{eq:derivative F1,eq:derivative F2,eq:derivati
 
 and reorganize as a power series of $\alpha_s$:
 
-\begin{equation}
-    \begin{split}
-        R^q(w) &= \frac{e^{\mathcal{F}(\alpha_s,L)}}{\Gamma(1-\gamma)} \biggl[ 1 + \alpha_s b_0 \Bigl( \psi_0(1-\gamma) f_2'(\lambda )  + \frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma)\bigl( \lambda  f_1''(\lambda ) +2  f_1'(\lambda )\bigr)\Bigr)\\
-        &+ \alpha_s^2 \Bigl(\frac{1}{8} (\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)(1-\gamma) \bigl(b_0^2 \lambda ^2 f_1''(\lambda )^2\\
+\begin{align}
+    \begin{split}\label{eq:Rw final expansion}
+        R^q(w) &= \frac{e^{\mathcal{F}(\alpha_s,L)}}{\Gamma(1-\gamma)} \biggl[ 1 + \alpha_s b_0 \Bigl( \psi_0(1-\gamma) f_2'(\lambda )  + \frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma)\bigl( \lambda  f_1''(\lambda ) \\
+        &+2  f_1'(\lambda )\bigr)\Bigr) + \alpha_s^2 \Bigl(\frac{1}{8} (\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)(1-\gamma) \bigl(b_0^2 \lambda ^2 f_1''(\lambda )^2\\
         &+4 b_0^2 f_1'(\lambda )^2 +4 b_0^2 \lambda  f_1'(\lambda ) f_1''(\lambda )\bigr)+\frac{1}{6} (\psi_0^3 -3 \psi_0\psi_1+\psi_2)(1-\gamma) \bigl(b_0^2 \lambda  f_1^{(3)}(\lambda )\\
-        &+ 3 b_0^2 \lambda  f_1''(\lambda ) f_2'(\lambda )+3 b_0^2 f_1''(\lambda )+6 b_0^2 f_1'(\lambda ) f_2'(\lambda )\bigr)+\frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma) \bigl(b_0^2 f_2''(\lambda )\\
-        &+b_0^2 f_2'(\lambda )^2\bigr) + b_0 \psi_0(1-\gamma) f_3'(\lambda )\Bigr) + \alpha_s^3 \Bigl(\frac{1}{24} (\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)(1-\gamma) \\
-        &\bigl(b_0^3 \lambda  f_1^{(4)}(\lambda ) +4 b_0^3 \lambda  f_1^{(3)}(\lambda ) f_2'(\lambda ) + 4 b_0^3 f_1^{(3)}(\lambda )+6 b_0^3 \lambda  f_1''(\lambda ) f_2''(\lambda ) \\
+        &+ 3 b_0^2 \lambda  f_1''(\lambda ) f_2'(\lambda )+3 b_0^2 f_1''(\lambda )+6 b_0^2 f_1'(\lambda ) f_2'(\lambda )\bigr)+\frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma) \\
+        &\bigl(b_0^2 f_2''(\lambda ) +b_0^2 f_2'(\lambda )^2\bigr) + b_0 \psi_0(1-\gamma) f_3'(\lambda )\Bigr) + \alpha_s^3 \Bigl(\frac{1}{24} (\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 \\
+        &-\psi_3)(1-\gamma) \bigl(b_0^3 \lambda  f_1^{(4)}(\lambda ) +4 b_0^3 \lambda  f_1^{(3)}(\lambda ) f_2'(\lambda ) + 4 b_0^3 f_1^{(3)}(\lambda )+6 b_0^3 \lambda  f_1''(\lambda ) f_2''(\lambda ) \\
         &+ 6 b_0^3 \lambda  f_1''(\lambda ) f_2'(\lambda )^2 +12 b_0^3 f_1''(\lambda ) f_2'(\lambda )+12 b_0^3 f_1'(\lambda ) f_2''(\lambda ) + 12 b_0^3 f_1'(\lambda ) f_2'(\lambda )^2\bigr) \\
-        &+ \frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma) \bigl(2 b_0^2 f_2'(\lambda ) f_3'(\lambda )+b_0^2 f_3''(\lambda )\bigr) + \frac{1}{6} (\psi_0^3 -3 \psi_0\psi_1+\psi_2)(1-\gamma) \\
-        &\bigl(b_0^3 f_2^{(3)}(\lambda )+b_0^3 f_2'(\lambda )^3 +3 b_0^3 f_2'(\lambda ) f_2''(\lambda )+3 b_0^2 \lambda  f_1''(\lambda ) f_3'(\lambda ) +6 b_0^2 f_1'(\lambda ) f_3'(\lambda )\bigr)\\
-        &+ b_0 \psi_0(1-\gamma) f_4'(\lambda ) \Bigr) + \order{\alpha_s^4} \biggr]
+        &+ \frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma) \bigl(2 b_0^2 f_2'(\lambda ) f_3'(\lambda )+b_0^2 f_3''(\lambda )\bigr) + \frac{1}{6} (\psi_0^3 -3 \psi_0\psi_1\\
+        &+\psi_2)(1-\gamma) \bigl(b_0^3 f_2^{(3)}(\lambda )+b_0^3 f_2'(\lambda )^3 +3 b_0^3 f_2'(\lambda ) f_2''(\lambda )+3 b_0^2 \lambda  f_1''(\lambda ) f_3'(\lambda ) \\
+        &+6 b_0^2 f_1'(\lambda ) f_3'(\lambda )\bigr) + b_0 \psi_0(1-\gamma) f_4'(\lambda ) \Bigr) + \order{\alpha_s^4} \biggr]
     \end{split}
-\end{equation}
+\end{align}
 
 By comparing \cref{eq:Thrust fraction} and \cref{eq:Rw mass fraction} we see that to obtain the Thrust cross section, we simply multiply by 2 the inverse Laplace transform obtained.
-Following the convention of \cite{CATANI19933}, the final resummed expression $R_T(\tau)$ can be written as one exponential \cref{eq:RT resummed}, to do so we 
-observe that $\frac{1}{\Gamma(1-\gamma)}= \exp{-\ln(\Gamma(1-\gamma))}$ corrects $f_2$, while the expression in parenthesis starting with 1 can be seen as the expansion of an exponential 
-for $\alpha_s \to 0$, then the terms proportional to $\alpha_s$ corrects $f_3$, the terms proportional to $\alpha_s^2$ corrects $f_4$ and so on.
+Following the convention of \cite{CATANI19933}, the final resummed expression $R_T(\tau)$ can be written as one exponential \cref{eq:RT resummed}, 
 
 \begin{equation}\label{eq:RT resummed}
     R_T(\tau) = \exp{L g_1(\lambda) + g_2(\lambda) + \alpha_s g_3(\lambda) + \alpha_s^2 g_4(\lambda) + \alpha_s^3 g_5(\lambda) + \order{\alpha_s^4}}
 \end{equation}
 
-where
+to do so we observe that $\frac{1}{\Gamma(1-\gamma)}= \exp{-\ln(\Gamma(1-\gamma))}$ corrects $f_2$, while the expression in parenthesis starting with 1 can be seen 
+as the expansion of an exponential for $\alpha_s \to 0$ : 
+
+\begin{equation}
+    \begin{split}\label{eq:expansion exponential}
+    e^{\alpha_s g_3(\lambda) + \alpha_s^2 g_4(\lambda) + \alpha_s^3 g_5(\lambda) + \order{\alpha_s^4}} &= 1+\alpha_s g_3(\lambda)+\frac{1}{2} \alpha_s^2 \qty(g_3^2(\lambda)+2 g_4(\lambda))\\
+    &+\frac{1}{6} \alpha_s^3 \qty(g_3^3(\lambda) + 6 g_3(\lambda) g_4(\lambda) + 6 g_5(\lambda))+ \order{\alpha_s^4}
+    \end{split}
+\end{equation}
+
+to obtain $g_3(\lambda)$, $g_4(\lambda)$ and $g_5(\lambda)$ we match \cref{eq:Rw final expansion} with \cref{eq:expansion exponential} and obtain the following expressions:
+
 
 \begin{align}
     & g_1(\lambda) = 2 f_1(\lambda) \\
@@ -210,7 +219,5 @@ where
         &+ b_0 \psi_0(1-\gamma) f_4'(\lambda ) \Bigr)
     \end{split}
 \end{align}
-
-\printbibliography
 
 \end{document}

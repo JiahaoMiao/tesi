@@ -1,0 +1,42 @@
+\makeatletter % Use \makeatletter to make '@' a letter
+\def\input@path{{../}} % Define input path to parent directory
+\makeatother % Restore default category code of '@'
+
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\subsection{Renormalization-scale dependece}
+In this section we consider renormalization-scale dependence. In principle, such scale µ should not appear in
+the cross sections, as it does not correspond to any fundamental constant or kinematical scale in the problem.
+The completely resummed perturbative expansion of an observable is indeed formally independent on $\mu$.
+In practise, truncated perturbative expansions exhibit a residual scale dependence, because of neglected higher orders.
+
+We start with deriving the strong coupling $\alpha_s (Q^2)$ as a function of $\alpha_s(\mu^2)$ and $\mu^2/Q^2$, to do so we expand 
+the explicit \cref{eq:N4LO} in powers of $\alpha_s(\mu^2)$ and obtain:
+
+\begin{align}
+    \begin{split}\label{eq:renormalization scale dependence}
+        \alpha_s(Q^2) &= \alpha_s(\mu^2) + \alpha_s^2(\mu^2) b_0 \ln(\frac{\mu^2}{Q^2}) + \alpha_s^3(\mu^2) \biggl[b_1 \ln(\frac{\mu^2}{Q^2}) + b_0^2 \ln^2\qty(\frac{\mu^2}{Q^2})\biggr] \\
+        &+ \alpha_s^4 (\mu^2) \biggl[ b_2 \ln(\frac{\mu^2}{Q^2}) + \frac{5}{2} b_0 b_1 \ln^2\qty(\frac{\mu^2}{Q^2}) + b_0^3 \ln^3\qty(\frac{\mu^2}{Q^2})\biggr] \\
+        &+ \frac{1}{6} \alpha_s^5(\mu^2) \biggl[6 b3 \ln(\frac{\mu^2}{Q^2}) + \qty(9 b_1^2 + 18 b_0 b_2 ) \ln^2\qty(\frac{\mu^2}{Q^2}) \\
+        &+ 26 b_0^2 b_1 \ln^3\qty(\frac{\mu^2}{Q^2}) + 6 b_0^4 \ln^4\qty(\frac{\mu^2}{Q^2}) \biggr] + \order{\alpha_s^6(\mu^2)}
+    \end{split}
+\end{align}
+
+for brevity we'll write 
+
+\begin{equation}
+    \alpha_s(Q^2) = \alpha_s(\mu^2) + c_1 \alpha_s^2(\mu^2) + c_2 \alpha_s^3(\mu^2) + c_3 \alpha_s^4(\mu^2) + c_4 \alpha_s^5(\mu^2) + \order{\alpha_s^6(\mu^2)} 
+\end{equation}
+
+where $c_i$ are the coefficients of the expansion above.
+
+now we substitute  \cref{eq:renormalization scale dependence} $\lambda = b_0 \alpha_s(Q^2)$ and have :
+
+\begin{align}
+    \begin{split}
+        
+    \end{split}
+\end{align}
+\end{document}

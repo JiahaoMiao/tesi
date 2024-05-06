@@ -115,7 +115,7 @@ In \cref{Appendix: Laplace and Mellin transform} we show that the prescription, 
 contributins at an arbitrary logarithmic accuracy, can be used for the Laplace transform as well, we can use this result to express \cref{eq:master formula} 
 in an alternative representation:
 
-The method is a generalization of the prescription to NLL accuray in \cite{CATANI19933}
+The method is a generalization of the prescription to NLL accuracy in \cite{CATANI19933}
 
 \begin{equation}
     e^{-u \nu Q^2} - 1 \simeq -\Theta(u-v) \qq{with $v = \frac{N_0}{N}$}
@@ -127,7 +127,16 @@ where $N_0 = e^{-\gamma_E}$, $\gamma_E = 0.5772 \dots $ being the Euler-Maschero
     \ln \tilde{J}_\nu^q(Q^2) = - \int_{N_0/N}^{1} \frac{\dd u}{u} \qty[ \int_{u^2 Q^2}^{u Q^2} \frac{1}{q^2} A\qty(\alpha_s(q^2)) \dd q^2 + \frac{1}{2} \tilde{B}\qty(\alpha_s(u Q^2))] + \ln \tilde{C}(Q^2)
 \end{equation}
 
+Note that, due to the integration of the running coupling the integral in \cref{eq:master_formula} is singular for all values of $N=\nu Q^2$. However, if we perform the integration up 
+to a fixed logarithmic accuracy $N^kLL$ (\emph{i.e} we compute the leading $\alpha_s^n \ln^{n+1}N$, next-to-leading $\alpha_s^n \ln^nN$ and so on to $\alpha_s^n \ln^{n+1-k}$ terms ), we find 
 
+\begin{equation}
+    \ln \tilde{J}_\nu^q(Q^2) = \ln N f_1(\lambda) + f_2(\lambda) + \alpha_s f_3(\lambda) + \alpha_s^2 f_4(\lambda) + \alpha_s^3 f_5(\lambda) + \order{\alpha_s^n \ln^{n-4}N}
+\end{equation}
 
+We observe that the N-space formula \cref{eq:master_formula alt} is finite and uniquely defined up to the 
+very large $N=N_L=\exp(\frac{1}{2\alpha_s b_0})$ ($\lambda = \frac{1}{2}$), thanks to the prescription above.
+
+The region where the integral is divergent is therefore excluded from the integration if $N < N_L$.
 
 \end{document} 
