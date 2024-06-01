@@ -15,13 +15,13 @@ As is typical in physics, the equations that govern the interactions are quite c
 functions of interest are perturbatively expanded, meaning they are expanded in a power series of a small parameter. 
 
 When the force in question is the electromagnetic interaction, one can
-simply use the fine structure constant ( or electromagnetic coupling constant ) $\alpha_{em} \sim \frac{1}{137} $.
+use the fine structure constant ( or electromagnetic coupling constant ) $\alpha_{em} \sim \frac{1}{137} $.
 
 When discussing particles that interact with the strong interaction, it is then natural to use the strong
 coupling constant $ \alpha_S $.
 
-The function we are interested in is the Thrust event-shape distribution. \\
-Thrust $T$ is defined as:
+The kinematical variable we are interested in is the Thrust event-shape distribution, \\
+which $T$ is defined as:
 \begin{equation} \label{eq:Thrust}
     T = \max_{\vec{n}} \frac{\sum_i |\vec{p}_i \cdot \vec{n}|}{\sum_i |\vec{p}_i|} \stackrel{\text{def}}{=} 1-\tau
 \end{equation}
@@ -31,7 +31,16 @@ It can be seen from this definition that the thrust is an infrared and collinear
 quantity, that is, it is insensitive to the emission of zero momentum particles and to the splitting of 
 one particle into two collinear ones.
 
-Thus the cross section 
+In fact, contribution from soft particles with $\vec{p_i}\to 0$ drop out, and collinear splitting does not change the thrust:
+$\vert (1-\lambda)\vec{p_i}\cdot \vec{n} \vert + \vert \lambda \vec{p_i}\cdot \vec{n}\vert = \vert \vec{p_i}\cdot \vec{n} \vert$ and 
+$\vert (1-\lambda)\vec{p_i} \vert + \vert \lambda \vec{p_i}\vert = \vert \vec{p_i} \vert$
+
+Formally, infrared-safe observables are the one which do not distinguish between (n+1) partons and n partons in the soft/collinear limit, \emph{i.e},
+are insensitive to what happens at long-distance.
+
+Infra-red safe observables are important in the context of perturbative QCD, because they allow for a meaningful comparison between theory and experiment. 
+
+Thus the cross section :
 
 \begin{equation}\label{eq:cross_section}
     \sigma(\tau) = \int^1_{1-\tau} \dd{T} \dv{\sigma}{T}

@@ -1,0 +1,232 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{CATANI1989323}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=06af12ababe84e89a9f7077eaf290e33}{%
+           family={Catani},
+           familyi={C\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f65b9f55574bdd58f80ba32190754c96}{%
+           family={Trentadue},
+           familyi={T\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{556c0203b478ad8a39ba27a6df87d42c}
+      \strng{fullhash}{556c0203b478ad8a39ba27a6df87d42c}
+      \strng{fullhashraw}{556c0203b478ad8a39ba27a6df87d42c}
+      \strng{bibnamehash}{556c0203b478ad8a39ba27a6df87d42c}
+      \strng{authorbibnamehash}{556c0203b478ad8a39ba27a6df87d42c}
+      \strng{authornamehash}{556c0203b478ad8a39ba27a6df87d42c}
+      \strng{authorfullhash}{556c0203b478ad8a39ba27a6df87d42c}
+      \strng{authorfullhashraw}{556c0203b478ad8a39ba27a6df87d42c}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We study the region of inhibited radiation in hard hadronic processes, as for jet cross sections and heavy flavour production near threshold. The cases of deep inelastic scattering and Drell-Yan annihilation are explicitly considered. A general method to exponentiate leading and next-to-leading logarithms to all orders in perturbation theory is developed. A complete formula for the large N-moments is given and shown to agree with previous two-loop calculations. The resummation procedure suggests how to connect the perturbative and nonperturbative regions. The natural limit within the perturbative phase is shown to be the intrinsic transverse momentum.}
+      \field{issn}{0550-3213}
+      \field{journaltitle}{Nuclear Physics B}
+      \field{number}{2}
+      \field{title}{Resummation of the QCD perturbative series for hard processes}
+      \field{volume}{327}
+      \field{year}{1989}
+      \field{pages}{323\bibrangedash 352}
+      \range{pages}{30}
+      \verb{doi}
+      \verb https://doi.org/10.1016/0550-3213(89)90273-3
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/0550321389902733
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/0550321389902733
+      \endverb
+    \endentry
+    \entry{CATAN_large_chi}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=06af12ababe84e89a9f7077eaf290e33}{%
+           family={Catani},
+           familyi={C\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=fab4c5289b2146af0bcda20af58ba567}{%
+           family={Webber},
+           familyi={W\bibinitperiod},
+           given={B.R.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=7f827f5ff49bcd80926051520b01e9d2}{%
+           family={Marchesini},
+           familyi={M\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{1e063c24a747bec71d5b01baa8261697}
+      \strng{fullhash}{1e063c24a747bec71d5b01baa8261697}
+      \strng{fullhashraw}{1e063c24a747bec71d5b01baa8261697}
+      \strng{bibnamehash}{1e063c24a747bec71d5b01baa8261697}
+      \strng{authorbibnamehash}{1e063c24a747bec71d5b01baa8261697}
+      \strng{authornamehash}{1e063c24a747bec71d5b01baa8261697}
+      \strng{authorfullhash}{1e063c24a747bec71d5b01baa8261697}
+      \strng{authorfullhashraw}{1e063c24a747bec71d5b01baa8261697}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Using the QCD coherent branching algorithm, we compute the Deep Inelastic Scattering and Drell-Yan hard cross sections in the semi-inclusive region of large $\chi$. The calculation is done to next-to-leading logarithmic accuracy in the resummation of perturbative QCD. We compare the results with the known analytical expressions to the same accuracy in the MS subtraction scheme. They coincide if one defines an improved branching algorithm suitable for Monte Carlo simulation, in which the two-loop running coupling constant and Altarelli-Parisi splitting function are used. Therefore such a simulation can be used to measure ΛMS from these semi-inclusive cross sections. Moreover we show that the same results can also be obtained using the usual one-loop splitting function, provided the scale parameter ΛMC used in the Monte Carlo simulation is related to ΛMS by a computed factor: ΛMC=1.569 ΛMS (for five flavours).}
+      \field{issn}{0550-3213}
+      \field{journaltitle}{Nuclear Physics B}
+      \field{number}{3}
+      \field{title}{QCD coherent branching and semi-inclusive processes at large $\chi$}
+      \field{volume}{349}
+      \field{year}{1991}
+      \field{pages}{635\bibrangedash 654}
+      \range{pages}{20}
+      \verb{doi}
+      \verb https://doi.org/10.1016/0550-3213(91)90390-J
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/055032139190390J
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/055032139190390J
+      \endverb
+    \endentry
+    \entry{CATANI19933}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=06af12ababe84e89a9f7077eaf290e33}{%
+           family={Catani},
+           familyi={C\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f65b9f55574bdd58f80ba32190754c96}{%
+           family={Trentadue},
+           familyi={T\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=79a97c8a082064fc95e8a713c05a02fc}{%
+           family={Turnock},
+           familyi={T\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=fab4c5289b2146af0bcda20af58ba567}{%
+           family={Webber},
+           familyi={W\bibinitperiod},
+           given={B.R.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{5c929211dd72f5d61b7199458ed7be30}
+      \strng{fullhash}{51eeab71806e58302f3811d029394baf}
+      \strng{fullhashraw}{51eeab71806e58302f3811d029394baf}
+      \strng{bibnamehash}{5c929211dd72f5d61b7199458ed7be30}
+      \strng{authorbibnamehash}{5c929211dd72f5d61b7199458ed7be30}
+      \strng{authornamehash}{5c929211dd72f5d61b7199458ed7be30}
+      \strng{authorfullhash}{51eeab71806e58302f3811d029394baf}
+      \strng{authorfullhashraw}{51eeab71806e58302f3811d029394baf}
+      \field{extraname}{1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We describe a method for the resummation of leading and next-to-leading large logarithms to all orders in QCD perturbation theory, applicable to e+e− event shape distributions that have the property of exponentiation near the two-jet region. After a general discussion of the conditions for exponentiation and the evaluation of matrix elements and phase space to next-to-leading logarithmic accuracy, we give details of the application of the method to the thrust and heavy jet mass distributions. We show how the resummed expressions can be matched with known second-order results to obtain improved predictions throughout the whole of phase space, and how to suppress spurious higher-order terms generated by resummation outside the physical region. We also give the necessary ingredients for the improvement of third-order predictions by resummation when they become available.}
+      \field{issn}{0550-3213}
+      \field{journaltitle}{Nuclear Physics B}
+      \field{number}{1}
+      \field{title}{Resummation of large logarithms in e+e− event shape distributions}
+      \field{volume}{407}
+      \field{year}{1993}
+      \field{pages}{3\bibrangedash 42}
+      \range{pages}{40}
+      \verb{doi}
+      \verb https://doi.org/10.1016/0550-3213(93)90271-P
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/055032139390271P
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/055032139390271P
+      \endverb
+    \endentry
+    \entry{Catani_2003_appendix}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=ffd9a06f1b41cb168b788d903ddd6f96}{%
+           family={Catani},
+           familyi={C\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ecbc06cff714a6f779a36ec8f47a5d22}{%
+           family={Florian},
+           familyi={F\bibinitperiod},
+           given={Daniel\bibnamedelima de},
+           giveni={D\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=f046d3b6fb7ce66e9b2c519b29a8796a}{%
+           family={Grazzini},
+           familyi={G\bibinitperiod},
+           given={Massimiliano},
+           giveni={M\bibinitperiod}}}%
+        {{hash=08565706058718b454be32b190e67d73}{%
+           family={Nason},
+           familyi={N\bibinitperiod},
+           given={Paolo},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Springer Science}%
+        {Business Media LLC}%
+      }
+      \strng{namehash}{0d07461003d6091308485a78183ee8ba}
+      \strng{fullhash}{3d8402cc046afa29f07866fb5edfeceb}
+      \strng{fullhashraw}{3d8402cc046afa29f07866fb5edfeceb}
+      \strng{bibnamehash}{0d07461003d6091308485a78183ee8ba}
+      \strng{authorbibnamehash}{0d07461003d6091308485a78183ee8ba}
+      \strng{authornamehash}{0d07461003d6091308485a78183ee8ba}
+      \strng{authorfullhash}{3d8402cc046afa29f07866fb5edfeceb}
+      \strng{authorfullhashraw}{3d8402cc046afa29f07866fb5edfeceb}
+      \field{extraname}{2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1029-8479}
+      \field{journaltitle}{Journal of High Energy Physics}
+      \field{month}{7}
+      \field{number}{07}
+      \field{title}{Soft-gluon resummation for Higgs boson production at hadron colliders}
+      \field{volume}{2003}
+      \field{year}{2003}
+      \field{pages}{028\bibrangedash 028}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/1126-6708/2003/07/028
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1088/1126-6708/2003/07/028
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1088/1126-6708/2003/07/028
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -108,6 +108,12 @@ with
     A(\alpha_s) &= \sum_{n=1}^\infty \frac{A_n}{\pi^n}\alpha_s^n & B(\alpha_s) &= \sum_{n=1}^\infty \frac{B_n}{\pi^n}\alpha_s^n
 \end{align*}
 
+Function $A(\alpha_s)$ is associated with the cusp anomalous dimension and governs the exponentiation of the leading logarithms (LL). 
+It captures the resummation of the soft and collinear gluon emissions that dominate in the limit of large thrust values.
+
+Function $B(\alpha_S)$ includes the next-to-leading logarithmic (NLL) corrections and accounts for subleading contributions from hard collinear emissions.
+It typically involves the non-cusp part of the anomalous dimensions and running of the coupling constant.
+
 The integral as it is cannot be integrated, the $u$ integration may be performed using the prescription in Appendix A of \cite{Catani_2003_appendix} and
 readapting the formula to the case of Laplace transform instead of Mellin transform.
 
@@ -124,7 +130,7 @@ The method is a generalization of the prescription to NLL accuracy in \cite{CATA
 where $N_0 = e^{-\gamma_E}$, $\gamma_E = 0.5772 \dots $ being the Euler-Mascheroni constant
 
 \begin{equation}\label{eq:master_formula alt}
-    \ln \tilde{J}_\nu^q(Q^2) = - \int_{N_0/N}^{1} \frac{\dd u}{u} \qty[ \int_{u^2 Q^2}^{u Q^2} \frac{1}{q^2} A\qty(\alpha_s(q^2)) \dd q^2 + \frac{1}{2} \tilde{B}\qty(\alpha_s(u Q^2))] + \ln \tilde{C}(Q^2)
+    \ln \tilde{J}_\nu^q(Q^2) = - \int_{N_0/N}^{1} \frac{\dd u}{u} \qty[ \int_{u^2 Q^2}^{u Q^2} \frac{1}{q^2} A\qty(\alpha_s(q^2)) \dd q^2 + \frac{1}{2} \tilde{B}\qty(\alpha_s(u Q^2))] + \ln \tilde{C}\qty(\alpha_s(\mu^2),\frac{\mu^2}{Q^2})
 \end{equation}
 
 Note that, due to the integration of the running coupling the integral in \cref{eq:master_formula} is singular for all values of $N=\nu Q^2$. However, if we perform the integration up 

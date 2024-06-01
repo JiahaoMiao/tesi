@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\section{Laplace and Mellin transform in the large N limit} \label{Appendix: Laplace and Mellin transform}
+\section{Laplace transform in the large N limit} \label{Appendix: Laplace and Mellin transform}
 
 Using the methodology outlined in \cite{Catani_2003_appendix}, we will demonstrate that the Mellin transform prescription is also applicable to the Laplace transform.
 in the large moment $\nu Q^2 = N$ limit, this fact was already known in the literature \cite{CATAN_large_chi} and we'll show it here for completeness.
@@ -94,7 +94,7 @@ we obtain the all order generalization for of the prescriprion used in \cite{CAT
 
 where 
 
-\begin{equation}
+\begin{equation}\label{eq:appendix:gamma tilde}
     \tilde{\Gamma}\qty(1-\epsilon) \equiv e^{\gamma_E \epsilon} \Gamma(1+\epsilon) = \exp{\sum_{n=2}^\infty (-1)^n \frac{ \zeta(n) \epsilon^n}{n}}
 \end{equation}
 
@@ -112,27 +112,65 @@ and to evaluated the ln $N$-contribution arising from the integration of anu sof
 
 The result \cref{eq:appendix:generalized prescription} can be used to obtain \cref{eq:master_formula alt} as shown in \cite{Catani_2003_appendix}.
 
-The coefficients $\tilde{B}$ and $\tilde{C}$ are related to the coefficients $A$ and $B$ in the following way:
+\section{Equivalence between resummation formulae} \label{Appendix: Coefficients}
 
-\begin{align}
-\tilde{B}(\alpha_s) &= B(\alpha_s) + 4 \partial_\alpha \Gamma_2(\partial_\alpha) \qty[A(\alpha_s)-\frac{1}{4} B(\alpha_s)] \label{eq:appendix:Btilde}\\ 
-\tilde{C}(\alpha_s) &= \exp{-4\Gamma_2(\partial_\alpha) \qty[A(\alpha_s1-\frac{1}{4} B(\alpha_s))]} \label{eq:appendix:Ctilde}
-\end{align}
+Here i adapt the result in \cite{Catani_2003_appendix} to show the equivalence between the resummation formulae in \cref{eq:master_formula} and \cref{eq:master_formula alt}
+in the case of Thrust resummation.
 
-where 
+It is straightforward to show that equation $(90)$ in \cite{Catani_2003_appendix} becomes:
 
-\begin{align}
-    \Gamma_2(\partial_\alpha) &= \frac{1}{\epsilon^2}\qty[1-e^{-\gamma_E \epsilon \Gamma(1-\epsilon)}] = \frac{1}{\epsilon^2}\qty{1-\exp[\sum_{n=2}^\infty \frac{\zeta(n)}{n}\epsilon^n] }\\
-    \partial_\alpha &\equiv -2\beta(\alpha_s)\alpha_s \pdv{\alpha_s}
-\end{align}
+\begin{equation}
+    \begin{split}
+    &\int_{N_0/N}^1 \frac{\dd u}{u} \frac{1}{2}\qty(\tilde{B}(\alpha_s(uQ^2))-B(\alpha_s(uQ^2)))-\log \tilde{C}\qty( \alpha_s(\mu^2) , \frac{\mu^2}{Q^2} ) = \\
+    &\Gamma_2\qty(\pdv{\log N})\qty{ A(\alpha_s(\frac{N_0}{N}Q^2)) - \frac{1}{2} \pdv{\log N}B(\alpha_s(\frac{N_0}{N}Q^2)) -2 A(\alpha_s(\frac{N_0^2}{N^2}Q^2)) }
+    \end{split}
+\end{equation}
 
-$\beta(\alpha_s)$ is the QCD beta function \cref{eq:RGE}
+Observe that using the renormalization group equation \cref{eq:RGE} and chain rule we can write the following relation:
+
+\begin{flalign}
+    \begin{split}
+    \pdv{\log N} B(\alpha_s(\frac{k}{N})) &=  \pdv{B(\alpha_s)}{\alpha_s} \pdv{\alpha_s(\frac{k}{N})}{\frac{k}{N}} \pdv {\frac{k}{N}}{\log N} = - \pdv{\alpha_s(\frac{k}{N})}{\log \frac{k}{N}} \pdv{B(\alpha_s)}{\alpha_s} \\
+    &= -\beta(\alpha_s) \alpha_s \pdv{B(\alpha_s)}{\alpha_s} \\
+    \pdv {\log N} A(\alpha_s(\frac{k}{N^2})) &= -2 \beta(\alpha_s) \alpha_s \pdv{A(\alpha_s)}{\alpha_s} 
+    \end{split}
+\end{flalign}
+
+define the differential operator $\partial(\alpha_s)$ as:
+
+\begin{equation}
+    \partial_{\alpha_s} \equiv -\beta(\alpha_s) \alpha_s \pdv{\alpha_s}
+\end{equation}
+
+Substituting the above relations in the previous equation, we obtain the equivalent of equation $(92)$ in \cite{Catani_2003_appendix}: 
+
+\begin{equation}
+    \begin{split}
+    &\int_{N_0/N}^1 \frac{\dd u}{u} \frac{1}{2}\qty(\tilde{B}(\alpha_s(uQ^2))-B(\alpha_s(uQ^2)))-\log \tilde{C}\qty( \alpha_s(\mu^2) , \frac{\mu^2}{Q^2} ) = \\
+    &\Gamma_2\qty(\partial_{\alpha_s}) \qty{ A(\alpha_s(\frac{N_0}{N}Q^2)) - \frac{1}{2} \partial_{\alpha_s} B(\alpha_s(\frac{N_0}{N}Q^2)) } - 2 \Gamma\qty(2\partial_{\alpha_s}) A(\alpha_s(\frac{N_0^2}{N^2}Q^2)) 
+    \end{split}
+\end{equation}
+
+Now by setting $N=N_0$ or applying $\pdv{\log N}$ one obtains respectively the functions $\tilde{C}$ and  $\tilde{B}$ as functions of $A$ and $B$:
+
+\begin{equation}\label{eq:appendix:Ctilde}
+    \begin{split}
+    \tilde{C}(\alpha_s) &= \exp{-\Gamma_2(\partial_{\alpha_s}) \qty[A(\alpha_s)-\frac{1}{2} B(\alpha_s)]}\\
+    &- 2 \Gamma\qty(2\partial_{\alpha_s}) A(\alpha_s(\frac{N_0^2}{N^2}Q^2)) 
+    \end{split}
+\end{equation}
+\begin{equation}\label{eq:appendix:Btilde}
+    \begin{split}
+    \frac{\tilde{B}(\alpha_s)}{2} &= \frac{B(\alpha_s)}{2} + \partial_{\alpha_s} \qty{\Gamma_2(\partial_{\alpha_s}) \qty[A(\alpha_s)-\frac{1}{2} \partial_{\alpha_s}B(\alpha_s)]} \\
+    &- 4 \partial_{\alpha_s} \qty{\Gamma_s\qty(2\partial_{\alpha_s}) A(\alpha_s(\frac{N_0^2}{N^2}Q^2))} 
+\end{split}
+\end{equation}
 
 by inserting the expansion 
 
 \begin{align}
     \begin{split}
-    \Gamma_2(\epsilon) &= \frac{1}{2}\zeta(2) -\frac{1}{3}\zeta(3) \epsilon - \frac{9}{16}\zeta(4) \epsilon^2 - \qty(\frac{1}{6}\zeta(2)\zeta(3)+ \frac{1}{5}\zeta(5))\epsilon^3 \\
+    \Gamma_2(\epsilon) &= -\frac{1}{2}\zeta(2) -\frac{1}{3}\zeta(3) \epsilon - \frac{9}{16}\zeta(4) \epsilon^2 - \qty(\frac{1}{6}\zeta(2)\zeta(3)+ \frac{1}{5}\zeta(5))\epsilon^3 \\
     &- \qty(\frac{1}{18}\zeta(3)^2 - \frac{61}{128}\zeta(6))\epsilon^4 + \order{\epsilon^5}   
     \end{split}
 \end{align}
@@ -141,32 +179,21 @@ in \cref{eq:appendix:Btilde} and \cref{eq:appendix:Ctilde}, we can obtain the co
 
 \begin{align}
     \begin{split}
-    \tilde{B}\qty(\alpha_s \qty(u Q^2)) - B\qty(\alpha_s \qty(u Q^2)) &= -\frac{4 A_1 b_0}{\pi} (\zeta(2)) \alpha_s^2 + \Bigl(-\frac{8 A_2 b_0}{\pi^2} \zeta(2) + \frac{4 b_0^2 B_1}{\pi} \zeta(2) \\
-    &- \frac{4 A_1}{3\pi}(8 b_0^2 \zeta(3) + 3 b_1 \zeta(2))\Bigr) \alpha_s^3 + \biggl(-\frac{12 A_3 b_0}{\pi^3} \zeta(2) \\
-    &+ \frac{12 b_0^2 B_2}{\pi^2} \zeta(2) - \frac{8 A_2}{\pi^2} (4 b_0^2 \zeta(3) + b_1 \zeta(2)) \\
-    &+ \frac{B_1}{3 \pi}(48 b_0^3 \zeta(3) +  30 b_0 b_1 \zeta(2)) - \frac{4 A_1}{(3 \pi)} (20 b_0 b_1 \zeta(3) \\
-    &+ 3 b_2 \zeta(2) + 81 b_0^3 \zeta(4)) \biggr) \alpha_s^4 + \order{\alpha_s^5}
+    \tilde{B}\qty(\alpha_s \qty(u Q^2)) &= B\qty(\alpha_s \qty(u Q^2))  
     \end{split}
 \end{align}
-
-% \biggl( -\frac{16 A_4 b_0}{\pi^4} \zeta(2) + \frac{24 b_0^2 B_3}{\pi^3} \zeta(2) \\
-% &- \frac{4 A_3}{\pi^3} (16 b_0^2 \zeta(3) + 3 b_1 \zeta(2)) - \frac{2 B_2}{15 \pi^2} (-480 b_0^3 \zeta(3) - 210 b_0 b_1 \zeta(2)) \\
-% &- \frac{8 A_2}{3 \pi^2} (28 b_0 b_1 \zeta(3) + 3 b_2 \zeta(2) + 162 b_0^3 \zeta(4)) - \frac{2 B_1}{15 \pi} (-520 b_0^2 b_1 \zeta(3) \\
-% &- 45 b_1^2 \zeta(2) - 90 b_0 b_2 \zeta(2) - 1620 b_0^4 \zeta(4)) - \frac{2 A_1}{15 \pi} (120 b_1^2 \zeta(3) \\
-% &+ 240 b_0 b_2 \zeta(3) + 2304 b_0^4 \zeta(5) + 30 b_3 \zeta(2) + 1920 b_0^4 \zeta(3) \zeta(2) \\ 
-% &+ 3510 b_0^2 b_1 \zeta(4))\biggr)\alpha_s^5 + \order{\alpha_s^6}
 
 \begin{align}
     \begin{split}
-    \ln \tilde{C}\qty(\alpha_s \qty(Q^2, \frac{\mu^2}{Q^2})) &= \frac{2 A_1 \zeta(2)}{\pi} \alpha_s + \biggl(\frac{2 A_2}{\pi^2} \zeta(2) - \frac{b_0 B_1}{\pi} \zeta(2) + \frac{A_1}{3\pi}(8 b_0 \zeta(3) \\
-    &- 6 b_0 \ln\qty[\frac{\mu^2}{Q^2}] \zeta(2))\biggr)\alpha_s^2 + \biggl( \frac{2 A_3}{\pi^3} \zeta(2) - \frac{2 b_0 B2}{\pi^2} \zeta(2) \\
-    &+ \frac{A_2}{3 \pi^2} (16 b_0 \zeta(3) - 12 b_0 \ln\qty[\frac{\mu^2}{Q^2}] \zeta(2)) + \frac{B_1}{3 \pi} \Bigl(-8 b_0^2 \zeta(3) \\
-    &- 3 b_1 \zeta(2) + 6 b_0^2 \ln\qty[\frac{\mu^2}{Q^2}] \zeta(2)\Bigr) + \frac{A_1}{3 \pi} \Bigl(8 b_1 \zeta(3) \\
-    &+  6 b_0^2 \ln^2\qty[\frac{\mu^2}{Q^2}] \zeta(2) - 2 \ln\qty[\frac{\mu^2}{Q^2}] (8 b_0^2 \zeta(3) + 3 b_1 \zeta(2)) \\
-    &+ 54 b_0^2 \zeta(4)\Bigr) \biggr)\alpha_s^3 + \order{\alpha_s^4}
+    \log \tilde{C}\qty(\alpha_s(mu^2), \frac{\mu^2}{Q^2}) &= \frac{A_1}{\pi } (-\zeta (2)-1) \alpha_s + \biggl(\frac{-2 A_2 \zeta (2)-2 A_2+\pi  b_0 B_1}{2 \pi ^2}\\
+    &+\frac{A_1 b_0 \left(3 \zeta (2) \log \left(\frac{\mu ^2}{Q^2}\right)+3 \log \left(\frac{\mu ^2}{Q^2}\right) -4 \zeta (3)\right)}{3 \pi }\biggr)\alpha_s^2\\
+    &+\biggl(\frac{A_1}{3 \pi } \Bigl(-27 b_0^2 \zeta (4)-3 b_0^2 \zeta (2) \log ^2\left(\frac{\mu ^2}{Q^2}\right)-3 b_0^2 \log ^2\left(\frac{\mu ^2}{Q^2}\right)\\
+    &+8 b_0^2 \zeta (3) \log \left(\frac{\mu ^2}{Q^2}\right)+3 b_1 \zeta (2) \log \left(\frac{\mu ^2}{Q^2}\right)+3 b_1 \log \left(\frac{\mu ^2}{Q^2}\right)\\
+    &-4 b_1 \zeta (3)\Bigr)-\frac{1}{6 \pi ^3}\Bigl(-12 \pi  A_2 b_0 \zeta (2) \log \left(\frac{\mu ^2}{Q^2}\right)\\
+    &-12 \pi  A_2 b_0 \log \left(\frac{\mu ^2}{Q^2}\right)+16 \pi  A_2 b_0 \zeta (3)+6 A_3 \zeta (2)+6 A_3\\
+    &+6 \pi ^2 b_0^2 B_1 \log \left(\frac{\mu ^2}{Q^2}\right)-6 \pi  b_0 B_2 -3 \pi ^2 b_1 B_1\Bigr)\biggr)\alpha_s^3 + \order{\alpha_s^4}
     \end{split}
 \end{align}
-
 We note that $\tilde{B}$ corrects the $B$ terms so it has to be expanded up to $\alpha_s^4$ to achieve $N^4LL$ accuracy while
 $\ln \tilde{C}$ corrects the $f_i$ functions so they have to be expanded up to $\alpha_s^3$ to achieve $N^4LL$ accuracy, 
 these corrections are necessary only for NNLL accuracy and beyond, consistent with the results in \cite{CATANI19933}.
