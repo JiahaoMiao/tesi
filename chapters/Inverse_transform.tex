@@ -126,15 +126,15 @@ Lastly, we utilize the following result to evaluate the integral presented in \c
 where $\Gamma$ is the Euler $\Gamma$-function, notice that for $k=0$ the integral is the Hankel integral representation of the $\Gamma$-function:
 
 \begin{equation}\label{eq:hankel_integral_representation}
-    \frac{1}{2\pi i}\int_C \dd u e^{u} u^{-(1-\gamma(\alpha_s,L))} = \frac{1}{\Gamma(1-\gamma(\alpha_s,L))
+    \frac{1}{2\pi i}\int_C \dd u e^{u} u^{-(1-\gamma(\alpha_s,L))} = \frac{1}{\Gamma(1-\gamma(\alpha_s,L))}
 \end{equation}
 
 The reciprocal of the Euler $\Gamma$-function is an entire function, meaning that it has no singularities in the complex plane, it's holomorphic everywhere.
 The above integral \cref{eq:magic_integral} can be evaluated by differentiating with respect to $\gamma$ $k$ times, and it is straightforward to see that each time i derive inside the integral
 i will get a factor of $\ln u$. Interchaning the order of derivation and integration is justified by the fact that the integral:
 \begin{itemize}
-    \item  is a contour integral, and the function is holomorphic in the complex plane for each value of $\gamma \in \[-2,0\]$
-    \item  is dominated by the exponential factor $e^{u - (1-gamma) \ln u}$ as long as $\Re{u}>0$
+    \item  is a contour integral whose contour doesn't depent on $\gamma$, and the function is holomorphic in the complex plane for each value of $\gamma \in [-4,0]$
+    \item  is dominated by the exponential factor $e^{u - (1-\gamma) \ln u}$ as long as $\Re{u}>0$
 \end{itemize}
 
 \begin{align}

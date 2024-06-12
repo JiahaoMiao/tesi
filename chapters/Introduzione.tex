@@ -8,17 +8,18 @@
 
 \section{Introduction}
 
-In this thesis we are interested in a specific aspect of theoretical high energy physics. In particular,
-the topic of interest is that of resummantion of the Thrust event-shape distribution in electron-positron ($e^+e^-$) collisions.
+In this thesis, we focus on a specific aspect of theoretical high-energy physics: the resummation of the Thrust event-shape distribution in electron-positron ($e^+e^-$) collisions.
 
-As is typical in physics, the equations that govern the interactions are quite complicated and it is almost impossible to find exact solutions, so all
-functions of interest are perturbatively expanded, meaning they are expanded in a power series of a small parameter. 
+Electron-positron annihilation has been extensively studied, particularly during the operation of LEP (Large Electron-Positron Collider) at CERN from 1989 to 2000. 
+This process is currently also studied at the LHC (Large Hadron Collider). Electron-positron collisions provide an optimal environment for precision studies in high-energy physics. 
+Unlike hadron colliders, which are complicated by strongly interacting initial states, LEP has provided extremely accurate measurements of Standard Model quantities such as the Z-boson mass. 
+These results tightly constrain beyond-the-Standard Model physics. Precision data from LEP is also used in Quantum Chromodynamics (QCD) studies, for example, to determine the strong coupling constant, $\alpha_S$.
 
-When the force in question is the electromagnetic interaction, one can
-use the fine structure constant ( or electromagnetic coupling constant ) $\alpha_{em} \sim \frac{1}{137} $.
+As is typical in physics, the equations governing these interactions are highly complex, making exact solutions nearly impossible. Therefore, functions of interest are often expanded perturbatively, meaning they are expressed as a power series in a small parameter.
 
-When discussing particles that interact with the strong interaction, it is then natural to use the strong
-coupling constant $ \alpha_S $.
+For the electromagnetic interaction, this small parameter is the fine structure constant (or electromagnetic coupling constant) $\alpha_{em} \sim \frac{1}{137}$.
+
+For interactions involving the strong force, it is natural to use the strong coupling constant, $\alpha_S$.
 
 The kinematical variable we are interested in is the Thrust event-shape distribution, \\
 which $T$ is defined as:
@@ -27,6 +28,10 @@ which $T$ is defined as:
 \end{equation}
 
 where the sum is over all final state particles and $\vec{n}$ is a unit vector.
+In practice, the sum may be carried over the detected particles only. 
+The thrust distribution represents the probability of observing a given value of $T$ in $e^+e^-$ annihilation,\emph{i.e} the probability of observing a given configuration of momenta of final-state particles 
+with respect to the thrust axis.  
+
 It can be seen from this definition that the thrust is an infrared and collinear safe
 quantity, that is, it is insensitive to the emission of zero momentum particles and to the splitting of 
 one particle into two collinear ones.
@@ -38,16 +43,17 @@ $\vert (1-\lambda)\vec{p_i} \vert + \vert \lambda \vec{p_i}\vert = \vert \vec{p_
 Formally, infrared-safe observables are the one which do not distinguish between (n+1) partons and n partons in the soft/collinear limit, \emph{i.e},
 are insensitive to what happens at long-distance.
 
-Infra-red safe observables are important in the context of perturbative QCD, because they allow for a meaningful comparison between theory and experiment. 
+Infrared safe observables are important in the context of perturbative QCD, because they allow for a meaningful comparison between theory and experiment. 
 
 Thus the cross section :
 
 \begin{equation}\label{eq:cross_section}
-    \sigma(\tau) = \int^1_{1-\tau} \dd{T} \dv{\sigma}{T}
+    \sigma(\tau) = \int^\tau_0 \dd{\tau'} \dv{\sigma}{\tau'}
 \end{equation}
 
-It can be seen that a two-particle final state has fixed $T = 1$, consequently the thrust
-distribution receives its first non-trivial contribution from three-particle final states
+It can be seen that a two-particle final state has fixed $T = 1$, it can be seen from \cref{eq:LO fixed order} that it's 
+a delta distribution at leading order, consequently the thrust
+distribution receives its first non-trivial contribution from three-particle final states.
 
 The lower limit on $T$ depends on the number of final-state particles.
 Neglecting masses, $T_{min} = 2/3$ for three particles, corresponding to a symmetric
@@ -60,6 +66,22 @@ At large values o f $T$, however, there are terms in higher order that become en
 In this kinematical region the real expansion parameter is the
 large effective coupling $\alpha_s \ln^2(\tau)$ and therefore
 any finite-order perturbative calculation cannot give an accurate evaluation o f the cross section.
+
+For example, at leading order in perturbation theory the thrust distribution has the form:
+
+\begin{equation}\label{eq:LO fixed order}
+    \frac{1}{\sigma_0}\dv{\sigma}{\tau} = \delta(\tau) + \frac{2\alpha_s}{3\pi} \qty[\frac{-4 \ln \tau - 3}{\tau} + \dots]
+\end{equation}
+
+where $\sigma_0$ is the born cross section and the ellipsis denotes terms that are regular as $\tau \to 0$. 
+Upon integration over $\tau$, we obtain the cumulative distribution:
+
+\begin{equation}
+    R(\tau) = \int_0^\tau \dd{\tau'} \frac{1}{\sigma_0}\dv{\sigma}{\tau'} = 1 + \frac{2\alpha_s}{3\pi} \qty[-2 \ln^2 \tau - 3 \ln \tau + \dots] 
+\end{equation}
+
+Double logarithmic terms of the form $\alpha_s^n \ln^{2n}\tau$ plagues the fixed order expansion in the strong coupling. In the dijet region, higher order 
+terms are as important as lower order ones and resummation is needed to obtain a reliable prediction.
 
 
 \end{document}
