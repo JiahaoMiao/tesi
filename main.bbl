@@ -432,6 +432,225 @@
       \verb http://dx.doi.org/10.1088/1126-6708/2003/07/028
       \endverb
     \endentry
+    \entry{Dissertori_2008}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=7a75c4e1dfacb661349d513ba616e426}{%
+           family={Dissertori},
+           familyi={D\bibinitperiod},
+           given={G},
+           giveni={G\bibinitperiod}}}%
+        {{hash=c6254ae56b191e35386a6f6f77ee2c3d}{%
+           family={Ridder},
+           familyi={R\bibinitperiod},
+           given={A.\bibnamedelimi Gehrmann-De},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinithyphendelim D\bibinitperiod}}}%
+        {{hash=27680809a3b924b4d40dc16a470b2667}{%
+           family={Gehrmann},
+           familyi={G\bibinitperiod},
+           given={T},
+           giveni={T\bibinitperiod}}}%
+        {{hash=bc988eb2a1a7278a6cf603e868848281}{%
+           family={Glover},
+           familyi={G\bibinitperiod},
+           given={E.W.N},
+           giveni={E\bibinitperiod}}}%
+        {{hash=ac4a3d76d48a3329d547582d9c00e3f3}{%
+           family={Heinrich},
+           familyi={H\bibinitperiod},
+           given={G},
+           giveni={G\bibinitperiod}}}%
+        {{hash=1bac9f9f235d732451d3b00cea07a9b0}{%
+           family={Stenzel},
+           familyi={S\bibinitperiod},
+           given={H},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Springer Science}%
+        {Business Media LLC}%
+      }
+      \strng{namehash}{c47b1d067f05550d2e436b46c7690fd8}
+      \strng{fullhash}{e1e02e32665613754d9c45d91daf02a4}
+      \strng{fullhashraw}{e1e02e32665613754d9c45d91daf02a4}
+      \strng{bibnamehash}{c47b1d067f05550d2e436b46c7690fd8}
+      \strng{authorbibnamehash}{c47b1d067f05550d2e436b46c7690fd8}
+      \strng{authornamehash}{c47b1d067f05550d2e436b46c7690fd8}
+      \strng{authorfullhash}{e1e02e32665613754d9c45d91daf02a4}
+      \strng{authorfullhashraw}{e1e02e32665613754d9c45d91daf02a4}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1029-8479}
+      \field{journaltitle}{Journal of High Energy Physics}
+      \field{month}{2}
+      \field{number}{02}
+      \field{title}{First determination of the strong coupling constant using NNLO predictions for hadronic event shapes in e+e−annihilations}
+      \field{volume}{2008}
+      \field{year}{2008}
+      \field{pages}{040\bibrangedash 040}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/1126-6708/2008/02/040
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1088/1126-6708/2008/02/040
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1088/1126-6708/2008/02/040
+      \endverb
+    \endentry
+    \entry{Ellis:1980wv}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=646149a8f5c3245fd414214c586b32df}{%
+           family={Ellis},
+           familyi={E\bibinitperiod},
+           given={R.\bibnamedelimi Keith},
+           giveni={R\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=18c68049e3c346f3e27c990c50d736f9}{%
+           family={Ross},
+           familyi={R\bibinitperiod},
+           given={D.\bibnamedelimi A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=a6fa28d89be2bd38eb2bcb61230f6eb8}{%
+           family={Terrano},
+           familyi={T\bibinitperiod},
+           given={A.\bibnamedelimi E.},
+           giveni={A\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{aba9b832ef5e31d237c3bc542edb8730}
+      \strng{fullhash}{aba9b832ef5e31d237c3bc542edb8730}
+      \strng{fullhashraw}{aba9b832ef5e31d237c3bc542edb8730}
+      \strng{bibnamehash}{aba9b832ef5e31d237c3bc542edb8730}
+      \strng{authorbibnamehash}{aba9b832ef5e31d237c3bc542edb8730}
+      \strng{authornamehash}{aba9b832ef5e31d237c3bc542edb8730}
+      \strng{authorfullhash}{aba9b832ef5e31d237c3bc542edb8730}
+      \strng{authorfullhashraw}{aba9b832ef5e31d237c3bc542edb8730}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nucl. Phys. B}
+      \field{title}{{The Perturbative Calculation of Jet Structure in e+ e- Annihilation}}
+      \field{volume}{178}
+      \field{year}{1981}
+      \field{pages}{421\bibrangedash 456}
+      \range{pages}{36}
+      \verb{doi}
+      \verb 10.1016/0550-3213(81)90165-6
+      \endverb
+    \endentry
+    \entry{Gehrmann-DeRidder:2007nzq}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=7daa5cd703f5ab0af831b9aa2e7afbcf}{%
+           family={Gehrmann-De\bibnamedelima Ridder},
+           familyi={G\bibinithyphendelim D\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=27680809a3b924b4d40dc16a470b2667}{%
+           family={Gehrmann},
+           familyi={G\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=bc988eb2a1a7278a6cf603e868848281}{%
+           family={Glover},
+           familyi={G\bibinitperiod},
+           given={E.\bibnamedelimi W.\bibnamedelimi N.},
+           giveni={E\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=ac4a3d76d48a3329d547582d9c00e3f3}{%
+           family={Heinrich},
+           familyi={H\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{32b8a7fde3fdb2b65fd96a6963ca24ce}
+      \strng{fullhash}{fea77c566e9f39d54f9e8784c177fa77}
+      \strng{fullhashraw}{fea77c566e9f39d54f9e8784c177fa77}
+      \strng{bibnamehash}{32b8a7fde3fdb2b65fd96a6963ca24ce}
+      \strng{authorbibnamehash}{32b8a7fde3fdb2b65fd96a6963ca24ce}
+      \strng{authornamehash}{32b8a7fde3fdb2b65fd96a6963ca24ce}
+      \strng{authorfullhash}{fea77c566e9f39d54f9e8784c177fa77}
+      \strng{authorfullhashraw}{fea77c566e9f39d54f9e8784c177fa77}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{hep-ph}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Phys. Rev. Lett.}
+      \field{title}{{Second-order QCD corrections to the thrust distribution}}
+      \field{volume}{99}
+      \field{year}{2007}
+      \field{pages}{132002}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.99.132002
+      \endverb
+      \verb{eprint}
+      \verb 0707.1285
+      \endverb
+    \endentry
+    \entry{Herzog_2017}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=b2d577e3ed5fd1d034fa641717177019}{%
+           family={Herzog},
+           familyi={H\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=a7a2683d068d228199b0a4441f64d4a1}{%
+           family={Ruijl},
+           familyi={R\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=5ae695b25c82328ae53a75f171b7e1e8}{%
+           family={Ueda},
+           familyi={U\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=111cbf8aabf5139ae686c23509173473}{%
+           family={Vermaseren},
+           familyi={V\bibinitperiod},
+           given={J.\bibnamedelimi A.\bibnamedelimi M.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=b1eebc0e63dd53478f4ee5acb35d3f94}{%
+           family={Vogt},
+           familyi={V\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Springer Science}%
+        {Business Media LLC}%
+      }
+      \strng{namehash}{1ba3506594c33a75d25fcf81aac71ad1}
+      \strng{fullhash}{12cc2a88fb335e4a77b3c1db36384f57}
+      \strng{fullhashraw}{12cc2a88fb335e4a77b3c1db36384f57}
+      \strng{bibnamehash}{1ba3506594c33a75d25fcf81aac71ad1}
+      \strng{authorbibnamehash}{1ba3506594c33a75d25fcf81aac71ad1}
+      \strng{authornamehash}{1ba3506594c33a75d25fcf81aac71ad1}
+      \strng{authorfullhash}{12cc2a88fb335e4a77b3c1db36384f57}
+      \strng{authorfullhashraw}{12cc2a88fb335e4a77b3c1db36384f57}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1029-8479}
+      \field{journaltitle}{Journal of High Energy Physics}
+      \field{month}{2}
+      \field{number}{2}
+      \field{title}{The five-loop beta function of Yang-Mills theory with fermions}
+      \field{volume}{2017}
+      \field{year}{2017}
+      \verb{doi}
+      \verb 10.1007/jhep02(2017)090
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1007/JHEP02(2017)090
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/JHEP02(2017)090
+      \endverb
+    \endentry
     \entry{Kinoshita:1962ur}{article}{}{}
       \name{author}{1}{}{%
         {{hash=630e5c90fbb4433fd67f85f0b4ae78ca}{%
@@ -506,6 +725,81 @@
       \range{pages}{-1}
       \verb{doi}
       \verb 10.1103/PhysRev.133.B1549
+      \endverb
+    \endentry
+    \entry{Monni:2011gb}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=1044139b8fc1e744be1dff3072c8dfc0}{%
+           family={Monni},
+           familyi={M\bibinitperiod},
+           given={Pier\bibnamedelima Francesco},
+           giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=44fcf09480a1b38c618d044c135d07a2}{%
+           family={Gehrmann},
+           familyi={G\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=cee143dc8482c5c101bea2b8bab7a65a}{%
+           family={Luisoni},
+           familyi={L\bibinitperiod},
+           given={Gionata},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{10674e2f6d7cdf2cca864ec741e20121}
+      \strng{fullhash}{10674e2f6d7cdf2cca864ec741e20121}
+      \strng{fullhashraw}{10674e2f6d7cdf2cca864ec741e20121}
+      \strng{bibnamehash}{10674e2f6d7cdf2cca864ec741e20121}
+      \strng{authorbibnamehash}{10674e2f6d7cdf2cca864ec741e20121}
+      \strng{authornamehash}{10674e2f6d7cdf2cca864ec741e20121}
+      \strng{authorfullhash}{10674e2f6d7cdf2cca864ec741e20121}
+      \strng{authorfullhashraw}{10674e2f6d7cdf2cca864ec741e20121}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{hep-ph}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{JHEP}
+      \field{title}{{Two-Loop Soft Corrections and Resummation of the Thrust Distribution in the Dijet Region}}
+      \field{volume}{08}
+      \field{year}{2011}
+      \field{pages}{010}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1007/JHEP08(2011)010
+      \endverb
+      \verb{eprint}
+      \verb 1105.4560
+      \endverb
+    \endentry
+    \entry{Sterman:1986aj}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=850fa0d5adf1f02025038915b409662c}{%
+           family={Sterman},
+           familyi={S\bibinitperiod},
+           given={George\bibnamedelima F.},
+           giveni={G\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{850fa0d5adf1f02025038915b409662c}
+      \strng{fullhash}{850fa0d5adf1f02025038915b409662c}
+      \strng{fullhashraw}{850fa0d5adf1f02025038915b409662c}
+      \strng{bibnamehash}{850fa0d5adf1f02025038915b409662c}
+      \strng{authorbibnamehash}{850fa0d5adf1f02025038915b409662c}
+      \strng{authornamehash}{850fa0d5adf1f02025038915b409662c}
+      \strng{authorfullhash}{850fa0d5adf1f02025038915b409662c}
+      \strng{authorfullhashraw}{850fa0d5adf1f02025038915b409662c}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nucl. Phys. B}
+      \field{title}{{Summation of Large Corrections to Short Distance Hadronic Cross-Sections}}
+      \field{volume}{281}
+      \field{year}{1987}
+      \field{pages}{310\bibrangedash 364}
+      \range{pages}{55}
+      \verb{doi}
+      \verb 10.1016/0550-3213(87)90258-6
       \endverb
     \endentry
   \enddatalist

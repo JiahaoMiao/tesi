@@ -26,7 +26,7 @@ which gives the fraction of jets with masses less than $wQ^2$:
     R^q(w) = \int_0^\infty J^q(Q^2,k^2)\Theta(wQ^2-k^2) \dd k^2
 \end{equation}
 
-and using the integral representation of the Heaviside step function \cref{eq:heaviside_integral_representation}
+and using the integral representation of the Heaviside step function \cref{eq:heaviside_integral_representation}:
 
 \begin{equation}
     \Theta(wQ^2-k^2) = \frac{1}{2\pi i} \lim_{T \to \infty}\int_{C-iT}^{C+iT} \frac{\dd \nu}{\nu} e^{\nu (wQ^2-k^2)} 
@@ -70,8 +70,8 @@ where the integral is intended as before, along the line $C$ to the right of all
     \mathcal{F}^{(n)}(\alpha_s,L) = \pdv[n]{\mathcal{F}(\alpha_s,\ln u + L )}{\ln u} \eval_{\ln u = 0}
 \end{equation}
 
-As noticed in \cite{CATANI19933}, the $n$-th derivative of $\mathcal{F}$ w.r.t $\ln u$ evaluated at $\ln u = 0$ is 
-at most of logarithmic order $\alpha_s^{n+k-1}L^k$, so in order to achieve $N^4LL$ accuracy we need to compute the first four derivatives of $\mathcal{F}$ w.r.t $\ln u$ and 
+The $n$-th derivative of $\mathcal{F}$ w.r.t $\ln u$ evaluated at $\ln u = 0$ is 
+at most of logarithmic order $\alpha_s^{n+k-1}L^k$ \cite{CATANI19933}, so in order to achieve $\text{N}^4\text{LL}$ accuracy we need to compute the first four derivatives of $\mathcal{F}$ w.r.t $\ln u$ and 
 neglect the terms of order $\order{\alpha_s^4}$ that appear in the derivation. We obtain the following expressions: 
 
 \begin{align}
@@ -186,8 +186,8 @@ and reorganize as a power series of $\alpha_s$:
     \end{split}
 \end{align}
 
-By comparing \cref{eq:Thrust fraction} and \cref{eq:Rw mass fraction} we see that to obtain the Thrust cross section, we simply multiply by 2 the inverse Laplace transform obtained.
-Following the convention of \cite{CATANI19933}, the final resummed expression $R_T(\tau)$ can be written as one exponential \cref{eq:RT resummed}, 
+By comparing \cref{eq:Thrust fraction} and \cref{eq:Rw mass fraction} we see that to obtain the Thrust cross section, we simply multiply by 2 all the $f_i$  \cref{eq:f1,eq:f2,eq:f3,eq:f4,eq:f5} 
+obtained in the previous section. Following the convention of \cite{CATANI19933}, the final resummed expression $R_T(\tau)$ can be written as one exponential \cref{eq:RT resummed}, 
 
 \begin{equation}\label{eq:RT resummed}
     R_T(\tau) = \exp{L g_1(\lambda) + g_2(\lambda) + \alpha_s g_3(\lambda) + \alpha_s^2 g_4(\lambda) + \alpha_s^3 g_5(\lambda) + \order{\alpha_s^4}}
@@ -205,16 +205,15 @@ as the expansion of an exponential for $\alpha_s \to 0$ :
 
 to obtain $g_3(\lambda)$, $g_4(\lambda)$ and $g_5(\lambda)$ we match \cref{eq:Rw final expansion} with \cref{eq:expansion exponential} and obtain the following expressions:
 
-
 \begin{align}
-    & g_1(\lambda) = 2 f_1(\lambda) \\
-    & g_2(\lambda) = 2 f_2(\lambda) -  \ln \Gamma(1- 2 f_1(\lambda)- 2 \lambda f_1`(\lambda))\\
-    & g_3(\lambda) = 2 f_3(\lambda) + 2  \Bigl( \psi_0(1-\gamma) f_2'(\lambda )  + \frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma)\bigl( \lambda  f_1''(\lambda ) +2  f_1'(\lambda )\bigr)\Bigr)
+    & g_1(\lambda) = f_1(\lambda) \\
+    & g_2(\lambda) = f_2(\lambda) -  \ln \Gamma(1- f_1(\lambda)- \lambda f_1'(\lambda))\\
+    & g_3(\lambda) = f_3(\lambda) +   \Bigl( \psi_0(1-\gamma) f_2'(\lambda )  + \frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma)\bigl( \lambda  f_1''(\lambda ) +2  f_1'(\lambda )\bigr)\Bigr)
 \end{align}
 
 \begin{align}
     \begin{split}
-        g_4(\lambda) &= 2 f_4(\lambda) + 2 \Bigl(\frac{1}{8} (\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)(1-\gamma) \bigl(b_0^2 \lambda ^2 f_1''(\lambda )^2\\
+        g_4(\lambda) &=  f_4(\lambda) +  \Bigl(\frac{1}{8} (\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)(1-\gamma) \bigl(b_0^2 \lambda ^2 f_1''(\lambda )^2\\
         &+4 b_0^2 f_1'(\lambda )^2 +4 b_0^2 \lambda  f_1'(\lambda ) f_1''(\lambda )\bigr)+\frac{1}{6} (\psi_0^3 -3 \psi_0\psi_1+\psi_2)(1-\gamma) \bigl(b_0^2 \lambda  f_1^{(3)}(\lambda )\\
         &+ 3 b_0^2 \lambda  f_1''(\lambda ) f_2'(\lambda )+3 b_0^2 f_1''(\lambda )+6 b_0^2 f_1'(\lambda ) f_2'(\lambda )\bigr)+\frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma)\\
         &\bigl(b_0^2 f_2''(\lambda )+b_0^2 f_2'(\lambda )^2\bigr) + b_0 \psi_0(1-\gamma) f_3'(\lambda )\Bigr)
@@ -223,7 +222,7 @@ to obtain $g_3(\lambda)$, $g_4(\lambda)$ and $g_5(\lambda)$ we match \cref{eq:Rw
 
 \begin{align}
     \begin{split}
-        g_5(\lambda) &= 2 f_5(\lambda) + 2 \Bigl(\frac{1}{24} (\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)(1-\gamma) \\
+        g_5(\lambda) &=  f_5(\lambda) +  \Bigl(\frac{1}{24} (\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)(1-\gamma) \\
         &\bigl(b_0^3 \lambda  f_1^{(4)}(\lambda ) +4 b_0^3 \lambda  f_1^{(3)}(\lambda ) f_2'(\lambda ) + 4 b_0^3 f_1^{(3)}(\lambda )+6 b_0^3 \lambda  f_1''(\lambda ) f_2''(\lambda ) \\
         &+ 6 b_0^3 \lambda  f_1''(\lambda ) f_2'(\lambda )^2 +12 b_0^3 f_1''(\lambda ) f_2'(\lambda )+12 b_0^3 f_1'(\lambda ) f_2''(\lambda ) + 12 b_0^3 f_1'(\lambda ) f_2'(\lambda )^2\bigr) \\
         &+ \frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma) \bigl(2 b_0^2 f_2'(\lambda ) f_3'(\lambda )+b_0^2 f_3''(\lambda )\bigr) + \frac{1}{6} (\psi_0^3 -3 \psi_0\psi_1+\psi_2)(1-\gamma) \\

@@ -1,0 +1,110 @@
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Constants and Ingredients for Resummation}\label{app:Ingredients}
+
+The needed coefficients are often expressed in terms of the following parameters:
+
+\begin{flalign}
+    n_f = 5 \quad &\text{Number of active flavors}  & \nonumber \\
+    C_F = \frac{4}{3} \quad &\text{Quadratic Casimir operator for fundamental representation}  & \nonumber \\
+    C_A = 3 \quad &\text{Quadratic Casimir operator for adjoint representation}   \\
+    T_R = \frac{1}{2} \quad &\text{Trace normalization for fundamental representation} & \nonumber
+\end{flalign}
+
+The renormalization group equation for the QCD coupling constant reads:
+
+\begin{equation}
+    \mu^2 \dv{\alpha_s}{\mu^2} = \beta(\alpha_s) = -\alpha_s^2 \qty(b_0 + b_1 \alpha_s + b_2 \alpha_s^2 + \dots)
+\end{equation}
+
+where the coefficients of the $\beta(\alpha_s)$ functions are \cite{Herzog_2017}:
+\begingroup % To keep the change local
+\allowdisplaybreaks % To allow page breaks in the middle of equations
+\begin{flalign}
+    b_0 &= \frac{11C_A-4 n_f T_R}{12\pi} = \frac{33-2 n_f}{12\pi} & \nonumber \\
+    b_1 &= \frac{17C_A^2 - n_f T_R(10C_A + 6 C_F)}{24\pi^2} = \frac{153-19n_f}{24\pi^2} & \nonumber \\
+    b_2 &= \frac{325 n_f^2}{3456 \pi ^3}-\frac{5033 n_f}{1152 \pi ^3}+\frac{2857}{128 \pi ^3} & \nonumber \\
+    b_3 &= \frac{1093 n_f^3}{186624 \pi ^4}+n_f^2 \left(\frac{809 \zeta (3)}{2592 \pi ^4} +\frac{50065}{41472 \pi ^4}\right) +n_f \left(-\frac{1627 \zeta (3)}{1728 \pi ^4}-\frac{1078361}{41472 \pi ^4}\right)& \nonumber \\
+    &+\frac{891 \zeta (3)}{64 \pi ^4}+\frac{149753}{1536 \pi ^4} & \nonumber \\
+    b_4 &= n_f^4 \left(\frac{1205}{2985984 \pi ^5}-\frac{19 \zeta (3)}{10368 \pi ^5}\right) \\
+    &+n_f^3 \left(-\frac{24361 \zeta (3)}{124416 \pi ^5}+\frac{115 \zeta (5)}{2304 \pi ^5}+\frac{809}{1244160 \pi }-\frac{630559}{5971968 \pi ^5}\right) & \nonumber\\
+    &+n_f^2 \left(\frac{698531 \zeta (3)}{82944 \pi ^5}-\frac{5965 \zeta (5)}{1296 \pi ^5}-\frac{5263}{414720 \pi }+\frac{25960913}{1990656 \pi ^5}\right) & \nonumber \\
+    &+n_f \left(-\frac{1202791 \zeta (3)}{20736 \pi ^5}+\frac{1358995 \zeta (5)}{27648 \pi ^5}+\frac{6787}{110592 \pi }-\frac{336460813}{1990656 \pi ^5}\right)& \nonumber\\
+    &+\frac{621885 \zeta (3)}{2048 \pi ^5}-\frac{144045 \zeta (5)}{512 \pi ^5}-\frac{9801}{20480 \pi }+\frac{8157455}{16384 \pi ^5} & \nonumber
+\end{flalign}
+
+\endgroup
+
+Numerically, for $n_f = 5$ :
+
+\begin{flalign}
+    \begin{split}
+        b_0 &= 0.875352 - 0.0530516 n_f = \frac{23}{12 \pi} = 0.610094\\ 
+        b_1 &= 0.645923 - 0.0802126 n_f = \frac{29}{12 \pi^2} = 0.24486\\
+        b_2 &= 0.719864 - 0.140904 n_f + 0.00303291 n_f^2 = \frac{9769}{3456 \pi^3} = 0.0911647\\
+        b_3 &= 1.17269 - 0.278557 n_f + 0.0162447 n_f^2 + 0.0000601247 n_f^3 = 0.193536\\
+        b_4 &= 1.71413 - 0.594075 n_f + 0.0560618 n_f^2 - 0.000738048 n_f^3 - 5.87966 \cdot 10^{-6} n_f^4 = 0.0493694
+    \end{split}
+\end{flalign}
+
+The A coefficient in the resummation formula are given by:
+
+\begingroup % To keep the change local
+\allowdisplaybreaks % To allow page breaks in the middle of equations
+\begin{flalign}
+    A_1 &= C_F\\
+    A_2 &= \frac{1}{2} C_A C_F \left(-\frac{1}{27} 10 n_f T_R-\frac{\pi ^2}{6}+\frac{67}{18}\right)& \\
+    A_3 &= \left(-\frac{2051}{1296}-\frac{\pi ^2}{18}\right) C_A C_F n_f+\left(-\frac{11 \zeta (3)}{4}+\frac{11 \pi ^4}{720}-\frac{13 \pi ^2}{432}+\frac{15503}{2592}\right) C_A^2 C_F \\
+    &+\left(\frac{\zeta (3)}{2}-\frac{55}{96}\right) C_F^2 n_f+\left(\frac{25}{324}+\frac{\pi ^2}{108}\right) C_F n_f^2 &\nonumber\\
+    A_4 &= \Bigl(-\frac{\zeta (3)^2}{16}+\frac{11 \pi ^2 \zeta (3)}{32}-\frac{24461 \zeta (3)}{864}+\frac{20513 \pi ^2}{5184}+\frac{1925 \zeta (5)}{288}-\frac{253 \pi ^4}{1920}-\frac{313 \pi ^6}{90720}\\
+    &+\frac{4311229}{186624}\Bigr) C_F C_A^3+\Bigl(\frac{7 \pi ^2 \zeta (3)}{72}+\frac{43 \zeta (3)}{144}+\frac{451 \pi ^4}{4320}+\frac{131 \zeta (5)}{144}&\nonumber\\
+    &+T_R \left(-\frac{1}{72} 11 \pi ^2 \zeta (3)+\frac{685 \zeta (3)}{48}-3 \zeta (5)-\frac{11 \pi ^4}{144}-\frac{1123}{162}-\frac{12247 \pi ^2}{15552}\right)&\nonumber\\
+    &-\frac{64421 \pi ^2}{31104}-\frac{260731}{62208}\Bigr) C_F n_f C_A^2+\Bigl(\Bigl(\left(\frac{34 \zeta (3)}{9}+\frac{11 \pi ^4}{720}+\frac{55 \pi ^2}{576}-\frac{7351}{1152}\right) T_R-\frac{\pi ^2 \zeta (3)}{12} &\nonumber\\
+    &+\frac{29 \zeta (3)}{18}+\frac{5 \zeta (5)}{8}-\frac{55 \pi ^2}{1152}-\frac{11 \pi ^4}{1440}-\frac{17033}{10368}\Bigr) n_f C_F^2 &\nonumber\\
+    &+\Bigl(\left(-\frac{7 \zeta (3)}{54}+\frac{\pi ^4}{60}-\frac{481 \pi ^2}{1944}+\frac{1747}{3888}\right) T_R^2+\left(-\frac{143 \zeta (3)}{108}+\frac{847 \pi ^2}{1296}+\frac{55}{486}\right) T_R +\frac{803 \pi ^2}{3888}&\nonumber\\
+    &-\frac{\zeta (3)}{144}-\frac{49 \pi ^4}{4320}+\frac{19889}{62208}\Bigr) n_f^2 C_F\Bigr) C_A+\frac{31 \pi ^6}{60480}+\Bigl(\left(-\frac{7 \zeta (3)}{27}+\frac{5 \pi ^2}{324}+\frac{130}{729}\right) T_R^3&\nonumber\\
+    &+\left(\frac{13 \zeta (3)}{108}-\frac{5}{486}-\frac{77 \pi ^2}{1296}\right) T_R+\frac{\zeta (3)}{108}-\frac{1}{648}\Bigr) C_F n_f^3+\frac{\pi ^2}{96}+\biggl(\Bigl(-\frac{19 \zeta (3)}{18}+\frac{215}{96}-\frac{5 \pi ^2}{144} &\nonumber\\
+    &-\frac{\pi ^4}{180}\Bigr) T_R^2+\frac{\pi ^4}{720}+\frac{5 \pi ^2}{192}-\frac{5 \zeta (3)}{18}+\frac{299}{2592}\biggr) C_F^2 n_f^2+\frac{3 \zeta (3)^2}{16} &\nonumber\\
+    &+81 \left(-\frac{\zeta (3)^2}{32}+\frac{\zeta (3)}{288}+\frac{55 \zeta (5)}{576}-\frac{\pi ^2}{576}-\frac{31 \pi ^6}{362880}\right)&\nonumber\\
+    &+9 \left(-\frac{5 \zeta (3)^2}{32}+\frac{5 \zeta (3)}{288}+\frac{275 \zeta (5)}{576}-\frac{5 \pi ^2}{576}-\frac{31 \pi ^6}{72576}\right)+\biggl(\left(\frac{37 \zeta (3)}{48}-\frac{5 \zeta (5)}{4}+\frac{143}{576}\right) C_F^3 &\nonumber\\
+    &+\frac{1}{3} \left(-\frac{\zeta (3)}{12}+\frac{\pi ^2}{24}-\frac{5 \zeta (5)}{12}\right)+\frac{1}{27} \left(\frac{\zeta (3)}{16}+\frac{5 \zeta (5)}{16}-\frac{\pi ^2}{32}\right)+3 \left(\frac{7 \zeta (3)}{288}+\frac{35 \zeta (5)}{288}-\frac{7 \pi ^2}{576}\right) &\nonumber\\
+    &+27 \left(-\frac{\zeta (3)}{288}+\frac{\pi ^2}{576}-\frac{5 \zeta (5)}{288}\right)\biggr) n_f-\frac{\zeta (3)}{48}-\frac{55 \zeta (5)}{96}&\nonumber\\
+    A_5 &= 14541.099 
+\end{flalign}
+\endgroup
+
+The $B$ coefficients are given by:
+
+\begingroup % To keep the change local
+\allowdisplaybreaks % To allow page breaks in the middle of equations
+\begin{flalign}
+    B_1 &= -\frac{1}{2} \left(3 C_F\right) \\
+    B_2 &=\left(2 \left(\frac{3 \zeta (3)}{4}-\frac{57}{32}\right)+\frac{11 \pi ^2}{24}\right) C_A C_F+\left(\frac{5}{8}-\frac{\pi ^2}{12}\right) C_F n_f+\left(2 \left(-\frac{3 \zeta (3)}{2}-\frac{3}{32}\right)+\frac{\pi ^2}{4}\right) C_F^2 
+    % B_3 &=C_A \biggl(C_F n_f \left(\left(\frac{34 \zeta (3)}{27}-\frac{485 \pi ^2}{432}-\frac{\pi ^4}{720}+\frac{3683}{864}\right) T_R+\frac{31 \zeta (3)}{54}+\frac{131 \pi ^4}{4320}+\frac{5261}{1728}-\frac{2657 \pi ^2}{2592}\right)&\nonumber\\
+    % &+\left(-\frac{\pi ^2 \zeta (3)}{12}-\frac{89 \zeta (3)}{12}-\frac{15 \zeta (5)}{4}+\frac{287 \pi ^2}{192}-\frac{23}{16}-\frac{17 \pi ^4}{360}\right) C_F^2\biggr) &\nonumber\\
+    % &+\left(\frac{241 \zeta (3)}{108}-\frac{5 \zeta (5)}{4}+\frac{22841 \pi ^2}{5184}-\frac{5951}{432}-\frac{713 \pi ^4}{4320}\right) C_A^2 C_F+C_F^2 n_f \biggl(\Bigl(\frac{17 \zeta (3)}{6}+\frac{23}{16}-&\nonumber\\
+    % &\frac{5 \pi ^2}{72}-\frac{29 \pi ^4}{1080}\Big) T_R-\frac{\zeta (3)}{4}+\frac{41 \pi ^4}{2160}+\frac{31}{64}-\frac{71 \pi ^2}{288}\biggr)+C_F n_f^2 \biggl(\left(\frac{2 \zeta (3)}{9}+\frac{17}{72}-\frac{5 \pi ^2}{81}\right) T_R^2+ &\nonumber\\
+    % &\left(-\frac{13 \zeta (3)}{27}+\frac{193 \pi ^2}{648}-\frac{433}{432}\right) T_R\biggr)+\left(\frac{\pi ^2 \zeta (3)}{6}-\frac{17 \zeta (3)}{8}+\frac{15 \zeta (5)}{2}-\frac{\pi ^4}{20}-\frac{3 \pi ^2}{32}-\frac{29}{64}\right) C_F^3
+\end{flalign}
+
+\begin{dmath}
+    B_3 = C_A \left(C_F n_f \left(\left(\frac{34 \zeta (3)}{27}-\frac{485 \pi ^2}{432}-\frac{\pi ^4}{720}+\frac{3683}{864}\right) T_R+\frac{31 \zeta (3)}{54}+\frac{131 \pi ^4}{4320}+\frac{5261}{1728}-\frac{2657 \pi ^2}{2592}\right)+\left(-\frac{\pi ^2 \zeta (3)}{12}-\frac{89 \zeta (3)}{12}-\frac{15 \zeta (5)}{4}+\frac{287 \pi ^2}{192}-\frac{23}{16}-\frac{17 \pi ^4}{360}\right) C_F^2\right)+\left(\frac{241 \zeta (3)}{108}-\frac{5 \zeta (5)}{4}+\frac{22841 \pi ^2}{5184}-\frac{5951}{432}-\frac{713 \pi ^4}{4320}\right) C_A^2 C_F+C_F^2 n_f \left(\left(\frac{17 \zeta (3)}{6}+\frac{23}{16}-\frac{5 \pi ^2}{72}-\frac{29 \pi ^4}{1080}\right) T_R-\frac{\zeta (3)}{4}+\frac{41 \pi ^4}{2160}+\frac{31}{64}-\frac{71 \pi ^2}{288}\right)+C_F n_f^2 \left(\left(\frac{2 \zeta (3)}{9}+\frac{17}{72}-\frac{5 \pi ^2}{81}\right) T_R^2+\left(-\frac{13 \zeta (3)}{27}+\frac{193 \pi ^2}{648}-\frac{433}{432}\right) T_R\right)+\left(\frac{\pi ^2 \zeta (3)}{6}-\frac{17 \zeta (3)}{8}+\frac{15 \zeta (5)}{2}-\frac{\pi ^4}{20}-\frac{3 \pi ^2}{32}-\frac{29}{64}\right) C_F^3
+\end{dmath}
+
+\begin{flalign}
+&B_4 =  3817.42&
+\end{flalign}
+\endgroup
+
+$A_1,A_2$ and $B_1$ were already known in \cite{CATANI19933} and were obtained from the one and two loop splitting functions.
+$A_3$ and $B_2$ were obtained by comparing \cref{eq:f3} with the equivalent expression in Soft Collinear Effective Theory (SCET) \cite{Monni:2011gb} (Eq(4.17)) by 
+absorbing the jet and soft terms into the $A$ and $B$ term.
+$A_4,A_5$ and $B_3,B_4$ were obtained in a similar fashion but the SCET expressions were gently provided by my co-supervisor Wan-Li.
+
+\end{document}

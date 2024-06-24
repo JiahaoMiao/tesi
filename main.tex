@@ -1,4 +1,4 @@
-\documentclass[10pt,english]{article}
+\documentclass[10pt,english,openany]{book}
 
 \usepackage{style/relazione}
 \usepackage{style/mystyle}
@@ -10,10 +10,10 @@
 \def\myCDL{Corso di Laurea triennale in Fisica}
 
 % TITLE:
-\def\myTitle{Thrust distribution in \lowercase{$e^+e^-$} annihilation} 
+\def\myTitle{Resummation of the Thrust distribution in \lowercase{$e^+e^-$} annihilation} 
 
 % AUTHOR:
-\def\myName{Miao Jiahao}
+\def\myName{Jiahao Miao}
 \def\myMat{Matr. Nr. 936136}
  
 \def\myRefereeA{Giancarlo Ferrera}
@@ -51,69 +51,7 @@ and then consistently combine with the known fixed-order results up to next-to-n
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-\subfile{chapters/Introduzione} 
-
-\subfile{chapters/Resummation}
-
-\subfile{chapters/Strong_Coupling}
-
-\subfile{chapters/f_coeff}
-
-\subfile{chapters/Inverse_transform}
-
-\appendix
-\subfile{Appendix/Appendix}
-
-% bibliography 
-\printbibliography
-
-\end{document}
-\documentclass[12pt,english]{article}
-
-\usepackage{style/relazione}
-\usepackage{style/mystyle}
-
-\addbibresource{bibliography/biblio.bib} % The file containing the bibliography
-
-% BACHELOR DEGREE COURSE
-\def\myCDL{Corso di Laurea triennale in Fisica}
-
-% TITLE:
-\def\myTitle{Thrust distribution in \lowercase{$e^+e^-$} annihilation} 
-
-% AUTHOR:
-\def\myName{Miao Jiahao}
-\def\myMat{Matr. Nr. 936136}
- 
-\def\myRefereeA{Giancarlo Ferrera}
-\def\myRefereeB{Wan-Li Ju}
- 
-% ANNO ACCADEMICO
-\def\myYY{2023-2024}
-
-% This command introduces a list of figures after the table of contents (optional)
-\figurespagetrue
-
-% This command introduces a list of tables after the table of contents (optional)
-\tablespagetrue
-
-
-\begin{document}
-
-% frontispiece with logo, title, author, referee, etc.
-\frontispiece
-
-\beforepreface % romans page numbering, sets pagestyle to plain
-\prefacesection{Abstract} %Abstract
-\begin{abstract}
-    This thesis focuses on the Thrust event-shape distribution in electron-positron annihilation, 
-    a classical precision QCD observable. We focus on the back-to-back region and perform all-order resummation 
-    to address logarithmically enhanced contributions within QCD perturbation theory. Our calculations extend the pioneering work of Catani in this field, 
-    aiming to achieve next-to-next-to-next-to-leading logarithmic (N^3LL) accuracy and then consistently combine with the known fixed-order results up to next-to-next-to-leading order
-    (NNLO). Almost all the calculations are done analytically using the software Mathematica.
-\end{abstract} 
-\afterpreface % table of contents, tables and figures, page numbering arabic
-
+\allowdisplaybreaks % To allow page breaks in the middle of equations
 
 \subfile{chapters/Introduzione} 
 
@@ -128,8 +66,9 @@ and then consistently combine with the known fixed-order results up to next-to-n
 \subfile{chapters/Inverse_transform}
 
 \appendix
-\subfile{Appendix/Appendix}
 
+\subfile{Appendix/Appendix}
+\subfile{Appendix/Ingredients}
 % bibliography 
 \printbibliography
 

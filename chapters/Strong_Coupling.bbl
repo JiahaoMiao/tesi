@@ -1,0 +1,86 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{Herzog_2017}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=b2d577e3ed5fd1d034fa641717177019}{%
+           family={Herzog},
+           familyi={H\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=a7a2683d068d228199b0a4441f64d4a1}{%
+           family={Ruijl},
+           familyi={R\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=5ae695b25c82328ae53a75f171b7e1e8}{%
+           family={Ueda},
+           familyi={U\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=111cbf8aabf5139ae686c23509173473}{%
+           family={Vermaseren},
+           familyi={V\bibinitperiod},
+           given={J.\bibnamedelimi A.\bibnamedelimi M.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=b1eebc0e63dd53478f4ee5acb35d3f94}{%
+           family={Vogt},
+           familyi={V\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Springer Science}%
+        {Business Media LLC}%
+      }
+      \strng{namehash}{1ba3506594c33a75d25fcf81aac71ad1}
+      \strng{fullhash}{12cc2a88fb335e4a77b3c1db36384f57}
+      \strng{fullhashraw}{12cc2a88fb335e4a77b3c1db36384f57}
+      \strng{bibnamehash}{1ba3506594c33a75d25fcf81aac71ad1}
+      \strng{authorbibnamehash}{1ba3506594c33a75d25fcf81aac71ad1}
+      \strng{authornamehash}{1ba3506594c33a75d25fcf81aac71ad1}
+      \strng{authorfullhash}{12cc2a88fb335e4a77b3c1db36384f57}
+      \strng{authorfullhashraw}{12cc2a88fb335e4a77b3c1db36384f57}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1029-8479}
+      \field{journaltitle}{Journal of High Energy Physics}
+      \field{month}{2}
+      \field{number}{2}
+      \field{title}{The five-loop beta function of Yang-Mills theory with fermions}
+      \field{volume}{2017}
+      \field{year}{2017}
+      \verb{doi}
+      \verb 10.1007/jhep02(2017)090
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1007/JHEP02(2017)090
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/JHEP02(2017)090
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

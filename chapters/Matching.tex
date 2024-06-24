@@ -1,0 +1,29 @@
+\makeatletter % Use \makeatletter to make '@' a letter
+\def\input@path{{../}} % Define input path to parent directory
+\makeatother % Restore default category code of '@'
+
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Matching of resummation to fixed-order calculations}\label{sec:Matching}
+
+Having obtained a resummed expression such as \cref{eq:RT resummed} for the shape cross sections at small values
+of $\tau$, one can now match the resummed expression to the fixed-order calculations at large values of $\tau$
+using the log(R)-mathing scheme \cite{CATANI19933}. The results presented in the previous sections allow us to 
+compare the predictions at N$^3$LL accuracy with the fixed-order calculations at NNLO.
+
+In the log(R)-matching scheme, at N$^3$LL+NNLO accuracy the matching procedure is given by
+
+\begin{equation}\label{eq:matching}
+    \begin{split}
+        \log(R(\tau,Q)) &= L g_1(\lambda)+ g_2(\lambda)+ \alpha_s g_3(\lambda)+\alpha_s^2 g_4(\lambda)\\
+        &+ \bar{\alpha_s} \qty( A(\tau) - G_{11}L- G_{12}L^2 - C_1) \\
+        &+ \bar{\alpha_s}^2 \qty( B(\tau)-  ) \\
+        &+ \bar{\alpha_s}^3 \qty( C(\tau)- R_{\text{log}}^{(3)}(\tau) )
+    \end{split}
+\end{equation}
+
+
+
+\end{document}
