@@ -154,15 +154,12 @@ Substituting the above relations in the previous equation, we obtain the equival
 Now by setting $N=N_0$ or applying $\pdv{\log N}$ one obtains respectively the functions $\tilde{C}$ and  $\tilde{B}$ as functions of $A$ and $B$:
 
 \begin{equation}\label{eq:appendix:Ctilde}
-    \begin{split}
-    \tilde{C}(\alpha_s) &= \exp{-\Gamma_2(\partial_{\alpha_s}) \qty[A(\alpha_s)-\frac{1}{2} B(\alpha_s)]}\\
-    &- 2 \Gamma\qty(2\partial_{\alpha_s}) A(\alpha_s(\frac{N_0^2}{N^2}Q^2)) 
-    \end{split}
+    \tilde{C}(\alpha_s) = \exp{-\Gamma_2(\partial_{\alpha_s}) \qty[A(\alpha_s)-\frac{1}{2} \partial_{\alpha_s}B(\alpha_s)]- 2 \Gamma\qty(2\partial_{\alpha_s}) A(\alpha_s)}\biggr\rvert_{\alpha_s=\alpha_s\qty(Q^2)} 
 \end{equation}
 \begin{equation}\label{eq:appendix:Btilde}
     \begin{split}
-    \frac{\tilde{B}(\alpha_s)}{2} &= \frac{B(\alpha_s)}{2} + \partial_{\alpha_s} \qty{\Gamma_2(\partial_{\alpha_s}) \qty[A(\alpha_s)-\frac{1}{2} \partial_{\alpha_s}B(\alpha_s)]} \\
-    &- 4 \partial_{\alpha_s} \qty{\Gamma_s\qty(2\partial_{\alpha_s}) A(\alpha_s(\frac{N_0^2}{N^2}Q^2))} 
+    \frac{\tilde{B}(\alpha_s)}{2} &= \frac{B(\alpha_s)}{2} + \partial_{\alpha_s} \qty{\Gamma_2(\partial_{\alpha_s}) \qty[A(\alpha_s)-\frac{1}{2} \partial_{\alpha_s}B(\alpha_s)]} \biggr \rvert_{\alpha_s = \alpha_s\qty(\frac{N_0}{N}Q^2)}\\
+    &- 4 \partial_{\alpha_s} \qty{\Gamma_s\qty(2\partial_{\alpha_s}) A(\alpha_s)}\biggr\rvert_{\alpha_s=\alpha_s\qty(\frac{N_0^2}{N^2}Q^2)} 
 \end{split}
 \end{equation}
 
@@ -185,7 +182,7 @@ in \cref{eq:appendix:Btilde} and \cref{eq:appendix:Ctilde}, we can obtain the co
 
 \begin{align}
     \begin{split}
-    \log \tilde{C}\qty(\alpha_s(mu^2), \frac{\mu^2}{Q^2}) &= \frac{A_1}{\pi } (-\zeta (2)-1) \alpha_s + \biggl(\frac{-2 A_2 \zeta (2)-2 A_2+\pi  b_0 B_1}{2 \pi ^2}\\
+    \log \tilde{C}\qty(\alpha_s(\mu^2), \frac{\mu^2}{Q^2}) &= \frac{A_1}{\pi } (-\zeta (2)-1) \alpha_s + \biggl(\frac{-2 A_2 \zeta (2)-2 A_2+\pi  b_0 B_1}{2 \pi ^2}\\
     &+\frac{A_1 b_0 \left(3 \zeta (2) \log \left(\frac{\mu ^2}{Q^2}\right)+3 \log \left(\frac{\mu ^2}{Q^2}\right) -4 \zeta (3)\right)}{3 \pi }\biggr)\alpha_s^2\\
     &+\biggl(\frac{A_1}{3 \pi } \Bigl(-27 b_0^2 \zeta (4)-3 b_0^2 \zeta (2) \log ^2\left(\frac{\mu ^2}{Q^2}\right)-3 b_0^2 \log ^2\left(\frac{\mu ^2}{Q^2}\right)\\
     &+8 b_0^2 \zeta (3) \log \left(\frac{\mu ^2}{Q^2}\right)+3 b_1 \zeta (2) \log \left(\frac{\mu ^2}{Q^2}\right)+3 b_1 \log \left(\frac{\mu ^2}{Q^2}\right)\\

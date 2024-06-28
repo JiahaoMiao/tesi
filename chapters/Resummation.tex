@@ -10,13 +10,13 @@
 
 \section{Soft-gluon effects in QCD cross sections} \label{sec:Soft_gluon_effects}
 
-Soft-gluon effects and the soft-gluon exponentiation are reviewed in \cite{Catani_1997} and \cite{catani1997softgluon}, here i summarize the physical 
+Soft-gluon effects and the soft-gluon exponentiation are reviewed in \cite{Catani_1997} and \cite{catani1997softgluon}, here I summarize the physical 
 motivation and main idea of the resummation of soft gluon effects in QCD.
 
 The finite energy resolution inherent in any particle detector implies that the physical cross sections, 
 those experimentally measured, inherently incorporate all contributions from arbitrarily soft particles 
 produced in the final state. In other words, because we lack the ability to precisely resolve the energy 
-of soft particles, we are unable to distinguish between their presence or absence in our calculations \cref{fig:NLO virtual corrections}. 
+of soft particles, we are unable to distinguish between their presence or absence in our calculations (see \cref{fig:NLO virtual corrections}). 
 Consequently, we must account for the sum over all possible final states.
 
 \begin{figure}[h]
@@ -92,27 +92,27 @@ These logarithmically enhanced terms in \cref{eq:log_enhanced_terms} are certain
 In these cases, the theoretical predictions can be improved by evaluating soft gluon 
 contributions to high orders and possibly resumming to all of them in $\alpha_s$ \cite{CATANI1991491,Monni:2011gb}.
 
-Resummation of large logarithms in event shape distributions was described by CTTW \cite{CATANI19933}. 
+Certainly! Here's a revised version with improved English and coherence:
+
+The resummation of large logarithms in event shape distributions was described by Catani, Trentadue, Turnock, and Webber (CTTW) \cite{CATANI19933}.
 
 The physical basis for all-order resummation of soft-gluon contributions to QCD cross sections are dynamics and kinmatics factorizations. The first factorization follows from 
 gauge invariance and unitarity while the second factorization is strongly depends on the observable to be computed.
 
 In the appropriate soft limit, if the phase-space for this observable can be written in a factorized way, then resummation is feasible in the form of a generalized exponentiation \cite{Sterman:1986aj}.
-However even when phase-space factorization is achievable, it does
-not always occur in the space where the physical observable $x$ is defined.
-Usually, it is necessary to introduce a conjugate space to overcome phase-space constraints.
-A typical example is the energy-conservation constraint that can be factorized by working in
-$N$-moment space, $N$ being the variable conjugate to the energy $x$ via a Mellin (or Laplace)
-transformation.
+However even when phase-space factorization is achievable, it does not always occur in the space where the physical observable $x$ is defined.
+
+Thrust is a good example of this situation, in fact, the thrust distribution admits a factorization in Laplace space, 
+where the observable is the Laplace transform of the thrust distribution. 
 
 
 \section{CTTW convention}\label{sec:CTTW convention}
 
 According to general theorems \cite{Block:1937},\cite{Kinoshita:1962ur},\cite{Lee:1964is}, 
-the cumulant cross section \cref{eq:cross_section} $R(\tau)$ has a power series expansion in $\alpha_s(Q^2)$ of the form:
+the cumulant cross section $R_T(\tau)$ \cref{eq:cumulative_distribution} has a power series expansion in $\alpha_s(Q^2)$ of the form:
 
 \begin{equation}\label{eq:cumulant_expansion}
-    R(\tau) =  C\qty(\alpha_s\qty(Q^2))\Sigma\qty(\tau,\alpha_s\qty(Q^2))+F\qty(\tau,\alpha_s\qty(Q^2))
+    R_T(\tau) =  C\qty(\alpha_s\qty(Q^2))\Sigma\qty(\tau,\alpha_s\qty(Q^2)) + D\qty(\tau,\alpha_s\qty(Q^2))
 \end{equation}
 
 where 
@@ -123,16 +123,17 @@ where
     D(\tau,\alpha_s) &= \sum_{n=1}^{\infty} \bar{\alpha_s}^n D_n(\tau)
 \end{align}
 
-Here $C_n$ and $G_{nm}$ are constants and $\bar{\alpha_s} = \frac{\alpha_s}{2\pi}$, while $D_n(\tau)$ are perturbatively computable functions that vanish at small $\tau$.
+Here $C_n$ and $G_{nm}$ are constants and $\bar{\alpha_s} = \frac{\alpha_s}{2\pi}$, while $D_n(\tau)$ 
+is the non-singular part of the fixed-order expansion of $R_T(\tau)$ \cref{eq:Fixed_order_R}.
 
 Thus at small $\tau$ (large thrust) it becomes morst important to resum the series of large logarithms in $\Sigma\qty(\tau,\alpha_s)$.
 These are normally classified as \emph{leading} logarithms when $n < m \le 2n$, \emph{next-to-leading} when $m = n$ 
 and \emph{subdominant} logarithms when $m < n$. 
 
-The cumulant cross section $R(\tau)$ can be written in general as:
+The cumulant cross section $R(\tau)$, in general, also takes the form (without the $D(\tau,\alpha_s)$ term):
 
 \begin{equation}\label{eq:resummed_R}
-    R(\tau) = \qty(1 + \sum_{n=1}^{\infty} C_n \bar{\alpha_s}^n)\exp[L g_1(\lambda)  + g_2(\lambda) + g_3(\lambda) \alpha_s + g_4(\lambda) \alpha_s^2 + g_5(\lambda) \alpha_s^3 + \order{\alpha_s^4}]
+    R_T(\tau) = \qty(1 + \sum_{n=1}^{\infty} C_n \bar{\alpha_s}^n)\exp[L g_1(\lambda)  + g_2(\lambda) + g_3(\lambda) \alpha_s + g_4(\lambda) \alpha_s^2 + g_5(\lambda) \alpha_s^3 + \order{\alpha_s^4}]
 \end{equation}
 
 where $L = \ln \frac{1}{\tau}$ and $\lambda = \alpha_s b_0 L$. The function $g_1$ encodes all the leading logarithms, the function $g_2$
@@ -144,7 +145,7 @@ fixed-order prediction become important. To achieve a reliable description of th
 over a broader kinematical range the two expressions \cref{eq:Fixed_order_R} and \cref{eq:cumulant_expansion} can be matched,
 taking care of double counting of logarithms appearing in both expressions.
 
-Expanding \cref{eq:resummed_R} in powers of $\alpha_s$ we have:
+Expanding \cref{eq:cumulant_expansion} in powers of $\alpha_s$ we have:
 
 \begin{equation}
     R(\tau) = 1 + R^{(1)}(\tau) \bar{\alpha_s} + R^{(2)}(\tau)\bar{\alpha_s}^2 + R^{(3)}(\tau)\bar{\alpha_s}^3+ \dots
@@ -154,24 +155,24 @@ where
 
 \begin{equation}
     \begin{split}
-        R^{(1)}(\tau) &= C_1  + G_{12} \log ^2(\tau )+G_{11} \log (\tau ) \\
+        R^{(1)}(\tau) &= C_1  + G_{12} \log ^2(\tau )+G_{11} \log (\tau ) + D_1(\tau)\\
         R^{(2)}(\tau) & = C_2 +\frac{1}{2} G_{12}^2 \log ^4(\tau ) +\left(G_{11} G_{12}+G_{23}\right) \log ^3(\tau )\\
         &+\log ^2(\tau ) \Bigl(C_1 G_{12}+\frac{G_{11}^2}{2}+G_{22}\Bigr)+\log (\tau ) \Bigl(C_1 G_{11}+G_{21}\Bigr)\\
+        &+ D_2(\tau)\\
         R^{(3)}(\tau) &= C_3 +\frac{1}{6} G_{12}^3 \log ^6(\tau )+\left(\frac{1}{2} G_{11} G_{12}^2+G_{23} G_{12}\right) \log ^5(\tau ) \\
         &+ \log ^4(\tau ) \left(\frac{1}{2} C_1 G_{12}^2+\frac{1}{2} G_{12} G_{11}^2+G_{23} G_{11}+G_{12} G_{22}+G_{34}\right)\\
         &+\log ^3(\tau ) \left(C_1 G_{12} G_{11}+C_1 G_{23}+\frac{G_{11}^3}{6}+G_{22} G_{11}+G_{12} G_{21}+G_{33}\right)\\
         &+\log ^2(\tau ) \left(\frac{1}{2} C_1 G_{11}^2+C_2 G_{12}+C_1 G_{22}+G_{21} G_{11}+G_{32}\right)\\
-        &+\log (\tau ) \left(C_2 G_{11}+C_1 G_{21}+G_{31}\right)
+        &+\log (\tau ) \left(C_2 G_{11}+C_1 G_{21}+G_{31}\right) + D_3(\tau)
     \end{split}
 \end{equation}
 
-Observe that written in this form, Fixed-order perturbation theory \cref{eq:Fixed_order} calculates the cross sections row by row, order by order in $\alpha_s$,
+Observe that written in this form, Fixed-order perturbation theory \cref{eq:Fixed_order} calculates the cross sections row by row (each $R^{(n)}$ is a row), order by order in $\alpha_s$,
 while the resummation approach calculates the cross section column by column, and this is achieved by knowing the resummation
-coefficients $g_i$. In fact by expanding $\log\frac{1}{\tau} g_1(\lambda)$ in $\alpha_s$ we get all the coefficients $G_{n\space n+1}$, expanding
+coefficients $g_i$ in \cref{eq:resummed_R}. In fact by expanding $\log\frac{1}{\tau} g_1(\lambda)$ in $\alpha_s$ we get all the coefficients $G_{n\space n+1}$, expanding
 $g_2(\lambda)$ yields the coefficients $G_{n\space n}$, expading $g_2 \alpha_s$ yields $G_{n \space n-1}$ and so on.
 
-The difference between the logarithmic part and the full fixed-order series at different orders
-is given by $D(\tau,\alpha_s)$ above:
+The difference between the logarithmic part and the full fixed-order series at different orders is given by $D(\tau,\alpha_s)$ above:
 
 \begin{equation}
     \begin{split}
@@ -184,8 +185,8 @@ is given by $D(\tau,\alpha_s)$ above:
 It contain the non-logarithmic part of the fixed-order contribution and vanish for $\tau \to 0$.
 
 However, in order to calculate the resummation coefficients $g_i(\lambda)$, whose expansion in $\alpha_s$ yields the $G_{nm}$ coefficients,  we need to perform an inverse transformation from Laplace space to real space.
-This necessity arises because the factorization is carried out in Laplace space. As demonstrated in \cite{CATANI19933}, this problem can be reformulated as an integral equation in Laplace space \cref{eq:master_formula}, 
-whose solution directly provides the exponent function.
+This necessity arises because the factorization is carried out in Laplace space. As demonstrated in \cite{CATANI19933}, the problem of resummation
+can be recast in the form of an integral equation in Laplace space \cref{eq:master_formula},  whose solution directly provides the exponent function.
 
 \begin{equation}\label{eq:master formula}
     \ln \tilde{J}_\nu^q(Q^2) = \int_0^1 \frac{\dd u}{u} \qty(e^{-u \nu Q^2}-1)\qty[ \int_{u^2 Q^2}^{u Q^2} \frac{1}{q^2} A\qty(\alpha_s(q^2)) \dd q^2 + \frac{1}{2} B\qty(\alpha_s(u Q^2))]
@@ -193,10 +194,10 @@ whose solution directly provides the exponent function.
 
 where $\tilde{J}_\nu^q(Q^2)$ is the Laplace transform of the quark jet mass distribution, a quantity related to the thrust distribution.
 
-We'll see explicitly in the next chapter \cref{ch:calculations} that resolving the above integral gives:
+We'll see explicitly in the next chapter \cref{ch:calculations} that resolving the above integral gives the exponent:
 
-\begin{equation}
-    \var{F}(\alpha_s,\ln N) = L f_1(\lambda)  + f_2(\lambda) + f_3(\lambda) \alpha_s + f_4(\lambda) \alpha_s^2 + f_5(\lambda) \alpha_s^3 + \order{\alpha_s^4}
+\begin{equation}\label{eq:exponent F}
+    \mathcal{F}(\alpha_s,\ln N) = L f_1(\lambda)  + f_2(\lambda) + f_3(\lambda) \alpha_s + f_4(\lambda) \alpha_s^2 + f_5(\lambda) \alpha_s^3 + \order{\alpha_s^4}
 \end{equation}
 
 where $L = \ln N = \ln(\nu Q^2)$ and $\lambda = \alpha_s b_0 L$.
@@ -206,10 +207,11 @@ We require the functions $f_i(\lambda)$ to be omogeneous,\emph{i.e} $f_i(0)=0$, 
     f_{n+1}(\lambda) = \sum_{k \ge n} \tilde{G}_{k,k+1-n} \alpha_s^k L^{k+1-n}
 \end{equation}
 
-this requirement is automatically satisfied if we choose as variable $L = \ln(\frac{N}{N_0})$ where $N_0 = e^{-\gamma_E}$, $\gamma_E = 0.5772 \dots $ being the Euler-Mascheroni constant.
-With the latter choice the terms proportional to $\gamma_E$ and its powers disappear. The advantage of the variable N is that the total rate is directly reproduced by setting $N=1$, while
-in the variable $n=N/N_0$ it is given $f_{n=1/N_0}$. These two choices differ only by terms of higher order in $\gamma_E$.
-It's cleaner to use the variable $n=N/N_0$, but in literature the variable $N$ is more common and in order to compare with other results we'll use the variable $N$.
+this requirement is automatically satisfied if we choose as variable $L = \ln(\frac{N}{N_0})$ where $N_0 = e^{-\gamma}$, $\gamma = 0.5772 \dots $ being the Euler-Mascheroni constant.
+With the latter choice the terms proportional to $\gamma$ and its powers disappear. The advantage of the variable N is that the total rate is directly reproduced by setting $N=1$, while
+in the variable $n=N/N_0$ it's wheb $N=N_0$. These two choices differ only by terms of higher order in $\gamma$.
+It's cleaner to use the variable $n=N/N_0$, but in literature the variable $N$ is more common and in order to compare with other results we'll use the variable $N$,
+but we can recover the results in the variable $n$ by setting $\gamma = 0$.
 
 In the presentation of CTTW, N$^k$LL accuracy means how many terms in the exponent of \cref{eq:resummed_R} are known.
 

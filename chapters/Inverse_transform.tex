@@ -8,7 +8,7 @@
 
 \section{Inversion of the Laplace transform}
 
-In order to find the quark jet mass distribution $J^q(Q^2,k^2)$,we have to perform the inverse Laplace transform via 
+In order to find the quark jet mass distribution $J^q(Q^2,k^2)$ or $R_T(\tau)$, we have to perform the inverse Laplace transform via 
 the Mellin's inversion formula (or the Bromwich integral) given by the line integral: 
 
 \begin{equation} \label{eq:inverse_laplace}
@@ -18,9 +18,8 @@ the Mellin's inversion formula (or the Bromwich integral) given by the line inte
 where C is a real number such that C is at the right of all singularities of the integrand in the complex plane and
 the function $\tilde{J}^q_\nu(Q^2)$ has to be bounded on the line.
 
-Instead of directly considering the expression in \cref{eq:inverse_laplace}, it was pointed \\
-in \cite{CATANI19933} that it is more convenient to work with the mass fraction $R^q(w)$, 
-which gives the fraction of jets with masses less than $wQ^2$:
+Instead of working with the differential quark jet mass distribution $J^q$, it more convenient to deal with
+the mass fraction $R^q(w)$, which gives the fraction of jets with masses less than $wQ^2$ (cumulant distribution):
 
 \begin{equation}\label{eq:jet mass fraction}
     R^q(w) = \int_0^\infty J^q(Q^2,k^2)\Theta(wQ^2-k^2) \dd k^2
@@ -43,7 +42,7 @@ we recognize the Laplace transform of the quark jet mass distribution \cref{eq:l
     \end{split}
 \end{align}
 
-where $N=\nu Q^2$ and $\mathcal{F}$ has the logarithms expansion
+where $N=\nu Q^2$ and $\mathcal{F}$ has the logarithms expansion:
 
 \begin{align}
     \begin{split}
@@ -67,38 +66,38 @@ the original function $\mathcal{F}$ w.r.t $\ln N$ around $\ln N = \ln \frac{1}{w
 where the integral is intended as before, along the line $C$ to the right of all singularities of the integrand, and 
 
 \begin{equation}
-    \mathcal{F}^{(n)}(\alpha_s,L) = \pdv[n]{\mathcal{F}(\alpha_s,\ln u + L )}{\ln u} \eval_{\ln u = 0}
+    \mathcal{F}^{(n)}(\alpha_s,L) = \pdv[n]{\mathcal{F}(\alpha_s,\ln u + L )}{(\ln u)} \eval_{\ln u = 0}
 \end{equation}
 
 The $n$-th derivative of $\mathcal{F}$ w.r.t $\ln u$ evaluated at $\ln u = 0$ is 
 at most of logarithmic order $\alpha_s^{n+k-1}L^k$ \cite{CATANI19933}, so in order to achieve $\text{N}^4\text{LL}$ accuracy we need to compute the first four derivatives of $\mathcal{F}$ w.r.t $\ln u$ and 
 neglect the terms of order $\order{\alpha_s^4}$ that appear in the derivation. We obtain the following expressions: 
 
-\begin{align}
+\begin{flalign}
     \begin{split} \label{eq:derivative F1}
         \mathcal{F}^{(1)}(\alpha_s,L) &= f_1(\lambda )+\lambda  f_1'(\lambda )+\alpha_s b_0 f_2'(\lambda )+\alpha_s^2 b_0 f_3'(\lambda )+\alpha_s^3 b_0 f_4'(\lambda )\\
         &+ \order{\alpha_s^n L^{n-3}}
     \end{split}
-\end{align}
+\end{flalign}
 
-\begin{align}
+\begin{flalign}
     \begin{split}\label{eq:derivative F2}
         \mathcal{F}^{(2)}(\alpha_s,L) &= 2 \alpha_s b_0 f_1'(\lambda ) + \alpha_s b_0 \lambda  f_1''(\lambda )+\alpha_s^2 b_0^2 f_2''(\lambda )+ \alpha_s^3 b_0^2 f_3''(\lambda )\\
         &+ \order{\alpha_s^n L^{n-3}}
     \end{split}
-\end{align}
+\end{flalign}
 
-\begin{align}
+\begin{flalign}
     \begin{split}\label{eq:derivative F3}
         \mathcal{F}^{(3)}(\alpha_s,L) &=  3 \alpha_s^2 b_0^2 f_1''(\lambda )+\alpha_s^2 b_0^2 \lambda  f_1^{(3)}(\lambda )+\alpha_s^3 b_0^3 f_2^{(3)}(\lambda )+ \order{\alpha_s^n L^{n-3}}
     \end{split}
-\end{align}
+\end{flalign}
 
-\begin{align}
+\begin{flalign}
     \begin{split}\label{eq:derivative F4}
         \mathcal{F}^{(4)}(\alpha_s,L) &= 4 \alpha_s^3 b_0^3 f_1^{(3)}(\lambda ) +\alpha_s^3 b_0^3 \lambda  f_1^{(4)}(\lambda )+ \order{\alpha_s^n L^{n-3}}
     \end{split}
-\end{align}
+\end{flalign}
 
 Here $\lambda = \alpha_s b_0 L$ and derivative w.r.t $\ln u$ and then evaluated at $\ln u = 0$, or equivalently derivative w.r.t $L$ gives the same result.
 
@@ -133,9 +132,16 @@ The reciprocal of the Euler $\Gamma$-function is an entire function, meaning tha
 The above integral \cref{eq:magic_integral} can be evaluated by differentiating with respect to $\gamma$ $k$ times, and it is straightforward to see that each time i derive inside the integral
 i will get a factor of $\ln u$. Interchaning the order of derivation and integration is justified by the fact that the integral:
 \begin{itemize}
-    \item  is a contour integral whose contour doesn't depent on $\gamma$, and the function is holomorphic in the complex plane for each value of $\gamma \in [-4,0]$
+    \item  is a contour integral whose contour doesn't depent on $\gamma$, and the function is holomorphic in the complex plane for each value of $\gamma \in [-4,0] \cref{fig:gamma_lambda}$
     \item  is dominated by the exponential factor $e^{u - (1-\gamma) \ln u}$ as long as $\Re{u}>0$
 \end{itemize}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/gamma_lambda.png}
+    \caption{Plot of $\gamma(\lambda)$ in the range of interest $0<\lambda<\frac{1}{2}$}
+    \label{fig:gamma_lambda}
+\end{figure}
 
 \begin{align}
     \begin{split}\label{eq:Rw quasi final expansion}
@@ -187,13 +193,13 @@ and reorganize as a power series of $\alpha_s$:
 \end{align}
 
 By comparing \cref{eq:Thrust fraction} and \cref{eq:Rw mass fraction} we see that to obtain the Thrust cross section, we simply multiply by 2 all the $f_i$  \cref{eq:f1,eq:f2,eq:f3,eq:f4,eq:f5} 
-obtained in the previous section. Following the convention of \cite{CATANI19933}, the final resummed expression $R_T(\tau)$ can be written as one exponential \cref{eq:RT resummed}, 
+obtained in the previous section. The final resummed expression $R_T(\tau)$ can be written as one exponential \cref{eq:resummed_R}, 
 
-\begin{equation}\label{eq:RT resummed}
-    R_T(\tau) = \exp{L g_1(\lambda) + g_2(\lambda) + \alpha_s g_3(\lambda) + \alpha_s^2 g_4(\lambda) + \alpha_s^3 g_5(\lambda) + \order{\alpha_s^4}}
+\begin{equation}
+    R_T(\tau) = \qty(1 + \sum_{n=1}^{\infty} C_n \bar{\alpha_s}^n)\exp[L g_1(\lambda)  + g_2(\lambda) + g_3(\lambda) \alpha_s + g_4(\lambda) \alpha_s^2 + g_5(\lambda) \alpha_s^3 + \order{\alpha_s^4}]
 \end{equation}
 
-to do so we observe that $\frac{1}{\Gamma(1-\gamma)}= \exp{-\ln(\Gamma(1-\gamma))}$ corrects $f_2$, while the expression in parenthesis starting with 1 can be seen 
+to do so we observe that $\frac{1}{\Gamma(1-\gamma)}= \exp{-\ln(\Gamma(1-\gamma))}$ corrects $f_2$, while the expression in square parenthesis in \cref{eq:Rw final expansion} can be seen 
 as the expansion of an exponential for $\alpha_s \to 0$ : 
 
 \begin{equation}
@@ -206,12 +212,12 @@ as the expansion of an exponential for $\alpha_s \to 0$ :
 to obtain $g_3(\lambda)$, $g_4(\lambda)$ and $g_5(\lambda)$ we match \cref{eq:Rw final expansion} with \cref{eq:expansion exponential} and obtain the following expressions:
 
 \begin{align}
-    & g_1(\lambda) = f_1(\lambda) \\
-    & g_2(\lambda) = f_2(\lambda) -  \ln \Gamma(1- f_1(\lambda)- \lambda f_1'(\lambda))\\
-    & g_3(\lambda) = f_3(\lambda) +   \Bigl( \psi_0(1-\gamma) f_2'(\lambda )  + \frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma)\bigl( \lambda  f_1''(\lambda ) +2  f_1'(\lambda )\bigr)\Bigr)
+    & g_1(\lambda) = f_1(\lambda) \label{eq:g1}\\
+    & g_2(\lambda) = f_2(\lambda) -  \ln \Gamma(1- f_1(\lambda)- \lambda f_1'(\lambda)) \label{eq:g2}\\
+    & g_3(\lambda) = f_3(\lambda) +   \Bigl( \psi_0(1-\gamma) f_2'(\lambda )  + \frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma)\bigl( \lambda  f_1''(\lambda ) +2  f_1'(\lambda )\bigr)\Bigr) \label{eq:g3}
 \end{align}
 
-\begin{align}
+\begin{align}\label{eq:g4}
     \begin{split}
         g_4(\lambda) &=  f_4(\lambda) +  \Bigl(\frac{1}{8} (\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)(1-\gamma) \bigl(b_0^2 \lambda ^2 f_1''(\lambda )^2\\
         &+4 b_0^2 f_1'(\lambda )^2 +4 b_0^2 \lambda  f_1'(\lambda ) f_1''(\lambda )\bigr)+\frac{1}{6} (\psi_0^3 -3 \psi_0\psi_1+\psi_2)(1-\gamma) \bigl(b_0^2 \lambda  f_1^{(3)}(\lambda )\\
@@ -220,7 +226,7 @@ to obtain $g_3(\lambda)$, $g_4(\lambda)$ and $g_5(\lambda)$ we match \cref{eq:Rw
     \end{split}
 \end{align}
 
-\begin{align}
+\begin{align}\label{eq:g5}
     \begin{split}
         g_5(\lambda) &=  f_5(\lambda) +  \Bigl(\frac{1}{24} (\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)(1-\gamma) \\
         &\bigl(b_0^3 \lambda  f_1^{(4)}(\lambda ) +4 b_0^3 \lambda  f_1^{(3)}(\lambda ) f_2'(\lambda ) + 4 b_0^3 f_1^{(3)}(\lambda )+6 b_0^3 \lambda  f_1''(\lambda ) f_2''(\lambda ) \\
@@ -230,5 +236,20 @@ to obtain $g_3(\lambda)$, $g_4(\lambda)$ and $g_5(\lambda)$ we match \cref{eq:Rw
         &+ b_0 \psi_0(1-\gamma) f_4'(\lambda ) \Bigr)
     \end{split}
 \end{align}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/Thrust_differential_distribution.png}
+    \caption{Log Plot of \cref{eq:resummed_R} for different logarithmic accuracy orders, with fixed scale $\alpha_s = 0.118$. 
+    The plot also shows experimental data from Opal Experiment at LEP.}
+    \label{fig:Thrust distribution with data}
+\end{figure}
+
+Observe in \cref{fig:Thrust distribution with data}, the peak of the distribution gets near the experimental data peak as we increase the logarithmic accuracy order,
+this is expected since the resummation of the logarithms is supposed to improve the accuracy of the prediction.
+However, the peak also becomes lower while the tail of the distribution becomes higher, this means that if we set the value of the coupling to be $\alpha_s=0.118$, there's 
+too much radiation. To fix this, we would need to decrease the value of the coupling, which then would lead us to extract a lower value of $\alpha_s$ with respect to the world average. 
+
+
 
 \end{document}

@@ -17,48 +17,44 @@ for a final state configuration corresponding to a large value of thrust , \cref
     \tau = 1-T \approx \frac{k_1^2+k_2^2}{Q^2}
 \end{equation}
 
-where $k_1^2$ and $k_2^2$ are the invariant masses squared of two back-to-back jets and $Q^2$ is the energy of the center of mass.
-Thus the key to the evaluation of the thrust distributions is its relation to the quark jet mass distribution $J^q(Q^2,k^2)\stackrel{\text{def}}{=}J^q_{k^2}(Q^2)$ which denotes
-the probability of jet invariant mass-squared $k^2$ at scale $Q^2$, then the thrust fraction 
+where $k_1^2$ and $k_2^2$ are the squared invariant masses of two back-to-back jets and $Q^2$ is the energy of the center of mass.
+Thus the key to the evaluation of the thrust distributions is its relation to the quark jet mass distribution $J^q(Q^2,k^2)$, also denoted as $J^q_{k^2}(Q^2)$, which represents
+the probability of finding a jet originating from quarks, with an invariant mass-squared $k^2$, produced in collisions with a center-of-mass energy $Q^2$.
 
-\begin{equation}
-    R_T(\tau,\alpha_s(Q^2)) = \frac{\sigma(\tau,Q^2)}{\sigma_t} = \frac{1}{\sigma_t} 
-    \int_0^1 \dv{\sigma(\tau',Q^2)}{\tau'} \Theta \qty(\tau - \tau') \dd \tau'
-\end{equation}
-
+Then the thrust distribution $R_T(\tau,\alpha_s(Q^2))$ \cref{eq:cumulative_distribution}
 takes the form of a convolution of two jet mass distributions $J(Q^2,k_1^2)$ and $J(Q^2,k_2^2)$
 
 \begin{equation}\label{eq:Thrust fraction convolution}
     R_T(\tau,\alpha_s(Q^2)) \underset{\tau \ll 1}{=} \int_0^\infty \dd k_1^2 \int_0^\infty  \dd k_2^2 J^q_{k_1^2}(Q^2) J^q_{k_2^2}(Q^2) \Theta\qty(\tau - \frac{k_1^2+k_2^2}{Q^2}) 
 \end{equation}
 
-Introducing the Laplace transform of the jet mass distribution
+Introducing the Laplace transform of the jet mass distribution:
 
 \begin{equation}\label{eq:laplace_jet_mass}
-    \tilde{J}^q_\nu(Q^2) = \int_0^\infty J^q(Q^2,k^2) e^{-\nu k^2} \dd k^2 
+    \Tilde{J}^q_\nu(Q^2) = \int_0^\infty J^q(Q^2,k^2) e^{-\nu k^2} \dd k^2 
 \end{equation}
 
-and using the integral representation of the Heaviside step function
+and using the integral representation of the Heaviside step function:
 
 \begin{equation} \label{eq:heaviside_integral_representation}
     \Theta\qty(\tau - \frac{k_1^2+k_2^2}{Q^2}) = \frac{1}{2\pi i} \int_{C-i\infty}^{C+i\infty} \frac{\dd N}{N} e^{N \tau} e^{- N \frac{k_2^2+k_2^2}{Q^2}} 
 \end{equation}
 
-by substituting \cref{eq:heaviside_integral_representation} into \cref{eq:Thrust fraction convolution} and setting $N= \nu Q^2$:
+by substituting \cref{eq:heaviside_integral_representation} into \cref{eq:Thrust fraction convolution} and setting $N= \nu Q^2$ we obtain:
 
 \begin{align}
     \begin{split} \label{eq:Thrust fraction}
     R_T(\tau) &= \int_{C - i \infty}^{C + i\infty} \frac{\dd N}{N} \frac{e^{N \tau}}{2\pi i} \qty[\int_0^\infty \dd k_1^2 e^{-\nu k_1^2} J^q_{k_1^2}(Q^2) ] \qty[\int_0^\infty \dd k_2^2 e^{-\nu k_2^2} J^q_{k_2^2}(Q^2)]\\
-    &=\frac{1}{2\pi i}\int_{C - i \infty}^{C + i\infty} e^{N \tau} \qty[\tilde{J}_\nu^q(Q^2)]^2 \frac{\dd N}{N}
+    &=\frac{1}{2\pi i}\int_{C - i \infty}^{C + i\infty} e^{N \tau} \qty[\Tilde{J}_\nu^q(Q^2)]^2 \frac{\dd N}{N}
     \end{split}
 \end{align}
 
-where $C$ is a real positive constant to the right of all singularities of the integrand $\tilde{J}_\nu(Q^2)$ in the complex $\nu$ plane. 
+where $C$ is a real positive constant to the right of all singularities of the integrand $\Tilde{J}_\nu(Q^2)$ in the complex $\nu$ plane. 
 
-An integral representation for the Laplace transform $\tilde{J}_\nu(Q^2)$ is given by \cite{CATANI19933}:
+An integral representation for the Laplace transform $\Tilde{J}_\nu(Q^2)$ is given by \cite{CATANI19933}:
 
 \begin{equation}
-    \ln \tilde{J}_\nu^q(Q^2) = \int_0^1 \frac{\dd u}{u} \qty(e^{-u \nu Q^2}-1)\qty[ \int_{u^2 Q^2}^{u Q^2} \frac{1}{q^2} A\qty(\alpha_s(q^2)) \dd q^2 + \frac{1}{2} B\qty(\alpha_s(u Q^2))]
+    \ln \Tilde{J}_\nu^q(Q^2) = \int_0^1 \frac{\dd u}{u} \qty(e^{-u \nu Q^2}-1)\qty[ \int_{u^2 Q^2}^{u Q^2} \frac{1}{q^2} A\qty(\alpha_s(q^2)) \dd q^2 + \frac{1}{2} B\qty(\alpha_s(u Q^2))]
 \end{equation}
 
 with 
@@ -76,10 +72,6 @@ It typically involves the non-cusp part of the anomalous dimensions and running 
 The integral as it is cannot be integrated, the $u$ integration may be performed using the prescription by Paolo Nason in Appendix A of \cite{Catani_2003_appendix} and
 readapting the formula to the case of Laplace transform instead of Mellin transform.
 
-In \cref{Appendix: Laplace and Mellin transform} we show that the prescription, to evaluate the large-N Mellin moments of soft-gluon
-contributins at an arbitrary logarithmic accuracy, can be used for the Laplace transform as well, we can use this result to express \cref{eq:master formula} 
-in an alternative representation:
-
 This method is a generalization of the prescription to NLL accuracy in \cite{CATANI19933}
 
 \begin{equation}
@@ -88,19 +80,23 @@ This method is a generalization of the prescription to NLL accuracy in \cite{CAT
 
 where $N_0 = e^{-\gamma_E}$, $\gamma_E = 0.5772 \dots $ being the Euler-Mascheroni constant
 
+In \cref{Appendix: Laplace and Mellin transform} we show that the prescription to evaluate the large-N Mellin moments of soft-gluon
+contributins at an arbitrary logarithmic accuracy, can be used for the Laplace transform as well, then we can use this result to express \cref{eq:master formula} 
+in an alternative representation:
+
 \begin{equation}\label{eq:master_formula alt}
-    \ln \tilde{J}_\nu^q(Q^2) = - \int_{N_0/N}^{1} \frac{\dd u}{u} \qty[ \int_{u^2 Q^2}^{u Q^2} \frac{1}{q^2} A\qty(\alpha_s(q^2)) \dd q^2 + \frac{1}{2} \tilde{B}\qty(\alpha_s(u Q^2))] + \ln \tilde{C}\qty(\alpha_s(\mu^2),\frac{\mu^2}{Q^2})
+    \ln \Tilde{J}_\nu^q(Q^2) = - \int_{N_0/N}^{1} \frac{\dd u}{u} \qty[ \int_{u^2 Q^2}^{u Q^2} \frac{1}{q^2} A\qty(\alpha_s(q^2)) \dd q^2 + \frac{1}{2} \Tilde{B}\qty(\alpha_s(u Q^2))] + \ln \Tilde{C}\qty(\alpha_s(\mu^2),\frac{\mu^2}{Q^2})
 \end{equation}
 
 Note that, due to the integration of the running coupling the integral in \cref{eq:master_formula} is singular for all values of $N=\nu Q^2$. However, if we perform the integration up 
 to a fixed logarithmic accuracy $N^kLL$ (\emph{i.e} we compute the leading $\alpha_s^n \ln^{n+1}N$, next-to-leading $\alpha_s^n \ln^nN$ and so on to $\alpha_s^n \ln^{n+1-k}$ terms ), we find the form factor: 
 
-\begin{flalign}
-    \ln \tilde{J}_\nu^q(Q^2) &= \ln N f_1(\lambda) + f_2(\lambda) + \alpha_s f_3(\lambda) + \alpha_s^2 f_4(\lambda) + \alpha_s^3 f_5(\lambda) + \order{\alpha_s^n \ln^{n-4}N} \nonumber\\
-    &+ \ln \tilde{C}\qty(\alpha_s(\mu^2),\frac{\mu^2}{Q^2})
+\begin{flalign}\label{eq:factorized_J_nu}
+    \ln \Tilde{J}_\nu^q(Q^2) &= \ln N f_1(\lambda) + f_2(\lambda) + \alpha_s f_3(\lambda) + \alpha_s^2 f_4(\lambda) + \alpha_s^3 f_5(\lambda) + \order{\alpha_s^n \ln^{n-4}N} \nonumber\\
+    &+ \ln \Tilde{C}\qty(\alpha_s(\mu^2),\frac{\mu^2}{Q^2})
 \end{flalign}
 
-From now on i'll always use \cref{eq:master_formula alt}, so i'll drop the $\tilde{}$ notation for $B$.
+From now on i'll always use \cref{eq:master_formula alt}, so i'll drop the $\Tilde{}$ notation for $B$.
 
 We observe that the N-space formula \cref{eq:master_formula alt} is finite and uniquely defined up to the 
 very large $N=N_L=\exp(\frac{1}{2\alpha_s b_0})$ ($\lambda = \frac{1}{2}$), thanks to the prescription above.
@@ -109,7 +105,7 @@ very large $N=N_L=\exp(\frac{1}{2\alpha_s b_0})$ ($\lambda = \frac{1}{2}$), than
 \subsection{\texorpdfstring{$f_i$}{fi}}
 
 To calculate explicit expressions for the first few $f_i$ terms, we first write explicitly the internal integral of \cref{eq:master formula}, for
-now let's forget the $\ln \tilde{C}$ term, it can be absorbed into the $C$-term in \ref{eq:sigma}:
+now let's forget the $\ln \Tilde{C}$ term, it can be absorbed into the definition of $A$ and $B$:
 
 The $q^2$ integration also becomes simple if we use the renormalization group equation \cref{eq:RGE} to change
 the integration variable to as
@@ -128,7 +124,7 @@ where for convenience's sake we have defined:
     N_4 &= \frac{ \left(-b_4 b_0^3  +  2 b_3 b_1 b_0^2 + b_2^2 b_0^2- 3 b_2 b_1^2 b_0 + b_1^4\right)}{b_0^4} &\nonumber
 \end{align}
 
-then write the internal integral of \cref{eq:master_formula alt} as:
+Subsequently, the integral in \cref{eq:master_formula alt} can be expressed as:
 
 \begin{flalign}
     &\int_{\alpha_s(u^2 Q^2)}^{\alpha_s(u Q^2)} \frac{\dd \alpha_s}{b_0 \alpha_s^2} ( N_0+ N_1 \alpha_s + N_2 \alpha_s^2 + N_3 \alpha_s^3 + N_4 \alpha_s^4) \sum_{n=1}^\infty A_n \qty(\frac{\alpha_s}{\pi})^n &\nonumber & \nonumber\\ 
@@ -141,7 +137,7 @@ and keeping only terms up to $N_0$,$A_1$ and $\alpha_s^0$ we get contributions t
 That's because after integration, we evaluate the integrand at $\alpha_s(u^2 Q^2)$ and $\alpha_s(u Q^2)$, where $\alpha_s$ is $\alpha_{\text{LO}}$ for $f_1$, $\alpha_{\text{NLO}}$ for $f_2$ and so on. 
 
 And there's an easy way to see why it's like this, in fact it's also possible to do the $q^2$ integration directly, using \cref{eq:LO running coupling,eq:DNLO,eq:DNNLO,eq:DN3LO,eq:DN4LO} from \cref{sec:QCD_running_coupling}
-and keeping in mind \cref{tab:contributions to different powers of alpha_s}
+and keeping in mind \cref{tab:contributions to different powers of alpha_s}.
 
 \begin{flalign}
     &\int_{u^2 Q^2}^{u Q^2} \frac{\dd q^2}{q^2} \sum_{n=1}^\infty\frac{A_n}{\pi^n} \qty( \alpha_{\text{LO}}(q^2) + \delta\alpha_{\text{NLO}}(q^2) + \delta\alpha_{\text{NNLO}}(q^2) + \delta\alpha_{\text{N}^3\text{LO}}(q^2) + \delta\alpha_{\text{N}^4\text{LO}}(q^2) + \ldots)^n 
@@ -150,14 +146,14 @@ and keeping in mind \cref{tab:contributions to different powers of alpha_s}
 now we can see that if we consider terms up to $\alpha_s^1$ only $A_1$ contributes and this gives $f_1$, if we consider terms up to $\alpha_s^2$ we see $A_2$ starts to contribute together with $A_1  \delta\alpha_{\text{NLO}}$
 and this gives $f_2$ , for $f_3$ we need to consider terms up to $\alpha_s^3$ and so on. 
 
-For the $B$-term it's similar. However, since the $B$-term is "already integrated" in $q^2$, we need to consider one order lower in $\alpha_s$ compared to the $A$-term. In fact the $B_1$ starts to contribute from $f_2$, $B_2$ from $f_3$ and so on.  
+For the $B$-term it's similar. However, since the $B$-term is "already integrated" in $q^2$, it contributes one order lower in $\alpha_s$ compared to the $A$-term. Specifically, $B_1$ starts to contribute from $f_2$, $B_2$ from $f_3$ and so on.  
 
 Now armed with this knowledge we can calculate \cref{eq:master_formula alt} and find: 
 
 \begingroup
 \allowdisplaybreaks
 \begin{equation}
-    \ln \tilde{J}_\nu^q(Q^2) = \ln N f_1(\lambda) + f_2(\lambda) + \alpha_s f_3(\lambda) + \alpha_s^2 f_4(\lambda) + \alpha_s^3 f_5(\lambda) + \order{\alpha_s^n \ln^{n-4}N}
+    \ln \Tilde{J}_\nu^q(Q^2) = \ln N f_1(\lambda) + f_2(\lambda) + \alpha_s f_3(\lambda) + \alpha_s^2 f_4(\lambda) + \alpha_s^3 f_5(\lambda) + \order{\alpha_s^n \ln^{n-4}N}
 \end{equation}
 
 where $\lambda = \alpha_s b_0 \ln N$, $N=\nu Q^2$, $\alpha_s = \alpha_s(Q^2)$ and
@@ -255,5 +251,17 @@ where $\lambda = \alpha_s b_0 \ln N$, $N=\nu Q^2$, $\alpha_s = \alpha_s(Q^2)$ an
 
 In \cref{eq:f3,eq:f4,eq:f5} we have removed some constant terms in order to make them homogeneous, \emph{i.e.} $f_i(0)=0$, those constant can be reabsorbed in the $C$-term \cref{eq:sigma}.
 All the relevant constant can be found in \cref{app:Ingredients}.
+
+To obtain the laplace trasform of the thrust distribution \cref{eq:Laplace transform distribution}, 
+we perform the laplace transform of the convolution \cref{eq:Thrust fraction convolution}.
+By applying the convolution theorem, we find that it is twice the integral given by \cref{eq:master formula} that we have just calculated. 
+Therefore, we multiply by 2 the $f_i(\lambda)$ we just obtained \cref{eq:f1,eq:f2,eq:f3,eq:f4,eq:f5}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/Laplace_J_orders.png}
+    \caption{Plot of \cref{eq:factorized_J_nu} at different logarithmin orders.}
+    \label{fig:J_nu}
+\end{figure}
 
 \end{document}

@@ -9,7 +9,7 @@
 \chapter{Calculations}\label{ch:calculations}
 
 Next, we turn to the core task: calculating the resummation coefficients $f_i(\lambda)$ of the
-Sudakov form factor $\exp{\var{F}}$. To compute the $f_i(\lambda)$ functions, equation \cref{eq:master formula} is used, which
+Sudakov form factor $\exp{\mathcal{F}}$. To compute the $f_i(\lambda)$ functions, equation \cref{eq:master formula} is used, which
 requires knowledge of the $\mu$-dependence of the QCD running coupling $\alpha_s(\mu)$.
 We therefore proceed firstly to calculate the running coupling $\alpha_s(\mu)$ from LO up to N$^4$LO because the QCD $\beta$-function is known up to five loops \cite{Herzog_2017}. 
 We then use the obtained results to calculate the $f_i(\lambda)$ functions up to $i = 5$.
@@ -51,7 +51,6 @@ coupled at high energies, whereas the opposite happens for the QCD coupling as i
 energies and decreases with energy. This property of being weakly coupled at high energies is
 known as \emph{asymptotic freedom} and it means that perturbative calculations in QCD can only be
 done at high energies where $\alpha_s$ becomes small enough that a power expansion is meaningful.
-
 
 In the framework of perturbative QCD (\emph{pQCD}), predictions for observables are expressed in
 terms of the renormalized coupling $\alpha = \alpha (\mu^2)$, a function of an unphysical renormalization scale
@@ -250,5 +249,30 @@ Similarly one can obtain the four-loop running coupling $\alpha_{N^3LO}$ and fiv
     \end{split}
 \end{equation}
 
+
+Below we present a plot of the running coupling $\alpha_s$ as a function of the energy scale $(x m_z)^2$ for different orders of perturbation theory,
+where $m_z=91.18$ GeV is the mass of the Z boson. The global average value of the strong coupling constant is $\alpha_s(m_z^2) = 0.1179 \pm 0.0009$ \cite{PDG2022}.
+For the plot i use $\alpha_s(m_z^2) = 0.118$  
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/alpha_running.png}
+        \caption{Energy dependence of the strong coupling $\alpha_s$}
+        \label{fig:alpha_running}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/alpha_zoom.png}
+        \caption{Zoomed-in at the low energy region of the strong running coupling $\alpha_s$ at different orders}
+        \label{fig:alpha_zoom}
+    \end{subfigure}
+    \caption{Running coupling $\alpha_s$ at different orders of perturbation theory.}
+    \label{fig:alpha}
+\end{figure}
+
+In \cref{fig:alpha_zoom} wee see that the running coupling $\alpha_s$ is large and diverges at a finite 
+energy (Landau pole), this is a sign of the non-perturbative nature of QCD at low energies.
+It's very clear for the LO running coupling, for some some low energy scales it becomes negative, which is clearly unphysical.
 
 \end{document}
