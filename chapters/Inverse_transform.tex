@@ -53,7 +53,7 @@ where $N=\nu Q^2$ and $\mathcal{F}$ has the logarithms expansion:
 
 Since the function $\mathcal{F}$ in the exponent varies more slowly with N than $wN$, we can introduce the integration variable $u=wN$
 so that $\ln N = \ln u +\ln \frac{1}{w} = \ln u + L$ and Taylor expand with respect to $\ln u$ around $0$, which is equivalent to expanding 
-the original function $\mathcal{F}$ w.r.t $\ln N$ around $\ln N = \ln \frac{1}{w}\equiv L$:
+the original function $\mathcal{F}$ w.r.t $\ln N$ around $\ln N \sim \ln \frac{1}{w}\equiv L$:
 
 \begin{align}
     \begin{split}\label{eq:Rw expansion}
@@ -129,12 +129,13 @@ where $\Gamma$ is the Euler $\Gamma$-function, notice that for $k=0$ the integra
 \end{equation}
 
 The reciprocal of the Euler $\Gamma$-function is an entire function, meaning that it has no singularities in the complex plane, it's holomorphic everywhere.
-The above integral \cref{eq:magic_integral} can be evaluated by differentiating with respect to $\gamma$ $k$ times, and it is straightforward to see that each time i derive inside the integral
-i will get a factor of $\ln u$. Interchaning the order of derivation and integration is justified by the fact that the integral:
+The above integral \cref{eq:magic_integral} can be evaluated by differentiating with respect to $\gamma(\lambda)$ $k$ times, and it is straightforward to see that each derivation inside the integral
+gives a factor of $\ln u$. Interchaning the order of derivation and integration is justified by the fact that the integral:
 \begin{itemize}
-    \item  is a contour integral whose contour doesn't depent on $\gamma$, and the function is holomorphic in the complex plane for each value of $\gamma \in [-4,0] \cref{fig:gamma_lambda}$
-    \item  is dominated by the exponential factor $e^{u - (1-\gamma) \ln u}$ as long as $\Re{u}>0$
+    \item  is a contour integral whose contour doesn't depent on $\gamma(\lambda)$, and the function is holomorphic in the complex plane for each value of $\gamma(\lambda) \in (\infty,0]$ \cref{fig:gamma_lambda}
+    \item  is dominated by the exponential factor $e^{u - (1-\gamma(\lambda)) \ln u}$ as long as $\Re{u}>0$.  
 \end{itemize}
+
 
 \begin{figure}
     \centering
@@ -142,100 +143,92 @@ i will get a factor of $\ln u$. Interchaning the order of derivation and integra
     \caption{Plot of $\gamma(\lambda)$ in the range of interest $0<\lambda<\frac{1}{2}$}
     \label{fig:gamma_lambda}
 \end{figure}
-
+ 
 \begin{align}
     \begin{split}\label{eq:Rw quasi final expansion}
-        R^q(w) &= \frac{e^{\mathcal{F}(\alpha_s,L)}}{\Gamma(1-\gamma)} \biggl[ 1 + \mathcal{F}^{(1)}_{res} \psi_0(1-\gamma) + \frac{1}{2}\qty( \mathcal{F}^{(2)}+(\mathcal{F}^{(1)}_{res})^2) \qty(\psi_0^2-\psi_1)(1-\gamma) \\
-        &+ \frac{1}{6}\qty(\mathcal{F}^{(3)} + 3 \mathcal{F}^{(2)}\mathcal{F}^{(1)}_{res} + (\mathcal{F}^{(1)}_{res})^3 ) \qty(\psi_0^3 -3 \psi_0\psi_1+\psi_2)(1-\gamma) \\
+        R^q(w) &= \frac{e^{\mathcal{F}(\alpha_s,L)}}{\Gamma(1-\gamma(\lambda))} \biggl[ 1 + \mathcal{F}^{(1)}_{res} \psi_0 + \frac{1}{2}\qty( \mathcal{F}^{(2)}+(\mathcal{F}^{(1)}_{res})^2) \qty(\psi_0^2-\psi_1) \\
+        &+ \frac{1}{6}\qty(\mathcal{F}^{(3)} + 3 \mathcal{F}^{(2)}\mathcal{F}^{(1)}_{res} + (\mathcal{F}^{(1)}_{res})^3 ) \qty(\psi_0^3 -3 \psi_0\psi_1+\psi_2) \\
         &+ \frac{1}{24}\qty(\mathcal{F}^{(4)} + 3(\mathcal{F}^{(2)})^2 + 4 \mathcal{F}^{(3)} \mathcal{F}^{(1)}_{res} + 6 \mathcal{F}^{(2)} (\mathcal{F}^{(1)}_{res})^2 + (\mathcal{F}^{(1)}_{res})^4 ) \\
-        &\qty(\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)(1-\gamma)+ \order{\ln^5 u} \biggr]
+        &\qty(\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)+ \order{\ln^5 u} \biggr]
     \end{split}
 \end{align}
 
-where $\psi_n(z)$ are the polygamma functions, defined as:
+where $\psi_n$ are the polygamma functions all evaluated at $(1-\gamma(\lambda))$, defined as:
 
 \begin{equation}
     \psi_n (z) = \dv[n+1]{z} \ln \Gamma(z) = \dv[n]{z} \frac{\Gamma '(z)}{\Gamma(z)} = \dv[n]{z} \psi_0(z)
 \end{equation}
 
+The expression \cref{eq:Rw quasi final expansion} can be verified against Eq.(56) in \cite{Aglietti:2002ew} and Eq.(4.28) in \cite{Monni:2011gb}.
+It is noteworthy that they share the same structure within the square brackets, the difference is that they don't include $(\mathcal{F}^{(1)}_{res})^2$ in the second term.
+This omission is due to the fact that $(\mathcal{F}^{(1)}_{res})^2$ is a term of order $\order{\alpha_s^2}$ and thus contributes to the N$^3$LL accuracy.
+
 Substituting the expressions \cref{eq:derivative F1,eq:derivative F2,eq:derivative F3,eq:derivative F4} into \cref{eq:Rw quasi final expansion} we obtain:
 
-\begin{align}
-    \begin{split}
-        R^q(w) &= \frac{e^{\mathcal{F}(\alpha_s,L)}}{\Gamma(1-\gamma)} \biggl[ 1 + \Bigl(\alpha_s^3 b_0 f_4'(\lambda )+\alpha_s^2 b_0 f_3'(\lambda )+\alpha_s b_0 f_2'(\lambda )\Bigr) \psi_0(1-\gamma) \\
-        &+ \frac{1}{2} \Bigl(\alpha_s^3 \bigl(2 b_0^2 f_2'(\lambda ) f_3'(\lambda )+b_0^2 f_3''(\lambda )\bigr)+ \frac{1}{2} \alpha_s^2 \qty(b_0^2 f_2''(\lambda )+b_0^2 f_2'(\lambda )^2 ) \\
-        &+\frac{1}{2} \alpha_s \qty(b_0 \lambda  f_1''(\lambda ) + 2 b_0 f_1'(\lambda ) )\Bigr) \qty(\psi_0^2-\psi_1)(1-\gamma) \\
-        &+ \frac{1}{6}\Bigl( \alpha_s^3 \bigl(b_0^3 f_2^{(3)}(\lambda )+b_0^3 f_2'(\lambda )^3 + 3 b_0^3 f_2'(\lambda ) f_2''(\lambda )+3 b_0^2 \lambda  f_1''(\lambda ) f_3'(\lambda ) \\
-        &+6 b_0^2 f_1'(\lambda ) f_3'(\lambda )\bigr) +\frac{1}{6} \alpha_s^2 \bigl(b_0^2 \lambda  f_1^{(3)}(\lambda )+3 b_0^2 \lambda  f_1''(\lambda ) f_2'(\lambda )+3 b_0^2 f_1''(\lambda )\\
-        &+6 b_0^2 f_1'(\lambda ) f_2'(\lambda )\bigr) \Bigr) \qty(\psi_0^3 -3 \psi_0\psi_1+\psi_2)(1-\gamma) \\
-        &+ \frac{1}{24}\Bigl(\alpha_s^3 \bigl(b_0^3 \lambda  f_1^{(4)}(\lambda )+4 b_0^3 \lambda  f_1^{(3)}(\lambda ) f_2'(\lambda )\\
-        &+4 b_0^3 f_1^{(3)}(\lambda )+6 b_0^3 \lambda  f_1''(\lambda ) f_2''(\lambda )+6 b_0^3 \lambda  f_1''(\lambda ) f_2'(\lambda )^2+12 b_0^3 f_1''(\lambda ) f_2'(\lambda )\\
-        &+12 b_0^3 f_1'(\lambda ) f_2''(\lambda )+12 b_0^3 f_1'(\lambda ) f_2'(\lambda )^2\bigr)+\frac{1}{8} \alpha_s^2 \bigl(b_0^2 \lambda ^2 f_1''(\lambda )^2+4 b_0^2 f_1'(\lambda )^2\\
-        &+4 b_0^2 \lambda  f_1'(\lambda ) f_1''(\lambda )\bigr)\Bigr) \qty(\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)(1-\gamma)+ \order{\ln^5 u} \biggr]
-    \end{split}
-\end{align}
+\begin{flalign}
+    R^q(w) &= \frac{e^{\mathcal{F}(\alpha_s,L)}}{\Gamma(1-\gamma)} \biggl[ 1 + \Bigl(\alpha_s^3 b_0 f_4'(\lambda )+\alpha_s^2 b_0 f_3'(\lambda )+\alpha_s b_0 f_2'(\lambda )\Bigr) \psi_0 \\
+    &+ \frac{1}{2} \Bigl(\alpha_s^3 \bigl(2 b_0^2 f_2'(\lambda ) f_3'(\lambda )+b_0^2 f_3''(\lambda )\bigr)+ \frac{1}{2} \alpha_s^2 \qty(b_0^2 f_2''(\lambda )+b_0^2 f_2'(\lambda )^2 ) \nonumber\\
+    &+\frac{1}{2} \alpha_s \qty(b_0 \lambda  f_1''(\lambda ) + 2 b_0 f_1'(\lambda ) )\Bigr) \qty(\psi_0^2-\psi_1) \nonumber\\
+    &+ \frac{1}{6}\Bigl( \alpha_s^3 \bigl(b_0^3 f_2^{(3)}(\lambda )+b_0^3 f_2'(\lambda )^3 + 3 b_0^3 f_2'(\lambda ) f_2''(\lambda )+3 b_0^2 \lambda  f_1''(\lambda ) f_3'(\lambda ) \nonumber\\
+    &+6 b_0^2 f_1'(\lambda ) f_3'(\lambda )\bigr) +\frac{1}{6} \alpha_s^2 \bigl(b_0^2 \lambda  f_1^{(3)}(\lambda )+3 b_0^2 \lambda  f_1''(\lambda ) f_2'(\lambda )+3 b_0^2 f_1''(\lambda )\nonumber\\
+    &+6 b_0^2 f_1'(\lambda ) f_2'(\lambda )\bigr) \Bigr) \qty(\psi_0^3 -3 \psi_0\psi_1+\psi_2) \nonumber\\
+    &+ \frac{1}{24}\Bigl(\alpha_s^3 \bigl(b_0^3 \lambda  f_1^{(4)}(\lambda )+4 b_0^3 \lambda  f_1^{(3)}(\lambda ) f_2'(\lambda )\nonumber\\
+    &+4 b_0^3 f_1^{(3)}(\lambda )+6 b_0^3 \lambda  f_1''(\lambda ) f_2''(\lambda )+6 b_0^3 \lambda  f_1''(\lambda ) f_2'(\lambda )^2+12 b_0^3 f_1''(\lambda ) f_2'(\lambda )\nonumber\\
+    &+12 b_0^3 f_1'(\lambda ) f_2''(\lambda )+12 b_0^3 f_1'(\lambda ) f_2'(\lambda )^2\bigr)+\frac{1}{8} \alpha_s^2 \bigl(b_0^2 \lambda ^2 f_1''(\lambda )^2+4 b_0^2 f_1'(\lambda )^2\nonumber\\
+    &+4 b_0^2 \lambda  f_1'(\lambda ) f_1''(\lambda )\bigr)\Bigr) \qty(\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)+ \order{\ln^5 u} \biggr]\nonumber
+\end{flalign}
 
 and reorganize as a power series of $\alpha_s$:
 
-\begin{align}
-    \begin{split}\label{eq:Rw final expansion}
-        R^q(w) &= \frac{e^{\mathcal{F}(\alpha_s,L)}}{\Gamma(1-\gamma)} \biggl[ 1 + \alpha_s b_0 \Bigl( \psi_0(1-\gamma) f_2'(\lambda )  + \frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma)\bigl( \lambda  f_1''(\lambda ) \\
-        &+2  f_1'(\lambda )\bigr)\Bigr) + \alpha_s^2 \Bigl(\frac{1}{8} (\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)(1-\gamma) \bigl(b_0^2 \lambda ^2 f_1''(\lambda )^2\\
-        &+4 b_0^2 f_1'(\lambda )^2 +4 b_0^2 \lambda  f_1'(\lambda ) f_1''(\lambda )\bigr)+\frac{1}{6} (\psi_0^3 -3 \psi_0\psi_1+\psi_2)(1-\gamma) \bigl(b_0^2 \lambda  f_1^{(3)}(\lambda )\\
-        &+ 3 b_0^2 \lambda  f_1''(\lambda ) f_2'(\lambda )+3 b_0^2 f_1''(\lambda )+6 b_0^2 f_1'(\lambda ) f_2'(\lambda )\bigr)+\frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma) \\
-        &\bigl(b_0^2 f_2''(\lambda ) +b_0^2 f_2'(\lambda )^2\bigr) + b_0 \psi_0(1-\gamma) f_3'(\lambda )\Bigr) + \alpha_s^3 \Bigl(\frac{1}{24} (\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 \\
-        &-\psi_3)(1-\gamma) \bigl(b_0^3 \lambda  f_1^{(4)}(\lambda ) +4 b_0^3 \lambda  f_1^{(3)}(\lambda ) f_2'(\lambda ) + 4 b_0^3 f_1^{(3)}(\lambda )+6 b_0^3 \lambda  f_1''(\lambda ) f_2''(\lambda ) \\
-        &+ 6 b_0^3 \lambda  f_1''(\lambda ) f_2'(\lambda )^2 +12 b_0^3 f_1''(\lambda ) f_2'(\lambda )+12 b_0^3 f_1'(\lambda ) f_2''(\lambda ) + 12 b_0^3 f_1'(\lambda ) f_2'(\lambda )^2\bigr) \\
-        &+ \frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma) \bigl(2 b_0^2 f_2'(\lambda ) f_3'(\lambda )+b_0^2 f_3''(\lambda )\bigr) + \frac{1}{6} (\psi_0^3 -3 \psi_0\psi_1\\
-        &+\psi_2)(1-\gamma) \bigl(b_0^3 f_2^{(3)}(\lambda )+b_0^3 f_2'(\lambda )^3 +3 b_0^3 f_2'(\lambda ) f_2''(\lambda )+3 b_0^2 \lambda  f_1''(\lambda ) f_3'(\lambda ) \\
-        &+6 b_0^2 f_1'(\lambda ) f_3'(\lambda )\bigr) + b_0 \psi_0(1-\gamma) f_4'(\lambda ) \Bigr) + \order{\alpha_s^4} \biggr]
-    \end{split}
+\begin{align}\label{eq:Rw final expansion}
+        R^q(w) &= \frac{e^{\mathcal{F}(\alpha_s,L)}}{\Gamma(1-\gamma)} \biggl[ 1 + \alpha_s b_0 \Bigl( \psi_0 f_2'(\lambda )  + \frac{1}{2} (\psi_0^2-\psi_1)\bigl( \lambda  f_1''(\lambda ) \\
+        &+2  f_1'(\lambda )\bigr)\Bigr) + \alpha_s^2 \Bigl(\frac{1}{8} (\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3) \bigl(b_0^2 \lambda ^2 f_1''(\lambda )^2\nonumber\\
+        &+4 b_0^2 f_1'(\lambda )^2 +4 b_0^2 \lambda  f_1'(\lambda ) f_1''(\lambda )\bigr)+\frac{1}{6} (\psi_0^3 -3 \psi_0\psi_1+\psi_2) \bigl(b_0^2 \lambda  f_1^{(3)}(\lambda )\nonumber\\
+        &+ 3 b_0^2 \lambda  f_1''(\lambda ) f_2'(\lambda )+3 b_0^2 f_1''(\lambda )+6 b_0^2 f_1'(\lambda ) f_2'(\lambda )\bigr)+\frac{1}{2} (\psi_0^2-\psi_1) \nonumber\\
+        &\bigl(b_0^2 f_2''(\lambda ) +b_0^2 f_2'(\lambda )^2\bigr) + b_0 \psi_0 f_3'(\lambda )\Bigr) + \alpha_s^3 \Bigl(\frac{1}{24} (\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 \nonumber\\
+        &-\psi_3) \bigl(b_0^3 \lambda  f_1^{(4)}(\lambda ) +4 b_0^3 \lambda  f_1^{(3)}(\lambda ) f_2'(\lambda ) + 4 b_0^3 f_1^{(3)}(\lambda )+6 b_0^3 \lambda  f_1''(\lambda ) f_2''(\lambda ) \nonumber\\
+        &+ 6 b_0^3 \lambda  f_1''(\lambda ) f_2'(\lambda )^2 +12 b_0^3 f_1''(\lambda ) f_2'(\lambda )+12 b_0^3 f_1'(\lambda ) f_2''(\lambda ) + 12 b_0^3 f_1'(\lambda ) f_2'(\lambda )^2\bigr) \nonumber\\
+        &+ \frac{1}{2} (\psi_0^2-\psi_1) \bigl(2 b_0^2 f_2'(\lambda ) f_3'(\lambda )+b_0^2 f_3''(\lambda )\bigr) + \frac{1}{6} (\psi_0^3 -3 \psi_0\psi_1\nonumber\\
+        &+\psi_2) \bigl(b_0^3 f_2^{(3)}(\lambda )+b_0^3 f_2'(\lambda )^3 +3 b_0^3 f_2'(\lambda ) f_2''(\lambda )+3 b_0^2 \lambda  f_1''(\lambda ) f_3'(\lambda )\nonumber \\
+        &+6 b_0^2 f_1'(\lambda ) f_3'(\lambda )\bigr) + b_0 \psi_0 f_4'(\lambda ) \Bigr) + \order{\alpha_s^4} \biggr]\nonumber
 \end{align}
 
-By comparing \cref{eq:Thrust fraction} and \cref{eq:Rw mass fraction} we see that to obtain the Thrust cross section, we simply multiply by 2 all the $f_i$  \cref{eq:f1,eq:f2,eq:f3,eq:f4,eq:f5} 
-obtained in the previous section. The final resummed expression $R_T(\tau)$ can be written as one exponential \cref{eq:resummed_R}, 
+As observed in the previous section, to obtain the Thrust cross section, we simply multiply by 2 all the $f_i$  \cref{eq:f1,eq:f2,eq:f3,eq:f4,eq:f5}. The final resummed expression $R_T(\tau)$ can be written 
+as one exponential \cref{eq:resummed_R}, 
 
 \begin{equation}
-    R_T(\tau) = \qty(1 + \sum_{n=1}^{\infty} C_n \bar{\alpha_s}^n)\exp[L g_1(\lambda)  + g_2(\lambda) + g_3(\lambda) \alpha_s + g_4(\lambda) \alpha_s^2 + g_5(\lambda) \alpha_s^3 + \order{\alpha_s^4}]
+    R_T(\tau) = \qty(1 + \sum_{n=1}^{\infty} C_n \bar{\alpha}_s^n)\exp[L g_1(\lambda)  + g_2(\lambda) + g_3(\lambda) \alpha_s + g_4(\lambda) \alpha_s^2 + g_5(\lambda) \alpha_s^3 + \order{\alpha_s^4}]
 \end{equation}
 
 to do so we observe that $\frac{1}{\Gamma(1-\gamma)}= \exp{-\ln(\Gamma(1-\gamma))}$ corrects $f_2$, while the expression in square parenthesis in \cref{eq:Rw final expansion} can be seen 
-as the expansion of an exponential for $\alpha_s \to 0$ : 
+as the expansion of an exponential for $\alpha_s \to 0$, the reason for this is that since we integrated an exponential function in \cref{eq:Rw mass fraction}, we 
+expect to find an exponential function as the result of the integration.
 
 \begin{equation}
     \begin{split}\label{eq:expansion exponential}
-    e^{\alpha_s g_3(\lambda) + \alpha_s^2 g_4(\lambda) + \alpha_s^3 g_5(\lambda) + \order{\alpha_s^4}} &= 1+\alpha_s g_3(\lambda)+\frac{1}{2} \alpha_s^2 \qty(g_3^2(\lambda)+2 g_4(\lambda))\\
+    \exp(\alpha_s g_3(\lambda) + \alpha_s^2 g_4(\lambda) + \alpha_s^3 g_5(\lambda) + \order{\alpha_s^4}) &= 1+\alpha_s g_3(\lambda)+\frac{1}{2} \alpha_s^2 \qty(g_3^2(\lambda)+2 g_4(\lambda))\\
     &+\frac{1}{6} \alpha_s^3 \qty(g_3^3(\lambda) + 6 g_3(\lambda) g_4(\lambda) + 6 g_5(\lambda))+ \order{\alpha_s^4}
     \end{split}
 \end{equation}
 
-to obtain $g_3(\lambda)$, $g_4(\lambda)$ and $g_5(\lambda)$ we match \cref{eq:Rw final expansion} with \cref{eq:expansion exponential} and obtain the following expressions:
+to obtain $g_3(\lambda)$, $g_4(\lambda)$ and $g_5(\lambda)$ we match \cref{eq:Rw final expansion} with \cref{eq:expansion exponential} and obtain the following expressions in which all 
+the Polygamma functions $\psi_n$ are evaluated at $1-\gamma(\lambda)$ as before, and the functions $f_i$ are twice the ones obtained in the previous section \cref{eq:f1,eq:f2,eq:f3,eq:f4,eq:f5}: 
 
-\begin{align}
-    & g_1(\lambda) = f_1(\lambda) \label{eq:g1}\\
-    & g_2(\lambda) = f_2(\lambda) -  \ln \Gamma(1- f_1(\lambda)- \lambda f_1'(\lambda)) \label{eq:g2}\\
-    & g_3(\lambda) = f_3(\lambda) +   \Bigl( \psi_0(1-\gamma) f_2'(\lambda )  + \frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma)\bigl( \lambda  f_1''(\lambda ) +2  f_1'(\lambda )\bigr)\Bigr) \label{eq:g3}
-\end{align}
-
-\begin{align}\label{eq:g4}
-    \begin{split}
-        g_4(\lambda) &=  f_4(\lambda) +  \Bigl(\frac{1}{8} (\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)(1-\gamma) \bigl(b_0^2 \lambda ^2 f_1''(\lambda )^2\\
-        &+4 b_0^2 f_1'(\lambda )^2 +4 b_0^2 \lambda  f_1'(\lambda ) f_1''(\lambda )\bigr)+\frac{1}{6} (\psi_0^3 -3 \psi_0\psi_1+\psi_2)(1-\gamma) \bigl(b_0^2 \lambda  f_1^{(3)}(\lambda )\\
-        &+ 3 b_0^2 \lambda  f_1''(\lambda ) f_2'(\lambda )+3 b_0^2 f_1''(\lambda )+6 b_0^2 f_1'(\lambda ) f_2'(\lambda )\bigr)+\frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma)\\
-        &\bigl(b_0^2 f_2''(\lambda )+b_0^2 f_2'(\lambda )^2\bigr) + b_0 \psi_0(1-\gamma) f_3'(\lambda )\Bigr)
-    \end{split}
-\end{align}
-
-\begin{align}\label{eq:g5}
-    \begin{split}
-        g_5(\lambda) &=  f_5(\lambda) +  \Bigl(\frac{1}{24} (\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)(1-\gamma) \\
-        &\bigl(b_0^3 \lambda  f_1^{(4)}(\lambda ) +4 b_0^3 \lambda  f_1^{(3)}(\lambda ) f_2'(\lambda ) + 4 b_0^3 f_1^{(3)}(\lambda )+6 b_0^3 \lambda  f_1''(\lambda ) f_2''(\lambda ) \\
-        &+ 6 b_0^3 \lambda  f_1''(\lambda ) f_2'(\lambda )^2 +12 b_0^3 f_1''(\lambda ) f_2'(\lambda )+12 b_0^3 f_1'(\lambda ) f_2''(\lambda ) + 12 b_0^3 f_1'(\lambda ) f_2'(\lambda )^2\bigr) \\
-        &+ \frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma) \bigl(2 b_0^2 f_2'(\lambda ) f_3'(\lambda )+b_0^2 f_3''(\lambda )\bigr) + \frac{1}{6} (\psi_0^3 -3 \psi_0\psi_1+\psi_2)(1-\gamma) \\
-        &\bigl(b_0^3 f_2^{(3)}(\lambda )+b_0^3 f_2'(\lambda )^3 +3 b_0^3 f_2'(\lambda ) f_2''(\lambda )+3 b_0^2 \lambda  f_1''(\lambda ) f_3'(\lambda ) +6 b_0^2 f_1'(\lambda ) f_3'(\lambda )\bigr)\\
-        &+ b_0 \psi_0(1-\gamma) f_4'(\lambda ) \Bigr)
-    \end{split}
-\end{align}
+\begin{flalign}
+    g_1(\lambda) &= f_1(\lambda) \label{eq:g1}\\
+    g_2(\lambda) &= f_2(\lambda) -  \ln \Gamma(1- f_1(\lambda)- \lambda f_1'(\lambda)) \label{eq:g2}\\
+    g_3(\lambda) &= f_3(\lambda) +   \Bigl( \psi_0(1-\gamma(\lambda)) f_2'(\lambda )  + \frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma)\bigl( \lambda  f_1''(\lambda ) +2  f_1'(\lambda )\bigr)\Bigr) \label{eq:g3}\\
+    g_4(\lambda) &=  f_4(\lambda) +  \Bigl(\frac{1}{8} (\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)(1-\gamma(\lambda)) \bigl(b_0^2 \lambda ^2 f_1''(\lambda )^2\label{eq:g4}\\
+    &+4 b_0^2 f_1'(\lambda )^2 +4 b_0^2 \lambda  f_1'(\lambda ) f_1''(\lambda )\bigr)+\frac{1}{6} (\psi_0^3 -3 \psi_0\psi_1+\psi_2)(1-\gamma(\lambda)) \bigl(b_0^2 \lambda  f_1^{(3)}(\lambda ) \nonumber\\
+    &+ 3 b_0^2 \lambda  f_1''(\lambda ) f_2'(\lambda )+3 b_0^2 f_1''(\lambda )+6 b_0^2 f_1'(\lambda ) f_2'(\lambda )\bigr)+\frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma)\nonumber\\
+    &\bigl(b_0^2 f_2''(\lambda )+b_0^2 f_2'(\lambda )^2\bigr) + b_0 \psi_0(1-\gamma(\lambda)) f_3'(\lambda )\Bigr)\nonumber\\
+    g_5(\lambda) &=  f_5(\lambda) +  \Bigl(\frac{1}{24} (\psi_0^4 -6 \psi_1 + 3\psi_1^3 +4\psi_0\psi_2 -\psi_3)(1-\gamma(\lambda)) \label{eq:g5}\\
+    &\bigl(b_0^3 \lambda  f_1^{(4)}(\lambda ) +4 b_0^3 \lambda  f_1^{(3)}(\lambda ) f_2'(\lambda ) + 4 b_0^3 f_1^{(3)}(\lambda )+6 b_0^3 \lambda  f_1''(\lambda ) f_2''(\lambda ) \nonumber\\
+    &+ 6 b_0^3 \lambda  f_1''(\lambda ) f_2'(\lambda )^2 +12 b_0^3 f_1''(\lambda ) f_2'(\lambda )+12 b_0^3 f_1'(\lambda ) f_2''(\lambda ) + 12 b_0^3 f_1'(\lambda ) f_2'(\lambda )^2\bigr) \nonumber\\
+    &+ \frac{1}{2} (\psi_0^2-\psi_1)(1-\gamma(\lambda)) \bigl(2 b_0^2 f_2'(\lambda ) f_3'(\lambda )+b_0^2 f_3''(\lambda )\bigr) + \frac{1}{6} (\psi_0^3 -3 \psi_0\psi_1+\psi_2)(1-\gamma) \nonumber\\
+    &\bigl(b_0^3 f_2^{(3)}(\lambda )+b_0^3 f_2'(\lambda )^3 +3 b_0^3 f_2'(\lambda ) f_2''(\lambda )+3 b_0^2 \lambda  f_1''(\lambda ) f_3'(\lambda ) +6 b_0^2 f_1'(\lambda ) f_3'(\lambda )\bigr)\nonumber\\
+    &+ b_0 \psi_0(1-\gamma) f_4'(\lambda ) \Bigr)\nonumber
+\end{flalign}
 
 \begin{figure}[htbp]
     \centering
@@ -245,11 +238,18 @@ to obtain $g_3(\lambda)$, $g_4(\lambda)$ and $g_5(\lambda)$ we match \cref{eq:Rw
     \label{fig:Thrust distribution with data}
 \end{figure}
 
-Observe in \cref{fig:Thrust distribution with data}, the peak of the distribution gets near the experimental data peak as we increase the logarithmic accuracy order,
+The thrust differential distribution \cref{eq:differential_cross_section} is obtained by taking the derivative of the thrust cross section 
+$R_T(\tau)$ \cref{eq:resummed_R} with respect to $\tau$:
+
+\begin{equation}
+    \frac{1}{\sigma_0} \dv{\sigma}{\tau} = \frac{1}{\tau} \dv{R_T(\tau)}{\ln \tau} 
+\end{equation}
+
+This procedure extends the NLL \cite{CATANI19933} and NNLL \cite{Monni:2011gb} results for the analytical Laplace inversion to N$^3$LL and N$^4$LL accuracy.
+
+We observe in \cref{fig:Thrust distribution with data} that the peak of the distribution is close to the experimental data as we increase the logarithmic accuracy,
 this is expected since the resummation of the logarithms is supposed to improve the accuracy of the prediction.
 However, the peak also becomes lower while the tail of the distribution becomes higher, this means that if we set the value of the coupling to be $\alpha_s=0.118$, there's 
 too much radiation. To fix this, we would need to decrease the value of the coupling, which then would lead us to extract a lower value of $\alpha_s$ with respect to the world average. 
-
-
 
 \end{document}

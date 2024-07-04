@@ -8,13 +8,13 @@
 
 \chapter{Introduction}\label{ch:introduction}
 
-In this thesis, we focus on a specific aspect of theoretical high-energy physics and collider physics: the resummation of large logarithms for 
+In this thesis, we focus on a specific aspect of theoretical high-energy physics and collider physics: the resummation of QCD large logarithms for 
 the Thrust event-shape distribution in electron-positron ($e^+e^-$) collisions.
 
-High energy physics, often synonymous with particle physics, and collider physics are crucial because 
+High energy physics, often synonymous of particle physics, and collider physics are crucial because 
 they explores the most basic constituents of matter and helps us understand three of the four fundamental forces of nature: 
 the strong, weak, and electromagnetic forces. Collider experiments test the predictions of the Standard Model of particle physics,
-the most successful theory of particle physics to date. Through high precision theoretical prediction and experimental measurements,
+the most successful theory of particle and interactions to date. Through high precision theoretical prediction and experimental measurements,
 it is possible to test the limits of the Standard Model, search for new physics beyond it and gain a better understanding of the fundamental forces. 
 
 One key parameter of the Standard Model is the strong coupling constant $\alpha_s$, which measures the strength of the strong force.
@@ -55,23 +55,24 @@ these quarks and gluons cannot exist freely and thus hadronize, forming jets of 
 that originates from the hadronization of a single quark or gluon.
 
 In electron-positron annihilation, the electron and positron interact electromagnetically \\
-through the exchange of a photon, which mediates the electromagnetic interaction. 
-This photon can then decay into a quark-antiquark pair in another electromagnetic process, conserving the electrical and color charge of the initial state, as well as the four-momentum.
+through the exchange of a virtual photon, which mediates the electromagnetic interaction, virtual refers 
+to the fact that the photon is off-shell, meaning it does not satisfy the mass-shell condition $E = pc$ for a real photon with mass $m=0$. 
+This virtual photon can then decay into a quark-antiquark pair in another electromagnetic process, conserving the electrical and color charge of the initial state, as well as the four-momentum.
 
 The quark-antiquark pair produced interacts through both the strong force and the electromagnetic force, as they possess both electric charge and color charge.
 They can radiate gluons via the strong force and photons via the electromagnetic force. This radiation process continues, creating a cascade of particles known as a parton shower.
-The parton shower eventually hadronizes into jets when the particles are no longer energetic enough to radiate further, and the final state particles can be detected by the detectors, with their momenta measured to study the underlying processes.
+The parton shower eventually hadronizes into jets when the particles are no longer energetic enough to radiate further, and the final state particles can be revealed by the detectors, with their momenta measured to study the underlying processes.
 
 
-As is typical in physics, the equations governing these interactions are highly complex, finding exact solutions is nearly impossible.
+As is typical in physics, the equations governing these interactions are highly complex so that finding exact solutions is nearly impossible.
 Therefore, functions of interest are often expanded perturbatively, meaning they are expressed as a power series in a small parameter.
 
 For the electromagnetic interaction, this small parameter is the fine structure constant (or electromagnetic coupling constant) $\alpha_{em} \sim \frac{1}{137}$.
 
-For interactions involving the strong force, it is natural to use the aformentioned strong coupling constant, $\alpha_S$. This key parameter becomes small 
+For interactions involving the strong force, it is natural to use the aformentioned strong coupling constant, $\alpha_s$. This key parameter becomes small 
 at high energies (or equivalently, short distances) due to the phenomen known as asymptotic freedom of QCD.
 
-Extraction of $\alpha_s$ can be achieved from comparing the distribution of event shape variables such as the thrust and experimental data. 
+Extraction of $\alpha_s$ can be achieved from comparing precise QCD distribution such as the thrust event shape variable against experimental data. 
 
 
 \section{Thrust variable}\label{sec:Thrust}
@@ -82,17 +83,25 @@ Thrust $T$ is defined as:
     T = \max_{\vec{n}} \frac{\sum_i |\vec{p}_i \cdot \vec{n}|}{\sum_i |\vec{p}_i|} \stackrel{\text{def}}{=} 1-\tau
 \end{equation}
 
-where the sum is over all final state particles and $\vec{n}$ is a unit vector.
-In practice, the sum may be carried over the detected particles only. 
+where the sum is over all final state particles and $\vec{n}$ is a unit vector that points in the direction
+which maximizes the magnitude of $T$. A quick way to calculate the thrust axis $\vec{n}$ for small number $N$ of partons in the final state is described 
+in the Appendix A of \cite{Weinzierl_2009}, where the optimization problem of finding the unit vector which maximizes a certain configuration of final state partons 
+is reduced to a simple loop over $2^{N-1}-1$ configurations of signs $\{s_1,\dots,s_N\}$ which satisfies the constraint
+$ \vec{p}_j\cdot \vec{n} = s_j \vert \vec{p}_j\cdot \vec{n} \vert $ where $\vec{p}_j$ is the momenta of the $j$-th parton.
+
+In practice, the sum may be carried over the detected particles only.  
 The thrust distribution represents the probability of observing a given value of $T$ in $e^+e^-$ annihilation, \emph{i.e} the probability of observing a given configuration of momenta of final-state particles 
 with respect to the thrust axis.
 
 It can be seen from this definition that the thrust is an infrared and collinear safe quantity, that is, it is insensitive to the emission of zero momentum particles and to the splitting of 
 one particle into two collinear ones.
 
-In fact, contribution from soft particles with $\vec{p_i}\to 0$ drop out, and collinear splitting does not change the thrust:
-$\vert (1-\lambda)\vec{p_i}\cdot \vec{n} \vert + \vert \lambda \vec{p_i}\cdot \vec{n}\vert = \vert \vec{p_i}\cdot \vec{n} \vert$ and 
-$\vert (1-\lambda)\vec{p_i} \vert + \vert \lambda \vec{p_i}\vert = \vert \vec{p_i} \vert$
+In fact, contribution from soft particles with $\vec{p_i}\to 0$ drop out, and collinear splitting of a parton with 
+momenta $\vec{p}$ into two partons of momenta $(1-\lambda)\vec{p}$ and $\lambda \vec{p}$ does not change the thrust:
+\begin{flalign*}
+    &\vert (1-\lambda)\vec{p_i}\cdot \vec{n} \vert + \vert \lambda \vec{p_i}\cdot \vec{n}\vert =(1-\lambda)\vert\vec{p_i}\cdot \vec{n} \vert + \lambda \vert \vec{p_i}\cdot \vec{n}\vert = \vert \vec{p_i}\cdot \vec{n} \vert ,\\
+    &\vert (1-\lambda)\vec{p_i} \vert + \vert \lambda \vec{p_i}\vert = (1-\lambda) \vert \vec{p_i} \vert + \lambda \vert\vec{p_i}\vert = \vert \vec{p_i} \vert .
+\end{flalign*}
 
 Formally, infrared-safe observables are the one which do not distinguish between (n+1)-partons and n-partons in the soft/collinear limit, \emph{i.e},
 are insensitive to what happens at long-distance (non-perturbative) scales.
@@ -107,8 +116,8 @@ for event shapes have been known since 1980 \cite{Ellis:1980wv}, the relevant ne
     \includegraphics[width=0.5\textwidth]{figures/LEP_Thrust_NNLO.png}
     \caption{Distributions measured by ALEPH, after correction for backgrounds and detector
     effects of thrust at energies between 91.2 and 206
-    GeV together with the fitted NNLO QCD predictions. The error bars correspond to statistical
-    uncertainties.The plotted
+    GeV together with NNLO QCD predictions. The error bars correspond to statistical
+    uncertainties. The plotted
     distributions are scaled by arbitrary factors for presentation. Image taken from \cite{Dissertori_2008}.}
     \label{fig:LEP_Thrust_NNLO}
 \end{figure}
@@ -128,7 +137,7 @@ The cross section is defined as the probability of observing a final state with 
 as a differential cross section, as a cumulative distribution and as its Laplace transform.
 
 \begin{equation}\label{eq:differential_cross_section}
-    \sigma(\tau) = \int^\tau_0 \dd{\tau'} \dv{\sigma}{\tau'}
+    \sigma(\tau) =  \frac{1}{\sigma_0} \dv{\sigma}{\tau}
 \end{equation}
 
 \begin{equation}\label{eq:cumulative_distribution}
@@ -139,7 +148,7 @@ as a differential cross section, as a cumulative distribution and as its Laplace
     \Tilde{\sigma}(\nu) = \int^\infty_0 \dd{\tau} e^{-\nu \tau} \dv{\sigma}{\tau}
 \end{equation}
 
-It can be seen that a two-particle final state has fixed $T = 1$, in fact at the zeroth order of the fixed order this corrisponds to a delta distribution 
+It can be seen that a two-particle final state has fixed $T = 1$, in fact at the zeroth order of the fixed order this corresponds to a delta distribution 
 for the differential cross section, as shown in  \cref{eq:LO fixed order}, consequently the thrust distribution receives its first non-trivial contribution 
 from three-particle final states.
 
@@ -156,15 +165,23 @@ any finite-order perturbative calculation cannot give an accurate evaluation of 
 For example, at leading order in perturbation theory the thrust distribution has the form:
 
 \begin{equation}\label{eq:LO fixed order}
-    \frac{1}{\sigma_0}\dv{\sigma}{\tau} = \delta(\tau) + \frac{2\alpha_s}{3\pi} \qty[\frac{-4 \ln \tau - 3}{\tau} + \dots]
+    \frac{1}{\sigma_0}\dv{\sigma}{\tau} = \delta(\tau) + \frac{2\alpha_s}{3\pi} \qty[\frac{-4 \ln \tau - 3}{\tau} + \dots]_{+}
 \end{equation}
 
-where $\sigma_0$ is the born cross section and the ellipsis denotes terms that are regular as $\tau \to 0$. 
-Upon integration over $\tau$, we obtain the cumulative distribution:
+where $\sigma_0$ is the born cross section, the ellipsis denotes terms that are regular as $\tau \to 0$ and the subscript $+$ denotes the 
+plus distribution, which is defined as:
 
 \begin{equation}
-    R_T(\tau) = \int_0^\tau \dd{\tau'} \frac{1}{\sigma_0}\dv{\sigma}{\tau'} = 1 + \frac{2\alpha_s}{3\pi} \qty[-2 \ln^2 \tau - 3 \ln \tau + \dots] 
+    \qty[\frac{-4 \ln \tau - 3}{\tau}]_{+} = \lim_{\epsilon \to 0}\qty[ \qty(\frac{-4 \ln \tau - 3}{\tau}) \theta(\tau - \epsilon) +\delta(\tau - \epsilon)\int_1^{\tau}  \dd{\tau'} \qty(\frac{-4 \ln \tau' - 3}{\tau'})]
 \end{equation}
+
+Upon integration over $\tau$, we obtain the cumulative distribution:
+
+\begin{flalign}
+    R_T(\tau) &= \int_0^\tau \dd{\tau'} \frac{1}{\sigma_0}\dv{\sigma}{\tau'} \nonumber \\
+    &= 1 + \frac{2\alpha_s}{3\pi} + \lim_{\epsilon \to 0} \qty[ \int_\epsilon^\tau  \dd{\tau'} \qty(\frac{-4 \ln \tau' - 3}{\tau'} + \dots) + \int_1^{\epsilon}  \dd{\tau'} \qty(\frac{-4 \ln \tau' - 3}{\tau'}+\dots)]\\
+    &= 1 + \frac{2\alpha_s}{3\pi} \qty[-2 \ln^2 \tau - 3 \ln \tau + \dots] \nonumber
+\end{flalign}
 
 Double logarithmic terms of the form $\alpha_s^n \ln^{2n}\tau$ plagues the fixed order expansion in the strong coupling. In the dijet region, higher order 
 terms are as important as lower order ones, necessitating resummation to achieve reliable predictions.
@@ -181,26 +198,28 @@ to NLO and NNLO numerically, as mentioned earlier. At a centre-of-mass energy $Q
 where the complete leading order expression for the thrust distribution reads \cite{Ellis:1980wv}:
 
 \begin{equation}\label{eq:Fixed_order_A}
-    \dv{A}{\tau}(\tau) =  \text{C}_F \left(9 \tau -\frac{3}{\tau }+\left(-6 +\frac{4}{(1-\tau ) \tau }\right) \log \left(\frac{1-2 \tau }{\tau }\right)+6\right)
+    \dv{A}{\tau}(\tau) =  \text{C}_F \left(9 \tau -\frac{3}{\tau }+\left(-6 +\frac{4}{(1-\tau ) \tau }\right) \ln \left(\frac{1-2 \tau }{\tau }\right)+6\right)
 \end{equation}
 
-Where $C_F = \frac{4}{3}$ is the Casimir of the fundamental representation of SU(3). As mentioned earlier, this expansion becomes unreliable near the dijet limit $\tau \to 0$ due to the presence of large logarithms.
+with $C_F = \frac{4}{3}$ the Casimir of the fundamental representation of SU(3). As mentioned earlier, this expansion becomes unreliable near the dijet limit $\tau \to 0$ due to the presence of large logarithms.
 Resummation of these terms to all orders in $\alpha_s$ is necessary to obtain a reliable prediction.
 
 While the cumulant distribution has the following fixed-order expansion:
 
 \begin{equation}\label{eq:Fixed_order_R}
-    R_T(\tau) = 1 + A(\tau) \frac{\alpha_s(\mu)}{2\pi} + B(\tau,\mu) \frac{\alpha_s(\mu)}{2\pi}^2 + C(\tau,\mu)\frac{\alpha_s(\mu)}{2\pi}^3 + \order{\alpha_s^4}
+    R_T(\tau) = 1 + A(\tau) \frac{\alpha_s(\mu)}{2\pi} + B(\tau,\mu) \frac{\alpha_s(\mu)}{2\pi}^2 + C(\tau,\mu)\frac{\alpha_s(\mu)}{2\pi}^3 + \order{\alpha_s^4} ,
 \end{equation}
 
-the fixed-order coeficcient $A,B$ and $C$ can be obtained by integrating the differential cross section \cref{eq:Fixed_order_A} to all orderand 
-imposing the normalization condition $R(\tau_{max}) = 1$, where $\tau_{max}$ is the maximum kinetically allowed value of $\tau$. At leading order($e^+e^- \to q\bar{q}g$) $\tau_{max}=\frac{1}{3}$, at Next-to-Leading Order
+the fixed-order coeficcient $A,B$ and $C$ can be obtained by integrating the differential cross section \cref{eq:Fixed_order_A} to all order and 
+imposing the normalization condition $R(\tau_{max}) = 1$, where $\tau_{max}$ is the maximum kinetically allowed value of $\tau$. At leading order ($e^+e^- \to q\bar{q}g$) $\tau_{max}=\frac{1}{3}$, at Next-to-Leading Order
 is $\tau_{max}=1-\frac{1}{\sqrt{3}}$ and from NNLO onwards $\tau_{max}$ needs to be estimated numerically.
 
+At leading order we have:
+
 \begin{flalign} \label{eq:Fixed_order_A_integrated}
-    A(\tau) = \int_0^\tau \dd{\tau'} \dv{A}{\tau'}(\tau') &= C_F \Bigl(\frac{9 \tau ^2}{2}-2 \log ^2(1-\tau )-2 \log ^2(\tau )+6 \tau  (\log (\tau )+1) &\nonumber \\
-    &+4 \log (1-\tau ) \log (\tau )-3 \log (\tau )+3 (1-2 \tau ) \log (1-2 \tau) \\
-    &-4 \text{Li}_2\left(\frac{\tau }{1-\tau }\right)\Bigr) \nonumber
+    A(\tau) = \int_0^\tau \dd{\tau'} \dv{A}{\tau'}(\tau') &= C_F \Bigl(\frac{9 \tau ^2}{2}-2 \ln ^2(1-\tau )-2 \ln ^2(\tau )+6 \tau  (\ln (\tau )+1) &\nonumber \\
+    &+4 \ln (1-\tau ) \ln (\tau )-3 \ln (\tau )+3 (1-2 \tau ) \ln (1-2 \tau) \\
+    &-4 \text{Li}_2\left(\frac{\tau }{1-\tau }\right)\Bigr) . \nonumber
 \end{flalign}
 
 \end{document}

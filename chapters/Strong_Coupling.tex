@@ -6,9 +6,9 @@
 
 \begin{document}
 
-\chapter{Calculations}\label{ch:calculations}
+\chapter{Resummed Calculations for Thrust}\label{ch:calculations}
 
-Next, we turn to the core task: calculating the resummation coefficients $f_i(\lambda)$ of the
+We now turn to one of the many results of the present work: the calculation of the resummation coefficients $f_i(\lambda)$ of the
 Sudakov form factor $\exp{\mathcal{F}}$. To compute the $f_i(\lambda)$ functions, equation \cref{eq:master formula} is used, which
 requires knowledge of the $\mu$-dependence of the QCD running coupling $\alpha_s(\mu)$.
 We therefore proceed firstly to calculate the running coupling $\alpha_s(\mu)$ from LO up to N$^4$LO because the QCD $\beta$-function is known up to five loops \cite{Herzog_2017}. 
@@ -16,10 +16,10 @@ We then use the obtained results to calculate the $f_i(\lambda)$ functions up to
 
 \section{QCD running coupling} \label{sec:QCD_running_coupling}
 
-A surpring effect of the renormalization procedure is that, after renormalizatio, the "constants" are not constant
+A surpring effect of the renormalization procedure is that, after renormalization, the coupling "constants" are not constant
 at all, but depend on the energy.
 
-One way to understand this is the following: Classically, the force between two sources is then given by $F = \frac{\alpha}{r^2}$, 
+One way to understand this is the following: Classically, the Coulomb potential between two sources is then given by $V = \frac{\alpha}{r}$, 
 characterized by a universal coefficient -- the coupling constant $\alpha$, which 
 quantifies the force between two static bodies of unit “charge” at distance $r$,
 \textit{i.e.}, the electric charge for QED, the color charge for QCD, the weak isospin
@@ -27,15 +27,14 @@ for the weak force, or the mass for gravity. Consequently, the coupling $\alpha$
 as being proportional to the elementary charge squared, \textit{e.g.}, $\alpha_{em} \equiv \frac{e^2}{4\pi}$ where 
 $e$ is the elementary electric charge, or $\alpha_s \equiv \frac{g^2}{4\pi}$ where $g$ is the elementary gauge field
 coupling in QCD.
-In quantum field theory (QFT), $\frac{1}{r^2}$ is the coordinate-space expression
-for the propagator of the force carrier (gauge boson) at leading-order in perturbation
+In the non-relativistic limit of QCD, $\frac{1}{r}$ is the coordinate-space representation
+for the propagator of the gluon (force carrier) at leading-order in perturbation
 theory: in momentum space, the analogous propagator is proportional to $\frac{1}{q^2}$, where q is
 the boson 4-momentum ($Q^2=-q^2>0$).
 
 For sources interacting weakly, the one-boson exchange representation of interactions
-is a good first approximation. However, when interactions become strong (with “strong”
-to be defined below), higher orders in perturbation theory become noticeable and the
-$\frac{1}{r^2}$ law no longer stands. In such cases, it makes good physics sense to fold the extra r-dependence
+is a good approximation. However, when interactions become strong, higher orders in perturbation theory become noticeable and the
+$\frac{1}{r}$ law no longer stands. In such cases, it makes good physics sense to fold the extra r-dependence
 into the coupling, which thereby becomes $r$, or equivalently $Q^2$, dependent.
 
 Another way to view this is that the running of the coupling is due to vacuum polarization. The vacuum is not empty, but is filled 
@@ -46,11 +45,10 @@ While in QED, the extra $r$-dependence comes only from the vacuum polarization. 
 $\alpha_s$ receives contributions from the vacuum polarization and from gluon self-interactions since the gluon 
 has a color charge.
 
-The two couplings have opposite trends: the QED coupling increases with energy and the theory becomes strongly
-coupled at high energies, whereas the opposite happens for the QCD coupling as it is large at low
+The two couplings have opposite trends: the QED coupling increases with energy and the theory could eventually become strongly
+coupled at extremely high energies, whereas the opposite happens for the QCD coupling as it is large at low
 energies and decreases with energy. This property of being weakly coupled at high energies is
-known as \emph{asymptotic freedom} and it means that perturbative calculations in QCD can only be
-done at high energies where $\alpha_s$ becomes small enough that a power expansion is meaningful.
+known as \emph{asymptotic freedom} and it means that perturbative calculations in QCD can be used at high energies where $\alpha_s$ becomes small enough that a power expansion is meaningful.
 
 In the framework of perturbative QCD (\emph{pQCD}), predictions for observables are expressed in
 terms of the renormalized coupling $\alpha = \alpha (\mu^2)$, a function of an unphysical renormalization scale
@@ -143,7 +141,7 @@ and $\delta\alpha$ are needed for higher order corrections. The equation to solv
     \int _{Q^2}^{\mu^2} - b_0 \frac{ \dd\mu^2}{\mu^2} ( 1 - \frac{b_1}{b_0} \alpha_{LO}(\mu^2) )
 \end{equation}
 
-Using \emph{Mathematica} to solve this equation, we obtain the two-loop running coupling:
+Using \emph{Mathematica} \cite{Mathematica} to solve this equation, we obtain the two-loop running coupling:
 
 \begin{equation}
     \alpha_{\text{NLO}}(\mu^2) = \frac{\alpha_s}{1+\lambda_\mu + \alpha_s \frac{b_1}{b_0} \log(1+\lambda_\mu)}
@@ -154,12 +152,12 @@ in powers of $\alpha_s$ by keeping $\lambda_\mu$ fixed and only keeping terms up
 $\order{\alpha_s^2}$ by doing so one obtains:
 
 \begin{equation}\label{eq:NLO}
-    \alpha_{\text{NLO}}\qty(\mu^2) = \alpha_{\text{LO}}\qty(\mu^2) -\frac{b_1}{b_0} \alpha_{LO}^2\qty(\mu^2) \log(1+\lambda_\mu) + \mathcal{O}(\alpha_s^2)
+    \alpha_{\text{NLO}}\qty(\mu^2) = \alpha_{\text{LO}}\qty(\mu^2) -\frac{b_1}{b_0} \alpha_{LO}^2\qty(\mu^2) \log(1+\lambda_\mu) + \mathcal{O}(\alpha_s^2) .
 \end{equation}
 
 We found the correction: 
 \begin{equation}\label{eq:DNLO}
-\delta\alpha_{\text{NLO}}\qty(\mu^2) = -\frac{b_1}{b_0} \alpha_{\text{LO}}^2\qty(\mu^2) \log(1+\lambda_\mu)
+\delta\alpha_{\text{NLO}}\qty(\mu^2) = -\frac{b_1}{b_0} \alpha_{\text{LO}}^2\qty(\mu^2) \log(1+\lambda_\mu) .
 \end{equation}
 
 By repeating the same procedure, one can obtain the three-loop running coupling $\alpha_{NNLO}$ and so on.
@@ -252,7 +250,7 @@ Similarly one can obtain the four-loop running coupling $\alpha_{N^3LO}$ and fiv
 
 Below we present a plot of the running coupling $\alpha_s$ as a function of the energy scale $(x m_z)^2$ for different orders of perturbation theory,
 where $m_z=91.18$ GeV is the mass of the Z boson. The global average value of the strong coupling constant is $\alpha_s(m_z^2) = 0.1179 \pm 0.0009$ \cite{PDG2022}.
-For the plot i use $\alpha_s(m_z^2) = 0.118$  
+For the plot $\alpha_s(m_z^2) = 0.118$ is used.  
 
 \begin{figure}[htbp]
     \centering
@@ -264,7 +262,7 @@ For the plot i use $\alpha_s(m_z^2) = 0.118$
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{figures/alpha_zoom.png}
-        \caption{Zoomed-in at the low energy region of the strong running coupling $\alpha_s$ at different orders}
+        \caption{Zoomed-in at low energies of the strong running coupling $\alpha_s$ at different orders}
         \label{fig:alpha_zoom}
     \end{subfigure}
     \caption{Running coupling $\alpha_s$ at different orders of perturbation theory.}
@@ -272,7 +270,7 @@ For the plot i use $\alpha_s(m_z^2) = 0.118$
 \end{figure}
 
 In \cref{fig:alpha_zoom} wee see that the running coupling $\alpha_s$ is large and diverges at a finite 
-energy (Landau pole), this is a sign of the non-perturbative nature of QCD at low energies.
+energy (the so called Landau pole), this is a sign of the non-perturbative nature of QCD at low energies.
 It's very clear for the LO running coupling, for some some low energy scales it becomes negative, which is clearly unphysical.
 
 \end{document}

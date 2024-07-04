@@ -8,12 +8,12 @@
 
 \section{Calculating the resummation coefficients}\label{sec:f_coeff}
 
-Now we will calculate the resummation coefficients $f_i(\lambda)$ for the thrust distribution.
+In this section we discuss the calculation of the resummation coefficients $f_i(\lambda)$ for the thrust distribution.
 
 In the article by Catani, Turnock, Webber and Trentadue \cite{CATANI1991491}, it was observed that 
 for a final state configuration corresponding to a large value of thrust , \cref{eq:Thrust} can be approximated by
 
-\begin{equation}
+\begin{equation} \label{eq:Thrust_approx}
     \tau = 1-T \approx \frac{k_1^2+k_2^2}{Q^2}
 \end{equation}
 
@@ -60,7 +60,7 @@ An integral representation for the Laplace transform $\Tilde{J}_\nu(Q^2)$ is giv
 with 
 
 \begin{align*}
-    A(\alpha_s) &= \sum_{n=1}^\infty A_n \qty(\frac{\alpha_s}{\pi})^n & B(\alpha_s) &= \sum_{n=1}^\infty B_n\qty(\frac{\alpha_s}{\pi})^n
+    A(\alpha_s) &= \sum_{n=1}^\infty A_n \qty(\frac{\alpha_s}{\pi})^n , & B(\alpha_s) &= \sum_{n=1}^\infty B_n\qty(\frac{\alpha_s}{\pi})^n .
 \end{align*}
 
 Function $A(\alpha_s)$ is associated with the cusp anomalous dimension and governs the exponentiation of the leading logarithms (LL). 
@@ -69,7 +69,7 @@ It captures the resummation of the soft and collinear gluon emissions that domin
 Function $B(\alpha_S)$ includes the next-to-leading logarithmic (NLL) corrections and accounts for subleading contributions from hard collinear emissions.
 It typically involves the non-cusp part of the anomalous dimensions and running of the coupling constant.
 
-The integral as it is cannot be integrated, the $u$ integration may be performed using the prescription by Paolo Nason in Appendix A of \cite{Catani_2003_appendix} and
+The integral as it is cannot be integrated, the $u$ integration may be performed using the prescription discussed in Appendix A of \cite{Catani_2003_appendix} and
 readapting the formula to the case of Laplace transform instead of Mellin transform.
 
 This method is a generalization of the prescription to NLL accuracy in \cite{CATANI19933}
@@ -78,17 +78,17 @@ This method is a generalization of the prescription to NLL accuracy in \cite{CAT
     e^{-u \nu Q^2} - 1 \simeq -\Theta(u-v) \qq{with $v = \frac{N_0}{N}$}
 \end{equation}
 
-where $N_0 = e^{-\gamma_E}$, $\gamma_E = 0.5772 \dots $ being the Euler-Mascheroni constant
+where $N_0 = e^{-\gamma_E}$.
 
 In \cref{Appendix: Laplace and Mellin transform} we show that the prescription to evaluate the large-N Mellin moments of soft-gluon
 contributins at an arbitrary logarithmic accuracy, can be used for the Laplace transform as well, then we can use this result to express \cref{eq:master formula} 
 in an alternative representation:
 
 \begin{equation}\label{eq:master_formula alt}
-    \ln \Tilde{J}_\nu^q(Q^2) = - \int_{N_0/N}^{1} \frac{\dd u}{u} \qty[ \int_{u^2 Q^2}^{u Q^2} \frac{1}{q^2} A\qty(\alpha_s(q^2)) \dd q^2 + \frac{1}{2} \Tilde{B}\qty(\alpha_s(u Q^2))] + \ln \Tilde{C}\qty(\alpha_s(\mu^2),\frac{\mu^2}{Q^2})
+    \ln \Tilde{J}_\nu^q(Q^2) = - \int_{N_0/N}^{1} \frac{\dd u}{u} \qty[ \int_{u^2 Q^2}^{u Q^2} \frac{1}{q^2} A\qty(\alpha_s(q^2)) \dd q^2 + \frac{1}{2} \Tilde{B}\qty(\alpha_s(u Q^2))] + \ln \Tilde{C}\qty(\alpha_s(\mu^2),\frac{\mu^2}{Q^2}).
 \end{equation}
 
-Note that, due to the integration of the running coupling the integral in \cref{eq:master_formula} is singular for all values of $N=\nu Q^2$. However, if we perform the integration up 
+Note that, due to the integration of the running coupling the integral in \cref{eq:master formula} is singular for all values of $N=\nu Q^2$. However, if we perform the integration up 
 to a fixed logarithmic accuracy $N^kLL$ (\emph{i.e} we compute the leading $\alpha_s^n \ln^{n+1}N$, next-to-leading $\alpha_s^n \ln^nN$ and so on to $\alpha_s^n \ln^{n+1-k}$ terms ), we find the form factor: 
 
 \begin{flalign}\label{eq:factorized_J_nu}
@@ -96,13 +96,13 @@ to a fixed logarithmic accuracy $N^kLL$ (\emph{i.e} we compute the leading $\alp
     &+ \ln \Tilde{C}\qty(\alpha_s(\mu^2),\frac{\mu^2}{Q^2})
 \end{flalign}
 
-From now on i'll always use \cref{eq:master_formula alt}, so i'll drop the $\Tilde{}$ notation for $B$.
+From now on we'll always use \cref{eq:master_formula alt}, so i'll drop the $\Tilde{}$ notation for $B$.
 
 We observe that the N-space formula \cref{eq:master_formula alt} is finite and uniquely defined up to the 
 very large $N=N_L=\exp(\frac{1}{2\alpha_s b_0})$ ($\lambda = \frac{1}{2}$), thanks to the prescription above.
 
 
-\subsection{\texorpdfstring{$f_i$}{fi}}
+\subsection{resummation functions}
 
 To calculate explicit expressions for the first few $f_i$ terms, we first write explicitly the internal integral of \cref{eq:master formula}, for
 now let's forget the $\ln \Tilde{C}$ term, it can be absorbed into the definition of $A$ and $B$:
@@ -158,109 +158,135 @@ Now armed with this knowledge we can calculate \cref{eq:master_formula alt} and 
 
 where $\lambda = \alpha_s b_0 \ln N$, $N=\nu Q^2$, $\alpha_s = \alpha_s(Q^2)$ and
 
-
 \begin{flalign}\label{eq:f1}
-    f_1(\lambda) =-\frac{A_1}{2 \pi  b_0 \lambda } \qty[(1-2 \lambda ) \log (1-2 \lambda )-2 (1-\lambda ) \log (1-\lambda )]
+    f_1(\lambda) =-\frac{A_1}{2 \pi  b_0 \lambda } \qty[(1-2 \lambda ) \ln (1-2 \lambda )-2 (1-\lambda ) \ln (1-\lambda )]
 \end{flalign}
 
 
 \begin{flalign}\label{eq:f2}
-    f_2(\lambda) &= -\frac{A_2}{2 \pi ^2 b_0^2} \qty[2 \log (1-\lambda )-\log (1-2 \lambda )]+\frac{B_1 \log (1-\lambda )}{2 \pi  b_0} +\frac{\gamma  A_1}{\pi  b_0} \qty[\log (1-2 \lambda )-\log (1-\lambda )] & \nonumber\\
-    &-\frac{A_1 b_1}{2 \pi  b_0^3} \left[-\log ^2(1-\lambda )+\frac{1}{2} \log ^2(1-2 \lambda )-2 \log (1-\lambda )+\log (1-2 \lambda )\right]
+    f_2(\lambda) &= -\frac{A_2}{2 \pi ^2 b_0^2} \qty[2 \ln (1-\lambda )-\ln (1-2 \lambda )]+\frac{B_1 \ln (1-\lambda )}{2 \pi  b_0} +\frac{\gamma_E  A_1}{\pi  b_0} \qty[\ln (1-2 \lambda )-\ln (1-\lambda )] & \nonumber\\
+    &-\frac{A_1 b_1}{2 \pi  b_0^3} \left[-\ln ^2(1-\lambda )+\frac{1}{2} \ln ^2(1-2 \lambda )-2 \ln (1-\lambda )+\ln (1-2 \lambda )\right]
 \end{flalign}
     
 \begin{flalign}\label{eq:f3}
     f_3(\lambda) &= -\frac{A_3 }{2 \pi ^3 b_0^2 (\lambda -1) (2 \lambda -1)}\lambda ^2 + \frac{B_2}{2 \pi ^2 b_0 (\lambda -1)}\lambda +\frac{B_2 \lambda }{2 \pi ^2 b_0 (\lambda -1)}& \nonumber\\
-    &+\frac{b_1 A_2}{2 \pi ^2 b_0^3 (\lambda -1) (2 \lambda -1)} \left[3 \lambda ^2 + (1-\lambda) \log (1-2 \lambda)- 2 (1-2 \lambda) \log (1-\lambda)\right]& \nonumber \\
-    &-\frac{\gamma A_2 \lambda }{\pi ^2 b_0 (\lambda -1) (2 \lambda -1)} - \frac{B_1 b_1 }{2 \pi  b_0^2 (\lambda -1)}\qty[\lambda +\log (1-\lambda )] + \frac{\gamma B_1 \lambda}{2 \pi  (\lambda -1)}+\frac{\gamma ^2 A_1 \lambda  (2 \lambda -3)}{2 \pi  (\lambda -1) (2 \lambda -1)}& \nonumber \\ 
-    &+ \frac{b_1 \gamma A_1}{\pi  b_0^2 (\lambda -1) (2 \lambda -1)}  \qty[-\lambda +(1-2 \lambda)  \log (1-\lambda )- (1-\lambda)  \log (1-2 \lambda )] \\
-    &-\frac{b_1^2 A_1}{2 \pi  b_0^4 (\lambda -1) (2 \lambda -1)} \Bigl[\left(\lambda ^2+(2 \lambda -1) \log (1-\lambda ) (2 \lambda +\log (1-\lambda ))\right)&\nonumber\\
-    &+\frac{1}{2}\left((1-\lambda) \log ^2(1-2 \lambda )\right)-2 (\lambda -1) \lambda  \log (1-2 \lambda )\Bigr] & \nonumber\\
-    &-\frac{b_0 b_2 A_1}{2 \pi  b_0^4 (\lambda -1) (2 \lambda -1)} \left[\lambda ^2+ (\lambda -1) (2 \lambda -1)\qty(2 \log (1-\lambda )+ \log (1-2 \lambda ))\right] & \nonumber
+    &+\frac{b_1 A_2}{2 \pi ^2 b_0^3 (\lambda -1) (2 \lambda -1)} \left[3 \lambda ^2 + (1-\lambda) \ln (1-2 \lambda)- 2 (1-2 \lambda) \ln (1-\lambda)\right]& \nonumber \\
+    &-\frac{\gamma_E A_2 \lambda }{\pi ^2 b_0 (\lambda -1) (2 \lambda -1)} - \frac{B_1 b_1 }{2 \pi  b_0^2 (\lambda -1)}\qty[\lambda +\ln (1-\lambda )] + \frac{\gamma_E B_1 \lambda}{2 \pi  (\lambda -1)}+\frac{\gamma_E ^2 A_1 \lambda  (2 \lambda -3)}{2 \pi  (\lambda -1) (2 \lambda -1)}& \nonumber \\ 
+    &+ \frac{b_1 \gamma_E A_1}{\pi  b_0^2 (\lambda -1) (2 \lambda -1)}  \qty[-\lambda +(1-2 \lambda)  \ln (1-\lambda )- (1-\lambda)  \ln (1-2 \lambda )] \\
+    &-\frac{b_1^2 A_1}{2 \pi  b_0^4 (\lambda -1) (2 \lambda -1)} \Bigl[\left(\lambda ^2+(2 \lambda -1) \ln (1-\lambda ) (2 \lambda +\ln (1-\lambda ))\right)&\nonumber\\
+    &+\frac{1}{2}\left((1-\lambda) \ln ^2(1-2 \lambda )\right)-2 (\lambda -1) \lambda  \ln (1-2 \lambda )\Bigr] & \nonumber\\
+    &-\frac{b_0 b_2 A_1}{2 \pi  b_0^4 (\lambda -1) (2 \lambda -1)} \left[\lambda ^2+ (\lambda -1) (2 \lambda -1)\qty(2 \ln (1-\lambda )+ \ln (1-2 \lambda ))\right] & \nonumber
 \end{flalign}
 
 \begin{flalign}\label{eq:f4}
     f_4(\lambda) &= -\frac{A_4 \lambda ^2 \left(2 \lambda ^2-6 \lambda +3\right)}{6 \pi ^4 b_0^2 (\lambda -1)^2 (2 \lambda -1)^2} + \frac{B_3 (\lambda -2) \lambda }{4 \pi ^3 b_0 (\lambda -1)^2} +\frac{b_1 A_3}{12 \pi ^3 b_0^3 (\lambda -1)^2 (2 \lambda -1)^2} \Bigl[15 \lambda ^2& \nonumber\\
-    &+10 (\lambda -3) \lambda^3+3 (\lambda -1)^2 \log (1-2 \lambda )-6 (1-2 \lambda )^2 \log (1-\lambda )\Bigr]& \nonumber\\
-    &+\frac{\gamma A_3 \lambda  (3 \lambda -2)}{2 \pi ^3 b_0 (\lambda -1)^2 (2 \lambda -1)^2}+\frac{\gamma B_2 (\lambda -2) \lambda }{2 \pi ^2 (\lambda -1)^2}-\frac{b_1 B_2 \left[\lambda ^2-2 \lambda -2 \log (1-\lambda )\right]}{4 \pi ^2 b_0^2 (\lambda -1)^2} & \nonumber\\
-    &+\frac{\gamma ^2 A_2 \lambda  \left(4 \lambda ^3-12 \lambda ^2+15 \lambda -6\right)}{2 \pi ^2 (\lambda -1)^2 (2 \lambda -1)^2}+\frac{b_1 \gamma A_2}{2 \pi ^2 b_0^2 (\lambda -1)^2 (2 \lambda -1)^2}  \Bigl[\lambda  (2-3 \lambda ) &\nonumber\\
-    &+2 (\lambda -1)^2 \log (1-2 \lambda )-2 (1-2 \lambda )^2 \log (1-\lambda )\Bigr] +\frac{b_2 A_2 \lambda ^3 (4 \lambda -3)}{3 \pi ^2 b_0^3 (\lambda -1)^2 (2 \lambda -1)^2}& \nonumber\\
-    &-\frac{b_1^2 A_2}{12 \pi ^2 b_0^4 (\lambda -1)^2 (2 \lambda -1)^2} \Bigl[\lambda ^2 \left(22 \lambda ^2-30 \lambda +9\right)+3 (\lambda -1)^2 \log ^2(1-2 \lambda )&\nonumber\\
-    &+3 (\lambda -1)^2 \log (1-2 \lambda )-6 (1-2 \lambda )^2 \log (1-\lambda ) (\log (1-\lambda )+1)\Bigr] \\
-    &+\frac{b_0 \gamma ^2 B_1 (\lambda -2) \lambda }{4 \pi  (\lambda -1)^2} +\frac{b_1 \gamma B_1 \log (1-\lambda )}{2 \pi  b_0 (\lambda -1)^2} + \frac{b_2 B_1 \lambda ^2}{4 \pi  b_0^2 (\lambda -1)^2} & \nonumber\\
-    &+ \frac{b_1^2 B_1 (\lambda -\log (1-\lambda )) (\lambda +\log (1-\lambda ))}{4 \pi  b_0^3 (\lambda -1)^2} +\frac{b_0 \gamma ^3 A_1 \lambda  \left(12 \lambda ^3-36 \lambda ^2+39 \lambda -14\right)}{6 \pi  (\lambda -1)^2 (2 \lambda -1)^2}& \nonumber\\
-    &+\frac{b_1 \gamma ^2 A_1}{2 \pi  b_0 (\lambda -1)^2 (2 \lambda -1)^2} \left[2 (\lambda -1)^2 \log (1-2 \lambda )-(1-2 \lambda )^2 \log (1-\lambda )\right] &\nonumber\\
-    &-\frac{b_1^2 \gamma A_1}{2 \pi  b_0^3 A_1 (\lambda -1)^2 (2 \lambda -1)^2} \left[(4 \lambda -3) \lambda ^2-(1-2 \lambda )^2 \log ^2(1-\lambda )+(\lambda -1)^2 \log ^2(1-2 \lambda )\right]&\nonumber\\
-    &-\frac{b_1^3 A_1}{12 \pi  b_0^5 (\lambda -1)^2 (2 \lambda -1)^2} \Bigl[4 (3-4 \lambda ) \lambda ^3+2 (1-2 \lambda )^2 \log (1-\lambda ) \left(\log ^2(1-\lambda )-3 \lambda ^2\right)&\nonumber\\
-    &+12 (\lambda -1)^2 \lambda ^2 \log (1-2 \lambda )-(\lambda -1)^2 \log ^3(1-2 \lambda )\Bigr] +\frac{b_2 \gamma A_1 \lambda ^2 (4 \lambda -3)}{2 \pi  b_0^2 (\lambda -1)^2 (2 \lambda -1)^2} & \nonumber\\
-    &\frac{b_1 b_2 A_1}{12 \pi  b_0^4 (\lambda -1)^2 (2 \lambda -1)^2} \Bigl[\lambda ^2 (2 \lambda  (3-7 \lambda )+3)+3 \left(8 \lambda ^2-4 \lambda +1\right) (\lambda -1)^2 \log (1-2 \lambda )&\nonumber\\
-    &-6 (1-2 \lambda )^2 (2 (\lambda -1) \lambda +1) \log (1-\lambda )\Bigr] + -\frac{b_3 A_1}{12 \pi  b_0^3 (\lambda -1)^2 (2 \lambda -1)^2} \Bigl[(2 (\lambda -3) \lambda +3) \lambda ^2&\nonumber\\
-    &-6 \left(2 \lambda ^2-3 \lambda +1\right)^2 \log (1-\lambda )+3 \left(2 \lambda ^2-3 \lambda +1\right)^2 \log (1-2 \lambda )\Bigr] & \nonumber
+    &+10 (\lambda -3) \lambda^3+3 (\lambda -1)^2 \ln (1-2 \lambda )-6 (1-2 \lambda )^2 \ln (1-\lambda )\Bigr]& \nonumber\\
+    &+\frac{\gamma_E A_3 \lambda  (3 \lambda -2)}{2 \pi ^3 b_0 (\lambda -1)^2 (2 \lambda -1)^2}+\frac{\gamma_E B_2 (\lambda -2) \lambda }{2 \pi ^2 (\lambda -1)^2}-\frac{b_1 B_2 \left[\lambda ^2-2 \lambda -2 \ln (1-\lambda )\right]}{4 \pi ^2 b_0^2 (\lambda -1)^2} & \nonumber\\
+    &+\frac{\gamma_E ^2 A_2 \lambda  \left(4 \lambda ^3-12 \lambda ^2+15 \lambda -6\right)}{2 \pi ^2 (\lambda -1)^2 (2 \lambda -1)^2}+\frac{b_1 \gamma_E A_2}{2 \pi ^2 b_0^2 (\lambda -1)^2 (2 \lambda -1)^2}  \Bigl[\lambda  (2-3 \lambda ) &\nonumber\\
+    &+2 (\lambda -1)^2 \ln (1-2 \lambda )-2 (1-2 \lambda )^2 \ln (1-\lambda )\Bigr] +\frac{b_2 A_2 \lambda ^3 (4 \lambda -3)}{3 \pi ^2 b_0^3 (\lambda -1)^2 (2 \lambda -1)^2}& \nonumber\\
+    &-\frac{b_1^2 A_2}{12 \pi ^2 b_0^4 (\lambda -1)^2 (2 \lambda -1)^2} \Bigl[\lambda ^2 \left(22 \lambda ^2-30 \lambda +9\right)+3 (\lambda -1)^2 \ln ^2(1-2 \lambda )&\nonumber\\
+    &+3 (\lambda -1)^2 \ln (1-2 \lambda )-6 (1-2 \lambda )^2 \ln (1-\lambda ) (\ln (1-\lambda )+1)\Bigr] \\
+    &+\frac{b_0 \gamma_E ^2 B_1 (\lambda -2) \lambda }{4 \pi  (\lambda -1)^2} +\frac{b_1 \gamma_E B_1 \ln (1-\lambda )}{2 \pi  b_0 (\lambda -1)^2} + \frac{b_2 B_1 \lambda ^2}{4 \pi  b_0^2 (\lambda -1)^2} & \nonumber\\
+    &+ \frac{b_1^2 B_1 (\lambda -\ln (1-\lambda )) (\lambda +\ln (1-\lambda ))}{4 \pi  b_0^3 (\lambda -1)^2} +\frac{b_0 \gamma_E ^3 A_1 \lambda  \left(12 \lambda ^3-36 \lambda ^2+39 \lambda -14\right)}{6 \pi  (\lambda -1)^2 (2 \lambda -1)^2}& \nonumber\\
+    &+\frac{b_1 \gamma_E ^2 A_1}{2 \pi  b_0 (\lambda -1)^2 (2 \lambda -1)^2} \left[2 (\lambda -1)^2 \ln (1-2 \lambda )-(1-2 \lambda )^2 \ln (1-\lambda )\right] &\nonumber\\
+    &-\frac{b_1^2 \gamma_E A_1}{2 \pi  b_0^3 A_1 (\lambda -1)^2 (2 \lambda -1)^2} \left[(4 \lambda -3) \lambda ^2-(1-2 \lambda )^2 \ln ^2(1-\lambda )+(\lambda -1)^2 \ln ^2(1-2 \lambda )\right]&\nonumber\\
+    &-\frac{b_1^3 A_1}{12 \pi  b_0^5 (\lambda -1)^2 (2 \lambda -1)^2} \Bigl[4 (3-4 \lambda ) \lambda ^3+2 (1-2 \lambda )^2 \ln (1-\lambda ) \left(\ln ^2(1-\lambda )-3 \lambda ^2\right)&\nonumber\\
+    &+12 (\lambda -1)^2 \lambda ^2 \ln (1-2 \lambda )-(\lambda -1)^2 \ln ^3(1-2 \lambda )\Bigr] +\frac{b_2 \gamma_E A_1 \lambda ^2 (4 \lambda -3)}{2 \pi  b_0^2 (\lambda -1)^2 (2 \lambda -1)^2} & \nonumber\\
+    &\frac{b_1 b_2 A_1}{12 \pi  b_0^4 (\lambda -1)^2 (2 \lambda -1)^2} \Bigl[\lambda ^2 (2 \lambda  (3-7 \lambda )+3)+3 \left(8 \lambda ^2-4 \lambda +1\right) (\lambda -1)^2 \ln (1-2 \lambda )&\nonumber\\
+    &-6 (1-2 \lambda )^2 (2 (\lambda -1) \lambda +1) \ln (1-\lambda )\Bigr] + -\frac{b_3 A_1}{12 \pi  b_0^3 (\lambda -1)^2 (2 \lambda -1)^2} \Bigl[(2 (\lambda -3) \lambda +3) \lambda ^2&\nonumber\\
+    &-6 \left(2 \lambda ^2-3 \lambda +1\right)^2 \ln (1-\lambda )+3 \left(2 \lambda ^2-3 \lambda +1\right)^2 \ln (1-2 \lambda )\Bigr] & \nonumber
 \end{flalign}
     
 
 \begin{flalign}\label{eq:f5}
     f_5(\lambda) &= -\frac{A_5 \lambda ^2 \left(4 \lambda ^4-18 \lambda ^3+33 \lambda ^2-24 \lambda +6\right)}{12 \pi ^5 b_0^2 (\lambda -1)^3 (2 \lambda -1)^3} + \frac{B_4 \lambda  \left(\lambda ^2-3 \lambda +3\right)}{6 \pi ^4 b_0 (\lambda -1)^3} \\ 
-    &-\frac{\gamma A_4 \lambda  \left(7 \lambda ^2-9 \lambda +3\right)}{3 \pi ^4 b_0 (\lambda -1)^3 (2 \lambda -1)^3} +\frac{b_1 A_4}{36 \pi ^4 b_0^3 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[7 \lambda ^2 (\lambda  (\lambda  (2 \lambda  (2 \lambda -9)+33)-24)&\nonumber\\
-    &+6)-6 (\lambda -1)^3 \log (1-2 \lambda )+12 (2 \lambda -1)^3 \log (1-\lambda )\Bigr] + \frac{\gamma B_3 \lambda  \left(\lambda ^2-3 \lambda +3\right)}{2 \pi ^3 (\lambda -1)^3}+  & \nonumber\\
-    &\frac{b_1 B_3\left(\lambda ^3-3 \lambda ^2+3 \lambda +3 \log (1-\lambda )\right)}{6 \pi ^3 b_0^2 (\lambda -1)^3} +\frac{\gamma ^2 A_3 \lambda  \left(8 \lambda ^5-36 \lambda ^4+66 \lambda ^3-69 \lambda ^2+39 \lambda -9\right)}{2 \pi ^3 (\lambda -1)^3 (2 \lambda -1)^3} & \nonumber\\
-    &-\frac{b_1 \gamma A_3}{3 \pi ^3 b_0^2 (\lambda -1)^3 (2 \lambda -1)^3}  \Bigl[\lambda  ((9-7 \lambda ) \lambda -3)+3 (\lambda -1)^3 \log (1-2 \lambda )&\nonumber\\
-    &-3 (2 \lambda -1)^3 \log (1-\lambda )\Bigr] +\frac{b_2 A_3\lambda ^3 \left(4 \lambda ^3-18 \lambda ^2+19 \lambda -6\right)}{4 \pi ^3 b_0^3 (\lambda -1)^3 (2 \lambda -1)^3}-& \nonumber\\
-    &\frac{b_1^2 A_3}{36 \pi ^3 b_0^4 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[\lambda ^3(\lambda  (26 \lambda  (2 \lambda -9)+303)-150)-9 (\lambda -1)^3 \log ^2(1-2 \lambda )&\nonumber\\
-    &+24 \lambda^2 -6 (\lambda -1)^3 \log (1-2 \lambda )+6 (2 \lambda -1)^3 \log (1-\lambda ) (3 \log (1-\lambda )+2)\Bigr] & \nonumber\\
-    &+\frac{b_0 \gamma ^2 B_2 \lambda  \left(\lambda ^2-3 \lambda +3\right)}{2 \pi ^2 (\lambda -1)^3} -\frac{b_1 \gamma B_2 \log (1-\lambda )}{\pi ^2 b_0 (\lambda -1)^3} +\frac{b_1^2 B_2 \left(\lambda ^3-3 \lambda ^2+3 \log ^2(1-\lambda )\right)}{6 \pi ^2 b_0^3 (\lambda -1)^3}& \nonumber\\
-    &-\frac{b_2 B_2 (\lambda -3) \lambda ^2}{6 \pi ^2 b_0^2 (\lambda -1)^3} + \frac{b_0 \gamma ^3 A_2 \lambda  \left(24 \lambda ^5-108 \lambda ^4+198 \lambda ^3-193 \lambda ^2+99 \lambda -21\right)}{3 \pi ^2 (\lambda -1)^3 (2 \lambda -1)^3} & \nonumber\\
-    &+\frac{b_1^2 \gamma A_2}{3 \pi ^2 b_0^3 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[\lambda ^2 (\lambda  (18 \lambda -25)+9)+3 (\lambda -1)^3 \log ^2(1-2 \lambda )&\nonumber\\
-    &-3 (2 \lambda -1)^3 \log ^2(1-\lambda )\Bigr] -\frac{b_2 \gamma A_2 \lambda ^2 \left(18 \lambda ^2-25 \lambda +9\right)}{3 \pi ^2 b_0^2 (\lambda -1)^3 (2 \lambda -1)^3} &\nonumber\\
+    &-\frac{\gamma_E A_4 \lambda  \left(7 \lambda ^2-9 \lambda +3\right)}{3 \pi ^4 b_0 (\lambda -1)^3 (2 \lambda -1)^3} +\frac{b_1 A_4}{36 \pi ^4 b_0^3 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[7 \lambda ^2 (\lambda  (\lambda  (2 \lambda  (2 \lambda -9)+33)-24)&\nonumber\\
+    &+6)-6 (\lambda -1)^3 \ln (1-2 \lambda )+12 (2 \lambda -1)^3 \ln (1-\lambda )\Bigr] + \frac{\gamma_E B_3 \lambda  \left(\lambda ^2-3 \lambda +3\right)}{2 \pi ^3 (\lambda -1)^3}+  & \nonumber\\
+    &\frac{b_1 B_3\left(\lambda ^3-3 \lambda ^2+3 \lambda +3 \ln (1-\lambda )\right)}{6 \pi ^3 b_0^2 (\lambda -1)^3} +\frac{\gamma_E ^2 A_3 \lambda  \left(8 \lambda ^5-36 \lambda ^4+66 \lambda ^3-69 \lambda ^2+39 \lambda -9\right)}{2 \pi ^3 (\lambda -1)^3 (2 \lambda -1)^3} & \nonumber\\
+    &-\frac{b_1 \gamma_E A_3}{3 \pi ^3 b_0^2 (\lambda -1)^3 (2 \lambda -1)^3}  \Bigl[\lambda  ((9-7 \lambda ) \lambda -3)+3 (\lambda -1)^3 \ln (1-2 \lambda )&\nonumber\\
+    &-3 (2 \lambda -1)^3 \ln (1-\lambda )\Bigr] +\frac{b_2 A_3\lambda ^3 \left(4 \lambda ^3-18 \lambda ^2+19 \lambda -6\right)}{4 \pi ^3 b_0^3 (\lambda -1)^3 (2 \lambda -1)^3}-& \nonumber\\
+    &\frac{b_1^2 A_3}{36 \pi ^3 b_0^4 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[\lambda ^3(\lambda  (26 \lambda  (2 \lambda -9)+303)-150)-9 (\lambda -1)^3 \ln ^2(1-2 \lambda )&\nonumber\\
+    &+24 \lambda^2 -6 (\lambda -1)^3 \ln (1-2 \lambda )+6 (2 \lambda -1)^3 \ln (1-\lambda ) (3 \ln (1-\lambda )+2)\Bigr] & \nonumber\\
+    &+\frac{b_0 \gamma_E ^2 B_2 \lambda  \left(\lambda ^2-3 \lambda +3\right)}{2 \pi ^2 (\lambda -1)^3} -\frac{b_1 \gamma_E B_2 \ln (1-\lambda )}{\pi ^2 b_0 (\lambda -1)^3} +\frac{b_1^2 B_2 \left(\lambda ^3-3 \lambda ^2+3 \ln ^2(1-\lambda )\right)}{6 \pi ^2 b_0^3 (\lambda -1)^3}& \nonumber\\
+    &-\frac{b_2 B_2 (\lambda -3) \lambda ^2}{6 \pi ^2 b_0^2 (\lambda -1)^3} + \frac{b_0 \gamma_E ^3 A_2 \lambda  \left(24 \lambda ^5-108 \lambda ^4+198 \lambda ^3-193 \lambda ^2+99 \lambda -21\right)}{3 \pi ^2 (\lambda -1)^3 (2 \lambda -1)^3} & \nonumber\\
+    &+\frac{b_1^2 \gamma_E A_2}{3 \pi ^2 b_0^3 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[\lambda ^2 (\lambda  (18 \lambda -25)+9)+3 (\lambda -1)^3 \ln ^2(1-2 \lambda )&\nonumber\\
+    &-3 (2 \lambda -1)^3 \ln ^2(1-\lambda )\Bigr] -\frac{b_2 \gamma_E A_2 \lambda ^2 \left(18 \lambda ^2-25 \lambda +9\right)}{3 \pi ^2 b_0^2 (\lambda -1)^3 (2 \lambda -1)^3} &\nonumber\\
     &+\frac{b_1^3 A_2}{36 \pi ^2 b_0^5 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[\lambda ^2 (\lambda  (\lambda  (2 \lambda  (50 \lambda -171)+339)-114)+6)&\nonumber\\
-    &-6 (\lambda -1)^3 \log ^3(1-2 \lambda )+12 (2 \lambda -1)^3 \log (1-\lambda ) \left(-3 \lambda +\log ^2(1-\lambda )+1\right)&\nonumber\\
-    &+6 (6 \lambda -1) (\lambda -1)^3 \log (1-2 \lambda )\Bigr]+\frac{b_3 A_2 \lambda ^3 \left(20 \lambda ^3-54 \lambda ^2+45 \lambda -12\right)}{12 \pi ^2 b_0^3 (\lambda -1)^3 (2 \lambda -1)^3} & \nonumber\\
-    &-\frac{b_1 \gamma ^2 A_2}{\pi ^2 b_0 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[2 (\lambda -1)^3 \log (1-2 \lambda )-(2 \lambda -1)^3 \log (1-\lambda )\Bigr] & \nonumber\\
+    &-6 (\lambda -1)^3 \ln ^3(1-2 \lambda )+12 (2 \lambda -1)^3 \ln (1-\lambda ) \left(-3 \lambda +\ln ^2(1-\lambda )+1\right)&\nonumber\\
+    &+6 (6 \lambda -1) (\lambda -1)^3 \ln (1-2 \lambda )\Bigr]+\frac{b_3 A_2 \lambda ^3 \left(20 \lambda ^3-54 \lambda ^2+45 \lambda -12\right)}{12 \pi ^2 b_0^3 (\lambda -1)^3 (2 \lambda -1)^3} & \nonumber\\
+    &-\frac{b_1 \gamma_E ^2 A_2}{\pi ^2 b_0 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[2 (\lambda -1)^3 \ln (1-2 \lambda )-(2 \lambda -1)^3 \ln (1-\lambda )\Bigr] & \nonumber\\
     &-\frac{b_2 b_1 A_2}{18 \pi ^2 b_0^4 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[\lambda ^2 (\lambda  (\lambda  (4 \lambda  (20 \lambda -63)+237)-75)+3)&\nonumber\\
-    &+3 (6 \lambda -1) (\lambda -1)^3 \log (1-2 \lambda )-6 (2 \lambda -1)^3 (3 \lambda -1) \log (1-\lambda )\Bigr] & \nonumber \\
-    &+\frac{b_0^2 \gamma ^3 B_1 \lambda  \left(\lambda ^2-3 \lambda +3\right)}{6 \pi  (\lambda -1)^3} -\frac{b_1^2 \gamma B_1  \left(\lambda -\log ^2(1-\lambda )+\log (1-\lambda )\right)}{2 \pi  b_0^2 (\lambda -1)^3}- & \nonumber\\
-    &\frac{b_1^3 B_1}{12 \pi  b_0^4 (\lambda -1)^3}(\lambda +\log (1-\lambda )) \left(2 \lambda ^2-3 \lambda +2 \log ^2(1-\lambda )-2 \lambda  \log (1-\lambda )-3 \log (1-\lambda )\right) & \nonumber\\
-    &+\frac{b_2 \gamma B_1 \lambda }{2 \pi  b_0 (\lambda -1)^3}-\frac{b_3 B_1 \lambda ^2 (2 \lambda -3)}{12 \pi  b_0^2 (\lambda -1)^3}+\frac{b_1 \gamma ^2 B_1 \left(\lambda ^3-3 \lambda ^2+3 \lambda -2 \log (1-\lambda )\right)}{4 \pi  (\lambda -1)^3} & \nonumber\\
-    &+\frac{b_2 b_1 B_1 \lambda  \left(2 \lambda ^2-3 \lambda -3 \log (1-\lambda )\right)}{6 \pi  b_0^3 (\lambda -1)^3} +\frac{b_0^2 \gamma ^4 A_1}{12 \pi  (\lambda -1)^3 (2 \lambda -1)^3} \lambda  (2 \lambda -3) \Bigl[28 \lambda ^4 &\nonumber\\
-    &-84 \lambda ^3+105 \lambda ^2-63 \lambda +15\Bigr] + \frac{b_1^3 \gamma A_1}{6 \pi  b_0^4 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[\lambda ^2 (4 \lambda  (3 (\lambda -3) \lambda +8)-9) &\nonumber\\
-    &-2 (\lambda -1)^3 \log ^3(1-2 \lambda )+3 (\lambda -1)^3 \log ^2(1-2 \lambda )+12 \lambda  (\lambda -1)^3 \log (1-2 \lambda ) &\nonumber\\
-    &+(2 \lambda -1)^3 \log (1-\lambda ) (\log (1-\lambda ) (2 \log (1-\lambda )-3) -6 \lambda )\Bigr] & \nonumber\\
-    &+\frac{b_1^4 A_1}{24 \pi  b_0^6 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[8 (\lambda -1)^3 \lambda ^2 (4 \lambda -3) \log (1-2 \lambda )&\nonumber\\
-    &-2 (2 \lambda -1)^3 \log (1-\lambda ) \left(2 (2 \lambda -3) \lambda ^2+\log (1-\lambda ) ((\log (1-\lambda )-2) \log (1-\lambda )-6 \lambda )\right)&\nonumber\\
-    &+2 \lambda ^3 \left(\lambda  \left(-28 \lambda ^2+54 \lambda -33\right)+6\right)+(\lambda -1)^3 \log ^4(1-2 \lambda )-2 (\lambda -1)^3 \log ^3(1-2 \lambda )- &\nonumber\\
-    &12 (\lambda -1)^3 \lambda  \log ^2(1-2 \lambda )\Bigr] -\frac{b_2 \gamma ^2 A_1 \lambda  \left(4 \lambda ^3-6 \lambda +3\right)}{2 \pi  b_0 (\lambda -1)^3 (2 \lambda -1)^3} +\frac{b_3 \gamma  \lambda ^2 \left(12 \lambda ^3-36 \lambda ^2+32 \lambda -9\right)}{6 \pi  b_0^2 (\lambda -1)^3 (2 \lambda -1)^3} & \nonumber\\
+    &+3 (6 \lambda -1) (\lambda -1)^3 \ln (1-2 \lambda )-6 (2 \lambda -1)^3 (3 \lambda -1) \ln (1-\lambda )\Bigr] & \nonumber \\
+    &+\frac{b_0^2 \gamma_E ^3 B_1 \lambda  \left(\lambda ^2-3 \lambda +3\right)}{6 \pi  (\lambda -1)^3} -\frac{b_1^2 \gamma_E B_1  \left(\lambda -\ln ^2(1-\lambda )+\ln (1-\lambda )\right)}{2 \pi  b_0^2 (\lambda -1)^3}- & \nonumber\\
+    &\frac{b_1^3 B_1}{12 \pi  b_0^4 (\lambda -1)^3}(\lambda +\ln (1-\lambda )) \left(2 \lambda ^2-3 \lambda +2 \ln ^2(1-\lambda )-2 \lambda  \ln (1-\lambda )-3 \ln (1-\lambda )\right) & \nonumber\\
+    &+\frac{b_2 \gamma_E B_1 \lambda }{2 \pi  b_0 (\lambda -1)^3}-\frac{b_3 B_1 \lambda ^2 (2 \lambda -3)}{12 \pi  b_0^2 (\lambda -1)^3}+\frac{b_1 \gamma_E ^2 B_1 \left(\lambda ^3-3 \lambda ^2+3 \lambda -2 \ln (1-\lambda )\right)}{4 \pi  (\lambda -1)^3} & \nonumber\\
+    &+\frac{b_2 b_1 B_1 \lambda  \left(2 \lambda ^2-3 \lambda -3 \ln (1-\lambda )\right)}{6 \pi  b_0^3 (\lambda -1)^3} +\frac{b_0^2 \gamma_E ^4 A_1}{12 \pi  (\lambda -1)^3 (2 \lambda -1)^3} \lambda  (2 \lambda -3) \Bigl[28 \lambda ^4 &\nonumber\\
+    &-84 \lambda ^3+105 \lambda ^2-63 \lambda +15\Bigr] + \frac{b_1^3 \gamma_E A_1}{6 \pi  b_0^4 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[\lambda ^2 (4 \lambda  (3 (\lambda -3) \lambda +8)-9) &\nonumber\\
+    &-2 (\lambda -1)^3 \ln ^3(1-2 \lambda )+3 (\lambda -1)^3 \ln ^2(1-2 \lambda )+12 \lambda  (\lambda -1)^3 \ln (1-2 \lambda ) &\nonumber\\
+    &+(2 \lambda -1)^3 \ln (1-\lambda ) (\ln (1-\lambda ) (2 \ln (1-\lambda )-3) -6 \lambda )\Bigr] & \nonumber\\
+    &+\frac{b_1^4 A_1}{24 \pi  b_0^6 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[8 (\lambda -1)^3 \lambda ^2 (4 \lambda -3) \ln (1-2 \lambda )&\nonumber\\
+    &-2 (2 \lambda -1)^3 \ln (1-\lambda ) \left(2 (2 \lambda -3) \lambda ^2+\ln (1-\lambda ) ((\ln (1-\lambda )-2) \ln (1-\lambda )-6 \lambda )\right)&\nonumber\\
+    &+2 \lambda ^3 \left(\lambda  \left(-28 \lambda ^2+54 \lambda -33\right)+6\right)+(\lambda -1)^3 \ln ^4(1-2 \lambda )-2 (\lambda -1)^3 \ln ^3(1-2 \lambda )- &\nonumber\\
+    &12 (\lambda -1)^3 \lambda  \ln ^2(1-2 \lambda )\Bigr] -\frac{b_2 \gamma_E ^2 A_1 \lambda  \left(4 \lambda ^3-6 \lambda +3\right)}{2 \pi  b_0 (\lambda -1)^3 (2 \lambda -1)^3} +\frac{b_3 \gamma_E  \lambda ^2 \left(12 \lambda ^3-36 \lambda ^2+32 \lambda -9\right)}{6 \pi  b_0^2 (\lambda -1)^3 (2 \lambda -1)^3} & \nonumber\\
     &+\frac{b_2^2 A_1 }{36 \pi  b_0^4 (\lambda -1)^3 (2 \lambda -1)^3}\Bigl[\lambda ^2 (6-\lambda  (\lambda  (2 \lambda  (10 \lambda +9)-69)+42))&\nonumber\\
-    &-12 \left(2 \lambda ^2-3 \lambda +1\right)^3 \log (1-\lambda )+6 \left(2 \lambda ^2-3 \lambda +1\right)^3 \log (1-2 \lambda )\Bigr] &\nonumber\\
-    &+\frac{b_1^2 \gamma ^2 A_1}{2 \pi  b_0^2 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[\lambda  \left(4 \lambda ^3-6 \lambda +3\right)+2 (\lambda -1)^3 \log ^2(1-2 \lambda )&\nonumber\\
-    &-2 (\lambda -1)^3 \log (1-2 \lambda )-(2 \lambda -1)^3 (\log (1-\lambda )-1) \log (1-\lambda )\Bigr] & \nonumber\\
+    &-12 \left(2 \lambda ^2-3 \lambda +1\right)^3 \ln (1-\lambda )+6 \left(2 \lambda ^2-3 \lambda +1\right)^3 \ln (1-2 \lambda )\Bigr] &\nonumber\\
+    &+\frac{b_1^2 \gamma_E ^2 A_1}{2 \pi  b_0^2 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[\lambda  \left(4 \lambda ^3-6 \lambda +3\right)+2 (\lambda -1)^3 \ln ^2(1-2 \lambda )&\nonumber\\
+    &-2 (\lambda -1)^3 \ln (1-2 \lambda )-(2 \lambda -1)^3 (\ln (1-\lambda )-1) \ln (1-\lambda )\Bigr] & \nonumber\\
     &-\frac{b_2 b_1^2 A_1}{36 \pi  b_0^5 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[\lambda ^2 (\lambda  (\lambda  (2 (153-82 \lambda ) \lambda -165)+12)+6)&\nonumber\\
-    &-18 \lambda  (\lambda -1)^3 \log ^2(1-2 \lambda )+6 \left(6 (1-2 \lambda )^2 \lambda -1\right) (\lambda -1)^3 \log (1-2 \lambda )&\nonumber\\
-    &-6 (2 \lambda -1)^3 \log (1-\lambda ) \left(6 \lambda  (\lambda -1)^2-3 \lambda  \log (1-\lambda )-2\right)\Bigr] & \nonumber \\
-    &+\frac{b_1 \gamma ^3 A_1}{6 \pi  (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[24 \lambda ^6-108 \lambda ^5+198 \lambda ^4-193 \lambda ^3 +16 \lambda ^3 \log (1-\lambda ) &\nonumber\\
-    &-8 \lambda ^3 \log (1-2 \lambda )+99 \lambda ^2-24 \lambda ^2 \log (1-\lambda )+24 \lambda ^2 \log (1-2 \lambda )-21 \lambda &\nonumber\\
-    &+12 \lambda  \log (1-\lambda )-24 \lambda  \log (1-2 \lambda )-2 \log (1-\lambda )+8 \log (1-2 \lambda )\Bigr] & \nonumber\\
-    &-\frac{b_2 b_1 \gamma A_1}{3 \pi  b_0^3 (\lambda -1)^3 (2 \lambda -1)^3} \lambda  \Bigl[\lambda  (4 \lambda  (3 (\lambda -3) \lambda +8)-9)+6 (\lambda -1)^3 \log (1-2 \lambda )&\nonumber\\
-    &-3 (2 \lambda -1)^3 \log (1-\lambda )\Bigr]+\frac{b_3 b_1 A_1}{18 \pi  b_0^4 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[\lambda ^3(\lambda  (4 (18-7 \lambda ) \lambda -51)+6) &\nonumber\\
-    &+3 \lambda^2 +3 (2 \lambda  (\lambda  (8 \lambda -9)+3)-1) (\lambda -1)^3 \log (1-2 \lambda )&\nonumber\\
-    &-3 (2 \lambda -1)^3 (\lambda  (\lambda  (4 \lambda -9)+6)-2) \log (1-\lambda )\Bigr] & \nonumber\\
+    &-18 \lambda  (\lambda -1)^3 \ln ^2(1-2 \lambda )+6 \left(6 (1-2 \lambda )^2 \lambda -1\right) (\lambda -1)^3 \ln (1-2 \lambda )&\nonumber\\
+    &-6 (2 \lambda -1)^3 \ln (1-\lambda ) \left(6 \lambda  (\lambda -1)^2-3 \lambda  \ln (1-\lambda )-2\right)\Bigr] & \nonumber \\
+    &+\frac{b_1 \gamma_E ^3 A_1}{6 \pi  (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[24 \lambda ^6-108 \lambda ^5+198 \lambda ^4-193 \lambda ^3 +16 \lambda ^3 \ln (1-\lambda ) &\nonumber\\
+    &-8 \lambda ^3 \ln (1-2 \lambda )+99 \lambda ^2-24 \lambda ^2 \ln (1-\lambda )+24 \lambda ^2 \ln (1-2 \lambda )-21 \lambda &\nonumber\\
+    &+12 \lambda  \ln (1-\lambda )-24 \lambda  \ln (1-2 \lambda )-2 \ln (1-\lambda )+8 \ln (1-2 \lambda )\Bigr] & \nonumber\\
+    &-\frac{b_2 b_1 \gamma_E A_1}{3 \pi  b_0^3 (\lambda -1)^3 (2 \lambda -1)^3} \lambda  \Bigl[\lambda  (4 \lambda  (3 (\lambda -3) \lambda +8)-9)+6 (\lambda -1)^3 \ln (1-2 \lambda )&\nonumber\\
+    &-3 (2 \lambda -1)^3 \ln (1-\lambda )\Bigr]+\frac{b_3 b_1 A_1}{18 \pi  b_0^4 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[\lambda ^3(\lambda  (4 (18-7 \lambda ) \lambda -51)+6) &\nonumber\\
+    &+3 \lambda^2 +3 (2 \lambda  (\lambda  (8 \lambda -9)+3)-1) (\lambda -1)^3 \ln (1-2 \lambda )&\nonumber\\
+    &-3 (2 \lambda -1)^3 (\lambda  (\lambda  (4 \lambda -9)+6)-2) \ln (1-\lambda )\Bigr] & \nonumber\\
     &-\frac{b_4 A_1}{36 \pi  b_0^3 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[\lambda ^2 (\lambda  (\lambda  (2 \lambda  (2 \lambda -9)+33)-24)+6)&\nonumber\\
-    &-12 \left(2 \lambda ^2-3 \lambda +1\right)^3 \log (1-\lambda )+6 \left(2 \lambda ^2-3 \lambda +1\right)^3 \log (1-2 \lambda )\Bigr] & \nonumber
+    &-12 \left(2 \lambda ^2-3 \lambda +1\right)^3 \ln (1-\lambda )+6 \left(2 \lambda ^2-3 \lambda +1\right)^3 \ln (1-2 \lambda )\Bigr] & \nonumber
 \end{flalign}
 
 \endgroup
 
 In \cref{eq:f3,eq:f4,eq:f5} we have removed some constant terms in order to make them homogeneous, \emph{i.e.} $f_i(0)=0$, those constant can be reabsorbed in the $C$-term \cref{eq:sigma}.
-All the relevant constant can be found in \cref{app:Ingredients}.
 
-To obtain the laplace trasform of the thrust distribution \cref{eq:Laplace transform distribution}, 
-we perform the laplace transform of the convolution \cref{eq:Thrust fraction convolution}.
+The functions $f_1(\lambda),f_2(\lambda)$ and $f_3(\lambda)$ were already known in the literature. Our results agree with those in \cite{CATANI19933,Aglietti:2005mb,Monni:2011gb} 
+\footnote{We assume there is a misprint in $f_3(\lambda)$ in \cite{Monni:2011gb}, the last term proportional $A_1 \beta_1^2$ in parethesis should have a plus sign instead of
+the minus sign.}.
+In \cite{Aglietti:2005mb}, the resummation coefficients $f_i(\lambda)$ were derived from a similar integral but instead of Laplace space they're problem factorizes in
+Mellin space, since in the large $N$ limit the Mellin and Laplace transforms are equivalent \cref{Appendix: Laplace and Mellin transform}, we obtain their same functional
+form and thus compare our results.
+In \cite{Monni:2011gb}, they applied Soft-Collinear Effective Theory (SCET) theory, in which contributions from Hard (H), Collinear (or Jet, J) and Soft (S) functions are treated separately
+at their respective scales \cite{Becher_2008}: the hard scale of the $e^-e^+$  collision $ \mu_H \sim Q$, the invariant mass of the two back-to-back jets \cref{eq:Thrust_approx} $\mu_J^2 \sim k_1^2+k_2^2 \sim \tau Q^2$  and 
+the soft scale $\mu_S \sim \frac{\mu_J^2}{\mu_H}\sim \tau Q$ . These functions are evaluated at their respective scales and then evolved to a common scale $\mu$ using renormalization group equations \cref{eq:RGE}.
+The cross section is then factorized into a convolution of these functions and the resummation coefficients are obtained by performing the Laplace transform of the convolution.
+The results of \cite{Monni:2011gb} are in agreement with our results; in fact their $f_1(\lambda)$ and $f_2(\lambda)$ are the same \footnote{The results differ by a factor 2 because we are considering the jet mass distribution, while the thrust distributions
+is the convolution of two jet mass distributions \cref{eq:Thrust fraction convolution}.}
+as the one originally obtained in \cite{CATANI19933}, however $f_3(\lambda)$ has two additional terms, one proportional to $c_s^{(1)}$ and the other to $c_j^{(1)}$ which we absorbed in the coefficients $A_3$ and $B_2$.
+
+The functions $f_4(\lambda)$ and $f_5(\lambda)$, as far as we know they never appeared in the literature and are one the main results of the present work.
+
+All the relevant constant can be found in \Cref{app:Ingredients}.
+The coefficients $A_1,A_2$ and $B_1$ were already known in \cite{CATANI19933} and were obtained from the one and two loop splitting functions.
+$A_3$ and $B_2$ were obtained by comparing our $f_3(\lambda)$ \cref{eq:f3} with the corresponding expression in Soft Collinear Effective Theory (SCET) \cite{Monni:2011gb} (Eq(4.17)) by 
+absorbing the jet $c_J^{(1)}$ and soft $c_S^{(1)}$ terms into $A_3$ and $B_2$ terms.
+We also compared our $G_{21}$ (in which $B_2$ appear) and $G_{32}$ (in which both $A_3$ and $B_2$ appear) with the exact expressions of 
+$G_{21}$ and $G_{32}$ in \cite{Becher_2008} and found perfect agreement.
+
+$B_3$ was extracted by comparing our $G_{31}$ in \Cref{app:Ingredients} with the exact expression of $G_{31}$ given by \cite{Monni:2011gb}.
+
+Lastly $A_4, A_5$ and $B_4$ can be obtained by comparing $f_4(\lambda)$ and $f_5(\lambda)$ with the corresponding expression derived from \cite{Ju_2023} by incorporating the hard form factor 
+of \cite{chakraborty2022hbbarbvertexloopshard} as appropriate, then absorbing contribution from the jet and soft functions into $A_4,A_5$ and $B_4$.
+
+To obtain the Laplace trasform of the thrust distribution \cref{eq:Laplace transform distribution}, 
+we perform the Laplace transform of the convolution \cref{eq:Thrust fraction convolution}.
 By applying the convolution theorem, we find that it is twice the integral given by \cref{eq:master formula} that we have just calculated. 
 Therefore, we multiply by 2 the $f_i(\lambda)$ we just obtained \cref{eq:f1,eq:f2,eq:f3,eq:f4,eq:f5}.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{figures/Laplace_J_orders.png}
-    \caption{Plot of \cref{eq:factorized_J_nu} at different logarithmin orders.}
+    \caption{Plot of $J_\nu^q$ function defined in \cref{eq:factorized_J_nu} at different logarithmin orders.}
     \label{fig:J_nu}
 \end{figure}
 

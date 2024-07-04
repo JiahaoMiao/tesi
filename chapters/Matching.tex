@@ -9,20 +9,25 @@
 \section{Matching of resummation to fixed-order calculations}\label{sec:Matching}
 
 Having obtained a resummed expression such as \cref{eq:RT resummed} for the shape cross sections at small values
-of $\tau$, one can now match the resummed expression to the fixed-order calculations at large values of $\tau$
+of $\tau$, one can now match the resummed expression to the fixed-order NNLO calculations at large values of $\tau$
 using the log(R)-mathing scheme \cite{CATANI19933}. The results presented in the previous sections allow us to 
 compare the predictions at N$^3$LL accuracy with the fixed-order calculations at NNLO.
 
-In the log(R)-matching scheme, at N$^3$LL+NNLO accuracy the matching procedure is given by
+In the log(R)-matching scheme, at N$^3$LL+NNLO accuracy the matching procedure is given by comparing 
+the logarithm of the fixed order result \cref{eq:Fixed_order}:
 
-\begin{equation}\label{eq:matching}
-    \begin{split}
-        \log(R(\tau,Q)) &= L g_1(\lambda)+ g_2(\lambda)+ \alpha_s g_3(\lambda)+\alpha_s^2 g_4(\lambda)\\
-        &+ \bar{\alpha_s} \qty( A(\tau) - G_{11}L- G_{12}L^2 - C_1) \\
-        &+ \bar{\alpha_s}^2 \qty( B(\tau)-  ) \\
-        &+ \bar{\alpha_s}^3 \qty( C(\tau)- R_{\text{log}}^{(3)}(\tau) )
-    \end{split}
+\begin{equation}
+    \log(R_T(\tau))= A(\tau) \bar{\alpha}_s + \qty( B(\tau) - \frac{1}{2}A^2(\tau)) \bar{\alpha}_s^2 + \qty(C(\tau) - A(\tau) B(\tau) + \frac{1}{3}A^3(\tau)) \bar{\alpha}_s^3 + \order{\bar{\alpha}_s^4}, 
 \end{equation}
+
+with the resummed expression \cref{eq:RT resummed} and subtracting the common logarithmic terms, one obtains the following expression:
+
+\begin{flalign}\label{eq:matching}
+        \log(R(\tau,Q)) &= L g_1(\lambda)+ g_2(\lambda)+ \alpha_s g_3(\lambda)+\alpha_s^2 g_4(\lambda)\\
+        &+ \bar{\alpha_s} \qty( A(\tau) - G_{12}L^2 - G_{11}L) \nonumber\\
+        &+ \bar{\alpha_s}^2 \qty( B(\tau) - \frac{1}{2}A^2(\tau) -G_{23}L^3 - G_{22}L^2 - G_{21}L ) \nonumber\\
+        &+ \bar{\alpha_s}^3 \qty( C(\tau) - A(\tau) B(\tau) + \frac{1}{3}A^3(\tau) -G_{34}L^4 - G_{33}L^3 - G_{32}L^2 - G_{31}L )\nonumber
+\end{flalign}
 
 
 
