@@ -7,6 +7,7 @@
 %\RequirePackage[utf8]{inputenc}         % UTF-8 support (not needed with XeLaTeX or LuaLaTeX)
 \RequirePackage[a-1b]{pdfx}             % PDF-A standard compliant file (required for submission)
 
+\RequirePackage{newtxtext}          
 % Graphics packages
 \RequirePackage{graphicx}               % Advanced image functions
 \RequirePackage{caption}                % Caption customization
@@ -27,7 +28,8 @@
 % \AtBeginDocument{\RenewCommandCopy\qty\SI}
 
 % Additional packages for typesetting theses on perturbative QCD
-\RequirePackage{tikz}     
+\RequirePackage{tikz}
+\usetikzlibrary{matrix}
 \usetikzlibrary{decorations.pathmorphing,arrows.meta}
 % Drawing diagrams
 % Feynman diagrams
@@ -56,14 +58,14 @@
     pdfstartview={FitH},            % Fits the width of the page to the window
     pdfnewwindow=true,              % Links open in new PDF window
     colorlinks=true,                % Colored links
-    linkcolor=blue,                 % Color of internal links
+    linkcolor=black,                 % Color of internal links
     citecolor=green,                % Color of links to bibliography
-    filecolor=cyan,                 % Color of file links
+    filecolor=black,                 % Color of file links
     urlcolor= blue                % Color of external links
 }
 \RequirePackage{cleveref}                   % Better cross-referencing(after hyperref)
 \RequirePackage{csquotes}               % Quotation management
 \RequirePackage{verbatim}              
-\RequirePackage{biblatex}               % Bibliography management
+\RequirePackage[backend=biber,style=ieee]{biblatex}               % Bibliography management
 % Packages for separate compilation and modular document
 \RequirePackage{subfiles}

@@ -1,9 +1,8 @@
-\makeatletter % Use \makeatletter to make '@' a letter
-\def\input@path{{../}} % Define input path to parent directory
-\makeatother % Restore default category code of '@'
+% \makeatletter % Use \makeatletter to make '@' a letter
+% \def\input@path{{../}} % Define input path to parent directory
+% \makeatother % Restore default category code of '@'
 
-\documentclass[../main.tex]{subfiles}
-
+\documentclass[../Tesi_Jiahao_Miao_986136.tex]{subfiles}
 \begin{document}
 
 \chapter{Resummed Calculations for Thrust}\label{ch:calculations}
@@ -56,7 +55,7 @@ $\mu_R$.
 The coupling satisfies the following renormalization group equation (RGE):
 
 \begin{equation}\label{eq:RGE}
-    \mu^2 \frac{d\alpha}{d\mu^2} = \beta(\alpha) = -\left( b_0 \alpha^2 + b_1 \alpha^3 + b_2 \alpha^4 + \ldots \right)
+    \mu^2 \frac{d\alpha}{d\mu^2} = \beta(\alpha) = -\left( b_0 \alpha^2 + b_1 \alpha^3 + b_2 \alpha^4 + \ldots \right),
 \end{equation}
 
 where $b_0$ is the 1-loop $\beta$-function coefficient,  
@@ -75,62 +74,59 @@ $\alpha$ ; then also $b_1$ is included and only terms up to the second order in 
 this same procedure is used to obtain $\alpha_{\text{NNLO}}$ , $\alpha_{\text{N}^3\text{LO}}$ , $\alpha_{\text{N}^4\text{LO}}$ . There will be a complication in
 calculating $\alpha_{\text{NLO}}$ and higher orders which will be explained and resolved in the following sections.
 
-\subsection{One-loop running coupling}
+\subsection{One-loop running coupling and higher order corrections}
 
 The one-loop running coupling $\alpha_{\text{LO}}$ is obtained by solving the RGE \cref{eq:RGE} with only the first term of the $\beta$-function:
 
 \begin{equation}
-    \mu^2 \frac{d\alpha}{d\mu^2} = - b_0 \alpha^2
+    \mu^2 \frac{d\alpha}{d\mu^2} = - b_0 \alpha^2.
 \end{equation}
 
 This equation can be solved by separation of variables and imposing 
 the boundary condition $\alpha(Q^2) = \alpha_s$:
 
 \begin{equation}
-   \int_{\alpha(Q^2)}^{\alpha(\mu^2)} \frac{\dd\alpha}{\alpha^2} = \int _{Q^2}^{\mu^2}-b_0 \frac{\dd\mu^2}{\mu^2} 
+   \int_{\alpha(Q^2)}^{\alpha(\mu^2)} \frac{\dd\alpha}{\alpha^2} = \int _{Q^2}^{\mu^2}-b_0 \frac{\dd\mu^2}{\mu^2},
 \end{equation}
 
 and one obtains:
 
 \begin{equation}
-    \alpha_{\text{LO}}(\mu^2) = \frac{\alpha_s}{1+b_0 \alpha_s \log(\frac{\mu^2}{Q^2})}
+    \alpha_{\text{LO}}(\mu^2) = \frac{\alpha_s}{1+b_0 \alpha_s \log(\frac{\mu^2}{Q^2})},
 \end{equation}
 
-In which one can observe the decreasing with energy trend of the running coupling (asymptotic freedom).  
+in which one can observe the decreasing with energy trend of the running coupling (asymptotic freedom).  
 
 It is useful to define the variable $\lambda_\mu = b_0 \alpha_s \log(\frac{\mu^2}{Q^2})$ so that:
 
 \begin{equation}\label{eq:LO running coupling}
-    \alpha_{\text{LO}}(\mu^2) = \frac{\alpha_s}{1+\lambda_\mu}
+    \alpha_{\text{LO}}(\mu^2) = \frac{\alpha_s}{1+\lambda_\mu}.
 \end{equation}
-
-
-\subsection{Two-loop running coupling}
 
 In order to obtain the two-loop running coupling $\alpha_{\text{NLO}}$, 
 we need to solve the RGE with the first two terms of the $\beta$-function \cref{eq:RGE}:
 
 \begin{equation}
-    \mu^2 \frac{d\alpha}{d\mu^2} = - b_0 \alpha^2 - b_1 \alpha^3
+    \mu^2 \frac{d\alpha}{d\mu^2} = - b_0 \alpha^2 - b_1 \alpha^3,
 \end{equation}
 
 but this equation is not solvable in a straightforward way as the one-loop equation, 
 we have to use the perturbative approach. We can rewrite the equation as:
 
 \begin{equation}
-    \frac{d\alpha}{d\mu^2} = - \frac{b_0 \alpha^2}{\mu^2} ( 1 - \frac{b_1}{b_0} \alpha )
+    \frac{d\alpha}{d\mu^2} = - \frac{b_0 \alpha^2}{\mu^2} ( 1 - \frac{b_1}{b_0} \alpha ),
 \end{equation}
 
 and expand the $\alpha$ term in the parenthesis as:
 
 \begin{equation}
-    \alpha = \alpha_{\text{LO}} + \delta \alpha
+    \alpha = \alpha_{\text{LO}} + \delta \alpha,
 \end{equation}
 
 where $\alpha_{\text{LO}}$ is the one-loop running coupling and $\delta\alpha$ contains the higher order correction, one obtains:
 
 \begin{equation}
-    \frac{d\alpha}{d\mu^2} = - \frac{b_0 \alpha^2}{\mu^2} ( 1 - \frac{b_1}{b_0} \alpha_{LO} - \frac{b_1}{b_0} \delta\alpha)
+    \frac{d\alpha}{d\mu^2} = - \frac{b_0 \alpha^2}{\mu^2} ( 1 - \frac{b_1}{b_0} \alpha_{LO} - \frac{b_1}{b_0} \delta\alpha).
 \end{equation}
 
 Observe that in parenthesis, by keeping 1 gave us the one-loop running coupling, by keeping $\frac{b_1}{b_0} \alpha_{LO}$ we can obtain the first order corrections
@@ -138,13 +134,13 @@ and $\delta\alpha$ are needed for higher order corrections. The equation to solv
 
 \begin{equation}
     \int_{\alpha_s}^{\alpha(\mu^2)} -\frac{\dd\alpha}{\alpha^2} = 
-    \int _{Q^2}^{\mu^2} - b_0 \frac{ \dd\mu^2}{\mu^2} ( 1 - \frac{b_1}{b_0} \alpha_{LO}(\mu^2) )
+    \int _{Q^2}^{\mu^2} - b_0 \frac{ \dd\mu^2}{\mu^2} ( 1 - \frac{b_1}{b_0} \alpha_{LO}(\mu^2) ).
 \end{equation}
 
 Using \emph{Mathematica} \cite{Mathematica} to solve this equation, we obtain the two-loop running coupling:
 
 \begin{equation}
-    \alpha_{\text{NLO}}(\mu^2) = \frac{\alpha_s}{1+\lambda_\mu + \alpha_s \frac{b_1}{b_0} \log(1+\lambda_\mu)}
+    \alpha_{\text{NLO}}(\mu^2) = \frac{\alpha_s}{1+\lambda_\mu + \alpha_s \frac{b_1}{b_0} \log(1+\lambda_\mu)},
 \end{equation}
 
 in which the expansion in powers of $\alpha_s$ is not explicit. One can expand 
@@ -162,20 +158,20 @@ We found the correction:
 
 By repeating the same procedure, one can obtain the three-loop running coupling $\alpha_{NNLO}$ and so on.
 
-\subsection{Higher order corrections}
-
 In order to calculate higher order corrections, one need to be careful of the powers of $\alpha$ needed for the desired order, 
 and the contributions to various orders of $\alpha_s$ may not be immediately apparent, but they are straightforward to compute.
 Expand the running coupling in powers of $\alpha_s$ as: 
 \begin{equation}
-    \alpha = \alpha_{\text{LO}} + \delta\alpha_{\text{NLO}} + \delta\alpha_{\text{NNLO}} + \delta\alpha_{\text{N}^3\text{LO}} + \delta\alpha_{\text{N}^4\text{LO}} + \ldots
+    \alpha = \alpha_{\text{LO}} + \delta\alpha_{\text{NLO}} + \delta\alpha_{\text{NNLO}} + \delta\alpha_{\text{N}^3\text{LO}} + \delta\alpha_{\text{N}^4\text{LO}} + \ldots,
 \end{equation} 
 with $\delta\alpha_{\text{NLO}} = \mathcal{O}(\alpha_s)$, $\delta\alpha_{\text{NLO}} = \order{\alpha_s^2}$, $\delta\alpha_{\text{NNLO}} = \mathcal{O}(\alpha_s^3)$,
- $\delta\alpha_{\text{N}^3\text{LO}} = \mathcal{O}(\alpha_s^4)$, $\delta\alpha_{\text{N}^4\text{LO}} = \mathcal{O}(\alpha_s^5)$, and so on.
+$\delta\alpha_{\text{N}^3\text{LO}} = \mathcal{O}(\alpha_s^4)$, $\delta\alpha_{\text{N}^4\text{LO}} = \mathcal{O}(\alpha_s^5)$, and so on.
+
 We present these contributions in the following table:
 \begin{table}[htbp] %h= here, t=top, b=bottom, p=page
     \centering
-    \scriptsize
+    \caption{Contributions to different powers of $\alpha_s$.}
+    % \scriptsize
     \begin{tabular}{c c c c c c c}
         \textbf{Power} & $\mathcal{O}(\alpha_s)$ & $\mathcal{O}(\alpha_s^2)$ & $\mathcal{O}(\alpha_s^3)$ 
         & $\mathcal{O}(\alpha_s^4)$ & $\mathcal{O}(\alpha_s^5)$\\
@@ -187,15 +183,13 @@ We present these contributions in the following table:
         $\alpha^4$ &  & & & $\alpha_{\text{LO}}^4$ & $4 \alpha_{\text{LO}}^3 \delta\alpha_{\text{NLO}}$  \\
         $\alpha^5$ &  & & & & $\alpha_{\text{LO}}^5$ \\
     \end{tabular}
-    
-    \caption{Contributions to different powers of $\alpha_s$.}
     \label{tab:contributions to different powers of alpha_s}
 \end{table}
 
 For the three-loop running coupling, the equation to solve is:
 
 \begin{equation}
-    \mu^2 \frac{d\alpha}{d\mu^2} = - b_0 \alpha^2(1 - \frac{b_1}{b_0} \alpha - \frac{b_2}{b_0} \alpha^2)
+    \mu^2 \frac{d\alpha}{d\mu^2} = - b_0 \alpha^2(1 - \frac{b_1}{b_0} \alpha - \frac{b_2}{b_0} \alpha^2).
 \end{equation}
 
 One can substitute the expansion of $\alpha= \alpha_{\text{LO}}+\delta\alpha_{\text{NLO}}+\order{\alpha_s^2}$ in powers of $\alpha_s$ 
@@ -203,36 +197,36 @@ and retain only terms up to $\order{\alpha_s^2}$, with this prescription the equ
 
 \begin{equation}
     \int_{\alpha_s}^{\alpha(\mu^2)} -\frac{\dd\alpha}{\alpha^2} = 
-    \int _{Q^2}^{\mu^2} - b_0 \frac{ \dd\mu^2}{\mu^2} ( 1 - \frac{b_1}{b_0} \alpha_{\text{NLO}}(\mu^2) - \frac{b_2}{b_0} \alpha_{LO}^2(\mu^2) )
+    \int _{Q^2}^{\mu^2} - b_0 \frac{ \dd\mu^2}{\mu^2} ( 1 - \frac{b_1}{b_0} \alpha_{\text{NLO}}(\mu^2) - \frac{b_2}{b_0} \alpha_{LO}^2(\mu^2) ),
 \end{equation}
 
 solving the above integral yields the three-loop running coupling $\alpha_{NNLO}$:
 
 \begin{equation}\label{eq:NNLO}
-    \alpha_{\text{NNLO}}(\mu^2) = \alpha_{\text{LO}}\qty(\mu^2) + \delta\alpha_{\text{NLO}}\qty(\mu^2)+\delta\alpha_{\text{NNLO}}\qty(\mu^2)
+    \alpha_{\text{NNLO}}(\mu^2) = \alpha_{\text{LO}}\qty(\mu^2) + \delta\alpha_{\text{NLO}}\qty(\mu^2)+\delta\alpha_{\text{NNLO}}\qty(\mu^2),
 \end{equation}
 
 with 
 \begin{equation}\label{eq:DNNLO}
-    \delta\alpha_{\text{NNLO}}\qty(\mu^2) = \frac{\alpha_{\text{LO}}^3\qty(\mu^2)}{b_0^2}\left(b _1^2 \lambda_\mu -b_0 b_2 \lambda_\mu +b_1^2 \log ^2(1+\lambda_\mu )-b_1^2 \log (1+\lambda_\mu )\right)    
+    \delta\alpha_{\text{NNLO}}\qty(\mu^2) = \frac{\alpha_{\text{LO}}^3\qty(\mu^2)}{b_0^2}\left(b _1^2 \lambda_\mu -b_0 b_2 \lambda_\mu +b_1^2 \log ^2(1+\lambda_\mu )-b_1^2 \log (1+\lambda_\mu )\right).
 \end{equation}
 
-Similarly one can obtain the four-loop running coupling $\alpha_{N^3LO}$ and five-loop running coupling $\alpha_{N^4LO}$.
+Similarly, one can obtain the four-loop running coupling $\alpha_{N^3LO}$ and five-loop running coupling $\alpha_{N^4LO}$
 
 \begin{equation}\label{eq:N3LO}
-    \alpha_{\text{N}^3\text{LO}}(\mu^2) = \alpha_{\text{LO}}\qty(\mu^2) + \delta\alpha_{\text{NLO}}\qty(\mu^2)+\delta\alpha_{\text{NNLO}}\qty(\mu^2)+\delta\alpha_{\text{N}^3\text{LO}}\qty(\mu^2)
+    \alpha_{\text{N}^3\text{LO}}(\mu^2) = \alpha_{\text{LO}}\qty(\mu^2) + \delta\alpha_{\text{NLO}}\qty(\mu^2)+\delta\alpha_{\text{NNLO}}\qty(\mu^2)+\delta\alpha_{\text{N}^3\text{LO}}\qty(\mu^2),
 \end{equation}
 
 \begin{equation}\label{eq:DN3LO}
     \begin{split}
         \delta\alpha_{\text{N}^3\text{LO}}\qty(\mu^2) &= \frac{\alpha_{\text{LO}}^4\qty(\mu^2)}{2 b_0^3} \Bigl(-\left(b_1^3-2 b_0 b_2 b_1+b_0^2 b_3\right) \lambda _{\mu }^2\\
         &-\left(2 b_0^2 b_3-2 b_0 b_1 b_2\right) \lambda _{\mu }-2 b_1^3 \log ^3\left(\lambda _{\mu }+1\right)+5 b_1^3 \log ^2\left(1+\lambda _{\mu }\right)\\
-        &+\left(2 b_0 b_1 b_2 \left(2 \lambda _{\mu }-1\right)-4 b_1^3 \lambda _{\mu }\right) \log \left(1+\lambda _{\mu }\right)\Bigr)
+        &+\left(2 b_0 b_1 b_2 \left(2 \lambda _{\mu }-1\right)-4 b_1^3 \lambda _{\mu }\right) \log \left(1+\lambda _{\mu }\right)\Bigr),
     \end{split}
 \end{equation}
 
 \begin{equation}\label{eq:N4LO}
-    \alpha_{\text{N}^4\text{LO}}(\mu^2) = \alpha_{\text{LO}}\qty(\mu^2) + \delta\alpha_{\text{NLO}}\qty(\mu^2)+\delta\alpha_{\text{NNLO}}\qty(\mu^2)+\delta\alpha_{\text{N}^3\text{LO}}\qty(\mu^2) + \delta\alpha_{\text{N}^4\text{LO}}\qty(\mu^2)
+    \alpha_{\text{N}^4\text{LO}}(\mu^2) = \alpha_{\text{LO}}\qty(\mu^2) + \delta\alpha_{\text{NLO}}\qty(\mu^2)+\delta\alpha_{\text{NNLO}}\qty(\mu^2)+\delta\alpha_{\text{N}^3\text{LO}}\qty(\mu^2) + \delta\alpha_{\text{N}^4\text{LO}}\qty(\mu^2),
 \end{equation}
 
 \begin{equation}\label{eq:DN4LO}
@@ -243,34 +237,28 @@ Similarly one can obtain the four-loop running coupling $\alpha_{N^3LO}$ and fiv
         &- 26 b_1^4 \log ^3\left(\lambda _{\mu }+1\right)+9 \left(\left(2 b_1^4-2 b_0 b_1^2 b_2\right) \lambda _{\mu } + b_1^4+2 b_0 b_2 b_1^2\right) \log ^2(1+\lambda _{\mu})\\
         &+ \bigl(6 b_1 \left(b_1^3-2 b_0 b_2 b_1+b_0^2 b_3\right) \lambda _{\mu }^2
         + 6 b_1 \left(-3 b_1^3+b_0 b_2 b_1+2 b_0^2 b_3\right) \lambda_{\mu}\\
-        &- 6 b_1 b_3 b_0^2 \bigr) \log(1+\lambda _{\mu }) \Bigr)
+        &- 6 b_1 b_3 b_0^2 \bigr) \log(1+\lambda _{\mu }) \Bigr).
     \end{split}
 \end{equation}
 
-
-Below we present a plot of the running coupling $\alpha_s$ as a function of the energy scale $(x m_z)^2$ for different orders of perturbation theory,
-where $m_z=91.18$ GeV is the mass of the Z boson. The global average value of the strong coupling constant is $\alpha_s(m_z^2) = 0.1179 \pm 0.0009$ \cite{PDG2022}.
-For the plot $\alpha_s(m_z^2) = 0.118$ is used.  
+The plot of the running coupling $\alpha_s$ as a function of the energy scale $(x m_z)^2$ for different orders of perturbation theory,
+where $m_z=91.18$ GeV is the mass of the Z boson, is shown in \cref{fig:alpha_running}. The global average value of the strong coupling constant is $\alpha_s(m_z^2) = 0.1179 \pm 0.0009$ \cite{PDG2022}.
+For the plots $\alpha_s(m_z^2) = 0.118$ is used.  
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/alpha_running.png}
-        \caption{Energy dependence of the strong coupling $\alpha_s$}
-        \label{fig:alpha_running}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/alpha_zoom.png}
-        \caption{Zoomed-in at low energies of the strong running coupling $\alpha_s$ at different orders}
-        \label{fig:alpha_zoom}
-    \end{subfigure}
-    \caption{Running coupling $\alpha_s$ at different orders of perturbation theory.}
-    \label{fig:alpha}
+    \includegraphics[width=\textwidth]{figures/alpha_running.png}
+    \caption{Energy dependence of the strong coupling $\alpha_s$}
+    \label{fig:alpha_running}
 \end{figure}
 
-In \cref{fig:alpha_zoom} wee see that the running coupling $\alpha_s$ is large and diverges at a finite 
-energy (the so called Landau pole), this is a sign of the non-perturbative nature of QCD at low energies.
-It's very clear for the LO running coupling, for some some low energy scales it becomes negative, which is clearly unphysical.
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=\textwidth]{figures/alpha_zoom.png}
+    \caption{Zoom-in at low energies of the strong running coupling $\alpha_s$ at different orders}
+    \label{fig:alpha_zoom}
+\end{figure}
 
+In \cref{fig:alpha_zoom} wee see that at low energies the running coupling $\alpha_s$ is large and diverges at a finite 
+energy (the so called Landau pole), this is a sign of the non-perturbative nature of QCD at low energies.
 \end{document}

@@ -1,8 +1,4 @@
-\makeatletter % Use \makeatletter to make '@' a letter
-\def\input@path{{../}} % Define input path to parent directory
-\makeatother % Restore default category code of '@'
-
-\documentclass[../main.tex]{subfiles}
+\documentclass[../Tesi_Jiahao_Miao_986136.tex]{subfiles}
 
 \begin{document}
 
@@ -14,7 +10,7 @@ In the article by Catani, Turnock, Webber and Trentadue \cite{CATANI1991491}, it
 for a final state configuration corresponding to a large value of thrust , \cref{eq:Thrust} can be approximated by
 
 \begin{equation} \label{eq:Thrust_approx}
-    \tau = 1-T \approx \frac{k_1^2+k_2^2}{Q^2}
+    \tau = 1-T \approx \frac{k_1^2+k_2^2}{Q^2},
 \end{equation}
 
 where $k_1^2$ and $k_2^2$ are the squared invariant masses of two back-to-back jets and $Q^2$ is the energy of the center of mass.
@@ -25,27 +21,31 @@ Then the thrust distribution $R_T(\tau,\alpha_s(Q^2))$ \cref{eq:cumulative_distr
 takes the form of a convolution of two jet mass distributions $J(Q^2,k_1^2)$ and $J(Q^2,k_2^2)$
 
 \begin{equation}\label{eq:Thrust fraction convolution}
-    R_T(\tau,\alpha_s(Q^2)) \underset{\tau \ll 1}{=} \int_0^\infty \dd k_1^2 \int_0^\infty  \dd k_2^2 J^q_{k_1^2}(Q^2) J^q_{k_2^2}(Q^2) \Theta\qty(\tau - \frac{k_1^2+k_2^2}{Q^2}) 
+    R_T(\tau,\alpha_s(Q^2)) \underset{\tau \ll 1}{=} \int_0^\infty \dd k_1^2 \int_0^\infty  \dd k_2^2 J^q_{k_1^2}(Q^2) J^q_{k_2^2}(Q^2) \Theta\qty(\tau - \frac{k_1^2+k_2^2}{Q^2}),
 \end{equation}
 
 Introducing the Laplace transform of the jet mass distribution:
 
 \begin{equation}\label{eq:laplace_jet_mass}
-    \Tilde{J}^q_\nu(Q^2) = \int_0^\infty J^q(Q^2,k^2) e^{-\nu k^2} \dd k^2 
+    \Tilde{J}^q_\nu(Q^2) = \int_0^\infty J^q(Q^2,k^2) e^{-\nu k^2} \dd k^2,
 \end{equation}
 
-and using the integral representation of the Heaviside step function:
+where $\nu$ is the conjugate variable to $k^2$ in Laplace space,
+
+and the integral representation of the Heaviside step function:
 
 \begin{equation} \label{eq:heaviside_integral_representation}
-    \Theta\qty(\tau - \frac{k_1^2+k_2^2}{Q^2}) = \frac{1}{2\pi i} \int_{C-i\infty}^{C+i\infty} \frac{\dd N}{N} e^{N \tau} e^{- N \frac{k_2^2+k_2^2}{Q^2}} 
+    \Theta\qty(\tau - \frac{k_1^2+k_2^2}{Q^2}) = \frac{1}{2\pi i} \int_{C-i\infty}^{C+i\infty} \frac{\dd N}{N} e^{N \tau} e^{- N \frac{k_1^2+k_2^2}{Q^2}},
 \end{equation}
 
-by substituting \cref{eq:heaviside_integral_representation} into \cref{eq:Thrust fraction convolution} and setting $N= \nu Q^2$ we obtain:
+where $N=\nu Q^2$.
+
+By substituting \cref{eq:heaviside_integral_representation} into \cref{eq:Thrust fraction convolution} and setting $N= \nu Q^2$ we obtain:
 
 \begin{align}
     \begin{split} \label{eq:Thrust fraction}
     R_T(\tau) &= \int_{C - i \infty}^{C + i\infty} \frac{\dd N}{N} \frac{e^{N \tau}}{2\pi i} \qty[\int_0^\infty \dd k_1^2 e^{-\nu k_1^2} J^q_{k_1^2}(Q^2) ] \qty[\int_0^\infty \dd k_2^2 e^{-\nu k_2^2} J^q_{k_2^2}(Q^2)]\\
-    &=\frac{1}{2\pi i}\int_{C - i \infty}^{C + i\infty} e^{N \tau} \qty[\Tilde{J}_\nu^q(Q^2)]^2 \frac{\dd N}{N}
+    &=\frac{1}{2\pi i}\int_{C - i \infty}^{C + i\infty} e^{N \tau} \qty[\Tilde{J}_\nu^q(Q^2)]^2 \frac{\dd N}{N},
     \end{split}
 \end{align}
 
@@ -54,7 +54,7 @@ where $C$ is a real positive constant to the right of all singularities of the i
 An integral representation for the Laplace transform $\Tilde{J}_\nu(Q^2)$ is given by \cite{CATANI19933}:
 
 \begin{equation}
-    \ln \Tilde{J}_\nu^q(Q^2) = \int_0^1 \frac{\dd u}{u} \qty(e^{-u \nu Q^2}-1)\qty[ \int_{u^2 Q^2}^{u Q^2} \frac{1}{q^2} A\qty(\alpha_s(q^2)) \dd q^2 + \frac{1}{2} B\qty(\alpha_s(u Q^2))]
+    \ln \Tilde{J}_\nu^q(Q^2) = \int_0^1 \frac{\dd u}{u} \qty(e^{-u \nu Q^2}-1)\qty[ \int_{u^2 Q^2}^{u Q^2} \frac{1}{q^2} A\qty(\alpha_s(q^2)) \dd q^2 + \frac{1}{2} B\qty(\alpha_s(u Q^2))],
 \end{equation}
 
 with 
@@ -69,13 +69,13 @@ It captures the resummation of the soft and collinear gluon emissions that domin
 Function $B(\alpha_S)$ includes the next-to-leading logarithmic (NLL) corrections and accounts for subleading contributions from hard collinear emissions.
 It typically involves the non-cusp part of the anomalous dimensions and running of the coupling constant.
 
-The integral as it is cannot be integrated, the $u$ integration may be performed using the prescription discussed in Appendix A of \cite{Catani_2003_appendix} and
+The integral as it is cannot be integrated since it involves the Landau pole where $\alpha_s(q^2)$ diverges. The $u$ integration may be performed using the prescription discussed in Appendix A of \cite{Catani_2003_appendix} and
 readapting the formula to the case of Laplace transform instead of Mellin transform.
 
 This method is a generalization of the prescription to NLL accuracy in \cite{CATANI19933}
 
 \begin{equation}
-    e^{-u \nu Q^2} - 1 \simeq -\Theta(u-v) \qq{with $v = \frac{N_0}{N}$}
+    e^{-u \nu Q^2} - 1 \simeq -\Theta(u-v) \qq{with $v = \frac{N_0}{N}$},
 \end{equation}
 
 where $N_0 = e^{-\gamma_E}$.
@@ -88,24 +88,23 @@ in an alternative representation:
     \ln \Tilde{J}_\nu^q(Q^2) = - \int_{N_0/N}^{1} \frac{\dd u}{u} \qty[ \int_{u^2 Q^2}^{u Q^2} \frac{1}{q^2} A\qty(\alpha_s(q^2)) \dd q^2 + \frac{1}{2} \Tilde{B}\qty(\alpha_s(u Q^2))] + \ln \Tilde{C}\qty(\alpha_s(\mu^2),\frac{\mu^2}{Q^2}).
 \end{equation}
 
-Note that, due to the integration of the running coupling the integral in \cref{eq:master formula} is singular for all values of $N=\nu Q^2$. However, if we perform the integration up 
-to a fixed logarithmic accuracy $N^kLL$ (\emph{i.e} we compute the leading $\alpha_s^n \ln^{n+1}N$, next-to-leading $\alpha_s^n \ln^nN$ and so on to $\alpha_s^n \ln^{n+1-k}$ terms ), we find the form factor: 
+After performing the integration up to a fixed logarithmic accuracy $N^kLL$ (\emph{i.e} we compute the leading $\alpha_s^n \ln^{n+1}N$, next-to-leading $\alpha_s^n \ln^nN$ and so on to $\alpha_s^n \ln^{n+1-k}$ terms ), we find the form factor: 
 
 \begin{flalign}\label{eq:factorized_J_nu}
     \ln \Tilde{J}_\nu^q(Q^2) &= \ln N f_1(\lambda) + f_2(\lambda) + \alpha_s f_3(\lambda) + \alpha_s^2 f_4(\lambda) + \alpha_s^3 f_5(\lambda) + \order{\alpha_s^n \ln^{n-4}N} \nonumber\\
     &+ \ln \Tilde{C}\qty(\alpha_s(\mu^2),\frac{\mu^2}{Q^2})
 \end{flalign}
 
-From now on we'll always use \cref{eq:master_formula alt}, so i'll drop the $\Tilde{}$ notation for $B$.
+From now on we'll always use \cref{eq:master_formula alt}, so we'll drop the $\Tilde{}$ notation for $B$.
 
 We observe that the N-space formula \cref{eq:master_formula alt} is finite and uniquely defined up to the 
-very large $N=N_L=\exp(\frac{1}{2\alpha_s b_0})$ ($\lambda = \frac{1}{2}$), thanks to the prescription above.
+very large $N=N_L=\exp(\frac{1}{2\alpha_s b_0})$, where $\lambda = \frac{1}{2}$, thanks to the prescription above.
 
 
 \subsection{resummation functions}
 
 To calculate explicit expressions for the first few $f_i$ terms, we first write explicitly the internal integral of \cref{eq:master formula}, for
-now let's forget the $\ln \Tilde{C}$ term, it can be absorbed into the definition of $A$ and $B$:
+now on let's forget the $\ln \Tilde{C}$ term, since it can be absorbed into the definition of $A$ and $B$:
 
 The $q^2$ integration also becomes simple if we use the renormalization group equation \cref{eq:RGE} to change
 the integration variable to as
@@ -113,15 +112,15 @@ the integration variable to as
 \begin{align}
     \frac{\dd q^2}{q^2} &= - \frac{\dd \alpha_s}{b_0 \alpha_s^2}\biggl(1-\frac{b_1}{b_0} \alpha_s  +  \frac{\left(b_1^2-b_2 b_0\right)}{b_0^2} \alpha_s^2 +\frac{ \left(-b_3 b_0^2  + 2 b_2  b_1 b_0-b_1^3\right)}{b_0^3} \alpha_s^3 & \nonumber\\
     &+\frac{ \left(-b_4 b_0^3  +  2 b_3 b_1 b_0^2 + b_2^2 b_0^2- 3 b_2 b_1^2 b_0 + b_1^4\right)}{b_0^4} \alpha_s^4 + \order{\alpha_s^5}\biggr)\\
-    &= - \frac{\dd \alpha_s}{b_0 \alpha_s^2} ( N_0 + N_1 \alpha_s + N_2 \alpha_s^2 + N_3 \alpha_s^3 + N_4 \alpha_s^4 + \order{\alpha_s^5}) &\nonumber
+    &= - \frac{\dd \alpha_s}{b_0 \alpha_s^2} ( N_0 + N_1 \alpha_s + N_2 \alpha_s^2 + N_3 \alpha_s^3 + N_4 \alpha_s^4 + \order{\alpha_s^5}), &\nonumber 
 \end{align}
 
 where for convenience's sake we have defined:
 
 \begin{align}
-    N_0 &= 1 \qquad N_1 = \frac{b_1}{b_0} \qquad N_2 = \frac{\left(b_1^2-b_2 b_0\right)}{b_0^2} &\nonumber \\
-    N_3 &= \frac{ \left(-b_3 b_0^2  + 2 b_2  b_1 b_0-b_1^3\right)}{b_0^3}  \\
-    N_4 &= \frac{ \left(-b_4 b_0^3  +  2 b_3 b_1 b_0^2 + b_2^2 b_0^2- 3 b_2 b_1^2 b_0 + b_1^4\right)}{b_0^4} &\nonumber
+    N_0 &= 1, \qquad N_1 = \frac{b_1}{b_0}, \qquad N_2 = \frac{\left(b_1^2-b_2 b_0\right)}{b_0^2}, &\nonumber \\
+    N_3 &= \frac{ \left(-b_3 b_0^2  + 2 b_2  b_1 b_0-b_1^3\right)}{b_0^3},  \\
+    N_4 &= \frac{ \left(-b_4 b_0^3  +  2 b_3 b_1 b_0^2 + b_2^2 b_0^2- 3 b_2 b_1^2 b_0 + b_1^4\right)}{b_0^4} . &\nonumber
 \end{align}
 
 Subsequently, the integral in \cref{eq:master_formula alt} can be expressed as:
@@ -130,7 +129,7 @@ Subsequently, the integral in \cref{eq:master_formula alt} can be expressed as:
     &\int_{\alpha_s(u^2 Q^2)}^{\alpha_s(u Q^2)} \frac{\dd \alpha_s}{b_0 \alpha_s^2} ( N_0+ N_1 \alpha_s + N_2 \alpha_s^2 + N_3 \alpha_s^3 + N_4 \alpha_s^4) \sum_{n=1}^\infty A_n \qty(\frac{\alpha_s}{\pi})^n &\nonumber & \nonumber\\ 
     &= \int_{\alpha_s(u^2 Q^2)}^{\alpha_s(u Q^2)} \frac{\dd \alpha_s}{b_0} \biggl(\frac{A_1 N_0}{\pi \alpha_s} + \frac{\pi  A_1 N_1+A_2}{\pi ^2} + \frac{ \left(\pi  A_2 N_1+\pi ^2 A_1 N_2+A_3\right)}{\pi ^3} \alpha_s &\nonumber\\
     &+ \frac{ \left(\pi  A_3 N_1+\pi ^2 A_2 N_2+\pi ^3 A_1 N_3+A_4\right)}{\pi ^4}\alpha_s^2 \\ 
-    &+ \frac{ \left(\pi  A_4 N_1+\pi ^2 A_3 N_2+\pi ^3 A_2 N_3+\pi ^4 A_1 N_4+A_5\right)}{\pi ^5} \alpha_s^3 +\order{\alpha_s^4}\biggr) & \nonumber
+    &+ \frac{ \left(\pi  A_4 N_1+\pi ^2 A_3 N_2+\pi ^3 A_2 N_3+\pi ^4 A_1 N_4+A_5\right)}{\pi ^5} \alpha_s^3 +\order{\alpha_s^4}\biggr) , & \nonumber
 \end{flalign}
 
 and keeping only terms up to $N_0$,$A_1$ and $\alpha_s^0$ we get contributions to $f_1$, keeping terms up to $N_1$,$A_2$ and $\alpha_s^1$ yields contributions to $f_2$ and so on. 
@@ -140,7 +139,7 @@ And there's an easy way to see why it's like this, in fact it's also possible to
 and keeping in mind \cref{tab:contributions to different powers of alpha_s}.
 
 \begin{flalign}
-    &\int_{u^2 Q^2}^{u Q^2} \frac{\dd q^2}{q^2} \sum_{n=1}^\infty\frac{A_n}{\pi^n} \qty( \alpha_{\text{LO}}(q^2) + \delta\alpha_{\text{NLO}}(q^2) + \delta\alpha_{\text{NNLO}}(q^2) + \delta\alpha_{\text{N}^3\text{LO}}(q^2) + \delta\alpha_{\text{N}^4\text{LO}}(q^2) + \ldots)^n 
+    &\int_{u^2 Q^2}^{u Q^2} \frac{\dd q^2}{q^2} \sum_{n=1}^\infty\frac{A_n}{\pi^n} \qty( \alpha_{\text{LO}}(q^2) + \delta\alpha_{\text{NLO}}(q^2) + \delta\alpha_{\text{NNLO}}(q^2) + \delta\alpha_{\text{N}^3\text{LO}}(q^2) + \delta\alpha_{\text{N}^4\text{LO}}(q^2) + \ldots)^n ,
 \end{flalign}
 
 now we can see that if we consider terms up to $\alpha_s^1$ only $A_1$ contributes and this gives $f_1$, if we consider terms up to $\alpha_s^2$ we see $A_2$ starts to contribute together with $A_1  \delta\alpha_{\text{NLO}}$
@@ -153,19 +152,19 @@ Now armed with this knowledge we can calculate \cref{eq:master_formula alt} and 
 \begingroup
 \allowdisplaybreaks
 \begin{equation}
-    \ln \Tilde{J}_\nu^q(Q^2) = \ln N f_1(\lambda) + f_2(\lambda) + \alpha_s f_3(\lambda) + \alpha_s^2 f_4(\lambda) + \alpha_s^3 f_5(\lambda) + \order{\alpha_s^n \ln^{n-4}N}
+    \ln \Tilde{J}_\nu^q(Q^2) = \ln N f_1(\lambda) + f_2(\lambda) + \alpha_s f_3(\lambda) + \alpha_s^2 f_4(\lambda) + \alpha_s^3 f_5(\lambda) + \order{\alpha_s^n \ln^{n-4}N} + \ln \Tilde{C}\qty(\alpha_s(\mu^2)),
 \end{equation}
 
 where $\lambda = \alpha_s b_0 \ln N$, $N=\nu Q^2$, $\alpha_s = \alpha_s(Q^2)$ and
 
 \begin{flalign}\label{eq:f1}
-    f_1(\lambda) =-\frac{A_1}{2 \pi  b_0 \lambda } \qty[(1-2 \lambda ) \ln (1-2 \lambda )-2 (1-\lambda ) \ln (1-\lambda )]
+    f_1(\lambda) =-\frac{A_1}{2 \pi  b_0 \lambda } \qty[(1-2 \lambda ) \ln (1-2 \lambda )-2 (1-\lambda ) \ln (1-\lambda )],
 \end{flalign}
 
 
 \begin{flalign}\label{eq:f2}
     f_2(\lambda) &= -\frac{A_2}{2 \pi ^2 b_0^2} \qty[2 \ln (1-\lambda )-\ln (1-2 \lambda )]+\frac{B_1 \ln (1-\lambda )}{2 \pi  b_0} +\frac{\gamma_E  A_1}{\pi  b_0} \qty[\ln (1-2 \lambda )-\ln (1-\lambda )] & \nonumber\\
-    &-\frac{A_1 b_1}{2 \pi  b_0^3} \left[-\ln ^2(1-\lambda )+\frac{1}{2} \ln ^2(1-2 \lambda )-2 \ln (1-\lambda )+\ln (1-2 \lambda )\right]
+    &-\frac{A_1 b_1}{2 \pi  b_0^3} \left[-\ln ^2(1-\lambda )+\frac{1}{2} \ln ^2(1-2 \lambda )-2 \ln (1-\lambda )+\ln (1-2 \lambda )\right],
 \end{flalign}
     
 \begin{flalign}\label{eq:f3}
@@ -175,7 +174,7 @@ where $\lambda = \alpha_s b_0 \ln N$, $N=\nu Q^2$, $\alpha_s = \alpha_s(Q^2)$ an
     &+ \frac{b_1 \gamma_E A_1}{\pi  b_0^2 (\lambda -1) (2 \lambda -1)}  \qty[-\lambda +(1-2 \lambda)  \ln (1-\lambda )- (1-\lambda)  \ln (1-2 \lambda )] \\
     &-\frac{b_1^2 A_1}{2 \pi  b_0^4 (\lambda -1) (2 \lambda -1)} \Bigl[\left(\lambda ^2+(2 \lambda -1) \ln (1-\lambda ) (2 \lambda +\ln (1-\lambda ))\right)&\nonumber\\
     &+\frac{1}{2}\left((1-\lambda) \ln ^2(1-2 \lambda )\right)-2 (\lambda -1) \lambda  \ln (1-2 \lambda )\Bigr] & \nonumber\\
-    &-\frac{b_0 b_2 A_1}{2 \pi  b_0^4 (\lambda -1) (2 \lambda -1)} \left[\lambda ^2+ (\lambda -1) (2 \lambda -1)\qty(2 \ln (1-\lambda )+ \ln (1-2 \lambda ))\right] & \nonumber
+    &-\frac{b_0 b_2 A_1}{2 \pi  b_0^4 (\lambda -1) (2 \lambda -1)} \left[\lambda ^2+ (\lambda -1) (2 \lambda -1)\qty(2 \ln (1-\lambda )+ \ln (1-2 \lambda ))\right] , & \nonumber
 \end{flalign}
 
 \begin{flalign}\label{eq:f4}
@@ -194,7 +193,7 @@ where $\lambda = \alpha_s b_0 \ln N$, $N=\nu Q^2$, $\alpha_s = \alpha_s(Q^2)$ an
     &+12 (\lambda -1)^2 \lambda ^2 \ln (1-2 \lambda )-(\lambda -1)^2 \ln ^3(1-2 \lambda )\Bigr] +\frac{b_2 \gamma_E A_1 \lambda ^2 (4 \lambda -3)}{2 \pi  b_0^2 (\lambda -1)^2 (2 \lambda -1)^2} & \nonumber\\
     &\frac{b_1 b_2 A_1}{12 \pi  b_0^4 (\lambda -1)^2 (2 \lambda -1)^2} \Bigl[\lambda ^2 (2 \lambda  (3-7 \lambda )+3)+3 \left(8 \lambda ^2-4 \lambda +1\right) (\lambda -1)^2 \ln (1-2 \lambda )&\nonumber\\
     &-6 (1-2 \lambda )^2 (2 (\lambda -1) \lambda +1) \ln (1-\lambda )\Bigr] + -\frac{b_3 A_1}{12 \pi  b_0^3 (\lambda -1)^2 (2 \lambda -1)^2} \Bigl[(2 (\lambda -3) \lambda +3) \lambda ^2&\nonumber\\
-    &-6 \left(2 \lambda ^2-3 \lambda +1\right)^2 \ln (1-\lambda )+3 \left(2 \lambda ^2-3 \lambda +1\right)^2 \ln (1-2 \lambda )\Bigr] & \nonumber
+    &-6 \left(2 \lambda ^2-3 \lambda +1\right)^2 \ln (1-\lambda )+3 \left(2 \lambda ^2-3 \lambda +1\right)^2 \ln (1-2 \lambda )\Bigr] , & \nonumber
 \end{flalign}
     
 
@@ -243,7 +242,7 @@ where $\lambda = \alpha_s b_0 \ln N$, $N=\nu Q^2$, $\alpha_s = \alpha_s(Q^2)$ an
     &+3 \lambda^2 +3 (2 \lambda  (\lambda  (8 \lambda -9)+3)-1) (\lambda -1)^3 \ln (1-2 \lambda )&\nonumber\\
     &-3 (2 \lambda -1)^3 (\lambda  (\lambda  (4 \lambda -9)+6)-2) \ln (1-\lambda )\Bigr] & \nonumber\\
     &-\frac{b_4 A_1}{36 \pi  b_0^3 (\lambda -1)^3 (2 \lambda -1)^3} \Bigl[\lambda ^2 (\lambda  (\lambda  (2 \lambda  (2 \lambda -9)+33)-24)+6)&\nonumber\\
-    &-12 \left(2 \lambda ^2-3 \lambda +1\right)^3 \ln (1-\lambda )+6 \left(2 \lambda ^2-3 \lambda +1\right)^3 \ln (1-2 \lambda )\Bigr] & \nonumber
+    &-12 \left(2 \lambda ^2-3 \lambda +1\right)^3 \ln (1-\lambda )+6 \left(2 \lambda ^2-3 \lambda +1\right)^3 \ln (1-2 \lambda )\Bigr] .& \nonumber
 \end{flalign}
 
 \endgroup
@@ -281,7 +280,8 @@ of \cite{chakraborty2022hbbarbvertexloopshard} as appropriate, then absorbing co
 To obtain the Laplace trasform of the thrust distribution \cref{eq:Laplace transform distribution}, 
 we perform the Laplace transform of the convolution \cref{eq:Thrust fraction convolution}.
 By applying the convolution theorem, we find that it is twice the integral given by \cref{eq:master formula} that we have just calculated. 
-Therefore, we multiply by 2 the $f_i(\lambda)$ we just obtained \cref{eq:f1,eq:f2,eq:f3,eq:f4,eq:f5}.
+Therefore, we multiply by 2 the $f_i(\lambda)$ we just obtained \cref{eq:f1,eq:f2,eq:f3,eq:f4,eq:f5}. 
+The plot of $J_\nu^q$ is shown in \cref{fig:J_nu}.
 
 \begin{figure}[htbp]
     \centering

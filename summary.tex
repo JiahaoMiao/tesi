@@ -1,0 +1,79 @@
+\documentclass[10pt,english,openany]{book}
+
+\usepackage{style/relazione}
+\usepackage{style/mystyle}
+
+% Adding the path for graphics
+\graphicspath{{../figures/}}
+
+% Setting the path for input files
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+
+\addbibresource{bibliography/biblio.bib} % The file containing the bibliography
+
+% BACHELOR DEGREE COURSE
+\def\myCDL{Corso di Laurea triennale in Fisica}
+
+% TITLE:
+\def\myTitle{Resummation of QCD large infrared logarithms \\for Thrust distribution in \lowercase{$e^+e^-$} annihilation} 
+
+% AUTHOR:
+\def\myName{Jiahao Miao}
+\def\myMat{Matr. Nr. 936136}
+ 
+\def\myRefereeA{Giancarlo Ferrera}
+\def\myRefereeB{Wan-Li Ju}
+ 
+% ANNO ACCADEMICO
+\def\myYY{2023-2024}
+ 
+% This command introduces a list of figures after the table of contents (optional)
+\figurespagetrue
+
+% This command introduces a list of tables after the table of contents (optional)
+\tablespagetrue
+
+
+\begin{document}
+
+% frontispiece with logo, title, author, referee, etc.
+% \frontispiece
+
+\chapter*{Summary}
+
+In this thesis, we have studied the resummation of QCD large infrared logarithms for the Thrust distribution in $e^+e^-$ annihilation.
+The Thrust distribution is a classical precision observable in collider physics and it allows the extraction of the strong coupling constant $\alpha_s$,
+which is a key parameter of the Standard Model of particle physics and is essential for the precision tests of the theory and the search for new physics at the LHC.
+
+In the era of the LEP experiments(1989-2000) the calculations for certain classes of variables, such as the Thrust event shape variable at next-to-leading order (NLO), 
+were improved by resumming leading and next-to-leading logarithmic terms (NLL). These calculations, matched to fixed-order expressions, enlarged the
+kinematic range of applicability for $\alpha_s$ extractions and reduced the systematic theoretical uncertainty. 
+
+This thesis aims to enhance these achievements by incorporating higher-order logarithmic terms in the resummation process and utilizing NNLO fixed-order calculations completed in 2007, 
+which were unavailable during the LEP experiments.
+
+Resummation tecniques are needed because in the kinematical region where the Thrust $\tau$ is close to 0, cancellations between real and virtual corrections 
+are not complete due to kinematical constraints and large logarithms of the form $\alpha_s^n \log^m(\frac{1}{\tau})$ with $m \le 2n$ appear to spoil the convergence of the perturbative series.
+Therefore, resummation of these logarithms is needed to obtain a reliable theoretical prediction for the Thrust distribution in the region of small $\tau$, 
+then matching the resummed prediction to the fixed order calculation yields a prediction that is valid in a larger range of $\tau$ than the fixed order calculation alone.
+Resummed calculations allows us to push the validity of QCD perturbation theory to the boundary of the phase space
+where fixed order predictions are not reliable.
+
+Initially, we calculated the resummation functions $f_i(\lambda)$ in Laplace space up to $i=5$, where the natural exponentiation of the logarithms occurs.
+We were careful in ensuring consistency with prior findings $i=1,2,3$ and extracting necessary ingredients for resummation up to N$^4$LL accuracy from existing literature.
+
+Subsequently, we performed the inverse Laplace transform of the resummed distribution following methodologies outlined in the literature 
+and extended the results beyond next-to-next-Leading Logarithm (NNLL) accuracy present in literature up to N$^4$LL accuracy. This has allowed us to obtain the resummed Thrust distribution in thrust space, whose shape 
+closely resembles experimental data from LEP (ALEPH, OPAL, L3 and DELPHI experiment) and SLAC (LSD experiment).
+
+We also utilized a stochastic optimation algorithm (genetic algorithm) to determine the kinematical lower limit of the Thrust
+for N=5 partons final state, which is necessary for the correct normalization of the fixed-order cross section at NNLO.
+
+To refine our theoretical predictions further, we have matched the resummed expression to the fixed-order NNLO calculations at large values of $\tau$ using the R-matching scheme.
+The results presented in this thesis allow us to achieve NNLO+N$^3$LL accuracy.
+This represents a step towards achieving a more precise theoretical prediction for the Thrust distribution in $e^+e^-$ annihilation and
+a more precise extraction of the strong coupling constant $\alpha_s$.
+
+\end{document}

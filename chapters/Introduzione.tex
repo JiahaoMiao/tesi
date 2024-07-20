@@ -1,12 +1,9 @@
-\makeatletter % Use \makeatletter to make '@' a letter
-\def\input@path{{../}} % Define input path to parent directory
-\makeatother % Restore default category code of '@'
-
-\documentclass[../main.tex]{subfiles}
-
+\documentclass[../Tesi_Jiahao_Miao_986136.tex]{subfiles}
 \begin{document}
 
 \chapter{Introduction}\label{ch:introduction}
+\pagenumbering{arabic}
+\setcounter{page}{1}
 
 In this thesis, we focus on a specific aspect of theoretical high-energy physics and collider physics: the resummation of QCD large logarithms for 
 the Thrust event-shape distribution in electron-positron ($e^+e^-$) collisions.
@@ -48,9 +45,9 @@ One example of a process studied in high-energy physics is electron-positron ann
 Electron-positron annihilation has been extensively studied, particularly during the operation of the Large Electron-Positron Collider (LEP) at CERN from 1989 to 2000. 
 LEP provided an optimal environment for precision studies in high-energy physics. 
 Unlike hadron colliders, which are complicated by strongly interacting initial states, LEP enabled extremely accurate measurements of Standard Model quantities such as the Z-boson mass. 
-These results tightly constrain beyond-the-Standard Model physics. Precision data from LEP is also used in Quantum Chromodynamics (QCD) studies, for example, to determine the strong coupling constant, $\alpha_S$.
+These results tightly constrain beyond-the-Standard Model physics. Precision data from LEP is also used in Quantum Chromodynamics (QCD) studies to determine the strong coupling constant, $\alpha_s$.
 
-When high-energy particles collide, quarks and gluons are produced in the interactions. Due to a phenomenon called color confinement, 
+When high-energy particles collide, quarks and gluons are produced in the interactions. Due to a phenomenon called \emph{color confinement}, 
 these quarks and gluons cannot exist freely and thus hadronize, forming jets of particles. A jet is a collimated stream of hadrons (such as protons, pions, and kaons)
 that originates from the hadronization of a single quark or gluon.
 
@@ -60,7 +57,7 @@ to the fact that the photon is off-shell, meaning it does not satisfy the mass-s
 This virtual photon can then decay into a quark-antiquark pair in another electromagnetic process, conserving the electrical and color charge of the initial state, as well as the four-momentum.
 
 The quark-antiquark pair produced interacts through both the strong force and the electromagnetic force, as they possess both electric charge and color charge.
-They can radiate gluons via the strong force and photons via the electromagnetic force. This radiation process continues, creating a cascade of particles known as a parton shower.
+They can radiate gluons via the strong force and photons via the electromagnetic force. This radiation process continues, creating a cascade of particles known as a \emph{parton shower}.
 The parton shower eventually hadronizes into jets when the particles are no longer energetic enough to radiate further, and the final state particles can be revealed by the detectors, with their momenta measured to study the underlying processes.
 
 
@@ -69,10 +66,10 @@ Therefore, functions of interest are often expanded perturbatively, meaning they
 
 For the electromagnetic interaction, this small parameter is the fine structure constant (or electromagnetic coupling constant) $\alpha_{em} \sim \frac{1}{137}$.
 
-For interactions involving the strong force, it is natural to use the aformentioned strong coupling constant, $\alpha_s$. This key parameter becomes small 
-at high energies (or equivalently, short distances) due to the phenomen known as asymptotic freedom of QCD.
+For interactions involving the strong force, it is natural to use the aforementioned strong coupling constant, $\alpha_s$. This key parameter becomes small 
+at high energies (or equivalently, short distances) due to the phenomen known as \emph{asymptotic freedom} of QCD.
 
-Extraction of $\alpha_s$ can be achieved from comparing precise QCD distribution such as the thrust event shape variable against experimental data. 
+Extraction of $\alpha_s$ can be achieved from comparing precise QCD prediction such as the thrust event-shape distribution against experimental data. 
 
 
 \section{Thrust variable}\label{sec:Thrust}
@@ -80,18 +77,14 @@ Extraction of $\alpha_s$ can be achieved from comparing precise QCD distribution
 Thrust $T$ is defined as:
 
 \begin{equation} \label{eq:Thrust}
-    T = \max_{\vec{n}} \frac{\sum_i |\vec{p}_i \cdot \vec{n}|}{\sum_i |\vec{p}_i|} \stackrel{\text{def}}{=} 1-\tau
+    T = \max_{\vec{n}} \frac{\sum_i |\vec{p}_i \cdot \vec{n}|}{\sum_i |\vec{p}_i|} \stackrel{\text{def}}{=} 1-\tau ,
 \end{equation}
 
-where the sum is over all final state particles and $\vec{n}$ is a unit vector that points in the direction
-which maximizes the magnitude of $T$. A quick way to calculate the thrust axis $\vec{n}$ for small number $N$ of partons in the final state is described 
-in the Appendix A of \cite{Weinzierl_2009}, where the optimization problem of finding the unit vector which maximizes a certain configuration of final state partons 
-is reduced to a simple loop over $2^{N-1}-1$ configurations of signs $\{s_1,\dots,s_N\}$ which satisfies the constraint
-$ \vec{p}_j\cdot \vec{n} = s_j \vert \vec{p}_j\cdot \vec{n} \vert $ where $\vec{p}_j$ is the momenta of the $j$-th parton.
+where the sum is over all final state particles and $\vec{n}$ is a unit vector that points in the direction which maximizes the magnitude of $T$. 
 
 In practice, the sum may be carried over the detected particles only.  
-The thrust distribution represents the probability of observing a given value of $T$ in $e^+e^-$ annihilation, \emph{i.e} the probability of observing a given configuration of momenta of final-state particles 
-with respect to the thrust axis.
+The thrust distribution represents the probability of observing a given value of $T$ in $e^+e^-$ annihilation, \emph{i.e} the probability of observing a configuration of 
+momenta in the final state whose thrust calculated with \cref{eq:Thrust} is $T$.
 
 It can be seen from this definition that the thrust is an infrared and collinear safe quantity, that is, it is insensitive to the emission of zero momentum particles and to the splitting of 
 one particle into two collinear ones.
@@ -113,7 +106,7 @@ for event shapes have been known since 1980 \cite{Ellis:1980wv}, the relevant ne
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{figures/LEP_Thrust_NNLO.png}
+    \includegraphics[width=0.7\textwidth]{figures/LEP_Thrust_NNLO.png}
     \caption{Distributions measured by ALEPH, after correction for backgrounds and detector
     effects of thrust at energies between 91.2 and 206
     GeV together with NNLO QCD predictions. The error bars correspond to statistical
@@ -137,42 +130,129 @@ The cross section is defined as the probability of observing a final state with 
 as a differential cross section, as a cumulative distribution and as its Laplace transform.
 
 \begin{equation}\label{eq:differential_cross_section}
-    \sigma(\tau) =  \frac{1}{\sigma_0} \dv{\sigma}{\tau}
+    \sigma(\tau) =  \frac{1}{\sigma_0} \dv{\sigma}{\tau} ,
 \end{equation}
 
 \begin{equation}\label{eq:cumulative_distribution}
-    R_T(\tau) = \int^\tau_0 \dd{\tau'} \frac{1}{\sigma_0}\dv{\sigma}{\tau'}
+    R_T(\tau) = \int^\tau_0 \dd{\tau'} \frac{1}{\sigma_0}\dv{\sigma}{\tau'} ,
 \end{equation}
 
 \begin{equation}\label{eq:Laplace transform distribution}
-    \Tilde{\sigma}(\nu) = \int^\infty_0 \dd{\tau} e^{-\nu \tau} \dv{\sigma}{\tau}
+    \Tilde{\sigma}(\nu) = \int^\infty_0 \dd{\tau} e^{-\nu \tau} \dv{\sigma}{\tau} .
 \end{equation}
 
-It can be seen that a two-particle final state has fixed $T = 1$, in fact at the zeroth order of the fixed order this corresponds to a delta distribution 
+It can be seen that a two-particle final state has fixed $T = 1$ because of momentum conservation, in fact at the zeroth order of the fixed order this corresponds to a delta distribution 
 for the differential cross section, as shown in  \cref{eq:LO fixed order}, consequently the thrust distribution receives its first non-trivial contribution 
 from three-particle final states.
 
-The lower limit on $T$ depends on the number of final-state particles.
-Neglecting masses, for three particles, $T_{min} = 2/3$, corresponding to a symmetric configuration.
-For four particles the minimum thrust corresponds to final-state momenta forming the vertices of a regular tetrahedron,
-each making an angle $\cos^{-1}(1/\sqrt{3})$ with respect to the thrust axis. Thus $T_{min} = 1/\sqrt{3} \approx 0.577$ in this
-case. For more than four particles, $T_{min}$ approaches $1/2$ from above as the number of particles increases.
+The upper limit of $\tau$ or lower limit on $T$ depends on the number of final-state partons.
+Knowing the lower limit of $T$ is important because it allows us to normalize correctly the fixed-order cross section.
+Neglecting masses, for three particles, $\tau_{max} = 1/3$, corresponding to a symmetric trigonal-planar configuration (\Cref{fig:3_parton}).
+For four particles the minimum thrust corresponds to final-state momenta forming the vertices of a regular tetrahedron (\Cref{fig:4_parton}),
+each making an angle $\cos^{-1}(1/\sqrt{3})$ with respect to the thrust axis. Thus $\tau_{max} = 1-\frac{1}{\sqrt{3}} \approx 0.42265$ in this
+case. For more than four particles, as far as we know there's no known value of $\tau_{max}$ in literature, it's only known that $\tau_{max}$ approaches $1/2$ 
+from below as the number of particles increases. For $N=5$ the maximum value of $\tau$ was previously 
+estimated to be $\tau_{max} = 0.4275$ by checking at what bin the cross sections is 0 for NNLO Monte Carlo (MC) calculation of the fixed-order cross sections \cite{Monni:2011gb}.
+We also have another estimate of $\tau_{max}$ for $N=5$ from the tables in \cite{Weinzierl_2009} of NNLO thrust cross section  whose 
+bins end at $\tau = 0.445$. The numerical NNLO calculation of the thrust distribution can only give an estimate to the upper limit of $\tau$, limited
+by the number of events used in the MC calculation, the smallness of the cross section in the kimematical limit and some small, but non zero, resolution
+parameters which are always present in numerical calculation at higher-orders
 
-At large values of $T$, however, there are terms in higher order that become enhanced by powers of $\ln(1 - T)$.
+We have used a stochastic optimization algorithm to find the lower limit of $T$ for $N=5$ and found a configuration which gives $\tau_{max} = 0.4539536 $ 
+for $N=5$ (\Cref{fig:5_parton}).
+ 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/3_parton.png}
+    \caption{Configuration of final state momenta of three partons that maximizes $\tau$, forming a trigonal-planar configuration.} 
+    \label{fig:3_parton}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/4_parton.png}
+    \caption{Configuration of final state momenta of four partons that maximizes $\tau$, forming a tetrahedral configuration.} 
+    \label{fig:4_parton}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/5_parton.png}
+    \caption{Configuration of final state momenta of five partons that maximizes $\tau$.} 
+    \label{fig:5_parton}
+\end{figure}
+
+\begin{table}
+    \centering
+    \caption{The maximum kinematically allowed value of $\tau$ as a function of the number of partons $N$ in the final state.
+    They should be interpreted as lower limits to the maximum value of $\tau$ since a stochastic algorithm is not guaranteed to find the absolute
+    minimum.}
+    \begin{tabular}{|c|cccccc|}
+        \hline
+        $N$&3 & 4 & 5 & 6 & 7 &8\\ 
+        \hline
+        $\tau_{max}$&$\frac{1}{3}$ & 1 - $\frac{1}{\sqrt{3}}$ & 0.4539536 & 0.4616661  & 0.4716270 & 0.4737373\\
+        \hline
+        $N$& 9 & 10 & 11 & 12 & 13 & 14\\
+        \hline
+        $\tau_{max}$ & 0.4782286 & 0.4802864 & 0.4816904 & 0.4840608 & 0.4836307& 0.4842613\\
+        \hline
+    \end{tabular}
+    \label{tab:max_tau}
+\end{table}
+
+Finding the lower limit of $T$ is non trivial as it involves a double optimization problem.  
+Given a configuration of $N$ parton momenta one needs to find the direction of the thrust axis which maximizes the value of \cref{eq:Thrust}
+and then find the minimum value of $T$ by varying the momenta of the partons and repeating the process of finding the thrust axis.
+
+A quick way to calculate the thrust axis $\vec{n}$ for small number $N$ of partons in the final state is described 
+in Appendix A of \cite{Weinzierl_2009}, where the optimization problem of finding the unit vector which maximizes a certain configuration of final state partons 
+is reduced to a simple loop over $2^{N-1}-1$ configurations of signs $\{s_1,\dots,s_N\}$ which satisfies the constraint
+
+\begin{equation}\label{eq:constraint}
+    \vec{p}_j\cdot \vec{n} = s_j \vert \vec{p}_j\cdot \vec{n} \vert ,
+\end{equation}
+where $\vec{p}_j$ is the momenta of the $j$-th parton.
+
+To see why the Thrust axis can be found by this method, suppose the constraint \cref{eq:constraint} is satisfied. Then the thrust can be written as: 
+
+\begin{equation}
+    T = \max_{\vec{n}} \frac{\sum_j \vert \vec{p}_j\cdot \vec{n} \vert}{\sum_j \vert \vec{p}_j \vert} = \max_{\vec{n}} \frac{\sum_j s_j \vec{p}_j\cdot \vec{n}}{\sum_j \vert \vec{p}_j \vert} = \max_{\vec{n}} \frac{\vec{P}\cdot \vec{n}}{\sum_i \vert \vec{p}_i \vert} ,
+\end{equation} 
+
+where $\vec{P}= \sum_j s_j \vec{p_i}$. It is clear that the thrust axis is the direction of the vector $\vec{n}=\frac{\vec{P}}{\vert P \vert}$ and 
+can be found by checking which of the $2^{N-1}-1$ configurations of signs $\{s_1,\dots,s_N\}$ satisfies the constraint \cref{eq:constraint} for all $j= 1, \cdots , N$ and among 
+them choose the one which maximizes the value of \cref{eq:Thrust}. There are in total $2^N$ configurations of signs $s_1, \cdots, s_N$, but we have to exclude the one where all the signs are equal because it violates momentum conservation, and also thrust 
+is invariant under the transformation $\vec{n} \to -\vec{n}$.
+
+We have implemented this algorithm in C++ to calculate the value of Thrust \cref{eq:Thrust} given a set of $N$ momenta. We then used metaheuristic optimization algorithms ( Genetic Algorithm (GA) and Particle Swarm Optimization (PSO)), 
+to find the maximum value of $\tau$ (or minimum of $T$) for a given number $N$ of partons by perturbing repeatedly the initially randomly generated momenta of the partons, always respecting the constraint of momentum conservation, and calculating 
+the thrust for each configuration. The results for the first few $N$ are shown in \cref{tab:max_tau}, then the problem 
+becomes computationally expensive because the evaluation of the thrust scales as $O(2^N)$.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/tau_maxVsN.png}
+    \caption{The maximum kinematically allowed value of $\tau$ as a function of the number of partons $N$ in the final state.
+    The value of $\tau_{max}$ approaches $1/2$ from below as the number of partons increases.}
+    \label{fig:max_tau}
+\end{figure}
+
+At small values of $\tau$, higher order terms enhanced by powers of $\ln(\tau)$ dominates the thrust distribution.
 In this kinematical region the real expansion parameter is the large effective coupling $\alpha_s \ln^2(\tau)$ and therefore
 any finite-order perturbative calculation cannot give an accurate evaluation of the cross section.
 
 For example, at leading order in perturbation theory the thrust distribution has the form:
 
 \begin{equation}\label{eq:LO fixed order}
-    \frac{1}{\sigma_0}\dv{\sigma}{\tau} = \delta(\tau) + \frac{2\alpha_s}{3\pi} \qty[\frac{-4 \ln \tau - 3}{\tau} + \dots]_{+}
+    \frac{1}{\sigma_0}\dv{\sigma}{\tau} = \delta(\tau) + \frac{2\alpha_s}{3\pi} \qty[\frac{-4 \ln \tau - 3}{\tau} + \dots]_{+} ,
 \end{equation}
 
 where $\sigma_0$ is the born cross section, the ellipsis denotes terms that are regular as $\tau \to 0$ and the subscript $+$ denotes the 
 plus distribution, which is defined as:
 
 \begin{equation}
-    \qty[\frac{-4 \ln \tau - 3}{\tau}]_{+} = \lim_{\epsilon \to 0}\qty[ \qty(\frac{-4 \ln \tau - 3}{\tau}) \theta(\tau - \epsilon) +\delta(\tau - \epsilon)\int_1^{\tau}  \dd{\tau'} \qty(\frac{-4 \ln \tau' - 3}{\tau'})]
+    \qty[\frac{-4 \ln \tau - 3}{\tau}]_{+} = \lim_{\epsilon \to 0}\qty[ \qty(\frac{-4 \ln \tau - 3}{\tau}) \theta(\tau - \epsilon) +\delta(\tau - \epsilon)\int_1^{\tau}  \dd{\tau'} \qty(\frac{-4 \ln \tau' - 3}{\tau'})].
 \end{equation}
 
 Upon integration over $\tau$, we obtain the cumulative distribution:
@@ -180,7 +260,7 @@ Upon integration over $\tau$, we obtain the cumulative distribution:
 \begin{flalign}
     R_T(\tau) &= \int_0^\tau \dd{\tau'} \frac{1}{\sigma_0}\dv{\sigma}{\tau'} \nonumber \\
     &= 1 + \frac{2\alpha_s}{3\pi} + \lim_{\epsilon \to 0} \qty[ \int_\epsilon^\tau  \dd{\tau'} \qty(\frac{-4 \ln \tau' - 3}{\tau'} + \dots) + \int_1^{\epsilon}  \dd{\tau'} \qty(\frac{-4 \ln \tau' - 3}{\tau'}+\dots)]\\
-    &= 1 + \frac{2\alpha_s}{3\pi} \qty[-2 \ln^2 \tau - 3 \ln \tau + \dots] \nonumber
+    &= 1 + \frac{2\alpha_s}{3\pi} \qty[-2 \ln^2 \tau - 3 \ln \tau + \dots] \nonumber .
 \end{flalign}
 
 Double logarithmic terms of the form $\alpha_s^n \ln^{2n}\tau$ plagues the fixed order expansion in the strong coupling. In the dijet region, higher order 
@@ -189,30 +269,30 @@ terms are as important as lower order ones, necessitating resummation to achieve
 \subsection{Fixed Order Cross Section}
 
 The fixed-order thrust differential distribution has been calculated to leading order analytically and
-to NLO and NNLO numerically, as mentioned earlier. At a centre-of-mass energy $Q$ and for a renormalization scale $\mu$ takes the form:
+to NLO and NNLO numerically, as mentioned earlier. At a centre-of-mass energy $Q$ and for a renormalization scale $\mu$, the differential cross section takes the form:
 
 \begin{equation}\label{eq:Fixed_order}
-    \frac{1}{\sigma_0} \dv{\sigma}{\tau} \qty(\tau,Q) = \delta(\tau) + \frac{\alpha_s(\mu)}{2\pi}\dv{A}{\tau} \qty(\tau) + \qty(\frac{\alpha_s(\mu)}{2\pi})^2 \dv{B}{\tau} \qty(\tau,\frac{\mu}{Q}) + \qty(\frac{\alpha_s(\mu)}{2\pi})^3 \dv{C}{\tau} \qty(\tau,\frac{\mu}{Q}) + \order{\alpha_s^4}
+    \frac{1}{\sigma_0} \dv{\sigma}{\tau} \qty(\tau,Q) = \delta(\tau) + \frac{\alpha_s(\mu)}{2\pi}\dv{A}{\tau} \qty(\tau) + \qty(\frac{\alpha_s(\mu)}{2\pi})^2 \dv{B}{\tau} \qty(\tau,\frac{\mu}{Q}) + \qty(\frac{\alpha_s(\mu)}{2\pi})^3 \dv{C}{\tau} \qty(\tau,\frac{\mu}{Q}) + \order{\alpha_s^4} ,
 \end{equation}
 
 where the complete leading order expression for the thrust distribution reads \cite{Ellis:1980wv}:
 
 \begin{equation}\label{eq:Fixed_order_A}
-    \dv{A}{\tau}(\tau) =  \text{C}_F \left(9 \tau -\frac{3}{\tau }+\left(-6 +\frac{4}{(1-\tau ) \tau }\right) \ln \left(\frac{1-2 \tau }{\tau }\right)+6\right)
+    \dv{A}{\tau}(\tau) =  \text{C}_F \left(9 \tau -\frac{3}{\tau }+\left(-6 +\frac{4}{(1-\tau ) \tau }\right) \ln \left(\frac{1-2 \tau }{\tau }\right)+6\right),
 \end{equation}
 
 with $C_F = \frac{4}{3}$ the Casimir of the fundamental representation of SU(3). As mentioned earlier, this expansion becomes unreliable near the dijet limit $\tau \to 0$ due to the presence of large logarithms.
 Resummation of these terms to all orders in $\alpha_s$ is necessary to obtain a reliable prediction.
 
-While the cumulant distribution has the following fixed-order expansion:
+The cumulant distribution has the following fixed-order expansion:
 
 \begin{equation}\label{eq:Fixed_order_R}
     R_T(\tau) = 1 + A(\tau) \frac{\alpha_s(\mu)}{2\pi} + B(\tau,\mu) \frac{\alpha_s(\mu)}{2\pi}^2 + C(\tau,\mu)\frac{\alpha_s(\mu)}{2\pi}^3 + \order{\alpha_s^4} ,
 \end{equation}
 
-the fixed-order coeficcient $A,B$ and $C$ can be obtained by integrating the differential cross section \cref{eq:Fixed_order_A} to all order and 
+the fixed-order coefficient $A,B$ and $C$ can be obtained by integrating the differential cross section \cref{eq:Fixed_order_A} to all order and 
 imposing the normalization condition $R(\tau_{max}) = 1$, where $\tau_{max}$ is the maximum kinetically allowed value of $\tau$. At leading order ($e^+e^- \to q\bar{q}g$) $\tau_{max}=\frac{1}{3}$, at Next-to-Leading Order
-is $\tau_{max}=1-\frac{1}{\sqrt{3}}$ and from NNLO onwards $\tau_{max}$ needs to be estimated numerically.
+is $\tau_{max}=1-\frac{1}{\sqrt{3}}$ and from NNLO onwards $\tau_{max}$ needs to be estimated numerically \cref{tab:max_tau}.
 
 At leading order we have:
 
@@ -221,5 +301,26 @@ At leading order we have:
     &+4 \ln (1-\tau ) \ln (\tau )-3 \ln (\tau )+3 (1-2 \tau ) \ln (1-2 \tau) \\
     &-4 \text{Li}_2\left(\frac{\tau }{1-\tau }\right)\Bigr) . \nonumber
 \end{flalign}
+
+For NLO and NNLO calculations, we use the numerical results from Table 1 in \cite{Weinzierl_2009}, interpolating the data to obtain the fixed-order coefficients 
+ $B$ and $C$.
+
+We plot the fixed-order results for the thrust distribution in \cref{fig:Fixed_order} and compare it with data from 
+OPAL \cite{OPAL2005}, DELPHI \cite{DELPHI:2000uri,hepdata.13245}, ALEPH \cite{ALEPH:2003obs,hepdata.12794}, L3 \cite{Achard_2004} experiments at LEP, as well as the
+SLD experiment \cite{Abe_1995} at SLAC. The fixed-order predictions show good agreement with the data in the middle region of $\tau$.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/FOvsdata.png}
+    \caption{Fixed-order predictions for the thrust distribution at leading order (LO), next-to-leading order (NLO) and next-to-next-to-leading order (NNLO) compared with data from LEP and SLD experiments.}
+    \label{fig:Fixed_order}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/FO_tail_region_logplot.png}
+    \caption{Log plot of the fixed-order predictions for the thrust distribution at leading order (LO), next-to-leading order (NLO) and next-to-next-to-leading order (NNLO) in the tail region.}
+    \label{fig:Fixed_order_tail}
+\end{figure}
 
 \end{document}

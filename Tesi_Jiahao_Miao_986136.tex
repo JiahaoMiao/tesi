@@ -1,0 +1,95 @@
+\documentclass[10pt,english,twoside]{book}
+
+\usepackage{style/relazione}
+\usepackage{style/mystyle}
+
+% Adding the path for graphics
+\graphicspath{{../figures/}}
+
+% Setting the path for input files
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+
+\addbibresource{bibliography/biblio.bib} % The file containing the bibliography
+
+% BACHELOR DEGREE COURSE
+\def\myCDL{Corso di Laurea triennale in Fisica}
+
+% TITLE:
+\def\myTitle{Resummation of QCD large infrared logarithms \\for Thrust distribution in Electron-Positron Annihilation} 
+
+% AUTHOR:
+\def\myName{Jiahao Miao}
+\def\myMat{Matr. Nr. 986136}
+ 
+\def\myRefereeA{Giancarlo Ferrera}
+\def\myRefereeB{Wan-Li Ju}
+ 
+% ANNO ACCADEMICO
+\def\myYY{2023-2024}
+ 
+% This command introduces a list of figures after the table of contents (optional)
+\figurespagetrue
+
+% This command introduces a list of tables after the table of contents (optional)
+\tablespagetrue
+
+
+\begin{document}
+
+% frontispiece with logo, title, author, referee, etc.
+\frontispiece
+
+\beforepreface % romans page numbering, sets pagestyle to empty
+\prefacesection{Abstract} %Abstract
+
+This thesis focuses on the Thrust event-shape distribution in electron-positron 
+annihilation, a classical precision collider observable which can be measured
+very accurately and provides an ideal proving ground for testing our understanding of strong interactions.
+Our particular focus lies on the back-to-back region, where we employ all-order resummation techniques to address logarithmically enhanced 
+contributions within QCD perturbation theory. Our calculations extend the pioneering work of Catani et al \cite{CATANI19933}
+in this field, aiming to achieve next-to-next-to-next-to-leading logarithmic (N$^3$LL) accuracy 
+and then consistently match with the known fixed-order results up to next-to-next-to-leading order (NNLO).
+
+Our approach involves calculating the resummation coefficients in Laplace space where natural exponentiation of the logarithmic contributions occurs,
+perform the inverse Laplace transform analytically up to N$^4$LL accuracy to obtain the resummed distribution in thrust space and then
+match the resummed expression to the fixed-order NNLO calculations at large values of $\tau$ using the R-matching scheme.
+We compare each step with experimental results, even though the experimental data are measured on hadron level while our prediction is calculated at parton level.
+Non-perturbative effects affecting the peak Thrust distribution are not included;
+a phenomenological model describing hadronization effects would enhance the agreement with experimental data, aiding in the 
+extraction of the strong coupling constant $\alpha_s$.
+The results presented in this thesis are a step towards achieving a more precise theoretical prediction for the Thrust distribution in $e^+e^-$ annihilation and
+a more precise extraction of the strong coupling constant $\alpha_s$, which is essential for the precision tests of the Standard Model and the search for new physics at the LHC. 
+
+% \afterpreface % table of contents, tables and figures
+
+
+
+\tableofcontents
+\pagenumbering{gobble}
+
+
+\allowdisplaybreaks % To allow page breaks in the middle of equations
+\subfile{chapters/Introduzione}
+
+\subfile{chapters/Resummation}
+
+\subfile{chapters/Strong_Coupling}
+
+\subfile{chapters/f_coeff}
+
+\subfile{chapters/scale_dependence}
+
+\subfile{chapters/Inverse_transform}
+
+\subfile{chapters/Matching}
+
+\subfile{chapters/conclusioni}
+\appendix
+
+\subfile{Appendix/Appendix}
+\subfile{Appendix/Ingredients}
+% bibliography 
+\printbibliography
+\end{document}

@@ -1,8 +1,4 @@
-\makeatletter
-\def\input@path{{../}}
-\makeatother
-
-\documentclass[../main.tex]{subfiles}
+\documentclass[../Tesi_Jiahao_Miao_986136.tex]{subfiles}
 
 \begin{document}
 
@@ -14,16 +10,16 @@ in the large moment $\nu Q^2 = N$ limit, this fact was already known in the lite
 We are interested in solving the following integral
 
 \begin{equation}
-    \int_0^1 \dd{z} \frac{e^{- N (1-z)} - 1}{1-z} F\qty(\alpha_s,\ln(1-z))= \int_0^1 \frac{\dd{u}}{u} \qty(e^{-u N} - 1) F\qty(\alpha_s , \ln u)
+    \int_0^1 \dd{z} \frac{e^{- N (1-z)} - 1}{1-z} F\qty(\alpha_s,\ln(1-z))= \int_0^1 \frac{\dd{u}}{u} \qty(e^{-u N} - 1) F\qty(\alpha_s , \ln u).
 \end{equation}
 
 Start by considering 
 
 \begin{equation}\label{eq:appendix:laplace test f}
-    I_n(N) = \int_0^1 \frac{\dd{u}}{u} \qty(e^{-u N} - 1) \ln^n(u) 
+    I_n(N) = \int_0^1 \frac{\dd{u}}{u} \qty(e^{-u N} - 1) \ln^n(u) ,
 \end{equation}
 
-the above integral can be evaluated as described in \cite{CATANI1989323}. Using the following identity
+which can be evaluated as described in \cite{CATANI1989323}, using the following identity
 
 \begin{equation}
     \ln^n(u)= \lim_{\epsilon \to 0} \qty(\pdv{\epsilon})^n u^\epsilon = \lim_{\epsilon \to 0} \qty(\pdv{\epsilon})^n e^{\epsilon \ln u}
@@ -37,14 +33,14 @@ to replace the logarithm term in the integrand \cref{eq:appendix:laplace test f}
     &= \lim_{\epsilon \to 0} \qty(\pdv{\epsilon})^n \qty{-\frac{1}{\epsilon}+N^{-\epsilon} (\Gamma(\epsilon,0) - \Gamma(\epsilon,N))} \\
     &= \lim_{\epsilon \to 0} \lim_{N \to \infty} \qty(\pdv{\epsilon})^n \qty{-\frac{1}{\epsilon}+N^{-\epsilon} \Gamma(\epsilon)}+ e^{-N + \order{\qty(\frac{1}{N})^2}}\order{\frac{1}{N}} \\
     &= \lim_{\epsilon \to 0} \lim_{N \to \infty} \qty(\pdv{\epsilon})^n \qty{\frac{1}{\epsilon} (N^{-\epsilon} \epsilon \Gamma(\epsilon) -1)} + \order{\frac{e^{-N}}{N}}\\
-    &= \lim_{\epsilon \to 0} \lim_{N \to \infty} \qty(\pdv{\epsilon})^n \qty{\frac{1}{\epsilon} ( e^{-\epsilon \ln N} \Gamma(1+\epsilon) -1)} + \order{\frac{e^{-N}}{N}}
+    &= \lim_{\epsilon \to 0} \lim_{N \to \infty} \qty(\pdv{\epsilon})^n \qty{\frac{1}{\epsilon} ( e^{-\epsilon \ln N} \Gamma(1+\epsilon) -1)} + \order{\frac{e^{-N}}{N}},
     \end{split}
 \end{align}
 
 where $\Gamma(\epsilon,0) = \Gamma(\epsilon)$, $\Gamma(\epsilon,N)$ is the incomplete Gamma function and $\epsilon \Gamma(\epsilon)=\Gamma(1+\epsilon)$
 
 \begin{equation}
-    \Gamma(\epsilon,N) = \int_N^\infty \dd{t} t^{\epsilon-1} e^{-t}
+    \Gamma(\epsilon,N) = \int_N^\infty \dd{t} t^{\epsilon-1} e^{-t}.
 \end{equation}
 
 The last equation in \cref{eq:appendix:calculation} is the same as Eq. $(68)$ obtained in \cite{Catani_2003_appendix} for the Mellin transform. Therefore, 
@@ -53,7 +49,7 @@ we can conclude that the Mellin transform prescription is also applicable to the
 Using the known expansion of the Gamma function for small $\epsilon$ 
 
 \begin{equation}\label{eq:appendix:gamma expansion}
-    \Gamma(1+\epsilon) = \exp{-\gamma_E \epsilon + \sum_{n=2}^\infty \qty(-1)^n \frac{\zeta(n) \epsilon^n}{n}}
+    \Gamma(1+\epsilon) = \exp{-\gamma_E \epsilon + \sum_{n=2}^\infty \qty(-1)^n \frac{\zeta(n) \epsilon^n}{n}},
 \end{equation}
 
 the term in curly brackets in \cref{eq:appendix:gamma expansion} can be expanded in power of $\epsilon$ and then derive. The result for $I_n(N)$ is thus a 
@@ -62,59 +58,59 @@ polynomial of degree $n+1$ in the large logarithm $\ln N$:
 \begin{align}
     \begin{split}\label{eq:appendix:In expansion}    
         I_n(N) &= \frac{(-1)^n+1}{n+1} (\ln N + \gamma_E)^{n+1} + \frac{(-1)^{n-1}}{2} n \zeta(2) (\ln N + \gamma_E)^{n-1} \\
-        &+ \sum_{k=0}^{n-2} a_{nk} (\ln N + \gamma_E)^k + \order{\frac{e^{-N}}{N}}
+        &+ \sum_{k=0}^{n-2} a_{nk} (\ln N + \gamma_E)^k + \order{\frac{e^{-N}}{N}}.
     \end{split}
 \end{align}
 
 This result can be generalized using the following formal identity:
 
 \begin{equation}
-    e^{-\epsilon \ln N} \Gamma(1+\epsilon) = \Gamma(1- \pdv{\ln N}) e^{\epsilon \ln N }
+    e^{-\epsilon \ln N} \Gamma(1+\epsilon) = \Gamma(1- \pdv{\ln N}) e^{\epsilon \ln N },
 \end{equation}
 
 then we can perform the $n$-th derivative with respect to $\epsilon$, and obtain
 
 \begin{equation}
-    I_n(N) = \Gamma\qty(1-\pdv{\ln N}) \frac{ \qty(-\ln N)^n+1}{n+1} + \order{\frac{e^{-N}}{N}}
+    I_n(N) = \Gamma\qty(1-\pdv{\ln N}) \frac{ \qty(-\ln N)^n+1}{n+1} + \order{\frac{e^{-N}}{N}}.
 \end{equation}
 
 This expression can be regarded as a replacement for \cref{eq:appendix:calculation} to compute the polynomial coefficients $a_{nk}$ 
 in \cref{eq:appendix:In expansion}. Moreover, by observing that 
 
 \begin{equation}
-    \frac{ \qty(-\ln N)^n+1}{n+1} = -\int_{\frac{1}{N}}^1 \dd{u} \frac{\ln^n(u)}{u}
+    \frac{ \qty(-\ln N)^n+1}{n+1} = -\int_{\frac{1}{N}}^1 \dd{u} \frac{\ln^n(u)}{u},
 \end{equation}
 
 we obtain the all order generalization for of the prescriprion used in \cite{CATANI19933}:
 
 \begin{align}
     e^{-uN}-1 &= -\Gamma\qty(1-\pdv{\ln_N}) \Theta(u-\frac{1}{N}) + \order{\frac{e^{-N}}{N}}\\
-              &=  -\tilde{\Gamma}\qty(1-\pdv{\ln_N}) \Theta(u-\frac{N_0}{N}) + \order{\frac{e^{-N}}{N}}
+              &=  -\tilde{\Gamma}\qty(1-\pdv{\ln_N}) \Theta(u-\frac{N_0}{N}) + \order{\frac{e^{-N}}{N}},
 \end{align}
 
 where 
 
 \begin{equation}\label{eq:appendix:gamma tilde}
-    \tilde{\Gamma}\qty(1-\epsilon) \equiv e^{\gamma_E \epsilon} \Gamma(1+\epsilon) = \exp{\sum_{n=2}^\infty (-1)^n \frac{ \zeta(n) \epsilon^n}{n}}
+    \tilde{\Gamma}\qty(1-\epsilon) \equiv e^{\gamma_E \epsilon} \Gamma(1+\epsilon) = \exp{\sum_{n=2}^\infty (-1)^n \frac{ \zeta(n) \epsilon^n}{n}}.
 \end{equation}
 
 It is straightforward to show that the prescription can be applied to as follows:
 
 \begin{equation} \label{eq:appendix:generalized prescription}
-    \int_0^1 \frac{\dd{u}}{u} \qty(e^{-u N} - 1) F\qty(\alpha_s , \ln u) = -\tilde{\Gamma}\qty(1-\pdv{\ln_N}) \int_{\frac{N_0}{N}}^1 \frac{\dd{u}}{u} F\qty(\alpha_s , \ln u) + \order{\frac{e^{-N}}{N}}
+    \int_0^1 \frac{\dd{u}}{u} \qty(e^{-u N} - 1) F\qty(\alpha_s , \ln u) = -\tilde{\Gamma}\qty(1-\pdv{\ln_N}) \int_{\frac{N_0}{N}}^1 \frac{\dd{u}}{u} F\qty(\alpha_s , \ln u) + \order{\frac{e^{-N}}{N}},
 \end{equation}
     
-and to evaluated the ln $N$-contribution arising from the integration of anu soft-gluon function $F$ that has a generic perturbative expansion of the type
+and to evaluated the ln $N$-contribution arising from the integration of any soft-gluon function $F$ that has a generic perturbative expansion of the type
 
 \begin{equation}
-    F\qty(\alpha_s , \ln u) = \sum_{k=1}^\infty \alpha_s^k \sum_{n=0}^{2k-1} F_{kn}\ln^n u
+    F\qty(\alpha_s , \ln u) = \sum_{k=1}^\infty \alpha_s^k \sum_{n=0}^{2k-1} F_{kn}\ln^n u .
 \end{equation}
 
-The result \cref{eq:appendix:generalized prescription} can be used to obtain \cref{eq:master_formula alt} as shown in \cite{Catani_2003_appendix}.
+The result in \cref{eq:appendix:generalized prescription} can be used to obtain \cref{eq:master_formula alt} as shown in \cite{Catani_2003_appendix}.
 
 \chapter{Equivalence between resummation formulae} \label{Appendix: Coefficients}
 
-Here i adapt the result in \cite{Catani_2003_appendix} to show the equivalence between the resummation formulae in \cref{eq:master_formula} and \cref{eq:master_formula alt}
+Here we adapt the result in \cite{Catani_2003_appendix} to show the equivalence between the resummation formulae in \cref{eq:master formula} and \cref{eq:master_formula alt}
 in the case of Thrust resummation.
 
 It is straightforward to show that equation $(90)$ in \cite{Catani_2003_appendix} becomes:
@@ -122,7 +118,7 @@ It is straightforward to show that equation $(90)$ in \cite{Catani_2003_appendix
 \begin{equation}
     \begin{split}
     &\int_{N_0/N}^1 \frac{\dd u}{u} \frac{1}{2}\qty(\tilde{B}(\alpha_s(uQ^2))-B(\alpha_s(uQ^2)))-\log \tilde{C}\qty( \alpha_s(\mu^2) , \frac{\mu^2}{Q^2} ) = \\
-    &\Gamma_2\qty(\pdv{\log N})\qty{ A(\alpha_s(\frac{N_0}{N}Q^2)) - \frac{1}{2} \pdv{\log N}B(\alpha_s(\frac{N_0}{N}Q^2)) -2 A(\alpha_s(\frac{N_0^2}{N^2}Q^2)) }
+    &\Gamma_2\qty(\pdv{\log N})\qty{ A(\alpha_s(\frac{N_0}{N}Q^2)) - \frac{1}{2} \pdv{\log N}B(\alpha_s(\frac{N_0}{N}Q^2)) -2 A(\alpha_s(\frac{N_0^2}{N^2}Q^2)) }.
     \end{split}
 \end{equation}
 
@@ -131,15 +127,15 @@ Observe that using the renormalization group equation \cref{eq:RGE} and chain ru
 \begin{flalign}
     \begin{split}
     \pdv{\log N} B(\alpha_s(\frac{k}{N})) &=  \pdv{B(\alpha_s)}{\alpha_s} \pdv{\alpha_s(\frac{k}{N})}{\frac{k}{N}} \pdv {\frac{k}{N}}{\log N} = - \pdv{\alpha_s(\frac{k}{N})}{\log \frac{k}{N}} \pdv{B(\alpha_s)}{\alpha_s} \\
-    &= -\beta(\alpha_s) \alpha_s \pdv{B(\alpha_s)}{\alpha_s} \\
-    \pdv {\log N} A(\alpha_s(\frac{k}{N^2})) &= -2 \beta(\alpha_s) \alpha_s \pdv{A(\alpha_s)}{\alpha_s} 
+    &= -\beta(\alpha_s) \alpha_s \pdv{B(\alpha_s)}{\alpha_s}, \\
+    \pdv {\log N} A(\alpha_s(\frac{k}{N^2})) &= -2 \beta(\alpha_s) \alpha_s \pdv{A(\alpha_s)}{\alpha_s} .
     \end{split}
 \end{flalign}
 
-define the differential operator $\partial(\alpha_s)$ as:
+Define the differential operator $\partial(\alpha_s)$ as:
 
 \begin{equation}
-    \partial_{\alpha_s} \equiv -\beta(\alpha_s) \alpha_s \pdv{\alpha_s}
+    \partial_{\alpha_s} \equiv -\beta(\alpha_s) \alpha_s \pdv{\alpha_s}.
 \end{equation}
 
 Substituting the above relations in the previous equation, we obtain the equivalent of equation $(92)$ in \cite{Catani_2003_appendix}: 
@@ -147,38 +143,33 @@ Substituting the above relations in the previous equation, we obtain the equival
 \begin{equation}
     \begin{split}
     &\int_{N_0/N}^1 \frac{\dd u}{u} \frac{1}{2}\qty(\tilde{B}(\alpha_s(uQ^2))-B(\alpha_s(uQ^2)))-\log \tilde{C}\qty( \alpha_s(\mu^2) , \frac{\mu^2}{Q^2} ) = \\
-    &\Gamma_2\qty(\partial_{\alpha_s}) \qty{ A(\alpha_s(\frac{N_0}{N}Q^2)) - \frac{1}{2} \partial_{\alpha_s} B(\alpha_s(\frac{N_0}{N}Q^2)) } - 2 \Gamma\qty(2\partial_{\alpha_s}) A(\alpha_s(\frac{N_0^2}{N^2}Q^2)) 
+    &\Gamma_2\qty(\partial_{\alpha_s}) \qty{ A(\alpha_s(\frac{N_0}{N}Q^2)) - \frac{1}{2} \partial_{\alpha_s} B(\alpha_s(\frac{N_0}{N}Q^2)) } - 2 \Gamma\qty(2\partial_{\alpha_s}) A(\alpha_s(\frac{N_0^2}{N^2}Q^2)) .
     \end{split}
 \end{equation}
 
 Now by setting $N=N_0$ or applying $\pdv{\log N}$ one obtains respectively the functions $\tilde{C}$ and  $\tilde{B}$ as functions of $A$ and $B$:
 
 \begin{equation}\label{eq:appendix:Ctilde}
-    \tilde{C}(\alpha_s) = \exp{-\Gamma_2(\partial_{\alpha_s}) \qty[A(\alpha_s)-\frac{1}{2} \partial_{\alpha_s}B(\alpha_s)]- 2 \Gamma\qty(2\partial_{\alpha_s}) A(\alpha_s)}\biggr\rvert_{\alpha_s=\alpha_s\qty(Q^2)} 
+    \tilde{C}(\alpha_s) = \exp{-\Gamma_2(\partial_{\alpha_s}) \qty[A(\alpha_s)-\frac{1}{2} \partial_{\alpha_s}B(\alpha_s)]- 2 \Gamma\qty(2\partial_{\alpha_s}) A(\alpha_s)}\biggr\rvert_{\alpha_s=\alpha_s\qty(Q^2)} ,
 \end{equation}
 \begin{equation}\label{eq:appendix:Btilde}
     \begin{split}
     \frac{\tilde{B}(\alpha_s)}{2} &= \frac{B(\alpha_s)}{2} + \partial_{\alpha_s} \qty{\Gamma_2(\partial_{\alpha_s}) \qty[A(\alpha_s)-\frac{1}{2} \partial_{\alpha_s}B(\alpha_s)]} \biggr \rvert_{\alpha_s = \alpha_s\qty(\frac{N_0}{N}Q^2)}\\
-    &- 4 \partial_{\alpha_s} \qty{\Gamma_s\qty(2\partial_{\alpha_s}) A(\alpha_s)}\biggr\rvert_{\alpha_s=\alpha_s\qty(\frac{N_0^2}{N^2}Q^2)} 
+    &- 4 \partial_{\alpha_s} \qty{\Gamma_s\qty(2\partial_{\alpha_s}) A(\alpha_s)}\biggr\rvert_{\alpha_s=\alpha_s\qty(\frac{N_0^2}{N^2}Q^2)} .
 \end{split}
 \end{equation}
 
-by inserting the expansion 
+With \cref{eq:appendix:Ctilde,eq:appendix:Btilde} one can relate the two formulas in \cref{eq:master formula} and \cref{eq:master_formula alt},
+\emph{e.g.} $\log \tilde{C}$ can be obtained by inserting the expansion:
 
 \begin{align}
     \begin{split}
     \Gamma_2(\epsilon) &= -\frac{1}{2}\zeta(2) -\frac{1}{3}\zeta(3) \epsilon - \frac{9}{16}\zeta(4) \epsilon^2 - \qty(\frac{1}{6}\zeta(2)\zeta(3)+ \frac{1}{5}\zeta(5))\epsilon^3 \\
-    &- \qty(\frac{1}{18}\zeta(3)^2 - \frac{61}{128}\zeta(6))\epsilon^4 + \order{\epsilon^5}   
+    &- \qty(\frac{1}{18}\zeta(3)^2 - \frac{61}{128}\zeta(6))\epsilon^4 + \order{\epsilon^5}
     \end{split}
 \end{align}
 
-in \cref{eq:appendix:Btilde} and \cref{eq:appendix:Ctilde}, we can obtain the coefficients $\tilde{B}$ and $\tilde{C}$ in terms of the coefficients $A$ and $B$ up to $N^4LL$ accuracy: 
-
-\begin{align}
-    \begin{split}
-    \tilde{B}\qty(\alpha_s \qty(u Q^2)) &= B\qty(\alpha_s \qty(u Q^2))  + \dots
-    \end{split}
-\end{align}
+in \cref{eq:appendix:Ctilde}, and up to N$^4$LL accuracy we have: 
 
 \begin{align}
     \begin{split}
@@ -188,11 +179,13 @@ in \cref{eq:appendix:Btilde} and \cref{eq:appendix:Ctilde}, we can obtain the co
     &+8 b_0^2 \zeta (3) \log \left(\frac{\mu ^2}{Q^2}\right)+3 b_1 \zeta (2) \log \left(\frac{\mu ^2}{Q^2}\right)+3 b_1 \log \left(\frac{\mu ^2}{Q^2}\right)\\
     &-4 b_1 \zeta (3)\Bigr)-\frac{1}{6 \pi ^3}\Bigl(-12 \pi  A_2 b_0 \zeta (2) \log \left(\frac{\mu ^2}{Q^2}\right)\\
     &-12 \pi  A_2 b_0 \log \left(\frac{\mu ^2}{Q^2}\right)+16 \pi  A_2 b_0 \zeta (3)+6 A_3 \zeta (2)+6 A_3\\
-    &+6 \pi ^2 b_0^2 B_1 \log \left(\frac{\mu ^2}{Q^2}\right)-6 \pi  b_0 B_2 -3 \pi ^2 b_1 B_1\Bigr)\biggr)\alpha_s^3 + \order{\alpha_s^4}
+    &+6 \pi ^2 b_0^2 B_1 \log \left(\frac{\mu ^2}{Q^2}\right)-6 \pi  b_0 B_2 -3 \pi ^2 b_1 B_1\Bigr)\biggr)\alpha_s^3 + \order{\alpha_s^4}.
     \end{split}
 \end{align}
-We note that $\tilde{B}$ corrects the $B$ terms so it has to be expanded up to $\alpha_s^4$ to achieve $N^4LL$ accuracy while
-$\ln \tilde{C}$ corrects the $f_i$ functions so they have to be expanded up to $\alpha_s^3$ to achieve $N^4LL$ accuracy, 
+
+For $\tilde{B}$ we'll have to use renormalization group equation to evolve the two scale $\frac{N_0}{N}Q^2$ and $\frac{N_0^2}{N^2}Q^2$ to a common scale $Q^2$.
+We note that $\tilde{B}$ corrects the $B$ terms so it has to be expanded up to $\alpha_s^4$ to achieve N$^4$LL accuracy while
+$\ln \tilde{C}$ corrects the $f_i$ functions so they have to be expanded up to $\alpha_s^3$ to achieve N$^4$LL accuracy, 
 these corrections are necessary only for NNLL accuracy and beyond, consistent with the results in \cite{CATANI19933}.
 
 \end{document}
